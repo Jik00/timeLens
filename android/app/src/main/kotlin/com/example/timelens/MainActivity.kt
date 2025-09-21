@@ -1,0 +1,5 @@
+package com.example.timelens
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
