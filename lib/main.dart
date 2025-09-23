@@ -22,14 +22,13 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MaterialApp(
             theme: ThemeData(
-            textTheme: GoogleFonts.alkatraTextTheme(),
-          ),
+              textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
+            ),
 
             debugShowCheckedModeBanner: false,
-            showPerformanceOverlay: false,
+            // showPerformanceOverlay: false,
             onGenerateRoute: onGenerateRoutes,
             initialRoute: 'OnboardingView',
-
 
             // flutter localization
             locale: const Locale('en'),

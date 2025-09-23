@@ -54,6 +54,66 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Meet the past, Experience it today`
+  String get onboarding1Title {
+    return Intl.message(
+      'Meet the past, Experience it today',
+      name: 'onboarding1Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Step into immersive worlds and relive the past like never before`
+  String get onboarding1Subtitle {
+    return Intl.message(
+      'Step into immersive worlds and relive the past like never before',
+      name: 'onboarding1Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unveil the Tales Etched in Ancient Walls`
+  String get onboarding2Title {
+    return Intl.message(
+      'Unveil the Tales Etched in Ancient Walls',
+      name: 'onboarding2Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Poowered by AI and VR, converse with history’s greatest figures`
+  String get onboarding2Subtitle {
+    return Intl.message(
+      'Poowered by AI and VR, converse with history’s greatest figures',
+      name: 'onboarding2Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History Speaks Your Language`
+  String get onboarding3Title {
+    return Intl.message(
+      'History Speaks Your Language',
+      name: 'onboarding3Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore and learn in multiple languages, wherever you are`
+  String get onboarding3Subtitle {
+    return Intl.message(
+      'Explore and learn in multiple languages, wherever you are',
+      name: 'onboarding3Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
