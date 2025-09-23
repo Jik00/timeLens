@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
-import 'package:timelens/core/utils/app_images.dart';
 
 class PgViewItem extends StatelessWidget {
   const PgViewItem(
@@ -43,7 +42,7 @@ class PgViewItem extends StatelessWidget {
         ),
 
         Positioned(
-          bottom: 70.h,
+          bottom: 90.h,
           left: 16.w,
           right: 16.w,
           child: Column(

@@ -4,11 +4,14 @@ import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/features/onboarding/presentation/views/widgets/pg_view_item.dart';
 
 class OnboardingPgview extends StatelessWidget {
-  const OnboardingPgview({super.key});
+  const OnboardingPgview({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     return PageView(
+      controller: pageController,
       physics: const BouncingScrollPhysics(),
       children: [
         PgViewItem(

@@ -55,10 +55,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Meet the past, Experience it today`
+  /// `Meet the past Experience it today`
   String get onboarding1Title {
     return Intl.message(
-      'Meet the past, Experience it today',
+      'Meet the past Experience it today',
       name: 'onboarding1Title',
       desc: '',
       args: [],
@@ -75,10 +75,10 @@ class S {
     );
   }
 
-  /// `Unveil the Tales Etched in Ancient Walls`
+  /// `Unveil the Tales Etched in Walls`
   String get onboarding2Title {
     return Intl.message(
-      'Unveil the Tales Etched in Ancient Walls',
+      'Unveil the Tales Etched in Walls',
       name: 'onboarding2Title',
       desc: '',
       args: [],
@@ -105,10 +105,10 @@ class S {
     );
   }
 
-  /// `Explore and learn in multiple languages, wherever you are`
+  /// `Explore and learn in multiple languages wherever you are`
   String get onboarding3Subtitle {
     return Intl.message(
-      'Explore and learn in multiple languages, wherever you are',
+      'Explore and learn in multiple languages wherever you are',
       name: 'onboarding3Subtitle',
       desc: '',
       args: [],
