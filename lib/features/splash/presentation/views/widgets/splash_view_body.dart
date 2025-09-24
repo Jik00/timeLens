@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
-import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/core/widgets/app_logo.dart';
+import 'package:timelens/features/splash/presentation/views/widgets/lottie_logo_pyramid.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -13,25 +12,16 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
+  
   bool isLogo = true;
   late AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-
-    _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 800));
-
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      setState(() {
-        isLogo = false;
-      });
-    });
-
-    Future.delayed(const Duration(milliseconds: 3700), () {
-      Navigator.pushReplacementNamed(context, 'OnboardingView');
-    });
+    initAnimation();
+    toggleLogo();
+    initNavigation();
 
   }
 
@@ -45,6 +35,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        //backgroung WILL BE CHANGED SOON!
         SizedBox.expand(
           child: Image.asset(
             Assets.assetsImages0,
@@ -58,36 +49,36 @@ class _SplashViewBodyState extends State<SplashViewBody>
             duration: const Duration(milliseconds: 300),
             alignment: Alignment.center,
             firstCurve: Curves.bounceInOut,
-            firstChild: ClipOval(
-              child: Lottie.asset(
-                kSplashAnimation,
-                width: 140.w,
-                height: 140.h,
-                fit: BoxFit.cover,
-                controller: _controller,
-                onLoaded: (composition) {
-                  _controller
-                    ..duration = composition.duration
-                    ..forward()
-                    ..addStatusListener((status) {
-                      if (status == AnimationStatus.completed) {
-                        _controller.repeat();
-                      }
-                    });
-                },
-              ),
-            ),
-            secondChild: ClipOval(
-              child: Image.asset(
-                Assets.assetsImagesAppIcon,
-                width: 140.w,
-                height: 140.h,
-                fit: BoxFit.cover,
-              ),
-            ),
+            
+            firstChild: LottieLogoPyramid(controller: _controller),
+            secondChild: const AppLogo(),
           ),
         ),
       ],
     );
   }
+
+  // our init logic 
+    Future<Null> toggleLogo() {
+    return Future.delayed(const Duration(milliseconds: 3000), () {
+    setState(() {
+      isLogo = false;
+    });
+  });
+  }
+
+  Future<Null> initNavigation() {
+    return Future.delayed(const Duration(milliseconds: 3700), () {
+    Navigator.pushReplacementNamed(context, 'OnboardingView');
+  });
+  }
+
+  AnimationController initAnimation() {
+    return _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 800));
+  }
+
 }
+
+
+
