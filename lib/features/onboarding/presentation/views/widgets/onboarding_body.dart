@@ -30,9 +30,8 @@ class _OnboardingBodyState extends State<OnboardingBody> {
 
   @override
   void dispose() {
-    //dispose controller
-    pageController.dispose();
     super.dispose();
+    pageController.dispose();
   }
 
   @override

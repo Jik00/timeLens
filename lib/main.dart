@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             // showPerformanceOverlay: false,
             onGenerateRoute: onGenerateRoutes,
-            initialRoute: 'OnboardingView',
+            initialRoute: 'SplashView',
 
             // flutter localization
             locale: const Locale('en'),
