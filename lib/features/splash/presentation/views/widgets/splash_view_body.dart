@@ -43,41 +43,51 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: AnimatedCrossFade(
-        crossFadeState:
-            isLogo ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-        duration: const Duration(milliseconds: 300),
-        alignment: Alignment.center,
-        firstCurve: Curves.bounceInOut,
-        firstChild: ClipOval(
-          child: Lottie.asset(
-            kSplashAnimation,
-            width: 150.w,
-            height: 150.h,
-            fit: BoxFit.cover,
-            controller: _controller,
-            onLoaded: (composition) {
-              _controller
-                ..duration = composition.duration
-                ..forward()
-                ..addStatusListener((status) {
-                  if (status == AnimationStatus.completed) {
-                    _controller.repeat();
-                  }
-                });
-            },
-          ),
-        ),
-        secondChild: ClipOval(
+    return Stack(
+      children: [
+        SizedBox.expand(
           child: Image.asset(
-            Assets.assetsImagesAppIcon,
-            width: 140.w,
-            height: 140.h,
+            Assets.assetsImages0,
             fit: BoxFit.cover,
           ),
         ),
-      ),
+        Center(
+          child: AnimatedCrossFade(
+            crossFadeState:
+                isLogo ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+            duration: const Duration(milliseconds: 300),
+            alignment: Alignment.center,
+            firstCurve: Curves.bounceInOut,
+            firstChild: ClipOval(
+              child: Lottie.asset(
+                kSplashAnimation,
+                width: 140.w,
+                height: 140.h,
+                fit: BoxFit.cover,
+                controller: _controller,
+                onLoaded: (composition) {
+                  _controller
+                    ..duration = composition.duration
+                    ..forward()
+                    ..addStatusListener((status) {
+                      if (status == AnimationStatus.completed) {
+                        _controller.repeat();
+                      }
+                    });
+                },
+              ),
+            ),
+            secondChild: ClipOval(
+              child: Image.asset(
+                Assets.assetsImagesAppIcon,
+                width: 140.w,
+                height: 140.h,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
