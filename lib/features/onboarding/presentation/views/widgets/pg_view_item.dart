@@ -42,7 +42,7 @@ class PgViewItem extends StatelessWidget {
         ),
 
         Positioned(
-          bottom: 90.h,
+          bottom: 100.h,
           left: 16.w,
           right: 16.w,
           child: Column(

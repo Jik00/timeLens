@@ -39,7 +39,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
     return Stack(children: [
       OnboardingPgview(pageController: pageController),
       Positioned(
-        bottom: 15.h,
+        bottom: 26.h,
         left: 0,
         right: 0,
         child: Column(

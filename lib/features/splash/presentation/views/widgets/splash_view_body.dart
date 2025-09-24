@@ -12,7 +12,7 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-  
+//
   bool isLogo = true;
   late AnimationController _controller;
 
@@ -22,7 +22,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initAnimation();
     toggleLogo();
     initNavigation();
-
   }
 
   @override
@@ -35,13 +34,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        //backgroung WILL BE CHANGED SOON!
+//backgroung WILL BE CHANGED SOON!
         SizedBox.expand(
           child: Image.asset(
             Assets.assetsImages0,
             fit: BoxFit.cover,
           ),
         ),
+//
         Center(
           child: AnimatedCrossFade(
             crossFadeState:
@@ -49,7 +49,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             duration: const Duration(milliseconds: 300),
             alignment: Alignment.center,
             firstCurve: Curves.bounceInOut,
-            
+//
             firstChild: LottieLogoPyramid(controller: _controller),
             secondChild: const AppLogo(),
           ),
@@ -58,27 +58,23 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-  // our init logic 
-    Future<Null> toggleLogo() {
+  // our init logic
+  Future<Null> toggleLogo() {
     return Future.delayed(const Duration(milliseconds: 3000), () {
-    setState(() {
-      isLogo = false;
+      setState(() {
+        isLogo = false;
+      });
     });
-  });
   }
 
   Future<Null> initNavigation() {
     return Future.delayed(const Duration(milliseconds: 3700), () {
-    Navigator.pushReplacementNamed(context, 'OnboardingView');
-  });
+      Navigator.pushReplacementNamed(context, 'OnboardingView');
+    });
   }
 
   AnimationController initAnimation() {
     return _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 800));
   }
-
 }
-
-
-
