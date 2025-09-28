@@ -3,5 +3,5 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   static const textColor = Colors.white70;
   static const grayscale400 = Color(0xFF949D9E);
-  static const splashColor1 = Color(0xFF4E3700);
+  static const splashColor1 = Color.fromARGB(255, 64, 45, 1);
 }

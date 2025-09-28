@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/core/widgets/background_theme.dart';
 
 class PgViewItem extends StatelessWidget {
   const PgViewItem(
@@ -18,28 +19,8 @@ class PgViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Full screen image
-        SizedBox.expand(
-          child: Image.asset(
-            img,
-            fit: BoxFit.cover,
-          ),
-        ),
-
-        // Dark edges effect using gradient
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.black.withOpacity(0.6), // top darker
-                Colors.transparent, // middle
-                Colors.black.withOpacity(0.88), // bottom darker
-              ],
-            ),
-          ),
-        ),
+        
+        BackgroundTheme(img: img),
 
         Positioned(
           bottom: 100.h,

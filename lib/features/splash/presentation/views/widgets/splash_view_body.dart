@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/core/widgets/background_theme.dart';
+import 'package:timelens/features/splash/presentation/views/widgets/animate_icons_splash.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -11,27 +12,22 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-  
   final List<String> _icons = [
-    Assets.assetsImagesSplash1,
     Assets.assetsImagesSplash2,
-    Assets.assetsImagesSplash3,
+    Assets.assetsImagesSplash1,
     Assets.assetsImagesSplash4,
-    Assets.assetsImagesSplash6,
-    Assets.assetsImagesSplash8,
     Assets.assetsImagesSplash7,
   ];
 
   int _currentIndex = 0;
   Timer? _timer;
+  bool _showLogo = false;
 
   @override
   void initState() {
     super.initState();
-
-    _initTimer();
-
-    _initNavigation();
+    
+    _startSplashFlow();
   }
 
   @override
@@ -44,59 +40,37 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        //backgroung WILL BE CHANGED SOON!
-        SizedBox.expand(
-          child: Image.asset(
-            Assets.assetsImages7,
-            fit: BoxFit.cover,
-          ),
-        ),
-        
-        // Dark edges effect using gradient
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.black.withOpacity(0.6), // top darker
-                Colors.transparent, // middle
-                Colors.black.withOpacity(0.88), // bottom darker
-              ],
-            ),
-          ),
-        ),
+       const BackgroundTheme(img: Assets.assetsImages7,),
 
         Center(
-          child: ClipOval(
-            child: Image.asset(
-              _icons[_currentIndex],
-              width: 140.w,
-              height: 140.h,
-              fit: BoxFit.fill,
-            ),
-          ),
+          child: AnimateIconsSplash(showLogo: _showLogo, icons: _icons, currentIndex: _currentIndex),
         ),
       ],
     );
   }
 
- //our logic
-  Future<Null> _initNavigation() {
-    return Future.delayed(const Duration(seconds: 5), () {
-    _timer?.cancel();
-
-    Navigator.pushReplacementNamed(context, 'OnboardingView');
-
-  });
-  }
-
+  //our logic
   Timer _initTimer() {
-    return _timer = Timer.periodic(const Duration(milliseconds: 750), (timer) {
-    setState(() {
-      _currentIndex = (_currentIndex + 1) % _icons.length;
+    return _timer = Timer.periodic(const Duration(milliseconds: 600), (timer) {
+      setState(() {
+        _currentIndex =
+            (_currentIndex + 1) % _icons.length;
+      });
     });
-  });
   }
 
+  void _startSplashFlow() {
+    _initTimer();
+
+    // end timer
+    Future.delayed(const Duration(seconds: 3), () {
+      _timer?.cancel();
+      setState(() => _showLogo = true);
+    });
+
+    // navigate next
+    Future.delayed(const Duration(seconds: 4), () {
+      Navigator.pushReplacementNamed(context, 'OnboardingView');
+    });
+  }
 }
