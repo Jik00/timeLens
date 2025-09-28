@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
+import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/widgets/onboarding_pgview.dart';
 
 class OnboardingBody extends StatefulWidget {
@@ -36,38 +37,44 @@ class _OnboardingBodyState extends State<OnboardingBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      OnboardingPgview(pageController: pageController),
-      Positioned(
-        bottom: 26.h,
-        left: 0,
-        right: 0,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SmoothPageIndicator(
-              textDirection: TextDirection.ltr, //important to override when ar
-              controller: pageController,
-              count: 3,
-              effect: ExpandingDotsEffect(
-                dotWidth: 12.w,
-                dotHeight: 4.w,
-                dotColor: Colors.white,
-                activeDotColor: Colors.white,
+    return Stack(
+      children: [
+        OnboardingPgview(pageController: pageController),
+        Positioned(
+          bottom: 26.h,
+          left: 0,
+          right: 0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SmoothPageIndicator(
+                // textDirection:
+                //     TextDirection.ltr, //important to override when ar
+                controller: pageController,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  dotWidth: 12.w,
+                  dotHeight: 4.w,
+                  dotColor: Colors.white,
+                  activeDotColor: Colors.white,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 24.h,
-            ),
-            Visibility(
-                visible: currentPg == 2,
-                maintainAnimation: true,
-                maintainState: true,
-                maintainSize: true,
-                child: CustomButton(hint: "start", onTap: () {})),
-          ],
+              SizedBox(
+                height: 24.h,
+              ),
+              Visibility(
+                  visible: currentPg == 2,
+                  maintainAnimation: true,
+                  maintainState: true,
+                  maintainSize: true,
+                  child: CustomButton(
+                      hint: "start",
+                      onTap: () => Navigator.pushReplacementNamed(
+                          context, LoginView.routeName))),
+            ],
+          ),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 }

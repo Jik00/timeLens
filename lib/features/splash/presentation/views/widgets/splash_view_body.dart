@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/background_theme.dart';
+import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/widgets/animate_icons_splash.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -70,7 +71,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
     // navigate next
     Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, 'OnboardingView');
+      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
     });
   }
 }
