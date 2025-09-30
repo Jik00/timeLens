@@ -37,49 +37,51 @@ class _Splash2ViewBodyState extends State<Splash2ViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        /// Centered logo + text
-        Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              FadeTransition(
-                opacity: _logoFade,
-                child: const AppLogo(h: 160, w: 160),
-              ),
-              FadeTransition(
-                opacity: _textFade,
-                child: Text(
-                  kAppTitle,
-                  style: TextStyle(
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.splash2Color1,
+    return SizedBox.expand(
+      child: Stack(
+        children: [
+          /// Centered logo + text
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FadeTransition(
+                  opacity: _logoFade,
+                  child: const AppLogo(h: 160, w: 160),
+                ),
+                FadeTransition(
+                  opacity: _textFade,
+                  child: Text(
+                    kAppTitle,
+                    style: TextStyle(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.splash2Color1,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20.h),
-            ],
+                SizedBox(height: 20.h),
+              ],
+            ),
           ),
-        ),
-
-        /// Pyramids animating from bottom → up
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: SlideTransition(
-            position: _pyramidSlide,
-            child: SizedBox(
-              height: 230.h,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                Assets.assetsImagesPyramidsplash2,
-                fit: BoxFit.fitHeight,
+      
+          /// Pyramids animating from bottom → up
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SlideTransition(
+              position: _pyramidSlide,
+              child: SizedBox(
+                height: 230.h,
+                width: MediaQuery.of(context).size.width,
+                child: Image.asset(
+                  Assets.assetsImagesPyramidsplash2,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
