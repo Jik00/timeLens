@@ -27,7 +27,7 @@ class AnimateIconsSplash extends StatelessWidget {
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const AppLogo(),
+                const AppLogo( h: 105, w: 105,),
                 Text(
                   kAppTitle,
                   style: TextStyle(

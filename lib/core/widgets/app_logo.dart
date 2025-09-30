@@ -4,17 +4,18 @@ import 'package:timelens/core/utils/app_images.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({
-    super.key,
+    super.key, required this.w, required this.h,
   });
 
+  final int w, h;
   @override
   Widget build(BuildContext context) {
     return ClipOval(
       child: Image.asset(
         Assets.assetsImagesAppIcon,
-       // Assets.assetsImagesPharaoh,
-        width: 105.w,
-        height: 105.h,
+        // Assets.assetsImagesPharaoh,
+        width: w.w,
+        height: h.h,
         fit: BoxFit.cover,
       ),
     );

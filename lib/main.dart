@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
-import 'package:timelens/features/splash/presentation/views/splash_view.dart';
+import 'package:timelens/features/splash2/presentation/views/splash2_view.dart';
 import 'package:timelens/generated/l10n.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             // showPerformanceOverlay: false,
             onGenerateRoute: onGenerateRoutes,
-            initialRoute: SplashView.routeName,
+            initialRoute: Splash2View.routeName,
 
             // flutter localization
             locale: const Locale('en'),
