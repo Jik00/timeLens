@@ -43,7 +43,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         children: [
           const BackgroundGradient(
               color1: AppColors.backgroundColor1,
-              color2: AppColors.backgroundColor2),
+              color2: AppColors.primaryColor),
 
           /// Centered logo + text
           Center(

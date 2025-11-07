@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/widgets/background_theme.dart';
+import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/widgets/skip_widget.dart';
 
 class PgViewItem extends StatelessWidget {
@@ -33,8 +34,8 @@ class PgViewItem extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     // Prefs.setBool(kIsOnboardingSeen, true);
-                    // Navigator.pushReplacementNamed(
-                    //     context, LoginView.routeName);
+                    Navigator.pushReplacementNamed(
+                        context, LoginView.routeName);
                   },
                   child: const SkipWidget(),
                 ),
