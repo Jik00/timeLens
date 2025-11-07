@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/generated/l10n.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await Prefs.init();
-  
+
   runApp(const MyApp());
 }
 
@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MaterialApp(
             theme: ThemeData(
+              colorScheme:
+                  ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
               textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
             ),
 
