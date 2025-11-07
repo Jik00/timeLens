@@ -9,24 +9,29 @@ class LoginTitle extends StatelessWidget {
     required this.colors,
     required this.titleSize,
     required this.borderColor,
+    this.textDecoration,
   });
 
   final String title;
   final List<Color> colors;
   final int titleSize;
   final Color borderColor;
+  final TextDecoration? textDecoration;
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      // Give it some space to center inside
-      size: Size(double.infinity, titleSize.sp * 1.4),
-      painter: _GradientBorderTextPainter(
-        text: title,
-        colors: colors,
-        fontSize: titleSize.sp,
-        borderColor: borderColor,
-        borderWidth: 3.w,
+    return SizedBox(
+      width: double.infinity,
+      child: CustomPaint(
+        size: Size(double.infinity, titleSize.sp * 1.4),
+        painter: _GradientBorderTextPainter(
+          textDecoration,
+          text: title,
+          colors: colors,
+          fontSize: titleSize.sp,
+          borderColor: borderColor,
+          borderWidth: 2.5,
+        ),
       ),
     );
   }
@@ -38,8 +43,10 @@ class _GradientBorderTextPainter extends CustomPainter {
   final double fontSize;
   final Color borderColor;
   final double borderWidth;
+  final TextDecoration? textDecoration;
 
-  _GradientBorderTextPainter({
+  _GradientBorderTextPainter(
+    this.textDecoration, {
     required this.text,
     required this.colors,
     required this.fontSize,
@@ -60,9 +67,10 @@ class _GradientBorderTextPainter extends CustomPainter {
       text: TextSpan(
         text: text,
         style: TextStyle(
+          letterSpacing: 2,
           fontFamily: GoogleFonts.cinzelDecorative().fontFamily,
           fontSize: fontSize,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           foreground: borderPaint,
         ),
       ),
@@ -93,9 +101,11 @@ class _GradientBorderTextPainter extends CustomPainter {
       text: TextSpan(
         text: text,
         style: TextStyle(
+          decoration: textDecoration,
+          letterSpacing: 2,
           fontFamily: GoogleFonts.cinzelDecorative().fontFamily,
           fontSize: fontSize,
-          fontWeight: FontWeight.w900,
+          fontWeight: FontWeight.w700,
           foreground: Paint()
             ..shader = shader
             ..style = PaintingStyle.fill,

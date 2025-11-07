@@ -2,21 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.hint, this.onTap});
+  const CustomButton(
+      {super.key,
+      required this.hint,
+      this.onTap,
+      required this.w,
+      this.fillColor,
+      this.borderColor});
 
   final String hint;
   final VoidCallback? onTap;
+  final int w;
+  final Color? fillColor;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.transparent,
-        minimumSize: Size(343.w, 50.h),
+        backgroundColor: fillColor ?? Colors.transparent,
+        minimumSize: Size(w.w, 50.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.r),
-          side: const BorderSide(color: Colors.white),
+          side: BorderSide(color: borderColor ?? Colors.white),
         ),
       ),
       child: Text(
