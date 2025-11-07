@@ -40,5 +40,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding3Title": MessageLookupByLibrary.simpleMessage(
       "History Speaks Your Language",
     ),
+    "onboardingSkip": MessageLookupByLibrary.simpleMessage("Skip"),
   };
 }

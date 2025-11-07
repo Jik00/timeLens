@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/pyramid_splash.png
   static const String assetsImagesPyramidSplash = "assets/images/pyramid_splash.png";
 
+  /// Assets for assetsImagesSkipArrow
+  /// assets/images/skip_arrow.png
+  static const String assetsImagesSkipArrow = "assets/images/skip_arrow.png";
+
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";
