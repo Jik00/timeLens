@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
 import 'package:timelens/core/widgets/background_gradiant.dart';
+import 'package:timelens/core/widgets/timelens_title.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -52,20 +52,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
               children: [
                 FadeTransition(
                   opacity: _logoFade,
-                  child: const AppLogo(h: 160, w: 160),
+                  child: const AppLogo(h: 180, w: 180),
                 ),
                 FadeTransition(
                   opacity: _textFade,
-                  child: Text(
-                    kAppTitle,
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.splashColor1,
-                    ),
-                  ),
+                  child: const TimelensTitle(),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 50.h),
               ],
             ),
           ),
@@ -126,13 +119,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void _scheduleNavigation() {
-    // Future.delayed(
-    //   const Duration(milliseconds: 4500),
-    //   () {
-    //     if (mounted) {
-    //       Navigator.pushReplacementNamed(context, OnboardingView.routeName);
-    //     }
-    //   },
-    // );
+    Future.delayed(
+      const Duration(milliseconds: 4500),
+      () {
+        if (mounted) {
+          Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+        }
+      },
+    );
   }
 }

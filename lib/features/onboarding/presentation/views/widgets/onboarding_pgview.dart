@@ -25,7 +25,7 @@ class OnboardingPgview extends StatelessWidget {
             title: context.loc.onboarding2Title,
             subtitle: context.loc.onboarding2Subtitle),
         PgViewItem(
-            isVisible : false,
+            isVisible: false,
             img: Assets.assetsImagesWritingOnboarding,
             title: context.loc.onboarding3Title,
             subtitle: context.loc.onboarding3Subtitle),
