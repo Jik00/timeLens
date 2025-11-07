@@ -1,9 +1,10 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/constants.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
-import 'package:timelens/core/widgets/background_theme.dart';
+import 'package:timelens/core/widgets/app_logo.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:timelens/features/splash/presentation/views/widgets/animate_icons_splash.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -12,66 +13,118 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> {
-  final List<String> _icons = [
-    Assets.assetsImagesSplash2,
-    Assets.assetsImagesSplash1,
-    Assets.assetsImagesSplash4,
-    Assets.assetsImagesSplash7,
-  ];
-
-  int _currentIndex = 0;
-  Timer? _timer;
-  bool _showLogo = false;
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _logoFade;
+  late Animation<double> _textFade;
+  late Animation<Offset> _pyramidSlide;
 
   @override
   void initState() {
     super.initState();
-    
-    _startSplashFlow();
+    _initAnimationController();
+    _initAnimations();
+    _startAnimation();
+    _scheduleNavigation();
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-       const BackgroundTheme(img: Assets.assetsImages7,),
+    return SizedBox.expand(
+      child: Stack(
+        children: [
+          /// Centered logo + text
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FadeTransition(
+                  opacity: _logoFade,
+                  child: const AppLogo(h: 160, w: 160),
+                ),
+                FadeTransition(
+                  opacity: _textFade,
+                  child: Text(
+                    kAppTitle,
+                    style: TextStyle(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.splashColor1,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+              ],
+            ),
+          ),
 
-        Center(
-          child: AnimateIconsSplash(showLogo: _showLogo, icons: _icons, currentIndex: _currentIndex),
-        ),
-      ],
+          /// Pyramids animating from bottom → up
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SlideTransition(
+              position: _pyramidSlide,
+              child: SizedBox(
+                height: 230.h,
+                width: MediaQuery.of(context).size.width,
+                child: Image.asset(
+                  Assets.assetsImagesPyramidsplash2,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  //our logic
-  Timer _initTimer() {
-    return _timer = Timer.periodic(const Duration(milliseconds: 600), (timer) {
-      setState(() {
-        _currentIndex =
-            (_currentIndex + 1) % _icons.length;
-      });
-    });
+  //our Logic
+
+  void _initAnimationController() {
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
   }
 
-  void _startSplashFlow() {
-    _initTimer();
+  void _initAnimations() {
+    _logoFade = CurvedAnimation(
+      parent: _controller,
+      curve: const Interval(0.0, 0.3, curve: Curves.easeOut),
+    );
 
-    // end timer
-    Future.delayed(const Duration(seconds: 3), () {
-      _timer?.cancel();
-      setState(() => _showLogo = true);
-    });
+    _textFade = CurvedAnimation(
+      parent: _controller,
+      curve: const Interval(0.3, 0.6, curve: Curves.easeOut),
+    );
 
-    // navigate next
-    Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+    _pyramidSlide = Tween<Offset>(
+      begin: const Offset(0, 1), // start completely off bottom
+      end: Offset.zero, // stop at bottom
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0.6, 1.0, curve: Curves.easeOut),
+      ),
+    );
+  }
+
+  void _startAnimation() {
+    _controller.forward();
+  }
+
+  void _scheduleNavigation() {
+    Future.delayed(const Duration(milliseconds: 4500), () {
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+      }
     });
   }
 }
