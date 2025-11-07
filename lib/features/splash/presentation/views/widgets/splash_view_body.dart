@@ -4,6 +4,7 @@ import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
+import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -40,6 +41,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return SizedBox.expand(
       child: Stack(
         children: [
+          const BackgroundGradient(
+              color1: AppColors.backgroundColor1,
+              color2: AppColors.backgroundColor2),
+
           /// Centered logo + text
           Center(
             child: Column(
@@ -121,10 +126,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void _scheduleNavigation() {
-    Future.delayed(const Duration(milliseconds: 4500), () {
-      if (mounted) {
-        Navigator.pushReplacementNamed(context, OnboardingView.routeName);
-      }
-    });
+    // Future.delayed(
+    //   const Duration(milliseconds: 4500),
+    //   () {
+    //     if (mounted) {
+    //       Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+    //     }
+    //   },
+    // );
   }
 }
