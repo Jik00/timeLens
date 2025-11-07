@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/shared_preferences_singleton.dart';
+import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/widgets/onboarding_pgview.dart';
@@ -63,14 +66,19 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                 height: 24.h,
               ),
               Visibility(
-                  visible: currentPg == 2,
-                  maintainAnimation: true,
-                  maintainState: true,
-                  maintainSize: true,
-                  child: CustomButton(
-                      hint: "start",
-                      onTap: () => Navigator.pushReplacementNamed(
-                          context, LoginView.routeName))),
+                visible: currentPg == 2,
+                maintainAnimation: true,
+                maintainState: true,
+                maintainSize: true,
+                child: CustomButton(
+                  hint: context.loc.onboardingStart,
+                  onTap: () {
+                    Prefs.setBool(kIsOnboardingSeen, true);
+                    Navigator.pushReplacementNamed(
+                        context, LoginView.routeName);
+                  },
+                ),
+              ),
             ],
           ),
         ),

@@ -119,6 +119,46 @@ class S {
   String get onboardingSkip {
     return Intl.message('Skip', name: 'onboardingSkip', desc: '', args: []);
   }
+
+  /// `Start`
+  String get onboardingStart {
+    return Intl.message('Start', name: 'onboardingStart', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Forget password?`
+  String get forgetPass {
+    return Intl.message(
+      'Forget password?',
+      name: 'forgetPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get requiredField {
+    return Intl.message(
+      'This field is required',
+      name: 'requiredField',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

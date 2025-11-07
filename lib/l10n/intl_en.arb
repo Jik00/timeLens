@@ -6,5 +6,11 @@
     "onboarding2Subtitle": "Poowered by AI and VR, converse with history’s greatest figures",
     "onboarding3Title": "History Speaks Your Language",
     "onboarding3Subtitle": "Explore and learn in multiple languages wherever you are",
-    "onboardingSkip": "Skip"
+    "onboardingSkip": "Skip",
+    "onboardingStart": "Start",
+    "login" : "Login",
+    "email" :"Email",
+    "password": "Password",
+    "forgetPass": "Forget password?",
+    "requiredField": "This field is required"
 }
