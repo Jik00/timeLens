@@ -11,7 +11,7 @@ class Prefs {
     return _instance.setBool(key, value);
   }
 
-  static bool? getBool(String key) {
+  static bool getBool(String key) {
     return _instance.getBool(key)?? false;
   }
 }

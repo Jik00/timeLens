@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
 import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/timelens_title.dart';
+import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -119,10 +122,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void _scheduleNavigation() {
+    bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
     Future.delayed(
       const Duration(milliseconds: 4500),
       () {
-        if (mounted) {
+        if (isOnboardingSeen) {
+          Navigator.pushReplacementNamed(context, LoginView.routeName);
+        } else {
           Navigator.pushReplacementNamed(context, OnboardingView.routeName);
         }
       },
