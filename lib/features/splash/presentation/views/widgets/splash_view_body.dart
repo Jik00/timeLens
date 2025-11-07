@@ -74,7 +74,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 height: 230.h,
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset(
-                  Assets.assetsImagesPyramidsplash2,
+                  Assets.assetsImagesPyramidSplash,
                   fit: BoxFit.fitHeight,
                 ),
               ),

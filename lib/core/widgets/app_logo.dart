@@ -13,7 +13,6 @@ class AppLogo extends StatelessWidget {
     return ClipOval(
       child: Image.asset(
         Assets.assetsImagesAppIcon,
-        // Assets.assetsImagesPharaoh,
         width: w.w,
         height: h.h,
         fit: BoxFit.cover,

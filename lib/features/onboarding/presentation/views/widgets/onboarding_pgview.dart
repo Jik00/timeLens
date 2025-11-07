@@ -15,15 +15,15 @@ class OnboardingPgview extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         PgViewItem(
-            img: Assets.assetsImages2,
+            img: Assets.assetsImagesBookOnboarding,
             title: context.loc.onboarding1Title,
             subtitle: context.loc.onboarding1Subtitle),
         PgViewItem(
-            img: Assets.assetsImages1,
+            img: Assets.assetsImagesWallsOnboarding,
             title: context.loc.onboarding2Title,
             subtitle: context.loc.onboarding2Subtitle),
         PgViewItem(
-            img: Assets.assetsImages6,
+            img: Assets.assetsImagesWritingOnboarding,
             title: context.loc.onboarding3Title,
             subtitle: context.loc.onboarding3Subtitle),
       ],
