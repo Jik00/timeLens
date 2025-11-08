@@ -24,9 +24,9 @@ class BackgroundTheme extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.black.withOpacity(0.6), // top darker
+                Colors.black.withOpacity(0.5), // top darker
                 Colors.transparent, // middle
-                Colors.black.withOpacity(0.88), // bottom darker
+                Colors.black.withOpacity(0.8), // bottom darker
               ],
             ),
           ),

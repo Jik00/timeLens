@@ -22,9 +22,9 @@ class CustomButton extends StatelessWidget {
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
         backgroundColor: fillColor ?? Colors.transparent,
-        minimumSize: Size(w.w, 50.h),
+        minimumSize: Size(w.w, 40.h),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.r),
+          borderRadius: BorderRadius.circular(12.r),
           side: BorderSide(color: borderColor ?? Colors.white),
         ),
       ),

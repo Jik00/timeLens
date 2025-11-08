@@ -14,13 +14,13 @@ class Assets {
   /// assets/images/email.png
   static const String assetsImagesEmail = "assets/images/email.png";
 
+  /// Assets for assetsImagesLoginBackground
+  /// assets/images/login_background.jpeg
+  static const String assetsImagesLoginBackground = "assets/images/login_background.jpeg";
+
   /// Assets for assetsImagesPadlock
   /// assets/images/padlock.png
   static const String assetsImagesPadlock = "assets/images/padlock.png";
-
-  /// Assets for assetsImagesPyramidLogin
-  /// assets/images/pyramid_login.jpg
-  static const String assetsImagesPyramidLogin = "assets/images/pyramid_login.jpg";
 
   /// Assets for assetsImagesPyramidSplash
   /// assets/images/pyramid_splash.png

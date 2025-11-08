@@ -58,7 +58,7 @@ class _LoginCardState extends State<LoginCard> {
             hint: context.loc.login,
             w: 173,
             borderColor: AppColors.primaryColor.withOpacity(0.6),
-            fillColor: AppColors.primaryColor.withOpacity(0.5),
+            fillColor: AppColors.primaryColor.withOpacity(0.75),
             onTap: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();

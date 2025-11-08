@@ -1,9 +1,9 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
-import 'package:timelens/core/widgets/background_theme.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/blur_login_card.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/login_card.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/login_title.dart';
@@ -18,7 +18,15 @@ class LoginViewBody extends StatelessWidget {
         height: 1.6.sh,
         child: Stack(
           children: [
-            const BackgroundTheme(img: Assets.assetsImagesPyramidLogin),
+            Positioned.fill(
+                child: Image.asset(Assets.assetsImagesLoginBackground,
+                    fit: BoxFit.cover)),
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+              child: Container(
+                color: Colors.black.withOpacity(0.2), // optional tint
+              ),
+            ),
             Positioned(
               left: 0,
               right: 0,

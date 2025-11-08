@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 
@@ -30,13 +31,18 @@ class CustomFormTextfield extends StatelessWidget {
           }
           return null;
         },
+        style: const TextStyle(color: Colors.white),
         keyboardType: textInputType,
         decoration: InputDecoration(
           labelText: hintText,
+          labelStyle: const TextStyle(color: Colors.white),
+          floatingLabelStyle: const TextStyle(color: AppColors.primaryColor),
+          hintText: hintText,
           hintStyle: TextStyle(
             fontSize: 16.sp,
             color: Colors.white,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w400,
+            fontFamily: GoogleFonts.lora().fontFamily,
           ),
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
