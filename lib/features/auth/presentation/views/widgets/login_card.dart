@@ -5,7 +5,7 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/login_title.dart';
+import 'package:timelens/core/widgets/stroke_text.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
 
 class LoginCard extends StatefulWidget {
@@ -26,7 +26,7 @@ class _LoginCardState extends State<LoginCard> {
       key: _formKey,
       child: Column(
         children: [
-          LoginTitle(
+          StrokeText(
             title: context.loc.login,
             colors: const [Colors.white, Colors.white],
             titleSize: 40,
@@ -75,7 +75,7 @@ class _LoginCardState extends State<LoginCard> {
           SizedBox(
             height: 14.h,
           ),
-          LoginTitle(
+          StrokeText(
             title: context.loc.forgetPass,
             colors: const [Colors.white, Colors.white],
             titleSize: 15,

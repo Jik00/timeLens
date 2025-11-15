@@ -6,7 +6,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/blur_login_card.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/login_card.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/login_title.dart';
+import 'package:timelens/core/widgets/stroke_text.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -35,7 +35,7 @@ class LoginViewBody extends StatelessWidget {
                 children: [
                   Transform.scale(
                     scaleX: 1.1,
-                    child: const LoginTitle(
+                    child: const StrokeText(
                         title: kAppTitle,
                         colors: [
                           AppColors.primaryColor,
