@@ -159,6 +159,16 @@ class S {
       args: [],
     );
   }
+
+  /// `learn Across The Millennia`
+  String get homeTitle {
+    return Intl.message(
+      'learn Across The Millennia',
+      name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

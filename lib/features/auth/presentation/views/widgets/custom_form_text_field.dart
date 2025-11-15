@@ -24,35 +24,50 @@ class CustomFormTextfield extends StatelessWidget {
     return SizedBox(
       width: 278.w,
       child: TextFormField(
-        onSaved: onSaved,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return context.loc.requiredField;
-          }
-          return null;
-        },
-        style: const TextStyle(color: Colors.white),
-        keyboardType: textInputType,
-        decoration: InputDecoration(
-          labelText: hintText,
-          labelStyle: const TextStyle(color: Colors.white),
-          floatingLabelStyle: const TextStyle(color: AppColors.primaryColor),
-          hintText: hintText,
-          hintStyle: TextStyle(
-            fontSize: 16.sp,
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontFamily: GoogleFonts.lora().fontFamily,
-          ),
-          suffixIcon: suffixIcon,
-          prefixIcon: prefixIcon,
-          filled: true,
-          fillColor: Colors.transparent,
-          enabled: true,
-          enabledBorder: buildBorder(),
-          border: buildBorder(),
-        ),
-      ),
+          onSaved: onSaved,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return context.loc.requiredField;
+            }
+            return null;
+          },
+          style: const TextStyle(color: Colors.white),
+          keyboardType: textInputType,
+          decoration: InputDecoration(
+            labelText: hintText,
+            labelStyle: TextStyle(
+                color: Colors.white, fontFamily: GoogleFonts.lora().fontFamily),
+            floatingLabelStyle: const TextStyle(),
+            errorStyle: const TextStyle(color: Colors.red),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: const BorderSide(
+                color: Colors.red,
+                width: 1,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: const BorderSide(
+                color: Colors.red,
+                width: 1,
+              ),
+            ),
+            hintText: hintText,
+            hintStyle: TextStyle(
+              fontSize: 16.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.w400,
+              fontFamily: GoogleFonts.lora().fontFamily,
+            ),
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            filled: true,
+            fillColor: Colors.transparent,
+            enabled: true,
+            enabledBorder: buildBorder(),
+            border: buildBorder(),
+          )),
     );
   }
 

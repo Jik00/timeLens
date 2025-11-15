@@ -12,5 +12,6 @@
     "email" :"Email",
     "password": "Password",
     "forgetPass": "Forget password?",
-    "requiredField": "This field is required"
+    "requiredField": "This field is required",
+    "homeTitle" : "learn Across The Millennia"
 }

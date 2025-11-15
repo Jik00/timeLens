@@ -5,8 +5,9 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
-import 'package:timelens/core/widgets/stroke_text.dart';
+import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
+import 'package:timelens/features/home/presentation/views/home_view.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({super.key});
@@ -26,7 +27,7 @@ class _LoginCardState extends State<LoginCard> {
       key: _formKey,
       child: Column(
         children: [
-          StrokeText(
+          StrokeTextCizel(
             title: context.loc.login,
             colors: const [Colors.white, Colors.white],
             titleSize: 40,
@@ -65,6 +66,7 @@ class _LoginCardState extends State<LoginCard> {
 
                 //////////////// backend login ///////////////////////
                 //
+                Navigator.pushReplacementNamed(context, HomeView.routeName);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
@@ -75,7 +77,7 @@ class _LoginCardState extends State<LoginCard> {
           SizedBox(
             height: 14.h,
           ),
-          StrokeText(
+          StrokeTextCizel(
             title: context.loc.forgetPass,
             colors: const [Colors.white, Colors.white],
             titleSize: 15,

@@ -4,14 +4,16 @@ import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 
 class TimelensTitle extends StatelessWidget {
-  const TimelensTitle({super.key});
+  const TimelensTitle({super.key, required this.size});
+
+  final int size;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       kAppTitle,
       style: TextStyle(
-        fontSize: 52.sp,
+        fontSize: size.sp,
         foreground: Paint()
           ..shader = const LinearGradient(
             colors: [AppColors.timeLensColor, Colors.white],

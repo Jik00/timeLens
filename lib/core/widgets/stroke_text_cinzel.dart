@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StrokeText extends StatelessWidget {
-  const StrokeText({
+class StrokeTextCizel extends StatelessWidget {
+  const StrokeTextCizel({
     super.key,
     required this.title,
     required this.colors,

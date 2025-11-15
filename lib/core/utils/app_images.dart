@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/login_background.jpeg
   static const String assetsImagesLoginBackground = "assets/images/login_background.jpeg";
 
+  /// Assets for assetsImagesNewKingdomPic
+  /// assets/images/new_kingdom_pic.png
+  static const String assetsImagesNewKingdomPic = "assets/images/new_kingdom_pic.png";
+
   /// Assets for assetsImagesPadlock
   /// assets/images/padlock.png
   static const String assetsImagesPadlock = "assets/images/padlock.png";

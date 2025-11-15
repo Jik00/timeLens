@@ -59,7 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 ),
                 FadeTransition(
                   opacity: _textFade,
-                  child: const TimelensTitle(),
+                  child: const TimelensTitle(size: 52,),
                 ),
                 SizedBox(height: 50.h),
               ],
