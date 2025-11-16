@@ -15,7 +15,7 @@ class EraContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 320.w,
+      //width: 320.w,
       decoration: BoxDecoration(
         color: AppColors.secondaryColor.withOpacity(0.3),
         borderRadius: BorderRadius.circular(34),
@@ -32,20 +32,23 @@ class EraContainer extends StatelessWidget {
           StrokeTextCizel(
               title: eraName,
               colors: const [Colors.white, Colors.white],
-              titleSize: 18,
+              titleSize: 16,
               borderColor: AppColors.primaryColor),
           Container(
-              width: 320.w,
+              width: 300.w,
               height: 297.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(34),
               ),
               child: Image.asset(eraPic)),
-          StrokeTextCizel(
-              title: eraDate,
-              colors: const [Colors.white, Colors.white],
-              titleSize: 16,
-              borderColor: AppColors.primaryColor),
+          Transform.translate(
+            offset: const Offset(68, 0),
+            child: StrokeTextCizel(
+                title: eraDate,
+                colors: const [Colors.white, Colors.white],
+                titleSize: 14,
+                borderColor: AppColors.primaryColor),
+          ),
           SizedBox(
             height: 10.h,
           )

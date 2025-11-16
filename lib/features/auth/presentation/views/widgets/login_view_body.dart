@@ -14,50 +14,56 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: SizedBox(
-        height: 1.6.sh,
-        child: Stack(
-          children: [
-            Positioned.fill(
-                child: Image.asset(Assets.assetsImagesLoginBackground,
-                    fit: BoxFit.cover)),
-            BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-              child: Container(
-                color: Colors.black.withOpacity(0.2), // optional tint
+      child: AnimatedPadding(
+        duration: const Duration(milliseconds: 300),
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom * 1.3,
+        ),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                  child: Image.asset(Assets.assetsImagesLoginBackground,
+                      fit: BoxFit.cover)),
+              BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+                child: Container(
+                  color: Colors.black.withOpacity(0.2), // optional tint
+                ),
               ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 136.h,
-              child: Column(
-                children: [
-                  Transform.scale(
-                    scaleX: 1.1,
-                    child: const StrokeTextCizel(
-                        title: kAppTitle,
-                        colors: [
-                          AppColors.primaryColor,
-                          AppColors.primaryColor,
-                          AppColors.middleColor,
-                          Colors.white
-                        ],
-                        titleSize: 50,
-                        borderColor: AppColors.secondaryColor),
-                  ),
-                  SizedBox(height: 85.h),
-                  const BlurLoginCard(),
-                ],
+              Positioned(
+                left: 0,
+                right: 0,
+                top: 136.h,
+                child: Column(
+                  children: [
+                    Transform.scale(
+                      scaleX: 1.1,
+                      child: const StrokeTextCizel(
+                          title: kAppTitle,
+                          colors: [
+                            AppColors.primaryColor,
+                            AppColors.primaryColor,
+                            AppColors.middleColor,
+                            Colors.white
+                          ],
+                          titleSize: 50,
+                          borderColor: AppColors.secondaryColor),
+                    ),
+                    SizedBox(height: 85.h),
+                    const BlurLoginCard(),
+                  ],
+                ),
               ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 300.h,
-              child: const LoginCard(),
-            ),
-          ],
+              Positioned(
+                left: 0,
+                right: 0,
+                top: 300.h,
+                child: const LoginCard(),
+              ),
+            ],
+          ),
         ),
       ),
     );
