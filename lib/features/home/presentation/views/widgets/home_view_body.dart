@@ -4,6 +4,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
+import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/home/presentation/views/widgets/era_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -39,6 +40,15 @@ class HomeViewBody extends StatelessWidget {
             ),
             const EraListview(),
           ],
+        ),
+        const Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomButtonNavigationBar(),
+          ),
         ),
       ],
     );

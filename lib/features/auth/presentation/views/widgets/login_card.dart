@@ -37,7 +37,7 @@ class _LoginCardState extends State<LoginCard> {
           CustomFormTextfield(
             textInputType: TextInputType.emailAddress,
             hintText: context.loc.email,
-            prefixIcon: const IconTextField(img: Assets.assetsImagesEmail),
+            prefixIcon: const IconTextField(img: Assets.assetsImagesIconsEmail),
             onSaved: (value) {
               email = value!;
             },
@@ -46,7 +46,8 @@ class _LoginCardState extends State<LoginCard> {
           CustomFormTextfield(
             textInputType: TextInputType.visiblePassword,
             hintText: context.loc.password,
-            prefixIcon: const IconTextField(img: Assets.assetsImagesPadlock),
+            prefixIcon:
+                const IconTextField(img: Assets.assetsImagesIconsPadlock),
             suffixIcon: const Icon(Icons.remove_red_eye, color: Colors.white),
             onSaved: (value) {
               pass = value!;
