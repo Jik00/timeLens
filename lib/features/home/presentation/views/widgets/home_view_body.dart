@@ -7,7 +7,7 @@ import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/home/presentation/cubit/cubit/get_eras_list_cubit.dart';
 import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
-import 'package:timelens/features/home/presentation/views/widgets/era_listview.dart';
+import 'package:timelens/features/home/presentation/views/widgets/eras_list_view_bloc_builder.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -17,13 +17,11 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-
-@override
+  @override
   void initState() {
     super.initState();
     context.read<GetErasListCubit>().getErasList();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +51,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 ],
               ),
             ),
-            const EraListview(),
+            const ErasListViewBlocBuilder(),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 40.h,
+              ),
+            ),
           ],
         ),
         const Positioned(
