@@ -1,15 +1,20 @@
-import 'dart:io';
-
 class EraEntity {
   final String eraName;
   final String eraPeriod;
   final String eraCode;
-  final File imageFile;
+  final String imageUrl;
 
   EraEntity({
     required this.eraPeriod,
     required this.eraName,
     required this.eraCode,
-    required this.imageFile,
+    required this.imageUrl,
   });
+
+  factory EraEntity.fromMap(Map<String, dynamic> map) => EraEntity(
+    eraName: map['era_name'],
+    eraPeriod: map['era_period'],
+    eraCode: map['era_code'],
+    imageUrl: map['image_url'],
+  );
 }
