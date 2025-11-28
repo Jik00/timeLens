@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
+import 'package:timelens/core/services/custom_bloc_observer.dart';
 import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_colors.dart';
@@ -19,6 +21,7 @@ void main() async {
     anonKey: kSupaKey,
   );
   setupGetIt();
+  Bloc.observer = CustomBlocObserver();
   runApp(const MyApp());
 }
 

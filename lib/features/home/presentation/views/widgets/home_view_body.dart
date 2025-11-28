@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
+import 'package:timelens/features/home/presentation/cubit/cubit/get_eras_list_cubit.dart';
 import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/home/presentation/views/widgets/era_listview.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+
+@override
+  void initState() {
+    super.initState();
+    context.read<GetErasListCubit>().getErasList();
+  }
+
 
   @override
   Widget build(BuildContext context) {

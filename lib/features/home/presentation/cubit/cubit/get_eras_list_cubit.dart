@@ -10,7 +10,7 @@ class GetErasListCubit extends Cubit<GetErasListState> {
 
   final EraRepo eraRepo;
 
-  Future<void> getEras() async {
+  Future<void> getErasList() async {
     emit(GetErasListLoading());
 
     final erasResult = await eraRepo.getEras();
