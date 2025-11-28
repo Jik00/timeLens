@@ -45,6 +45,7 @@ dependencies:
   supabase_flutter: ^2.10.3
   dartz: ^0.10.1
   get_it: ^9.1.1
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
