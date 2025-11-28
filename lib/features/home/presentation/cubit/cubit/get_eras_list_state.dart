@@ -9,6 +9,7 @@ final class GetErasListLoading extends GetErasListState {}
 
 final class GetErasListSuccess extends GetErasListState {
   final List<EraEntity> eras;
+  
   GetErasListSuccess({required this.eras});
 }
 
