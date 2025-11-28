@@ -13,5 +13,6 @@
     "password": "Password",
     "forgetPass": "Forget password?",
     "requiredField": "This field is required",
-    "homeTitle" : "learn Across The Millennia"
+    "homeTitle" : "learn Across The Millennia",
+    "retry" : "Retry"
 }
