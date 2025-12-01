@@ -32,6 +32,9 @@ class EraContainer extends StatelessWidget {
               colors: const [Colors.white, Colors.white],
               titleSize: 16,
               borderColor: AppColors.primaryColor),
+          SizedBox(
+            height: 8.h,
+          ),
           Container(
             width: 300.w,
             height: 297.h,
@@ -42,11 +45,15 @@ class EraContainer extends StatelessWidget {
               imageUrl: eraEntity.imageUrl,
               fit: BoxFit.cover,
               errorWidget: (context, url, error) => const Icon(Icons.error),
-              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
             ),
           ),
+          SizedBox(
+            height: 8.h,
+          ),
           Transform.translate(
-            offset: const Offset(68, 0),
+            offset: const Offset(80, 0),
             child: StrokeTextCizel(
                 title: eraEntity.eraPeriod,
                 colors: const [Colors.white, Colors.white],
