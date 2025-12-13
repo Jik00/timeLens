@@ -9,5 +9,6 @@ abstract class AppColors {
   static const middleColor = Color(0xFFF7F2E4);
   static const timeLensColor = Color(0xFFDF9309);
   static const skipColor = Color(0xFFFFFCF5);
+  static const blackBackground = Color(0xFF1E1E1E);
 
 }

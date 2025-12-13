@@ -54,21 +54,29 @@ class Assets {
   /// assets/images/login_background.jpeg
   static const String assetsImagesLoginBackground = "assets/images/login_background.jpeg";
 
-  /// Assets for assetsImagesNewKingdomPic
-  /// assets/images/new_kingdom_pic.png
-  static const String assetsImagesNewKingdomPic = "assets/images/new_kingdom_pic.png";
-
   /// Assets for assetsImagesPyramidSplash
   /// assets/images/pyramid_splash.png
   static const String assetsImagesPyramidSplash = "assets/images/pyramid_splash.png";
+
+  /// Assets for assetsImagesRamses2Statue
+  /// assets/images/ramses-2-statue.png
+  static const String assetsImagesRamses2Statue = "assets/images/ramses-2-statue.png";
 
   /// Assets for assetsImagesSkipArrow
   /// assets/images/skip_arrow.png
   static const String assetsImagesSkipArrow = "assets/images/skip_arrow.png";
 
+  /// Assets for assetsImagesStatueSquare
+  /// assets/images/statue-square.png
+  static const String assetsImagesStatueSquare = "assets/images/statue-square.png";
+
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";
+
+  /// Assets for assetsImagesWhiteLight
+  /// assets/images/white-light.png
+  static const String assetsImagesWhiteLight = "assets/images/white-light.png";
 
   /// Assets for assetsImagesWritingOnboarding
   /// assets/images/writing_onboarding.png
