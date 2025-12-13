@@ -1,22 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 
 class CustomErrorWidget extends StatelessWidget {
-  const CustomErrorWidget({super.key, required this.message,   this.onTap});
+  const CustomErrorWidget({
+    super.key,
+    required this.message,
+    this.onTap,
+  });
 
   final String message;
-  final void Function()? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Text('Error: $message'),
+          SizedBox(height: 200.h),
+          Icon(
+            Icons.error,
+            color: Colors.grey,
+            size: 100.sp,
+          ),
           const SizedBox(height: 16),
-          CustomButton(hint: context.loc.retry, w: 173, onTap: () {}),
+          Text(
+            message,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14.sp,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 24),
+          CustomButton(
+            hint: context.loc.retry,
+            w: 120,
+            onTap: onTap,
+          ),
         ],
       ),
     );

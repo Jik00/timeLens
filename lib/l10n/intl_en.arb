@@ -14,5 +14,6 @@
     "forgetPass": "Forget password?",
     "requiredField": "This field is required",
     "homeTitle" : "learn Across The Millennia",
-    "retry" : "Retry"
+    "retry" : "Retry",
+    "errorOccurred" : "An error occurred"
 }

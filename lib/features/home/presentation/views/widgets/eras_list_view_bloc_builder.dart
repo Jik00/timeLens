@@ -19,6 +19,9 @@ class ErasListViewBlocBuilder extends StatelessWidget {
           return SliverToBoxAdapter(
             child: CustomErrorWidget(
               message: state.message,
+              onTap: () {
+                context.read<GetErasListCubit>().getErasList();
+              },
             ),
           );
         } else {
