@@ -7,6 +7,7 @@ import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
+import 'package:timelens/features/auth/presentation/views/widgets/password_field.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
 
 class LoginCard extends StatefulWidget {
@@ -43,12 +44,7 @@ class _LoginCardState extends State<LoginCard> {
             },
           ),
           SizedBox(height: 16.h),
-          CustomFormTextfield(
-            textInputType: TextInputType.visiblePassword,
-            hintText: context.loc.password,
-            prefixIcon:
-                const IconTextField(img: Assets.assetsImagesIconsPadlock),
-            suffixIcon: const Icon(Icons.remove_red_eye, color: Colors.white),
+          PasswordField(
             onSaved: (value) {
               pass = value!;
             },

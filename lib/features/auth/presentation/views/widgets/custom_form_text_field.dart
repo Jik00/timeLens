@@ -11,13 +11,15 @@ class CustomFormTextfield extends StatelessWidget {
       required this.hintText,
       this.suffixIcon,
       this.prefixIcon,
-      this.onSaved});
+      this.onSaved,
+      this.obscure =false});
 
   final TextInputType textInputType;
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final void Function(String?)? onSaved;
+  final bool obscure;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class CustomFormTextfield extends StatelessWidget {
             }
             return null;
           },
+          obscureText: obscure,
           style: const TextStyle(color: Colors.white),
           keyboardType: textInputType,
           decoration: InputDecoration(
