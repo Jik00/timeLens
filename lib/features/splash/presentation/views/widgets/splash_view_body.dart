@@ -124,7 +124,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void _scheduleNavigation() {
     bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
     Future.delayed(
-      const Duration(milliseconds: 4500),
+      const Duration(milliseconds: 4000),
       () {
         if (isOnboardingSeen) {
           Navigator.pushReplacementNamed(context, LoginView.routeName);
