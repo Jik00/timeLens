@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/statue-square.png
   static const String assetsImagesStatueSquare = "assets/images/statue-square.png";
 
+  /// Assets for assetsImagesTestFigureBackgroung
+  /// assets/images/test_figure_backgroung.png
+  static const String assetsImagesTestFigureBackgroung = "assets/images/test_figure_backgroung.png";
+
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";

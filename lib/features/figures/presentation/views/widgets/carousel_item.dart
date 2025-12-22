@@ -14,11 +14,14 @@ class CarouselItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const StrokeTextCizel(
-            title: 'Ramses ||',
-            colors: [Colors.white, Colors.white],
-            titleSize: 30,
-            borderColor: AppColors.primaryColor),
+        Visibility(
+          visible: isCenter,
+          child: const StrokeTextCizel(
+              title: 'Ramses ||',
+              colors: [Colors.white, Colors.white],
+              titleSize: 30,
+              borderColor: AppColors.primaryColor),
+        ),
         SizedBox(height: 60.h),
         Image.asset(
           Assets.assetsImagesRamses2Statue,

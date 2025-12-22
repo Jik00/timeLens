@@ -8,6 +8,7 @@ class BaseSquare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.loose,
       alignment: Alignment.center,
       children: [
         Positioned(
@@ -24,6 +25,8 @@ class BaseSquare extends StatelessWidget {
           width: 380.w,
           child: Image.asset(
             Assets.assetsImagesWhiteLight,
+            // color: Color(0xFFE4CE95).withOpacity(1),
+            // colorBlendMode: BlendMode.modulate,
             fit: BoxFit.cover,
           ),
         ),
