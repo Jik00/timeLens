@@ -12,7 +12,7 @@ class CustomFormTextfield extends StatelessWidget {
       this.suffixIcon,
       this.prefixIcon,
       this.onSaved,
-      this.obscure =false});
+      this.obscure = false});
 
   final TextInputType textInputType;
   final String hintText;

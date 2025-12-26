@@ -54,6 +54,10 @@ class Assets {
   /// assets/images/login_background.jpeg
   static const String assetsImagesLoginBackground = "assets/images/login_background.jpeg";
 
+  /// Assets for assetsImagesPhoarhFace
+  /// assets/images/phoarh_face.jpg
+  static const String assetsImagesPhoarhFace = "assets/images/phoarh_face.jpg";
+
   /// Assets for assetsImagesPyramidSplash
   /// assets/images/pyramid_splash.png
   static const String assetsImagesPyramidSplash = "assets/images/pyramid_splash.png";

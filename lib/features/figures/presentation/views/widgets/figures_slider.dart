@@ -17,7 +17,7 @@ class _FiguresSliderState extends State<FiguresSlider> {
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
       options: CarouselOptions(
-        initialPage: 1,
+        initialPage: 0,
         height: 500.h,
         viewportFraction: 0.7,
         enableInfiniteScroll: true,
