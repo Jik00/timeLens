@@ -23,13 +23,20 @@ class CarouselItem extends StatelessWidget {
               borderColor: AppColors.primaryColor),
         ),
         SizedBox(height: 60.h),
-        Image.asset(
-          Assets.assetsImagesRamses2Statue,
-          width: 300.w,
-          height: 397.h,
-          opacity: isCenter
-              ? const AlwaysStoppedAnimation<double>(1)
-              : const AlwaysStoppedAnimation<double>(0.3),
+        GestureDetector(
+          onTap: () {
+            if (isCenter) {
+              Navigator.pushNamed(context, 'displayDetailView');
+            }
+          },
+          child: Image.asset(
+            Assets.assetsImagesRamses2Statue,
+            width: 300.w,
+            height: 397.h,
+            opacity: isCenter
+                ? const AlwaysStoppedAnimation<double>(1)
+                : const AlwaysStoppedAnimation<double>(0.3),
+          ),
         ),
       ],
     );
