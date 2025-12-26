@@ -6,5 +6,6 @@ AppBar buildAppBar(Color backgroundColor, Widget? titleWidget) {
     elevation: 0,
     title: titleWidget,
     foregroundColor: Colors.white,
+    forceMaterialTransparency: true,
   );
 }

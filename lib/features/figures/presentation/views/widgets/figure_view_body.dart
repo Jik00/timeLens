@@ -9,23 +9,27 @@ class FigureViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 660.h,
-      child: Stack(
-        children: [
-          Image.asset(
-            Assets.assetsImagesTestFigureBackgroung,
-            opacity: const AlwaysStoppedAnimation(0.5),
-            height: 660.h,
-            fit: BoxFit.fitHeight,
+    return Stack(
+      children: [
+        Image.asset(
+          Assets.assetsImagesTestFigureBackgroung,
+          opacity: const AlwaysStoppedAnimation(0.9),
+          height: double.infinity,
+          fit: BoxFit.fitHeight,
+        ),
+        SizedBox(
+          height: 660.h,
+          child: Stack(
+            children: [
+              Positioned(
+                bottom: 97.h,
+                child: const BaseSquare(),
+              ),
+              const FiguresSlider(),
+            ],
           ),
-          Positioned(
-            bottom: 97.h,
-            child: const BaseSquare(),
-          ),
-          const FiguresSlider(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

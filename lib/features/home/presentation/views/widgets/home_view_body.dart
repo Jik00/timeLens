@@ -3,10 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
-import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/home/presentation/cubit/cubit/get_eras_list_cubit.dart';
-import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/home/presentation/views/widgets/eras_list_view_bloc_builder.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -27,10 +25,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const BackgroundGradient(
-          color1: AppColors.backgroundColor1,
-          color2: AppColors.primaryColor,
-        ),
         CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -58,15 +52,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
             ),
           ],
-        ),
-        const Positioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: CustomButtonNavigationBar(),
-          ),
         ),
       ],
     );

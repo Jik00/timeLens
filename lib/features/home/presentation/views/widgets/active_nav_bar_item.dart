@@ -11,10 +11,10 @@ class ActiveItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 42.w,
-      height: 32.h,
+      height: 40.h,
       decoration: const BoxDecoration(
-        color: AppColors.primaryColor,
-        borderRadius: BorderRadius.all(Radius.circular(32)),
+        color: AppColors.blackBackground,
+        borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
       child: Center(
         child: Image.asset(
