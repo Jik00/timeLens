@@ -86,6 +86,10 @@ class Assets {
   /// assets/images/white-light.png
   static const String assetsImagesWhiteLight = "assets/images/white-light.png";
 
+  /// Assets for assetsImagesWriting
+  /// assets/images/writing.png
+  static const String assetsImagesWriting = "assets/images/writing.png";
+
   /// Assets for assetsImagesWritingOnboarding
   /// assets/images/writing_onboarding.png
   static const String assetsImagesWritingOnboarding = "assets/images/writing_onboarding.png";

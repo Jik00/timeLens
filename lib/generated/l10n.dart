@@ -184,6 +184,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Meet The Rulers Whose Reigns Shaped a Legacy`
+  String get figuresTitle {
+    return Intl.message(
+      'Meet The Rulers Whose Reigns Shaped a Legacy',
+      name: 'figuresTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

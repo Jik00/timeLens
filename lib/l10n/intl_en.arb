@@ -15,5 +15,6 @@
     "requiredField": "This field is required",
     "homeTitle" : "learn Across The Millennia",
     "retry" : "Retry",
-    "errorOccurred" : "An error occurred"
+    "errorOccurred" : "An error occurred",
+    "figuresTitle": "Meet The Rulers Whose Reigns Shaped a Legacy"
 }

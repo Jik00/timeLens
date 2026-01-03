@@ -24,7 +24,7 @@ class LoginViewBody extends StatelessWidget {
           child: Stack(
             children: [
               Positioned.fill(
-                  child: Image.asset(Assets.assetsImagesLoginBackground,
+                  child: Image.asset(Assets.assetsImagesPhoarhFace,
                       fit: BoxFit.cover)),
               BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),

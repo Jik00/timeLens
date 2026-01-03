@@ -21,9 +21,9 @@ class StrokeTextCizel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: double.maxFinite,
       child: CustomPaint(
-        size: Size(double.infinity, titleSize.sp * 1.4),
+        size: Size(double.maxFinite, 46.1.sp),
         painter: _GradientBorderTextPainter(
           textDecoration,
           text: title,
