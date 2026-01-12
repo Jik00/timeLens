@@ -14,19 +14,8 @@ class CarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Visibility(
-          visible: isCenter,
-          child: const Hero(
-            tag: kHeroTagName,
-            child: StrokeTextCizel(
-                title: 'Ramses ||',
-                colors: [Colors.white, Colors.white],
-                titleSize: 30,
-                borderColor: AppColors.primaryColor),
-          ),
-        ),
-        SizedBox(height: 50.h),
         GestureDetector(
           onTap: () {
             if (isCenter) {
@@ -41,16 +30,28 @@ class CarouselItem extends StatelessWidget {
                   },
                   child: Image.asset(
                     Assets.assetsImagesRamses2Statue,
-                    width: 300.w,
-                    height: 397.h,
+                    //width: 300.w,
+                    height: 390.h,
                   ),
                 )
               : Image.asset(
                   Assets.assetsImagesRamses2Statue,
-                  width: 300.w,
-                  height: 397.h,
+                  //width: 300.w,
+                  height: 390.h,
                   opacity: const AlwaysStoppedAnimation<double>(0.3),
                 ),
+        ),
+        SizedBox(height: 105.h),
+        Visibility(
+          visible: isCenter,
+          child: const Hero(
+            tag: kHeroTagName,
+            child: StrokeTextCizel(
+                title: 'Ramses ||',
+                colors: [Colors.white, Colors.white],
+                titleSize: 40,
+                borderColor: AppColors.primaryColor),
+          ),
         ),
       ],
     );

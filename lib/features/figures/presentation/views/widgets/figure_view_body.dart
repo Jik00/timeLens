@@ -9,27 +9,39 @@ class FigureViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          Assets.assetsImagesTestFigureBackgroung,
-          opacity: const AlwaysStoppedAnimation(0.9),
-          height: double.infinity,
-          fit: BoxFit.fitHeight,
-        ),
-        SizedBox(
-          height: 660.h,
-          child: Stack(
-            children: [
-              Positioned(
-                bottom: 97.h,
-                child: const BaseSquare(),
-              ),
-              const FiguresSlider(),
-            ],
+    return SizedBox(
+      height: double.maxFinite,
+      width: double.maxFinite,
+      child: Stack(
+        children: [
+          Positioned(
+            top: 50,
+            //left: -40.w,
+            child: Image.asset(
+              Assets.assetsImagesTestFigureBackgroung,
+              //opacity: const AlwaysStoppedAnimation(1),
+              height: 400.h,
+              //fit: BoxFit.fill,
+            ),
           ),
-        ),
-      ],
+          Positioned(
+            left: 21.w,
+            child: Text(
+              'Rulers of Ancient Egypt',
+              style: TextStyle(
+                fontSize: 24.sp,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 200.w,
+            child: const BaseSquare(),
+          ),
+          const FiguresSlider(),
+        ],
+      ),
     );
   }
 }

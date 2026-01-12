@@ -10,25 +10,28 @@ class DisplayDetailViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const DetailsColumn(),
-        Positioned(
-          right: 10.w,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Hero(
-              tag: kHeroTagImg,
-              child: Image.asset(
-                Assets.assetsImagesRamses2Statue,
-                width: 160.w,
+    return SizedBox(
+      height: double.maxFinite,
+      child: Stack(
+        children: [
+          const DetailsColumn(),
+          Positioned(
+            right: 10.w,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Hero(
+                tag: kHeroTagImg,
+                child: Image.asset(
+                  Assets.assetsImagesRamses2Statue,
+                  width: 175.w,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -19,13 +19,13 @@ class DetailsColumn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Transform.translate(
-            offset: Offset(-103.w, 0),
+            offset: Offset(-82.w, 0),
             child: const Hero(
               tag: kHeroTagName,
               child: StrokeTextCizel(
                   title: 'Ramses ||',
                   colors: [Colors.white, Colors.white],
-                  titleSize: 30,
+                  titleSize: 40,
                   borderColor: AppColors.primaryColor),
             ),
           ),
@@ -39,21 +39,21 @@ class DetailsColumn extends StatelessWidget {
           ),
           const Text(
             'Age: ~ 90 years',
-            style: TextStyle(color: Colors.white, fontSize: 22),
+            style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           const SizedBox(
             height: 5,
           ),
           const Text(
             'Reign: ~ 66 years',
-            style: TextStyle(color: Colors.white, fontSize: 22),
+            style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           const SizedBox(
             height: 5,
           ),
           const Text(
             '(1279–1213 BC)',
-            style: TextStyle(color: Colors.white, fontSize: 22),
+            style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           const SizedBox(
             height: 32,
