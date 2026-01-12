@@ -39,11 +39,21 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       );
 
     case DisplayDetailView.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const DisplayDetailView(),
+      return PageRouteBuilder(
         settings: settings,
+        transitionDuration: const Duration(milliseconds: 550),
+        reverseTransitionDuration: const Duration(milliseconds: 550),
+        pageBuilder: (_, animation, __) => const DisplayDetailView(),
+        transitionsBuilder: (_, animation, __, child) {
+          return FadeTransition(
+            opacity: CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeInOut,
+            ),
+            child: child,
+          );
+        },
       );
-      
 
     default:
       return null;
