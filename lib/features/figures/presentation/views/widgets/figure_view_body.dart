@@ -16,12 +16,10 @@ class FigureViewBody extends StatelessWidget {
         children: [
           Positioned(
             top: 50,
-            //left: -40.w,
             child: Image.asset(
               Assets.assetsImagesTestFigureBackgroung,
-              //opacity: const AlwaysStoppedAnimation(1),
+              gaplessPlayback: true,
               height: 400.h,
-              //fit: BoxFit.fill,
             ),
           ),
           Positioned(

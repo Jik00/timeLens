@@ -46,9 +46,14 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         pageBuilder: (_, animation, __) => const DisplayDetailView(),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(
-            opacity: CurvedAnimation(
-              parent: animation,
-              curve: Curves.easeInOut,
+            opacity: Tween<double>(
+              begin: 0.0,
+              end: 1.0,
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: const Interval(0.2, 1.0),
+              ),
             ),
             child: child,
           );
