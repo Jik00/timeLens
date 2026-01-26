@@ -47,9 +47,9 @@ class CarouselItem extends StatelessWidget {
           child: const Hero(
             tag: kHeroTagName,
             child: StrokeTextCizel(
-                title: 'Ramses ||',
-                colors: [Colors.white, Colors.white],
-                titleSize: 40,
+                title: 'Ramses II',
+                colors: [AppColors.timeLensColor, AppColors.timeLensColor],
+                titleSize: 41,
                 borderColor: AppColors.primaryColor),
           ),
         ),

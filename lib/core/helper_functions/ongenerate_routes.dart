@@ -41,8 +41,8 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case DisplayDetailView.routeName:
       return PageRouteBuilder(
         settings: settings,
-        transitionDuration: const Duration(milliseconds: 550),
-        reverseTransitionDuration: const Duration(milliseconds: 550),
+        transitionDuration: const Duration(milliseconds: 900),
+        reverseTransitionDuration: const Duration(milliseconds: 900),
         pageBuilder: (_, animation, __) => const DisplayDetailView(),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(

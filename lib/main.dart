@@ -38,7 +38,6 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MaterialApp(
             theme: ThemeData(
-              //  scaffoldBackgroundColor: AppColors.primaryColor,
               colorScheme:
                   ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
               textTheme: GoogleFonts.cinzelDecorativeTextTheme(),

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
-import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
+import 'package:timelens/features/figures/presentation/views/widgets/slide_transition_widget.dart';
+
+import '../../../../../core/utils/app_images.dart';
 
 class DetailsColumn extends StatelessWidget {
   const DetailsColumn({super.key});
@@ -19,41 +21,52 @@ class DetailsColumn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Transform.translate(
-            offset: Offset(-82.w, 0),
+            offset: Offset(-78.w, 0),
             child: const Hero(
               tag: kHeroTagName,
               child: StrokeTextCizel(
-                  title: 'Ramses ||',
-                  colors: [Colors.white, Colors.white],
+                  title: 'Ramses II',
+                  colors: [AppColors.timeLensColor, AppColors.timeLensColor],
                   titleSize: 40,
                   borderColor: AppColors.primaryColor),
             ),
           ),
-          SizedBox(height: 10.h),
-          Image.asset(
-            Assets.assetsImagesWriting,
-            height: 330.h,
+          SizedBox(height: 15.h),
+          SlideTransitionWidget(
+            child: Image.asset(
+              Assets.assetsImagesWriting,
+              height: 332.h,
+            ),
           ),
-          SizedBox(
-            height: 45.h,
-          ),
-          const Text(
-            'Age: ~ 90 years',
-            style: TextStyle(color: Colors.white, fontSize: 24),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          const Text(
-            'Reign: ~ 66 years',
-            style: TextStyle(color: Colors.white, fontSize: 24),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          const Text(
-            '(1279–1213 BC)',
-            style: TextStyle(color: Colors.white, fontSize: 24),
+          SlideTransitionWidget(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 42.h,
+                ),
+                const Text(
+                  'Age: ~ 90 years',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  'Reign: ~ 66 years',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  '(1279–1213 BC)',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 32,
@@ -61,7 +74,7 @@ class DetailsColumn extends StatelessWidget {
           const CustomButton(
             hint: 'start the journey',
             w: 50,
-            //fillColor: AppColors.newsecondaryColor,
+            fillColor: AppColors.newsecondaryColor,
           ),
         ],
       ),
