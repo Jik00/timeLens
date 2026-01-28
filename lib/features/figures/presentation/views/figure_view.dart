@@ -12,7 +12,7 @@ class FigureView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColors.blackBackground,
       appBar: buildAppBar(AppColors.blackBackground, null),
       bottomNavigationBar: const CustomButtonNavigationBar(),
       extendBody: true,

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
@@ -14,7 +16,23 @@ class DisplayDetailViewBody extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          const DetailsColumn(),
+          Positioned(
+            right: 33.w,
+            top: 130.h,
+            child: Container(
+              width: 135.w,
+              height: 350.h,
+              decoration: BoxDecoration(
+                //color: Colors.white.withOpacity(0.2),
+                color: const Color(0xFF91896B).withOpacity(0.6),
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+                child: Container(),
+              ),
+            ),
+          ),
           Positioned(
             right: 10.w,
             child: GestureDetector(
@@ -23,27 +41,14 @@ class DisplayDetailViewBody extends StatelessWidget {
               },
               child: Hero(
                 tag: kHeroTagImg,
-                child: Material(
-                  color: Colors.transparent,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF91896B).withOpacity(0.45),
-                          blurRadius: 60.r,
-                          spreadRadius: 0,
-                        ),
-                      ],
-                    ),
-                    child: Image.asset(
-                      Assets.assetsImagesRamses2Statue,
-                      width: 175.w,
-                    ),
-                  ),
+                child: Image.asset(
+                  Assets.assetsImagesRamses2Statue,
+                  width: 170.w,
                 ),
               ),
             ),
           ),
+          const DetailsColumn(),
         ],
       ),
     );

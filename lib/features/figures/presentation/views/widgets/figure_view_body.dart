@@ -14,14 +14,14 @@ class FigureViewBody extends StatelessWidget {
       width: double.maxFinite,
       child: Stack(
         children: [
-          Positioned(
-            top: 50,
-            child: Image.asset(
-              Assets.assetsImagesTestFigureBackgroung,
-              gaplessPlayback: true,
-              height: 400.h,
-            ),
-          ),
+          // Positioned(
+          //   top: 50,
+          //   child: Image.asset(
+          //     Assets.assetsImagesTestFigureBackgroung,
+          //     gaplessPlayback: true,
+          //     height: 400.h,
+          //   ),
+          // ),
           Positioned(
             left: 21.w,
             child: Text(

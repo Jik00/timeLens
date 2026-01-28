@@ -45,7 +45,7 @@ class DetailsColumn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 42.h,
+                  height: 40.h,
                 ),
                 const Text(
                   'Age: ~ 90 years',
@@ -69,12 +69,13 @@ class DetailsColumn extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 32,
+            height: 24,
           ),
-          const CustomButton(
-            hint: 'start the journey',
-            w: 50,
-            fillColor: AppColors.newsecondaryColor,
+          CustomButton(
+            hint: 'start z journey',
+            w: 200,
+            fillColor: AppColors.timeLensColor.withOpacity(0.38),
+            borderColor: AppColors.timeLensColor.withOpacity(0.38),
           ),
         ],
       ),
