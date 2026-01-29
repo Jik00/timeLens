@@ -1,65 +1,69 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:timelens/core/utils/app_images.dart';
-import 'package:timelens/features/test/back_drop_filter.dart';
-import 'package:timelens/features/test/slide_to_action_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
+import 'package:timelens/features/figures/presentation/views/figure_view.dart';
+import 'package:timelens/features/home/domain/entities/era_entity.dart';
 
-class EraStack extends StatelessWidget {
-  const EraStack({
-    super.key,
-    required this.bgColor,
-    required this.slideProgress,
-  });
+class EraContainer extends StatelessWidget {
+  const EraContainer({super.key, required this.eraEntity});
 
-  final Color? bgColor;
-  final ValueNotifier<double> slideProgress;
+  final EraEntity eraEntity;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          width: 2,
-          color: bgColor!,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, FigureView.routeName);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.secondaryColor.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(34),
+          border: Border.all(
+            color: AppColors.primaryColor,
+            width: 1.5,
+          ),
         ),
-      ),
-      height: 240,
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Image.asset(
-            Assets.assetsImagesEraPhoto,
-            fit: BoxFit.fill,
-            width: double.maxFinite,
-          ),
-          const Positioned(
-            top: 16,
-            left: 16,
-            child: BackDropFilter(
-              sigmaX: 10,
-              sigmaY: 10,
-              child: Text(
-                "( 1500 - 1300 BC )",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 16.h,
             ),
-          ),
-          Positioned(
-            bottom: 16,
-            left: 35,
-            child: BackDropFilter(
-              sigmaX: 8,
-              sigmaY: 8,
-              child: SlideToActionButton(
-                progressNotifier: slideProgress,
-              ),
+            StrokeTextCizel(
+                title: eraEntity.eraName,
+                colors: const [Colors.white, Colors.white],
+                titleSize: 16,
+                borderColor: AppColors.primaryColor),
+            SizedBox(
+              height: 8.h,
             ),
-          ),
-        ],
+            CachedNetworkImage(
+              imageUrl: eraEntity.imageUrl,
+              width: 292.w,
+              height: 260.h,
+              fit: BoxFit.contain,
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            Transform.translate(
+              offset: const Offset(80, 0),
+              child: StrokeTextCizel(
+                  title: eraEntity.eraPeriod,
+                  colors: const [Colors.white, Colors.white],
+                  titleSize: 14,
+                  borderColor: AppColors.primaryColor),
+            ),
+            SizedBox(
+              height: 10.h,
+            )
+          ],
+        ),
       ),
     );
   }

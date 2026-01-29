@@ -5,11 +5,14 @@ import 'package:lottie/lottie.dart';
 import 'package:slide_action/slide_action.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 
 class SlideToActionButton extends StatelessWidget {
-  const SlideToActionButton({super.key, required this.progressNotifier});
+  const SlideToActionButton(
+      {super.key, required this.progressNotifier, required this.title});
 
   final ValueNotifier<double> progressNotifier;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +41,13 @@ class SlideToActionButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 28.w,
+                  width: 32.w,
                 ),
                 Text(
-                  'Ancient Era',
+                  title,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.sp,
+                    fontSize: 17.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -92,11 +95,8 @@ class SlideToActionButton extends StatelessWidget {
             ),
           );
         },
-        action: () async {
-          await Future.delayed(
-            const Duration(seconds: 1),
-            () => debugPrint("Hello World"),
-          );
+        action: () {
+          Navigator.pushNamed(context, FigureView.routeName);
         },
       ),
     );

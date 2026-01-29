@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:timelens/features/test/era_container.dart';
+import 'package:timelens/features/home/domain/entities/era_entity.dart';
+import 'package:timelens/features/home/presentation/views/widgets/era_stack.dart';
+
 class EraCard extends StatefulWidget {
-  const EraCard({super.key});
+  const EraCard({super.key, required this.eraEntity});
+
+  final EraEntity eraEntity;
 
   @override
   State<EraCard> createState() => _EraCardState();
@@ -24,12 +28,15 @@ class _EraCardState extends State<EraCard> {
         final bgColor = Color.lerp(
           Colors.transparent,
           Colors.white,
+          //AppColors.primaryColor,
           t,
         );
-        return EraStack(bgColor: bgColor, slideProgress: slideProgress);
+        return EraStack(
+          bgColor: bgColor,
+          slideProgress: slideProgress,
+          eraEntity: widget.eraEntity,
+        );
       },
     );
   }
 }
-
-
