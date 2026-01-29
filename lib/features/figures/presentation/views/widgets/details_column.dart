@@ -5,6 +5,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/slide_transition_widget.dart';
+import 'package:timelens/features/test/test_view.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
@@ -76,6 +77,9 @@ class DetailsColumn extends StatelessWidget {
             w: 200,
             fillColor: AppColors.timeLensColor.withOpacity(0.38),
             borderColor: AppColors.timeLensColor.withOpacity(0.38),
+            onTap: () {
+              Navigator.pushNamed(context, TestView.routeName);
+            },
           ),
         ],
       ),

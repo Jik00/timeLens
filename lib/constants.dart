@@ -9,4 +9,5 @@ const String kSupaBucketForEras = "eras";
 const String kSupaErasTable = "eras_table";
 const String kHeroTagName = "Name";
 const String kHeroTagImg = "Img";
+const String kLottieRightArrow = 'assets/images/icons/lottie/Arrow_down_lottie.json';
 

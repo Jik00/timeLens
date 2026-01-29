@@ -5,6 +5,7 @@ import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
+import 'package:timelens/features/test/test_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
@@ -35,6 +36,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case FigureView.routeName:
       return MaterialPageRoute(
         builder: (_) => const FigureView(),
+        settings: settings,
+      );
+
+    case TestView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const TestView(),
         settings: settings,
       );
 

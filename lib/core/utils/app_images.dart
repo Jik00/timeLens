@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/book_onboarding.png
   static const String assetsImagesBookOnboarding = "assets/images/book_onboarding.png";
 
+  /// Assets for assetsImagesEraPhoto
+  /// assets/images/era_photo.png
+  static const String assetsImagesEraPhoto = "assets/images/era_photo.png";
+
   /// Assets for assetsImagesIconsChatbot
   /// assets/images/icons/chatbot.png
   static const String assetsImagesIconsChatbot = "assets/images/icons/chatbot.png";

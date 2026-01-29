@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/base_square.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/figures_slider.dart';
 
