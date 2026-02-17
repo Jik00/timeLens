@@ -1,47 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/core/utils/app_images.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.hint,
     this.onTap,
-    required this.w,
-    this.fillColor,
-    this.borderColor,
   });
 
   final String hint;
   final VoidCallback? onTap;
-  final int w;
-  final Color? fillColor, borderColor;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onTap,
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(
-          fillColor ?? Colors.transparent,
-        ),
-        minimumSize: WidgetStateProperty.all(
-          Size(w.w, 40.h),
-        ),
-        shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(
-              color: borderColor ?? Colors.white,
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 220.w,
+        height: 70.h,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                Assets.assetsImagesButtonFrame,
+                height: 65.h,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-        ),
-      ),
-      child: Text(
-        hint,
-        style: const TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize: 18,
-          color: Colors.white,
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  hint,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24.sp,
+                    color: AppColors.brownWriting.withOpacity(0.89),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

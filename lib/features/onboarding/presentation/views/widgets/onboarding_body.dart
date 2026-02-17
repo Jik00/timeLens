@@ -71,7 +71,6 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                 maintainState: true,
                 maintainSize: true,
                 child: CustomButton(
-                  w: 343,
                   hint: context.loc.onboardingStart,
                   onTap: () {
                     Prefs.setBool(kIsOnboardingSeen, true);

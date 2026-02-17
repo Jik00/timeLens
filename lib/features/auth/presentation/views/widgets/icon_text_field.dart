@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 
 class IconTextField extends StatelessWidget {
   const IconTextField({super.key, required this.img});
@@ -12,7 +13,7 @@ class IconTextField extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: Image.asset(
         img,
-        color: Colors.white,
+        color: AppColors.primaryColor,
         width: 18.w,
         height: 18.h,
       ),

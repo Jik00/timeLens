@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 
@@ -34,12 +33,13 @@ class CustomFormTextfield extends StatelessWidget {
             return null;
           },
           obscureText: obscure,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: AppColors.brownWriting),
           keyboardType: textInputType,
           decoration: InputDecoration(
             labelText: hintText,
-            labelStyle: TextStyle(
-                color: Colors.white, fontFamily: GoogleFonts.lora().fontFamily),
+            labelStyle: const TextStyle(
+              color: AppColors.brownWriting,
+            ),
             floatingLabelStyle: const TextStyle(),
             errorStyle: const TextStyle(color: Colors.red),
             errorBorder: OutlineInputBorder(
@@ -51,17 +51,16 @@ class CustomFormTextfield extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
-              borderSide: const BorderSide(
-                color: Colors.red,
+              borderSide:  const BorderSide(
+                color: AppColors.primaryColor,
                 width: 1,
               ),
             ),
             hintText: hintText,
             hintStyle: TextStyle(
               fontSize: 16.sp,
-              color: Colors.white,
+              color: AppColors.primaryColor,
               fontWeight: FontWeight.w400,
-              fontFamily: GoogleFonts.lora().fontFamily,
             ),
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,

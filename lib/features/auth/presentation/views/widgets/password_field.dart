@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
@@ -27,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
       suffixIcon: IconButton(
         onPressed: () => setState(() => obscure = !obscure),
         icon: Icon(obscure ? Icons.visibility_off : Icons.remove_red_eye),
-        color: Colors.white,
+        color: AppColors.primaryColor,
       ),
     );
   }

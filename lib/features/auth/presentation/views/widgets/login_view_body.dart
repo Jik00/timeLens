@@ -1,12 +1,12 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/core/widgets/background_with_top_frame.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/blur_login_card.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/login_card.dart';
+import 'package:timelens/features/auth/presentation/views/widgets/back_drop_filter.dart';
+import 'package:timelens/features/auth/presentation/views/widgets/text_fields_column.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -23,36 +23,32 @@ class LoginViewBody extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              Positioned.fill(
-                  child: Image.asset(Assets.assetsImagesPhoarhFace,
-                      fit: BoxFit.cover)),
-              BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-                child: Container(
-                  color: Colors.black.withOpacity(0.2),
-                ),
-              ),
+              const BackgroundWithTopFrame(),
               Positioned(
                 left: 0,
                 right: 0,
-                top: 136.h,
+                top: 220.h,
                 child: Column(
                   children: [
                     Transform.scale(
                       scaleX: 1.1,
-                      child: const StrokeTextCizel(
-                          title: kAppTitle,
-                          colors: [
-                            AppColors.primaryColor,
-                            AppColors.primaryColor,
+                      child: StrokeTextCizel(
+                          title: context.loc.login,
+                          colors: const [
+                            AppColors.timeLensColor,
+                            AppColors.timeLensColor,
                             AppColors.middleColor,
                             Colors.white
                           ],
+                          // colors: [
+                          //   AppColors.brownWriting.withOpacity(0.5),
+                          //   AppColors.brownWriting.withOpacity(0.5),
+                          // ],
                           titleSize: 50,
-                          borderColor: AppColors.secondaryColor),
+                          borderColor: AppColors.brownWriting),
                     ),
-                    SizedBox(height: 85.h),
-                    const BlurLoginCard(),
+                    SizedBox(height: 50.h),
+                    const BackDropFilter(),
                   ],
                 ),
               ),
@@ -60,7 +56,19 @@ class LoginViewBody extends StatelessWidget {
                 left: 0,
                 right: 0,
                 top: 300.h,
-                child: const LoginCard(),
+                child: Transform.scale(
+                  scaleX: 1.65,
+                  scaleY: 1.65,
+                  child: Image.asset(
+                    Assets.assetsImagesSquareFrame,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0,
+                right: 0,
+                top: 370.h,
+                child: const TextFieldsColumn(),
               ),
             ],
           ),

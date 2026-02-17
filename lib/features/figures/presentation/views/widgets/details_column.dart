@@ -74,9 +74,6 @@ class DetailsColumn extends StatelessWidget {
           ),
           CustomButton(
             hint: 'start z journey',
-            w: 200,
-            fillColor: AppColors.timeLensColor.withOpacity(0.38),
-            borderColor: AppColors.timeLensColor.withOpacity(0.38),
             onTap: () {
               Navigator.pushNamed(context, TestView.routeName);
             },

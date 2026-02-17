@@ -8,6 +8,8 @@ import 'package:timelens/core/widgets/timelens_title.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
+import '../../../../../core/widgets/background_with_top_frame.dart';
+
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -43,25 +45,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       child: Stack(
         children: [
 
-          Positioned.fill(
-            child: Image.asset(
-              Assets.assetsImagesBackground,
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: EdgeInsets.only(top: 30.h),
-              child: Image.asset(
-                Assets.assetsImagesTopFrame,
-                width: double.infinity,
-                // height: 180.h,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+          const BackgroundWithTopFrame(),
 
           /// Centered logo + text
           Center(
