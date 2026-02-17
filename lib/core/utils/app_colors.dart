@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   static const textColor = Colors.white70;
   static const grayscale400 = Color(0xFF949D9E);
-  static const backgroundColor1 = Color(0xFF471806);
+  static const brownWriting = Color(0xFF471806);
   static const primaryColor = Color(0xFFC49B37);
   static const secondaryColor = Color(0xFF5E4A1A);
   static const newsecondaryColor = Color(0xFF614317);
