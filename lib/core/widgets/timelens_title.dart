@@ -16,7 +16,8 @@ class TimelensTitle extends StatelessWidget {
         fontSize: size.sp,
         foreground: Paint()
           ..shader = const LinearGradient(
-            colors: [AppColors.timeLensColor, Colors.white],
+            colors: [AppColors.brownWriting, AppColors.brownWriting],
+            //colors: [AppColors.timeLensColor, Colors.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ).createShader(const Rect.fromLTWH(0, 0, 200, 70)),

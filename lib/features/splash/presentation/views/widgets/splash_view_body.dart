@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
-import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
-import 'package:timelens/core/widgets/background_gradiant.dart';
 import 'package:timelens/core/widgets/timelens_title.dart';
-import 'package:timelens/features/home/presentation/views/home_view.dart';
+import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -44,9 +42,26 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return SizedBox.expand(
       child: Stack(
         children: [
-          const BackgroundGradient(
-              color1: AppColors.backgroundColor1,
-              color2: AppColors.primaryColor),
+
+          Positioned.fill(
+            child: Image.asset(
+              Assets.assetsImagesBackground,
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: EdgeInsets.only(top: 30.h),
+              child: Image.asset(
+                Assets.assetsImagesTopFrame,
+                width: double.infinity,
+                // height: 180.h,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
 
           /// Centered logo + text
           Center(
@@ -59,7 +74,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 ),
                 FadeTransition(
                   opacity: _textFade,
-                  child: const TimelensTitle(size: 52,),
+                  child: const TimelensTitle(
+                    size: 52,
+                  ),
                 ),
                 SizedBox(height: 50.h),
               ],
@@ -127,8 +144,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
       const Duration(milliseconds: 4000),
       () {
         if (isOnboardingSeen) {
-          //Navigator.pushReplacementNamed(context, LoginView.routeName);
-          Navigator.pushReplacementNamed(context, HomeView.routeName);
+          Navigator.pushReplacementNamed(context, LoginView.routeName);
+          //Navigator.pushReplacementNamed(context, HomeView.routeName);
         } else {
           Navigator.pushReplacementNamed(context, OnboardingView.routeName);
         }
