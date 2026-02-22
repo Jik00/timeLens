@@ -3,12 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
-import 'package:timelens/core/widgets/timelens_title.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
+import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
+import '../../../../../core/widgets/stroke_text_cinzel.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -44,7 +46,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return SizedBox.expand(
       child: Stack(
         children: [
-
           const BackgroundWithTopFrame(),
 
           /// Centered logo + text
@@ -56,11 +57,24 @@ class _SplashViewBodyState extends State<SplashViewBody>
                   opacity: _logoFade,
                   child: const AppLogo(h: 180, w: 180),
                 ),
+                SizedBox(height: 30.h),
                 FadeTransition(
                   opacity: _textFade,
-                  child: const TimelensTitle(
-                    size: 52,
-                  ),
+                  child: StrokeTextCizel(
+                      title: context.loc.appTitle,
+                      colors: const [
+                        AppColors.timeLensColor,
+                        AppColors.timeLensColor,
+                        AppColors.middleColor,
+                        Colors.white
+                      ],
+                      titleSize: 52,
+                      borderColor: AppColors.brownWriting),
+
+                  //     const TimelensTitle(
+                  //   size: 52,
+                  // ),
+
                 ),
                 SizedBox(height: 50.h),
               ],

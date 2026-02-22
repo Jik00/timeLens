@@ -36,6 +36,7 @@ class CustomFormTextfield extends StatelessWidget {
           style: const TextStyle(color: AppColors.brownWriting),
           keyboardType: textInputType,
           decoration: InputDecoration(
+            helperText: " ",
             labelText: hintText,
             labelStyle: const TextStyle(
               color: AppColors.brownWriting,
@@ -51,7 +52,7 @@ class CustomFormTextfield extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
-              borderSide:  const BorderSide(
+              borderSide: const BorderSide(
                 color: AppColors.primaryColor,
                 width: 1,
               ),

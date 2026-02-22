@@ -17,7 +17,7 @@ class BackDropFilter extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
         child: Container(
           width: 340.w,
-          height: 280.h,
+          height: 320.h,
           decoration: BoxDecoration(
             color: AppColors.blurColor.withOpacity(0.3),
             borderRadius: BorderRadius.circular(34),

@@ -122,6 +122,10 @@ class Assets {
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";
 
+  /// Assets for assetsImagesWeatherPic
+  /// assets/images/weather_pic.png
+  static const String assetsImagesWeatherPic = "assets/images/weather_pic.png";
+
   /// Assets for assetsImagesWhiteLight
   /// assets/images/white-light.png
   static const String assetsImagesWhiteLight = "assets/images/white-light.png";

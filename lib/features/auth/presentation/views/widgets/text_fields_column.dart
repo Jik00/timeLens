@@ -36,14 +36,14 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
               email = value!;
             },
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: 12.h),
           PasswordField(
             onSaved: (value) {
               pass = value!;
             },
           ),
           SizedBox(
-            height: 24.h,
+            height: 20.h,
           ),
           Text(
             context.loc.forgetPass,
@@ -54,7 +54,7 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
             ),
           ),
           SizedBox(
-            height: 17.h,
+            height: 16.h,
           ),
           CustomButton(
             hint: context.loc.login,
