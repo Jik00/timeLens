@@ -5,12 +5,12 @@ import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
-import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
 import '../../../../../core/widgets/stroke_text_cinzel.dart';
+import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -142,8 +142,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
       const Duration(milliseconds: 4000),
       () {
         if (isOnboardingSeen) {
-          Navigator.pushReplacementNamed(context, LoginView.routeName);
-          //Navigator.pushReplacementNamed(context, HomeView.routeName);
+          //Navigator.pushReplacementNamed(context, LoginView.routeName);
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
         } else {
           Navigator.pushReplacementNamed(context, OnboardingView.routeName);
         }

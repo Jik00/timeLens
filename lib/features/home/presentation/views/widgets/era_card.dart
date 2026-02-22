@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:timelens/features/home/domain/entities/era_entity.dart';
 import 'package:timelens/features/home/presentation/views/widgets/era_stack.dart';
 
+import '../../../../../core/utils/app_colors.dart';
+
 class EraCard extends StatefulWidget {
   const EraCard({super.key, required this.eraEntity});
 
@@ -26,9 +28,9 @@ class _EraCardState extends State<EraCard> {
       valueListenable: slideProgress,
       builder: (context, t, child) {
         final bgColor = Color.lerp(
-          Colors.transparent,
+          AppColors.primaryColor,
+          // AppColors.brownWriting,
           Colors.white,
-          //AppColors.primaryColor,
           t,
         );
         return EraStack(

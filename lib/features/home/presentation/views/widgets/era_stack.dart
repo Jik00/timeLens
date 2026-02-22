@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/features/home/domain/entities/era_entity.dart';
 import 'package:timelens/features/home/presentation/views/widgets/back_drop_filter.dart';
 import 'package:timelens/features/home/presentation/views/widgets/slide_to_action_button.dart';
@@ -21,13 +22,14 @@ class EraStack extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        //color: bgColor!,
+        borderRadius: BorderRadius.circular(34.r),
         border: Border.all(
-          width: 2,
+          width: 3,
           color: bgColor!,
         ),
       ),
-      height: 240,
+      height: 240.h,
       child: Stack(
         clipBehavior: Clip.none,
         children: [

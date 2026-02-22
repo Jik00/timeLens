@@ -12,9 +12,9 @@ class ActiveItem extends StatelessWidget {
     return Container(
       width: 42.w,
       height: 40.h,
-      decoration: const BoxDecoration(
-        color: AppColors.blackBackground,
-        borderRadius: BorderRadius.all(Radius.circular(8)),
+      decoration: BoxDecoration(
+        color: AppColors.primaryColor.withOpacity(0.65),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
       child: Center(
         child: Image.asset(

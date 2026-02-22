@@ -80,6 +80,7 @@ class SlideToActionButton extends StatelessWidget {
             margin: const EdgeInsets.all(4),
             decoration: BoxDecoration(
               color: Colors.white,
+              //color: AppColors.newsecondaryColor,
               borderRadius: BorderRadius.circular(999),
             ),
             width: double.infinity,
@@ -87,11 +88,11 @@ class SlideToActionButton extends StatelessWidget {
             child: Center(
               child: state.isPerformingAction
                   ? const CupertinoActivityIndicator(
-                      color: AppColors.newsecondaryColor,
+                      color: AppColors.brownWriting,
                       radius: 10,
                     )
                   : const Icon(Icons.chevron_right,
-                      color: AppColors.newsecondaryColor, size: 28),
+                      color: AppColors.brownWriting, size: 28),
             ),
           );
         },

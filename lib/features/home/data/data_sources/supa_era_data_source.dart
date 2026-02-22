@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseEraDataSource {
@@ -11,13 +12,13 @@ class SupabaseEraDataSource {
       final response = await supabase
           .from(tableName)
           .select()
-          .order('created_at', ascending: false);
+          .order('created_at', ascending: true);
       
-      debugPrint("Fetched ${response.length} eras");
+      log("Fetched ${response.length} eras");
       return response;
       
     } catch (e) {
-      debugPrint("Error fetching eras: $e");
+      log("Error fetching eras: $e");
       rethrow;
     }
   }
