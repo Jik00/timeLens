@@ -20,7 +20,6 @@ class DisplayDetailView extends StatelessWidget {
             style: TextStyle(
                 fontSize: 18, fontFamily: GoogleFonts.lora().fontFamily),
           )),
-      backgroundColor: AppColors.blackBackground,
       bottomNavigationBar: const CustomButtonNavigationBar(),
       body: const DisplayDetailViewBody(),
     );

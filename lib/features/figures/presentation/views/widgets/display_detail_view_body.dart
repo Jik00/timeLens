@@ -16,6 +16,12 @@ class DisplayDetailViewBody extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
+          Positioned.fill(
+            child: Image.asset(
+              Assets.assetsImagesBackground,
+              fit: BoxFit.cover,
+            ),
+          ),
           Positioned(
             right: 33.w,
             top: 130.h,
@@ -42,7 +48,7 @@ class DisplayDetailViewBody extends StatelessWidget {
               child: Hero(
                 tag: kHeroTagImg,
                 child: Image.asset(
-                  Assets.assetsImagesRamses2Statue,
+                  Assets.assetsImagesRemsesStatue,
                   width: 170.w,
                 ),
               ),

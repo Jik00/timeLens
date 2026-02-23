@@ -29,28 +29,28 @@ class CarouselItem extends StatelessWidget {
                     return MaterialRectArcTween(begin: begin, end: end);
                   },
                   child: Image.asset(
-                    Assets.assetsImagesRamses2Statue,
+                    Assets.assetsImagesRemsesStatue,
                     //width: 300.w,
                     height: 390.h,
                   ),
                 )
               : Image.asset(
-                  Assets.assetsImagesRamses2Statue,
+                  Assets.assetsImagesRemsesStatue,
                   //width: 300.w,
                   height: 390.h,
                   opacity: const AlwaysStoppedAnimation<double>(0.3),
                 ),
         ),
-        SizedBox(height: 105.h),
+        SizedBox(height: 110.h),
         Visibility(
           visible: isCenter,
           child: const Hero(
             tag: kHeroTagName,
             child: StrokeTextCizel(
                 title: 'Ramses II',
-                colors: [AppColors.timeLensColor, AppColors.timeLensColor],
+                colors: [AppColors.timeLensColor, Colors.white],
                 titleSize: 41,
-                borderColor: AppColors.primaryColor),
+                borderColor: AppColors.brownWriting),
           ),
         ),
       ],

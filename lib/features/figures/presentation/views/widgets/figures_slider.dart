@@ -19,12 +19,12 @@ class _FiguresSliderState extends State<FiguresSlider> {
       options: CarouselOptions(
         initialPage: 0,
         height: 665.h,
-        viewportFraction: 0.5,
+        viewportFraction: 0.48,
         enableInfiniteScroll: true,
         scrollPhysics: const PageScrollPhysics(),
         enlargeCenterPage: true,
         enlargeStrategy: CenterPageEnlargeStrategy.zoom,
-        enlargeFactor: 0.72,
+        enlargeFactor: 0.7,
         onPageChanged: (index, reason) {
           setState(() {
             _currentIndex = index;

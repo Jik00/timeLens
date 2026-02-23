@@ -27,9 +27,9 @@ class DetailsColumn extends StatelessWidget {
               tag: kHeroTagName,
               child: StrokeTextCizel(
                   title: 'Ramses II',
-                  colors: [AppColors.timeLensColor, AppColors.timeLensColor],
-                  titleSize: 40,
-                  borderColor: AppColors.primaryColor),
+                  colors: [AppColors.timeLensColor, Colors.white],
+                titleSize: 40,
+                borderColor: AppColors.brownWriting),
             ),
           ),
           SizedBox(height: 15.h),
