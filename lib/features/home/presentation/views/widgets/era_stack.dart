@@ -5,6 +5,8 @@ import 'package:timelens/features/home/domain/entities/era_entity.dart';
 import 'package:timelens/features/home/presentation/views/widgets/back_drop_filter.dart';
 import 'package:timelens/features/home/presentation/views/widgets/slide_to_action_button.dart';
 
+import '../../../../../core/utils/app_colors.dart';
+
 class EraStack extends StatelessWidget {
   const EraStack({
     super.key,
@@ -40,7 +42,7 @@ class EraStack extends StatelessWidget {
             errorWidget: (context, url, error) => const Icon(Icons.error),
             placeholder: (context, url) => const Center(
               child: CircularProgressIndicator(
-                color: Colors.white,
+                color: AppColors.primaryColor,
               ),
             ),
           ),

@@ -10,6 +10,7 @@ import 'package:timelens/features/onboarding/presentation/views/onboarding_view.
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
 import '../../../../../core/widgets/stroke_text_cinzel.dart';
+//import '../../../../auth/presentation/views/login_view.dart';
 import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
