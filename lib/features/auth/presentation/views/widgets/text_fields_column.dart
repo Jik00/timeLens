@@ -48,7 +48,7 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
           Text(
             context.loc.forgetPass,
             style: TextStyle(
-              color: AppColors.brownWriting.withOpacity(0.7),
+              color: AppColors.brownWriting.withAlpha(179),
               fontSize: 18.sp,
               decoration: TextDecoration.underline,
             ),

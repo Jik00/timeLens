@@ -19,7 +19,7 @@ class EraContainer extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.secondaryColor.withOpacity(0.3),
+          color: AppColors.secondaryColor.withAlpha(77),
           borderRadius: BorderRadius.circular(34),
           border: Border.all(
             color: AppColors.primaryColor,

@@ -59,7 +59,7 @@ class PgViewItem extends StatelessWidget {
                   shadows: [
                     Shadow(
                       blurRadius: 8.r,
-                      color: Colors.black.withOpacity(0.7),
+                      color: Colors.black.withAlpha(179),
                       offset: const Offset(2, 2),
                     ),
                   ],

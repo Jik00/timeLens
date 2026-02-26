@@ -19,7 +19,7 @@ class BackDropFilter extends StatelessWidget {
           width: 340.w,
           height: 320.h,
           decoration: BoxDecoration(
-            color: AppColors.blurColor.withOpacity(0.3),
+            color: AppColors.blurColor.withAlpha(77),
             borderRadius: BorderRadius.circular(34),
             border: Border.all(
               color: AppColors.primaryColor,

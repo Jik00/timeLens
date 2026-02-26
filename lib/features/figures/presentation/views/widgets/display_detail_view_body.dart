@@ -30,7 +30,7 @@ class DisplayDetailViewBody extends StatelessWidget {
               height: 350.h,
               decoration: BoxDecoration(
                 //color: Colors.white.withOpacity(0.2),
-                color: const Color(0xFF91896B).withOpacity(0.6),
+                color: const Color(0xFF91896B).withAlpha(153),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: BackdropFilter(

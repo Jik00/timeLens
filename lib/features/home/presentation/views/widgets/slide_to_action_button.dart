@@ -33,7 +33,7 @@ class SlideToActionButton extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withAlpha(77),
                 ),
                 borderRadius: BorderRadius.circular(24.r)),
             child: Row(

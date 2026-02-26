@@ -13,7 +13,7 @@ class ActiveItem extends StatelessWidget {
       width: 42.w,
       height: 40.h,
       decoration: BoxDecoration(
-        color: AppColors.primaryColor.withOpacity(0.65),
+        color: AppColors.primaryColor.withAlpha(167),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
       child: Center(

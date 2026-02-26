@@ -75,7 +75,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
                   //     const TimelensTitle(
                   //   size: 52,
                   // ),
-
                 ),
                 SizedBox(height: 50.h),
               ],
@@ -139,14 +138,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void _scheduleNavigation() {
     bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
+    final navigator = Navigator.of(context);
     Future.delayed(
       const Duration(milliseconds: 4000),
       () {
-        if (isOnboardingSeen) {
-          //Navigator.pushReplacementNamed(context, LoginView.routeName);
-          Navigator.pushReplacementNamed(context, HomeView.routeName);
-        } else {
-          Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+        if (mounted) {
+          if (isOnboardingSeen) {
+            //Navigator.pushReplacementNamed(context, LoginView.routeName);
+            navigator.pushReplacementNamed(HomeView.routeName);
+          } else {
+            navigator.pushReplacementNamed(OnboardingView.routeName);
+          }
         }
       },
     );
