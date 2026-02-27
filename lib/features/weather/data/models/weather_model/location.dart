@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:timelens/features/weather/domain/entities/location_weather_entity.dart';
 
 class Location extends Equatable {
   final String name;
@@ -34,12 +35,19 @@ class Location extends Equatable {
         localtime: data['localtime'] as String?,
       );
 
-
   /// Parses the string and returns the resulting Json object as [Location].
   factory Location.fromJson(String data) {
     return Location.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
+  LocationWeatherEntity toSearchLocationWeatherEntity() {
+    return LocationWeatherEntity(
+      locationName: name,
+      country: country,
+      lat: lat.toString(),
+      lon: lon.toString(),
+    );
+  }
 
   Location copyWith({
     String? name,

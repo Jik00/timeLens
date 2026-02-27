@@ -1,4 +1,4 @@
-class WeatherDetailsEntity {
+class WeatherEntity {
   final String locationName;
   final String country;
   final double temperatureCelsius;
@@ -10,7 +10,7 @@ class WeatherDetailsEntity {
   final String maxTemp;
   final String minTemp;
 
-  WeatherDetailsEntity({
+  WeatherEntity({
     required this.locationName,
     required this.country,
     required this.temperatureCelsius,
