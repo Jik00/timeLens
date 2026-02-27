@@ -11,3 +11,7 @@ const String kHeroTagName = "Name";
 const String kHeroTagImg = "Img";
 const String kLottieRightArrow =
     'assets/images/icons/lottie/Arrow_down_lottie.json';
+
+const String kApiKey= '1344a7f8315943e2856153511262402';
+const String kBaseUrl = 'https://api.weatherapi.com/v1/';
+const String kAppLanguage = 'app_language'; // for shared preferences key to store selected language

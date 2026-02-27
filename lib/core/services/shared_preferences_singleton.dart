@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:timelens/constants.dart';
 
 class Prefs {
   static late SharedPreferences _instance;
@@ -13,5 +16,17 @@ class Prefs {
 
   static bool getBool(String key) {
     return _instance.getBool(key) ?? false;
+  }
+
+  static String getCurrentLanguage() {
+    return _instance.getString (kAppLanguage) ?? _getDeviceLanguage();
+  }
+
+  static Future<void> saveLanguage(String langCode) async {
+    await _instance.setString(kAppLanguage, langCode);
+  }
+
+  static String _getDeviceLanguage() {
+    return PlatformDispatcher.instance.locale.languageCode;
   }
 }

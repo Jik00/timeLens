@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:timelens/core/network/dio_factory.dart';
 import 'package:timelens/core/repos/era_repo/era_repo.dart';
 import 'package:timelens/core/repos/era_repo/era_repo_impl.dart';
 import 'package:timelens/features/home/data/data_sources/supa_era_data_source.dart';
@@ -12,4 +14,7 @@ void setupGetIt() {
   getIt.registerSingleton<EraRepo>(EraRepoImpl(
     dataSource: getIt<SupabaseEraDataSource>(),
   ));
+
+  getIt.registerSingleton<Dio>( DioFactory().createDio());
+  
 }
