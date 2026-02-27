@@ -1,22 +1,29 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
+import 'package:timelens/constants.dart';
 
 class WeatherApiService {
   final Dio dio;
 
   WeatherApiService({required this.dio});
 
-  Future <Response> getData (String endPoint, Map<String, dynamic>? queryParameters) async {
-    try {
-      
-      log('Fetching weather data from endpoint: $endPoint with query parameters: $queryParameters');
-      final response = await dio.get(endPoint, queryParameters: queryParameters);
+  Future<Response> getWeatherDetails(String city) {
+    return dio.get(
+      kWeatherEndpoint,
+      queryParameters: {
+        'q': city,
+        'days': 1,
+        'alerts': 'yes',
+      },
+    );
+  }
 
-      return response;
-    } catch (e) {
-      rethrow;
-    }
+  Future<Response> searchLocation(String city) {
+    return dio.get(
+      kSearchWeatherEndpoint,
+      queryParameters: {
+        'q': city,
+      },
+    );
   }
 
 }
