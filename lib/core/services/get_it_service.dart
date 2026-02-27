@@ -4,6 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/core/network/dio_factory.dart';
 import 'package:timelens/core/repos/era_repo/era_repo.dart';
 import 'package:timelens/core/repos/era_repo/era_repo_impl.dart';
+import 'package:timelens/core/services/weather_api_service.dart';
 import 'package:timelens/features/home/data/data_sources/supa_era_data_source.dart';
 
 final getIt = GetIt.instance;
@@ -16,5 +17,6 @@ void setupGetIt() {
   ));
 
   getIt.registerSingleton<Dio>( DioFactory().createDio());
-  
+  getIt.registerSingleton(WeatherApiService(dio: getIt<Dio>()));
+
 }
