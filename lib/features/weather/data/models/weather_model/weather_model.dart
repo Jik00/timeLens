@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:timelens/features/weather/domain/entities/weather_details_entity.dart';
 
 import 'alerts.dart';
 import 'current.dart';
@@ -29,24 +30,27 @@ class WeatherModel extends Equatable {
             : Alerts.fromMap(data['alerts'] as Map<String, dynamic>),
       );
 
-  Map<String, dynamic> toMap() => {
-        'location': location.toMap(),
-        'current': current.toMap(),
-        'forecast': forecast.toMap(),
-        'alerts': alerts?.toMap(),
-      };
 
-  /// `dart:convert`
-  ///
   /// Parses the string and returns the resulting Json object as [WeatherModel].
   factory WeatherModel.fromJson(String data) {
     return WeatherModel.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
-  /// `dart:convert`
-  ///
-  /// Converts [WeatherModel] to a JSON string.
-  String toJson() => json.encode(toMap());
+
+  WeatherDetailsEntity toWeatherDetailsEntity() {
+    return WeatherDetailsEntity(
+      locationName: location.name,
+      country: location.country,
+      temperatureCelsius: current.tempC,
+      conditionText: current.condition.text,
+      iconUrl: current.condition.icon,
+      windKph: current.windKph,
+      humidity: current.humidity,
+      uvIndex: current.uv,
+      maxTemp: forecast.forecastday.first.day.maxtempC.toString(),
+      minTemp: forecast.forecastday.first.day.mintempC.toString(),
+    );
+  }
 
   WeatherModel copyWith({
     Location? location,
