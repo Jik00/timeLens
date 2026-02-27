@@ -17,6 +17,3 @@ class ButtonNavBarItem extends StatelessWidget {
         : InActiveItem(img: buttonNavBarEntity.inActiveImg);
   }
 }
-
-
-

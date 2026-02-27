@@ -36,7 +36,7 @@ class _FiguresSliderState extends State<FiguresSlider> {
         itemCount: 3,
         itemBuilder: (context, index, realIndex) {
           final bool isCenter = index == _currentIndex;
-      
+
           return CarouselItem(
             isCenter: isCenter,
           );

@@ -8,27 +8,25 @@ class BackgroundWithTopFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-        children: [
-
-          Positioned.fill(
+      children: [
+        Positioned.fill(
+          child: Image.asset(
+            Assets.assetsImagesBackground,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Align(
+          alignment: Alignment.topCenter,
+          child: Padding(
+            padding: EdgeInsets.only(top: 30.h),
             child: Image.asset(
-              Assets.assetsImagesBackground,
+              Assets.assetsImagesTopFrame,
+              width: double.infinity,
               fit: BoxFit.cover,
             ),
           ),
-
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: EdgeInsets.only(top: 30.h),
-              child: Image.asset(
-                Assets.assetsImagesTopFrame,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ],
+        ),
+      ],
     );
   }
 }

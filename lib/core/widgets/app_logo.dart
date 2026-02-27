@@ -4,7 +4,9 @@ import 'package:timelens/core/utils/app_images.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({
-    super.key, required this.w, required this.h,
+    super.key,
+    required this.w,
+    required this.h,
   });
 
   final int w, h;

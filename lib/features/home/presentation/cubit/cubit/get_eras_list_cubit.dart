@@ -14,7 +14,7 @@ class GetErasListCubit extends Cubit<GetErasListState> {
     emit(GetErasListLoading());
 
     final erasResult = await eraRepo.getEras();
-    
+
     erasResult.fold(
       (failure) => emit(GetErasListFailure(message: failure.message)),
       (eras) => emit(

@@ -16,14 +16,13 @@ class EraRepoImpl implements EraRepo {
   @override
   Future<Either<Failure, List<EraEntity>>> getEras() async {
     try {
-      final response = await dataSource.fetchEras( tableName: kSupaErasTable);
+      final response = await dataSource.fetchEras(tableName: kSupaErasTable);
 
       // Convert each map to EraEntity
       final eras = response.map((json) => EraEntity.fromMap(json)).toList();
 
       debugPrint("Successfully fetched ${eras.length} eras");
       return Right(eras);
-      
     } on PostgrestException catch (e) {
       debugPrint("Database error: ${e.message}");
       return Left(DatabaseFailure('Failed to fetch eras: ${e.message}'));

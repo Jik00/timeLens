@@ -7,7 +7,6 @@ class TestView extends StatelessWidget {
   static const String routeName = 'testView';
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.blackBackground,
@@ -15,7 +14,7 @@ class TestView extends StatelessWidget {
       body: const Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.0),
-         child: Text("jhh"),
+          child: Text("jhh"),
         ),
       ),
     );

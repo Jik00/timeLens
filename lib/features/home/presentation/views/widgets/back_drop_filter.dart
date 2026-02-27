@@ -13,7 +13,6 @@ class BackDropFilter extends StatelessWidget {
   final Widget child;
 
   @override
-
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(18),

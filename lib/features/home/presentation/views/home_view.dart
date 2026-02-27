@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // bottomNavigationBar: const CustomButtonNavigationBar(),
+      // bottomNavigationBar: const CustomButtonNavigationBar(),
       body: BlocProvider(
         create: (context) => GetErasListCubit(
           getIt.get<EraRepo>(),

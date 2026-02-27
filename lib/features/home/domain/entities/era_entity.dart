@@ -12,9 +12,9 @@ class EraEntity {
   });
 
   factory EraEntity.fromMap(Map<String, dynamic> map) => EraEntity(
-    eraName: map['era_name'],
-    eraPeriod: map['era_period'],
-    eraCode: map['era_code'],
-    imageUrl: map['image_url'],
-  );
+        eraName: map['era_name'],
+        eraPeriod: map['era_period'],
+        eraCode: map['era_code'],
+        imageUrl: map['image_url'],
+      );
 }

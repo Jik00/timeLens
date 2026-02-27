@@ -7,16 +7,16 @@ class SupabaseEraDataSource {
 
   SupabaseEraDataSource(this.supabase);
 
-  Future<List<Map<String, dynamic>>> fetchEras({required String tableName}) async {
+  Future<List<Map<String, dynamic>>> fetchEras(
+      {required String tableName}) async {
     try {
       final response = await supabase
           .from(tableName)
           .select()
           .order('created_at', ascending: true);
-      
+
       log("Fetched ${response.length} eras");
       return response;
-      
     } catch (e) {
       log("Error fetching eras: $e");
       rethrow;
