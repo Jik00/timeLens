@@ -198,6 +198,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Weather`
+  String get weather {
+    return Intl.message('Weather', name: 'weather', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -14,7 +14,6 @@ class DisplayDetailView extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: buildAppBar(
-        Colors.transparent,
         Text(
           'More About ...',
           style: TextStyle(

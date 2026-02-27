@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/core/widgets/build_app_bar.dart';
 import 'package:timelens/core/widgets/custom_button_navigation_bar.dart';
-import 'package:timelens/features/figures/presentation/views/widgets/figure_view_body.dart';
+import 'package:timelens/features/weather/presentation/views/widgets/weather_view_body.dart';
 
-class FigureView extends StatelessWidget {
-  const FigureView({super.key});
+class WeatherView extends StatelessWidget {
+  const WeatherView({super.key});
 
-  static const routeName = 'figure';
+  static const String routeName = "weather_view";
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class FigureView extends StatelessWidget {
       appBar: buildAppBar(null),
       bottomNavigationBar: const CustomButtonNavigationBar(),
       extendBody: true,
-      body: const FigureViewBody(),
+      body: const WeatherViewBody(),
     );
   }
 }

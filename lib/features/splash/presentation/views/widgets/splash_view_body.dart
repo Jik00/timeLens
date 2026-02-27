@@ -6,12 +6,13 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
 import '../../../../../core/widgets/stroke_text_cinzel.dart';
 //import '../../../../auth/presentation/views/login_view.dart';
-import '../../../../home/presentation/views/home_view.dart';
+//import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -47,7 +48,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return SizedBox.expand(
       child: Stack(
         children: [
-          const BackgroundWithTopFrame(),
+          const BackgroundWithTopFrame( 
+            img: Assets.assetsImagesTopFrame,
+          ),
 
           /// Centered logo + text
           Center(
@@ -145,7 +148,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
         if (mounted) {
           if (isOnboardingSeen) {
             //Navigator.pushReplacementNamed(context, LoginView.routeName);
-            navigator.pushReplacementNamed(HomeView.routeName);
+            //navigator.pushReplacementNamed(HomeView.routeName);
+            navigator.pushReplacementNamed(WeatherView.routeName);
           } else {
             navigator.pushReplacementNamed(OnboardingView.routeName);
           }

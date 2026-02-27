@@ -23,7 +23,9 @@ class LoginViewBody extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              const BackgroundWithTopFrame(),
+              const BackgroundWithTopFrame( 
+                img: Assets.assetsImagesTopFrame,
+              ),
               Positioned(
                 left: 0,
                 right: 0,

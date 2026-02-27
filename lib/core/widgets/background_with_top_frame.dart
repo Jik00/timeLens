@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_images.dart';
 
 class BackgroundWithTopFrame extends StatelessWidget {
-  const BackgroundWithTopFrame({super.key});
+  const BackgroundWithTopFrame({super.key, required this.img});
+
+  final String img;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class BackgroundWithTopFrame extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(top: 30.h),
             child: Image.asset(
-              Assets.assetsImagesTopFrame,
+              img,
               width: double.infinity,
               fit: BoxFit.cover,
             ),

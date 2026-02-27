@@ -6,6 +6,7 @@ import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/features/test/test_view.dart';
+import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
@@ -65,6 +66,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
             child: child,
           );
         },
+      );
+
+    case WeatherView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const WeatherView(),
+        settings: settings,
       );
 
     default:
