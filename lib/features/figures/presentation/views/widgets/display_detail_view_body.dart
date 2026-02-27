@@ -23,23 +23,7 @@ class DisplayDetailViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 33.w,
-            top: 130.h,
-            child: Container(
-              width: 135.w,
-              height: 350.h,
-              decoration: BoxDecoration(
-                //color: Colors.white.withOpacity(0.2),
-                color: const Color(0xFF91896B).withAlpha(153),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
-                child: Container(),
-              ),
-            ),
-          ),
-          Positioned(
+            top: 85.h,
             right: 10.w,
             child: GestureDetector(
               onTap: () {
@@ -49,7 +33,7 @@ class DisplayDetailViewBody extends StatelessWidget {
                 tag: kHeroTagImg,
                 child: Image.asset(
                   Assets.assetsImagesRemsesStatue,
-                  width: 170.w,
+                  width: 175.w,
                 ),
               ),
             ),

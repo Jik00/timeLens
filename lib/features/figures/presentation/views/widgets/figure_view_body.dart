@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
-import 'package:timelens/features/figures/presentation/views/widgets/base_square.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/figures_slider.dart';
 
 import '../../../../../core/utils/app_images.dart';
@@ -23,21 +22,32 @@ class FigureViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 27.w,
-            child: Text(
-              'Rulers of Ancient Egypt',
-              style: TextStyle(
-                fontSize: 23.sp,
-                color: AppColors.brownWriting,
-                fontWeight: FontWeight.w700,
+            bottom: 160.h,
+            left: 55.w,
+            child: SizedBox(
+              width: 270.w,
+              child: Image.asset(
+                Assets.assetsImagesFigureBaseSquare,
+                fit: BoxFit.cover,
               ),
             ),
           ),
           Positioned(
-            bottom: 200.w,
-            child: const BaseSquare(),
+            top: 90.h,
+            child: Column(
+              children: [
+                Text(
+                  'Rulers of Ancient Egypt',
+                  style: TextStyle(
+                    fontSize: 23.sp,
+                    color: AppColors.brownWriting,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const FiguresSlider(),
+              ],
+            ),
           ),
-          const FiguresSlider(),
         ],
       ),
     );

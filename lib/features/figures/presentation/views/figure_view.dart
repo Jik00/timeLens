@@ -11,6 +11,7 @@ class FigureView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: buildAppBar(Colors.transparent, null),
       bottomNavigationBar: const CustomButtonNavigationBar(),
       extendBody: true,

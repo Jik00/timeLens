@@ -15,7 +15,7 @@ class DetailsColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, top: 12),
+      padding: const EdgeInsets.only(left: 20, top: 115),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,8 +28,8 @@ class DetailsColumn extends StatelessWidget {
               child: StrokeTextCizel(
                   title: 'Ramses II',
                   colors: [AppColors.timeLensColor, Colors.white],
-                titleSize: 40,
-                borderColor: AppColors.brownWriting),
+                  titleSize: 40,
+                  borderColor: AppColors.brownWriting),
             ),
           ),
           SizedBox(height: 15.h),
@@ -37,6 +37,7 @@ class DetailsColumn extends StatelessWidget {
             child: Image.asset(
               Assets.assetsImagesWriting,
               height: 332.h,
+              color: AppColors.brownWriting.withAlpha(200),
             ),
           ),
           SlideTransitionWidget(
@@ -50,21 +51,21 @@ class DetailsColumn extends StatelessWidget {
                 ),
                 const Text(
                   'Age: ~ 90 years',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
+                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 const Text(
                   'Reign: ~ 66 years',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
+                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 const Text(
                   '(1279–1213 BC)',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
+                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
                 ),
               ],
             ),
@@ -72,11 +73,15 @@ class DetailsColumn extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          CustomButton(
-            hint: 'start z journey',
-            onTap: () {
-              Navigator.pushNamed(context, TestView.routeName);
-            },
+          Transform.translate(
+            offset: Offset(-20.w, 0),
+            child: CustomButton(
+              hint: 'let\'s dive',
+              scaleX: 0.8,
+              onTap: () {
+                Navigator.pushNamed(context, TestView.routeName);
+              },
+            ),
           ),
         ],
       ),

@@ -15,30 +15,33 @@ int _currentIndex = 0;
 class _FiguresSliderState extends State<FiguresSlider> {
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-      options: CarouselOptions(
-        initialPage: 0,
-        height: 665.h,
-        viewportFraction: 0.48,
-        enableInfiniteScroll: true,
-        scrollPhysics: const PageScrollPhysics(),
-        enlargeCenterPage: true,
-        enlargeStrategy: CenterPageEnlargeStrategy.zoom,
-        enlargeFactor: 0.7,
-        onPageChanged: (index, reason) {
-          setState(() {
-            _currentIndex = index;
-          });
+    return SizedBox(
+      width: 375.w,
+      child: CarouselSlider.builder(
+        options: CarouselOptions(
+          initialPage: 0,
+          height: 665.h,
+          viewportFraction: 0.48,
+          enableInfiniteScroll: true,
+          scrollPhysics: const PageScrollPhysics(),
+          enlargeCenterPage: true,
+          enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+          enlargeFactor: 0.7,
+          onPageChanged: (index, reason) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
+        itemCount: 3,
+        itemBuilder: (context, index, realIndex) {
+          final bool isCenter = index == _currentIndex;
+      
+          return CarouselItem(
+            isCenter: isCenter,
+          );
         },
       ),
-      itemCount: 3,
-      itemBuilder: (context, index, realIndex) {
-        final bool isCenter = index == _currentIndex;
-
-        return CarouselItem(
-          isCenter: isCenter,
-        );
-      },
     );
   }
 }

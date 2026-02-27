@@ -41,7 +41,7 @@ class CarouselItem extends StatelessWidget {
                   opacity: const AlwaysStoppedAnimation<double>(0.3),
                 ),
         ),
-        SizedBox(height: 110.h),
+        SizedBox(height: 120.h),
         Visibility(
           visible: isCenter,
           child: const Hero(

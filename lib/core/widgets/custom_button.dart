@@ -8,10 +8,12 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.hint,
     this.onTap,
+    this.scaleX,
   });
 
   final String hint;
   final VoidCallback? onTap;
+  final double? scaleX;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +26,13 @@ class CustomButton extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.center,
-              child: Image.asset(
-                Assets.assetsImagesButtonFrame,
-                height: 65.h,
-                fit: BoxFit.cover,
+              child: Transform.scale(
+                scaleX: scaleX ?? 1,
+                child: Image.asset(
+                  Assets.assetsImagesButtonFrame,
+                  height: 65.h,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Align(
@@ -38,7 +43,7 @@ class CustomButton extends StatelessWidget {
                   hint,
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 24.sp,
+                    fontSize: 22.sp,
                     color: AppColors.brownWriting.withAlpha(227),
                   ),
                 ),
