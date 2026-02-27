@@ -117,7 +117,7 @@ class Current extends Equatable {
         'temp_c': tempC,
         'temp_f': tempF,
         'is_day': isDay,
-        'condition': condition?.toMap(),
+        'condition': condition.toMap(),
         'wind_mph': windMph,
         'wind_kph': windKph,
         'wind_degree': windDegree,
