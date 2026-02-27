@@ -49,23 +49,35 @@ class DetailsColumn extends StatelessWidget {
                 SizedBox(
                   height: 40.h,
                 ),
-                const Text(
+                Text(
                   'Age: ~ 90 years',
-                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
+                  style: TextStyle(
+                    color: AppColors.brownWriting.withAlpha(210),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text(
+                Text(
                   'Reign: ~ 66 years',
-                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
+                  style: TextStyle(
+                    color: AppColors.brownWriting.withAlpha(210),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text(
+                Text(
                   '(1279–1213 BC)',
-                  style: TextStyle(color: AppColors.brownWriting, fontSize: 24),
+                  style: TextStyle(
+                    color: AppColors.brownWriting.withAlpha(210),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

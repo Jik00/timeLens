@@ -18,7 +18,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
       child: SizedBox(
         height: 50.h,
         child: Stack(

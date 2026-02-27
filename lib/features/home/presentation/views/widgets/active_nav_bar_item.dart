@@ -14,7 +14,7 @@ class ActiveItem extends StatelessWidget {
       height: 40.h,
       decoration: BoxDecoration(
         color: AppColors.primaryColor.withAlpha(167),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
       ),
       child: Center(
         child: Image.asset(
