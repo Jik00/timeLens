@@ -203,6 +203,16 @@ class S {
   String get weather {
     return Intl.message('Weather', name: 'weather', desc: '', args: []);
   }
+
+  /// `Search for a city`
+  String get searchCity {
+    return Intl.message(
+      'Search for a city',
+      name: 'searchCity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

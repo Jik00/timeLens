@@ -18,5 +18,6 @@
     "retry" : "Retry",
     "errorOccurred" : "An error occurred",
     "figuresTitle": "Meet The Rulers Whose Reigns Shaped a Legacy",
-    "weather": "Weather"   
+    "weather": "Weather",
+    "searchCity": "Search for a city"
 }

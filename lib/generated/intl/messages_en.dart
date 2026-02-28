@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
+    "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
   };
 }
