@@ -1,10 +1,10 @@
-class LocationWeatherEntity {
+class LocationEntity {
   final String locationName;
   final String country;
   final String lat;
   final String lon;
 
-  LocationWeatherEntity({
+  LocationEntity({
     required this.locationName,
     required this.country,
     required this.lat,

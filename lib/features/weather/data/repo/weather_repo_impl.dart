@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/features/weather/data/models/weather_model/location.dart';
 import 'package:timelens/features/weather/data/models/weather_model/weather_model.dart';
-import 'package:timelens/features/weather/domain/entities/location_weather_entity.dart';
+import 'package:timelens/features/weather/domain/entities/location_entity.dart';
 import 'package:timelens/features/weather/domain/entities/weather_entity.dart';
 import 'package:timelens/features/weather/domain/repo/weather_repo.dart';
 
@@ -16,7 +16,7 @@ class WeatherRepoImpl implements WeatherRepo {
   WeatherRepoImpl({required this.apiService});
 
   @override
-  Future<Either<Failure, WeatherEntity>> getWeatherDetails(
+  Future<Either<Failure, List<WeatherEntity>>> getWeatherDetails(
       String cityName) async {
     try {
       log("Getting weather details for city: $cityName");
@@ -25,14 +25,14 @@ class WeatherRepoImpl implements WeatherRepo {
 
       final weatherModel = WeatherModel.fromJson(response.data);
 
-      return Right(weatherModel.toWeatherDetailsEntity());
+      return Right([weatherModel.toWeatherDetailsEntity()]);
     } on DioException catch (e) {
       return Left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, LocationWeatherEntity>> searchLocation(
+  Future<Either<Failure, List<LocationEntity>>> searchLocation(
       String cityName) async {
     try {
       log("Searching location for city: $cityName");
@@ -41,7 +41,7 @@ class WeatherRepoImpl implements WeatherRepo {
 
       final locationmodel = Location.fromJson(response.data[0]);
 
-      return Right(locationmodel.toSearchLocationWeatherEntity());
+      return Right([locationmodel.toLocationEntity()]);
     } on DioException catch (e) {
       return Left(ServerFailure(e.toString()));
     }
