@@ -11,6 +11,11 @@ class WeatherCubit extends Cubit<WeatherState> {
   final WeatherRepo weatherRepo;
 
   Future<void> getWeatherDetails(String cityName) async {
+
+    if (cityName.trim().isEmpty) {
+      emit(WeatherInitial());
+      return;
+    }
     emit(WeatherLoading());
 
     var result = await weatherRepo.getWeatherDetails(cityName);
