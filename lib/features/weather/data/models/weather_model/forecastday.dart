@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 import 'astro.dart';
@@ -40,34 +38,6 @@ class Forecastday extends Equatable {
         'astro': astro?.toMap(),
         'hour': hour?.map((e) => e.toMap()).toList(),
       };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Forecastday].
-  factory Forecastday.fromJson(String data) {
-    return Forecastday.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Forecastday] to a JSON string.
-  String toJson() => json.encode(toMap());
-
-  Forecastday copyWith({
-    String? date,
-    int? dateEpoch,
-    Day? day,
-    Astro? astro,
-    List<Hour>? hour,
-  }) {
-    return Forecastday(
-      date: date ?? this.date,
-      dateEpoch: dateEpoch ?? this.dateEpoch,
-      day: day ?? this.day,
-      astro: astro ?? this.astro,
-      hour: hour ?? this.hour,
-    );
-  }
 
   @override
   List<Object?> get props => [date, dateEpoch, day, astro, hour];

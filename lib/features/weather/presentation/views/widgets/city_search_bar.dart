@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
-import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
 
 class CitySearchBar extends StatelessWidget {
   const CitySearchBar({super.key, required this.controller});

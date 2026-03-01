@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:timelens/features/weather/domain/entities/location_entity.dart';
 
@@ -44,29 +42,7 @@ class Location extends Equatable {
       lon: lon.toString(),
     );
   }
-
-  Location copyWith({
-    String? name,
-    String? region,
-    String? country,
-    double? lat,
-    double? lon,
-    String? tzId,
-    int? localtimeEpoch,
-    String? localtime,
-  }) {
-    return Location(
-      name: name ?? this.name,
-      region: region ?? this.region,
-      country: country ?? this.country,
-      lat: lat ?? this.lat,
-      lon: lon ?? this.lon,
-      tzId: tzId ?? this.tzId,
-      localtimeEpoch: localtimeEpoch ?? this.localtimeEpoch,
-      localtime: localtime ?? this.localtime,
-    );
-  }
-
+  
   @override
   List<Object?> get props {
     return [

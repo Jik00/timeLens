@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 import 'forecastday.dart';
@@ -18,26 +16,6 @@ class Forecast extends Equatable {
   Map<String, dynamic> toMap() => {
         'forecastday': forecastday.map((e) => e.toMap()).toList(),
       };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Forecast].
-  factory Forecast.fromJson(String data) {
-    return Forecast.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Forecast] to a JSON string.
-  String toJson() => json.encode(toMap());
-
-  Forecast copyWith({
-    List<Forecastday>? forecastday,
-  }) {
-    return Forecast(
-      forecastday: forecastday ?? this.forecastday,
-    );
-  }
 
   @override
   List<Object?> get props => [forecastday];

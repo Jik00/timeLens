@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 class Condition extends Equatable {
@@ -20,30 +18,6 @@ class Condition extends Equatable {
         'icon': icon,
         'code': code,
       };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Condition].
-  factory Condition.fromJson(String data) {
-    return Condition.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Condition] to a JSON string.
-  String toJson() => json.encode(toMap());
-
-  Condition copyWith({
-    String? text,
-    String? icon,
-    int? code,
-  }) {
-    return Condition(
-      text: text ?? this.text,
-      icon: icon ?? this.icon,
-      code: code ?? this.code,
-    );
-  }
 
   @override
   List<Object?> get props => [text, icon];

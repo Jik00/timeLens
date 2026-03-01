@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 import 'condition.dart';
@@ -86,12 +84,12 @@ class Current extends Equatable {
         windKph: (data['wind_kph'] as num).toDouble(),
         windDegree: data['wind_degree'] as int,
         windDir: data['wind_dir'] as String,
-        pressureMb: data['pressure_mb'] as int,
+        pressureMb: (data['pressure_mb'] as num).toInt(),
         pressureIn: (data['pressure_in'] as num).toDouble(),
         precipMm: (data['precip_mm'] as num).toDouble(),
         precipIn: (data['precip_in'] as num).toDouble(),
-        humidity: data['humidity'] as int,
-        cloud: data['cloud'] as int,
+        humidity: (data['humidity'] as num).toInt(),
+        cloud: (data['cloud'] as num).toInt(),
         feelslikeC: (data['feelslike_c'] as num).toDouble(),
         feelslikeF: (data['feelslike_f'] as num).toDouble(),
         windchillC: (data['windchill_c'] as num).toDouble(),
@@ -100,15 +98,15 @@ class Current extends Equatable {
         heatindexF: (data['heatindex_f'] as num).toDouble(),
         dewpointC: (data['dewpoint_c'] as num).toDouble(),
         dewpointF: (data['dewpoint_f'] as num).toDouble(),
-        visKm: data['vis_km'] as int,
-        visMiles: data['vis_miles'] as int,
+        visKm: (  data['vis_km'] as num).toInt(),
+        visMiles: (data['vis_miles'] as num ).toInt(),
         uv: (data['uv'] as num).toDouble(),
         gustMph: (data['gust_mph'] as num).toDouble(),
         gustKph: (data['gust_kph'] as num).toDouble(),
-        shortRad: data['short_rad'] as int,
-        diffRad: data['diff_rad'] as int,
-        dni: data['dni'] as int,
-        gti: data['gti'] as int,
+        shortRad: ( data['short_rad'] as num).toInt(),
+        diffRad: (data['diff_rad'] as num).toInt(),
+        dni: (data['dni'] as num).toInt(),
+        gti: (data['gti'] as num).toInt(),
       );
 
   Map<String, dynamic> toMap() => {
@@ -146,90 +144,6 @@ class Current extends Equatable {
         'dni': dni,
         'gti': gti,
       };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Current].
-  factory Current.fromJson(String data) {
-    return Current.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Current] to a JSON string.
-  String toJson() => json.encode(toMap());
-
-  Current copyWith({
-    int? lastUpdatedEpoch,
-    String? lastUpdated,
-    double? tempC,
-    double? tempF,
-    int? isDay,
-    Condition? condition,
-    double? windMph,
-    double? windKph,
-    int? windDegree,
-    String? windDir,
-    int? pressureMb,
-    double? pressureIn,
-    double? precipMm,
-    double? precipIn,
-    int? humidity,
-    int? cloud,
-    double? feelslikeC,
-    double? feelslikeF,
-    double? windchillC,
-    double? windchillF,
-    double? heatindexC,
-    double? heatindexF,
-    double? dewpointC,
-    double? dewpointF,
-    int? visKm,
-    int? visMiles,
-    double? uv,
-    double? gustMph,
-    double? gustKph,
-    int? shortRad,
-    int? diffRad,
-    int? dni,
-    int? gti,
-  }) {
-    return Current(
-      lastUpdatedEpoch: lastUpdatedEpoch ?? this.lastUpdatedEpoch,
-      lastUpdated: lastUpdated ?? this.lastUpdated,
-      tempC: tempC ?? this.tempC,
-      tempF: tempF ?? this.tempF,
-      isDay: isDay ?? this.isDay,
-      condition: condition ?? this.condition,
-      windMph: windMph ?? this.windMph,
-      windKph: windKph ?? this.windKph,
-      windDegree: windDegree ?? this.windDegree,
-      windDir: windDir ?? this.windDir,
-      pressureMb: pressureMb ?? this.pressureMb,
-      pressureIn: pressureIn ?? this.pressureIn,
-      precipMm: precipMm ?? this.precipMm,
-      precipIn: precipIn ?? this.precipIn,
-      humidity: humidity ?? this.humidity,
-      cloud: cloud ?? this.cloud,
-      feelslikeC: feelslikeC ?? this.feelslikeC,
-      feelslikeF: feelslikeF ?? this.feelslikeF,
-      windchillC: windchillC ?? this.windchillC,
-      windchillF: windchillF ?? this.windchillF,
-      heatindexC: heatindexC ?? this.heatindexC,
-      heatindexF: heatindexF ?? this.heatindexF,
-      dewpointC: dewpointC ?? this.dewpointC,
-      dewpointF: dewpointF ?? this.dewpointF,
-      visKm: visKm ?? this.visKm,
-      visMiles: visMiles ?? this.visMiles,
-      uv: uv ?? this.uv,
-      gustMph: gustMph ?? this.gustMph,
-      gustKph: gustKph ?? this.gustKph,
-      shortRad: shortRad ?? this.shortRad,
-      diffRad: diffRad ?? this.diffRad,
-      dni: dni ?? this.dni,
-      gti: gti ?? this.gti,
-    );
-  }
 
   @override
   List<Object?> get props {

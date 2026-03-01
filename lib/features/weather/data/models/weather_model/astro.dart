@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 class Astro extends Equatable {
@@ -44,40 +42,6 @@ class Astro extends Equatable {
         'is_moon_up': isMoonUp,
         'is_sun_up': isSunUp,
       };
-
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [Astro].
-  factory Astro.fromJson(String data) {
-    return Astro.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  /// `dart:convert`
-  ///
-  /// Converts [Astro] to a JSON string.
-  String toJson() => json.encode(toMap());
-
-  Astro copyWith({
-    String? sunrise,
-    String? sunset,
-    String? moonrise,
-    String? moonset,
-    String? moonPhase,
-    int? moonIllumination,
-    int? isMoonUp,
-    int? isSunUp,
-  }) {
-    return Astro(
-      sunrise: sunrise ?? this.sunrise,
-      sunset: sunset ?? this.sunset,
-      moonrise: moonrise ?? this.moonrise,
-      moonset: moonset ?? this.moonset,
-      moonPhase: moonPhase ?? this.moonPhase,
-      moonIllumination: moonIllumination ?? this.moonIllumination,
-      isMoonUp: isMoonUp ?? this.isMoonUp,
-      isSunUp: isSunUp ?? this.isSunUp,
-    );
-  }
 
   @override
   List<Object?> get props {

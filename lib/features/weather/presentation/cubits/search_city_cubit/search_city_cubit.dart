@@ -18,7 +18,7 @@ class SearchCityCubit extends Cubit<SearchCityState> {
     if (_debounce?.isActive ?? false) _debounce!.cancel();
 
     _debounce = Timer(
-      const Duration(milliseconds: 500),
+      const Duration(milliseconds: 800),
       () async {
         if (cityName.trim().isEmpty) {
           emit(SearchCityInitial());

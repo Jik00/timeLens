@@ -16,23 +16,16 @@ class WeatherRepoImpl implements WeatherRepo {
   WeatherRepoImpl({required this.apiService});
 
   @override
-  Future<Either<Failure, List<WeatherEntity>>> getWeatherDetails(
+  Future<Either<Failure, WeatherEntity>> getWeatherDetails(
       String cityName) async {
     try {
-      log("Getting weather details for city: $cityName");
 
       final response = await apiService.getWeatherDetails(cityName);
 
-      log("Raw response: ${response.data}");
+      final WeatherModel weatherModel = WeatherModel.fromMap(response.data);
 
-      final List<WeatherModel> weatherModels = (response.data as List)
-          .map((weatherJson) => WeatherModel.fromMap(weatherJson))
-          .toList();
+      return Right(weatherModel.toWeatherEntity());
 
-      final List<WeatherEntity> weatherEntities =
-          weatherModels.map((model) => model.toWeatherEntity()).toList();
-
-      return Right(weatherEntities);
     } on DioException catch (e) {
       return Left(ServerFailure(e.toString()));
     } on Exception catch (e) {
@@ -44,7 +37,6 @@ class WeatherRepoImpl implements WeatherRepo {
   Future<Either<Failure, List<LocationEntity>>> searchLocation(
       String cityName) async {
     try {
-      log("Searching location for city: $cityName");
 
       final response = await apiService.searchLocation(cityName);
 

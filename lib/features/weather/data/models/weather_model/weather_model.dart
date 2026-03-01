@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:timelens/features/weather/domain/entities/weather_entity.dart';
 
@@ -42,20 +40,6 @@ class WeatherModel extends Equatable {
       uvIndex: current.uv,
       maxTemp: forecast.forecastday.first.day.maxtempC.toString(),
       minTemp: forecast.forecastday.first.day.mintempC.toString(),
-    );
-  }
-
-  WeatherModel copyWith({
-    Location? location,
-    Current? current,
-    Forecast? forecast,
-    Alerts? alerts,
-  }) {
-    return WeatherModel(
-      location: location ?? this.location,
-      current: current ?? this.current,
-      forecast: forecast ?? this.forecast,
-      alerts: alerts ?? this.alerts,
     );
   }
 

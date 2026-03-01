@@ -5,6 +5,7 @@ import 'package:timelens/core/widgets/build_app_bar.dart';
 import 'package:timelens/core/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/weather/domain/repo/weather_repo.dart';
 import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
+import 'package:timelens/features/weather/presentation/cubits/weather_cubit/weather_cubit.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/weather_view_body.dart';
 
 class WeatherView extends StatelessWidget {
@@ -14,10 +15,19 @@ class WeatherView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SearchCityCubit(
-        weatherRepo: getIt.get<WeatherRepo>(),
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => SearchCityCubit(
+            weatherRepo: getIt.get<WeatherRepo>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => WeatherCubit(
+            weatherRepo: getIt.get<WeatherRepo>(),
+          ),
+        ),
+      ],
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: buildAppBar(null),

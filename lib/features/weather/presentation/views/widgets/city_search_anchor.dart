@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
+import 'package:timelens/features/weather/presentation/cubits/weather_cubit/weather_cubit.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_search_bar.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/search_list_tile.dart';
 
@@ -26,9 +27,13 @@ class CitySearchAnchor extends StatelessWidget {
               return CitySearchBar( controller: controller);
             },
 
-            viewOnChanged: (value) {
-              context.read<SearchCityCubit>().searchCity(value);
-            },
+            // viewOnChanged: (value) {
+            //   context.read<SearchCityCubit>().searchCity(value);
+            // },
+
+            // viewOnSubmitted: (value) {
+            //    context.read<WeatherCubit>().getWeatherDetails(value);
+            // },
 
             dividerColor: AppColors.blurColor,
             viewPadding: EdgeInsets.zero,
