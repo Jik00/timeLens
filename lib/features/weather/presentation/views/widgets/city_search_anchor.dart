@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/back_drop_filter.dart';
+import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_search_bar.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/search_list_tile.dart';
 
-class CitySearchAnchor extends StatefulWidget {
+class CitySearchAnchor extends StatelessWidget {
   const CitySearchAnchor({super.key});
 
-  @override
-  State<CitySearchAnchor> createState() => _CitySearchAnchorState();
-}
-
-class _CitySearchAnchorState extends State<CitySearchAnchor> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,8 +23,13 @@ class _CitySearchAnchorState extends State<CitySearchAnchor> {
           ),
           SearchAnchor(
             builder: (BuildContext context, SearchController controller) {
-              return CitySearchBar(controller: controller);
+              return CitySearchBar( controller: controller);
             },
+
+            viewOnChanged: (value) {
+              context.read<SearchCityCubit>().searchCity(value);
+            },
+
             dividerColor: AppColors.blurColor,
             viewPadding: EdgeInsets.zero,
             // viewBarPadding: EdgeInsets.symmetric(vertical: 8.h),

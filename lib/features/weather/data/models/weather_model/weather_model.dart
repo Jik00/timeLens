@@ -30,12 +30,7 @@ class WeatherModel extends Equatable {
             : Alerts.fromMap(data['alerts'] as Map<String, dynamic>),
       );
 
-  /// Parses the string and returns the resulting Json object as [WeatherModel].
-  factory WeatherModel.fromJson(String data) {
-    return WeatherModel.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
-  WeatherEntity toWeatherDetailsEntity() {
+  WeatherEntity toWeatherEntity() {
     return WeatherEntity(
       locationName: location.name,
       country: location.country,

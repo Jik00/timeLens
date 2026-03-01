@@ -23,10 +23,19 @@ class WeatherRepoImpl implements WeatherRepo {
 
       final response = await apiService.getWeatherDetails(cityName);
 
-      final weatherModel = WeatherModel.fromJson(response.data);
+      log("Raw response: ${response.data}");
 
-      return Right([weatherModel.toWeatherDetailsEntity()]);
+      final List<WeatherModel> weatherModels = (response.data as List)
+          .map((weatherJson) => WeatherModel.fromMap(weatherJson))
+          .toList();
+
+      final List<WeatherEntity> weatherEntities =
+          weatherModels.map((model) => model.toWeatherEntity()).toList();
+
+      return Right(weatherEntities);
     } on DioException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -39,10 +48,19 @@ class WeatherRepoImpl implements WeatherRepo {
 
       final response = await apiService.searchLocation(cityName);
 
-      final locationmodel = Location.fromJson(response.data[0]);
+      log("Raw response: ${response.data}");
 
-      return Right([locationmodel.toLocationEntity()]);
+      final List <Location> locationModels = (response.data as List)
+          .map((locationJson) => Location.fromMap(locationJson))
+          .toList();
+
+      final List<LocationEntity> locationEntities =
+          locationModels.map((model) => model.toLocationEntity()).toList();
+
+      return Right(locationEntities);
     } on DioException catch (e) {
+      return Left(ServerFailure(e.toString()));
+    } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));
     }
   }

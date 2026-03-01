@@ -35,14 +35,10 @@ class Location extends Equatable {
         localtime: data['localtime'] as String?,
       );
 
-  /// Parses the string and returns the resulting Json object as [Location].
-  factory Location.fromJson(String data) {
-    return Location.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
-
   LocationEntity toLocationEntity() {
     return LocationEntity(
       locationName: name,
+      region: region,
       country: country,
       lat: lat.toString(),
       lon: lon.toString(),

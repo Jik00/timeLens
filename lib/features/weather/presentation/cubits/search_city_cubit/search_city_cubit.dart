@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timelens/features/weather/domain/entities/location_entity.dart';
@@ -10,16 +12,36 @@ class SearchCityCubit extends Cubit<SearchCityState> {
 
   final WeatherRepo weatherRepo;
 
+  Timer? _debounce;
+
   Future<void> searchCity(String cityName) async {
-    emit(SearchCityLoading());
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
 
-    var result = await weatherRepo.searchLocation(cityName);
+    _debounce = Timer(
+      const Duration(milliseconds: 500),
+      () async {
+        if (cityName.trim().isEmpty) {
+          emit(SearchCityInitial());
+          return;
+        }
 
-    result.fold(
-      (failure) => emit(SearchCityFailure(message: failure.message)),
-      (cities) => emit(
-        SearchCitySuccess(cities: cities),
-      ),
+        emit(SearchCityLoading());
+
+        var result = await weatherRepo.searchLocation(cityName);
+
+        result.fold(
+          (failure) => emit(SearchCityFailure(message: failure.message)),
+          (cities) => emit(
+            SearchCitySuccess(cities: cities),
+          ),
+        );
+      },
     );
+  }
+
+  @override
+  Future<void> close() {
+    _debounce?.cancel();
+    return super.close();
   }
 }
