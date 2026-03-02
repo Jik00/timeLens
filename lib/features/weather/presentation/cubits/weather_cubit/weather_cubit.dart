@@ -6,7 +6,7 @@ import 'package:timelens/features/weather/domain/repo/weather_repo.dart';
 part 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
-  WeatherCubit({required this.weatherRepo}) : super(WeatherInitial());
+  WeatherCubit({required this.weatherRepo}) : super(WeatherIdle());
 
   final WeatherRepo weatherRepo;
 
