@@ -21,5 +21,7 @@
     "weather": "Weather",
     "searchCity": "Search for a city",
     "noCitiesFound": "No cities found",
-    "enterCityName": "Start typing to search for cities"
+    "enterCityName": "Enter a city name",
+    "lat": "Lat",
+    "lon": "Lon"
 }

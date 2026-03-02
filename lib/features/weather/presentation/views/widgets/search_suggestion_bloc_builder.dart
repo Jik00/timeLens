@@ -40,29 +40,27 @@ class SearchSuggestionBlocBuilder extends StatelessWidget {
                 child: Text(
                   context.loc.noCitiesFound,
                   style: TextStyle(
-                    color: AppColors.primaryColor,
+                    color: AppColors.brownWriting,
                     fontSize: 16,
                   ),
                 ),
               ),
             );
           }
-          return SizedBox(
-            height: 400.h,
-            child: ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.only(top: 8),
-              itemCount: state.cities.length,
-              itemBuilder: (context, index) {
-                final city = state.cities[index];
-                return SearchListTile(
-                  location: city,
-                  onTap: () {
-                    controller.closeView(city.locationName);
-                  },
-                );
-              },
-            ),
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.only(top: 8),
+            itemCount: state.cities.length,
+            itemBuilder: (context, index) {
+              final city = state.cities[index];
+              return SearchListTile(
+                location: city,
+                onTap: () {
+                  controller.closeView(city.locationName);
+                },
+              );
+            },
           );
         } else {
           return Center(
@@ -71,8 +69,8 @@ class SearchSuggestionBlocBuilder extends StatelessWidget {
               child: Text(
                 context.loc.enterCityName,
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                  color: AppColors.brownWriting,
+                  fontSize: 16.sp,
                 ),
               ),
             ),

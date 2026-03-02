@@ -36,18 +36,18 @@ class CitySearchAnchor extends StatelessWidget {
             //    context.read<WeatherCubit>().getWeatherDetails(value);
             // },
 
-            dividerColor: AppColors.blurColor,
-            viewPadding: EdgeInsets.zero,
-            // viewBarPadding: EdgeInsets.symmetric(vertical: 8.h),
+            dividerColor: AppColors.primaryColor,
+            viewPadding: EdgeInsets.only(bottom: 4.h),
             isFullScreen: false,
-            viewBackgroundColor: AppColors.primaryColor.withAlpha(100),
-            viewElevation: 4,
+            viewBackgroundColor: Colors.white.withAlpha(110),
+
+            viewElevation: 0,
             viewShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(28),
             ),
+
             viewConstraints: BoxConstraints(
               minHeight: 100.h,
-              maxWidth: 350.w,
             ),
             shrinkWrap: true,
 

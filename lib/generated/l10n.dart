@@ -224,14 +224,24 @@ class S {
     );
   }
 
-  /// `Start typing to search for cities`
+  /// `Enter a city name`
   String get enterCityName {
     return Intl.message(
-      'Start typing to search for cities',
+      'Enter a city name',
       name: 'enterCityName',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Lat`
+  String get lat {
+    return Intl.message('Lat', name: 'lat', desc: '', args: []);
+  }
+
+  /// `Lon`
+  String get lon {
+    return Intl.message('Lon', name: 'lon', desc: '', args: []);
   }
 }
 

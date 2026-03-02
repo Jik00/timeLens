@@ -102,6 +102,10 @@ class Assets {
   /// assets/images/search_bar.png
   static const String assetsImagesSearchBar = "assets/images/search_bar.png";
 
+  /// Assets for assetsImagesSearchCityCard
+  /// assets/images/search_city_card.png
+  static const String assetsImagesSearchCityCard = "assets/images/search_city_card.png";
+
   /// Assets for assetsImagesSkipArrow
   /// assets/images/skip_arrow.png
   static const String assetsImagesSkipArrow = "assets/images/skip_arrow.png";

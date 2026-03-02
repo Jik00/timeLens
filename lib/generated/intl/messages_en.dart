@@ -24,9 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
-    "enterCityName": MessageLookupByLibrary.simpleMessage(
-      "Start typing to search for cities",
-    ),
+    "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(
       "Meet The Rulers Whose Reigns Shaped a Legacy",
@@ -35,7 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
+    "lat": MessageLookupByLibrary.simpleMessage("Lat"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Step into immersive worlds and relive the past like never before",
