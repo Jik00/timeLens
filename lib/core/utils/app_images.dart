@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/button_frame.png
   static const String assetsImagesButtonFrame = "assets/images/button_frame.png";
 
+  /// Assets for assetsImagesCountyNameContainer
+  /// assets/images/county_name_container.png
+  static const String assetsImagesCountyNameContainer = "assets/images/county_name_container.png";
+
   /// Assets for assetsImagesEgyptianEye
   /// assets/images/egyptian_eye.png
   static const String assetsImagesEgyptianEye = "assets/images/egyptian_eye.png";
@@ -29,6 +33,10 @@ class Assets {
   /// Assets for assetsImagesFigureBaseSquare
   /// assets/images/figure_base_square.png
   static const String assetsImagesFigureBaseSquare = "assets/images/figure_base_square.png";
+
+  /// Assets for assetsImagesGlassRectangle
+  /// assets/images/glass_rectangle.png
+  static const String assetsImagesGlassRectangle = "assets/images/glass_rectangle.png";
 
   /// Assets for assetsImagesIconsChatbot
   /// assets/images/icons/chatbot.png
@@ -50,6 +58,14 @@ class Assets {
   /// assets/images/icons/home_fill.png
   static const String assetsImagesIconsHomeFill = "assets/images/icons/home_fill.png";
 
+  /// Assets for assetsImagesIconsHumidity
+  /// assets/images/icons/humidity.png
+  static const String assetsImagesIconsHumidity = "assets/images/icons/humidity.png";
+
+  /// Assets for assetsImagesIconsHumidityGradient
+  /// assets/images/icons/humidity_gradient.png
+  static const String assetsImagesIconsHumidityGradient = "assets/images/icons/humidity_gradient.png";
+
   /// Assets for assetsImagesIconsLottieArrowDownLottie
   /// assets/images/icons/lottie/Arrow_down_lottie.json
   static const String assetsImagesIconsLottieArrowDownLottie = "assets/images/icons/lottie/Arrow_down_lottie.json";
@@ -66,6 +82,10 @@ class Assets {
   /// assets/images/icons/user_fill.png
   static const String assetsImagesIconsUserFill = "assets/images/icons/user_fill.png";
 
+  /// Assets for assetsImagesIconsUvIndex
+  /// assets/images/icons/uv-index.png
+  static const String assetsImagesIconsUvIndex = "assets/images/icons/uv-index.png";
+
   /// Assets for assetsImagesIconsWeb
   /// assets/images/icons/web.png
   static const String assetsImagesIconsWeb = "assets/images/icons/web.png";
@@ -73,6 +93,10 @@ class Assets {
   /// Assets for assetsImagesIconsWebFill
   /// assets/images/icons/web_fill.png
   static const String assetsImagesIconsWebFill = "assets/images/icons/web_fill.png";
+
+  /// Assets for assetsImagesIconsWind
+  /// assets/images/icons/wind.png
+  static const String assetsImagesIconsWind = "assets/images/icons/wind.png";
 
   /// Assets for assetsImagesLoginBackground
   /// assets/images/login_background.jpeg

@@ -5,6 +5,7 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_with_top_frame.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_search_anchor.dart';
+import 'package:timelens/features/weather/presentation/views/widgets/weather_card.dart';
 
 class WeatherViewBody extends StatelessWidget {
   const WeatherViewBody({super.key});
@@ -33,6 +34,13 @@ class WeatherViewBody extends StatelessWidget {
           Align(
             alignment: Alignment(0, -0.5),
             child: CitySearchAnchor(),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.only(top: 50.h),
+              child: WeatherCard(),
+            ),
           ),
         ],
       ),

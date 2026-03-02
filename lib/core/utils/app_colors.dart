@@ -9,7 +9,7 @@ abstract class AppColors {
   static const newsecondaryColor = Color(0xFF614317);
   static const middleColor = Color(0xFFF7F2E4);
   static const timeLensColor = Color(0xFFDF9309);
-  static const blurColor = Color(0xFFF2BF7B);
+  static const blurColor = Color(0xFFFEDFB3);
   static const skipColor = Color(0xFFFFFCF5);
   static const blackBackground = Color(0xFF1E1E1E);
 }
