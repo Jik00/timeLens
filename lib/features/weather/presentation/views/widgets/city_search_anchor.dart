@@ -6,13 +6,14 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
 import 'package:timelens/features/weather/presentation/cubits/weather_cubit/weather_cubit.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_search_bar.dart';
-import 'package:timelens/features/weather/presentation/views/widgets/search_list_tile.dart';
+import 'package:timelens/features/weather/presentation/views/widgets/search_suggestion_bloc_builder.dart';
 
 class CitySearchAnchor extends StatelessWidget {
   const CitySearchAnchor({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final searchCubit = context.read<SearchCityCubit>();
     return SizedBox(
       width: 350.w,
       child: Stack(
@@ -24,16 +25,16 @@ class CitySearchAnchor extends StatelessWidget {
           ),
           SearchAnchor(
             builder: (BuildContext context, SearchController controller) {
-              return CitySearchBar( controller: controller);
+              return CitySearchBar(controller: controller);
             },
 
-            // viewOnChanged: (value) {
-            //   context.read<SearchCityCubit>().searchCity(value);
+            viewOnChanged: (value) {
+              context.read<SearchCityCubit>().searchCity(value);
+            },
+
+            // viewOnSubmitted: (value) {
+            //    context.read<WeatherCubit>().getWeatherDetails(value);
             // },
-
-            viewOnSubmitted: (value) {
-               context.read<WeatherCubit>().getWeatherDetails(value);
-            },
 
             dividerColor: AppColors.blurColor,
             viewPadding: EdgeInsets.zero,
@@ -45,28 +46,19 @@ class CitySearchAnchor extends StatelessWidget {
               borderRadius: BorderRadius.circular(24),
             ),
             viewConstraints: BoxConstraints(
+              minHeight: 100.h,
               maxWidth: 350.w,
-              maxHeight: 300.h,
             ),
             shrinkWrap: true,
-            viewBuilder: (suggestions) {
-              return Center(
-                child: AnimatedOpacity(
-                  opacity: 1,
-                  duration: Duration(milliseconds: 300),
-                  // child:
-                ),
-              );
-            },
+
             suggestionsBuilder:
                 (BuildContext context, SearchController controller) {
-              return List<SearchListTile>.generate(
-                1,
-                (int index) {
-                  // final String item = 'item $index';
-                  return SearchListTile();
-                },
-              );
+              return [
+                BlocProvider.value(
+                  value: searchCubit,
+                  child: SearchSuggestionBlocBuilder(controller: controller),
+                ),
+              ];
             },
           ),
         ],

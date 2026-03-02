@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/features/weather/domain/entities/location_entity.dart';
 
 class SearchListTile extends StatelessWidget {
-  const SearchListTile({super.key});
+  const SearchListTile({super.key, required this.location, required this.onTap});
+
+  final LocationEntity location;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class SearchListTile extends StatelessWidget {
           color: AppColors.brownWriting,
         ),
         title: Text(
-          'Paris',
+          location.locationName,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 18,
@@ -28,7 +32,7 @@ class SearchListTile extends StatelessWidget {
           children: [
             const SizedBox(height: 4),
             Text(
-              'France',
+              location.country,
               style: const TextStyle(
                 fontSize: 16,
                 color: AppColors.brownWriting,
@@ -36,15 +40,14 @@ class SearchListTile extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              "Lat: 1234 "
-              "Long: 4567",
+              "Lat: ${location.lat}, Long: ${location.lon}",
               style:
                   const TextStyle(fontSize: 14, color: AppColors.brownWriting),
             ),
           ],
         ),
         isThreeLine: true,
-        onTap: () {},
+        onTap: onTap,
       ),
     );
   }

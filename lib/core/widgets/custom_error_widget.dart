@@ -36,9 +36,12 @@ class CustomErrorWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          CustomButton(
-            hint: context.loc.retry,
-            onTap: onTap,
+          Visibility(
+            visible: onTap != null,
+            child: CustomButton(
+              hint: context.loc.retry,
+              onTap: onTap,
+            ),
           ),
         ],
       ),

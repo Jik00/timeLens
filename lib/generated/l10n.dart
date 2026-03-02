@@ -213,6 +213,26 @@ class S {
       args: [],
     );
   }
+
+  /// `No cities found`
+  String get noCitiesFound {
+    return Intl.message(
+      'No cities found',
+      name: 'noCitiesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start typing to search for cities`
+  String get enterCityName {
+    return Intl.message(
+      'Start typing to search for cities',
+      name: 'enterCityName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

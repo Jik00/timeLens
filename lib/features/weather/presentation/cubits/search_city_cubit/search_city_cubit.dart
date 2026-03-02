@@ -13,30 +13,40 @@ class SearchCityCubit extends Cubit<SearchCityState> {
   final WeatherRepo weatherRepo;
 
   Timer? _debounce;
+  String _lastSearchedQuery = ''; // Track last searched query to avoid duplicates
 
   Future<void> searchCity(String cityName) async {
-    if (_debounce?.isActive ?? false) _debounce!.cancel();
+    // Cancel any existing timer
+    if (_debounce?.isActive ?? false) {
+      _debounce!.cancel();
+    }
 
-    _debounce = Timer(
-      const Duration(milliseconds: 800),
-      () async {
-        if (cityName.trim().isEmpty) {
-          emit(SearchCityInitial());
-          return;
-        }
+    // Don't search if the query is the same as the last searched one
+    if (cityName.trim() == _lastSearchedQuery) {
+      return;
+    }
 
-        emit(SearchCityLoading());
+    // If empty query, clear results immediately
+    if (cityName.trim().isEmpty) {
+      _lastSearchedQuery = '';
+      emit(SearchCityInitial());
+      return;
+    }
 
-        var result = await weatherRepo.searchLocation(cityName);
+    // Set up new debounce timer
+    _debounce = Timer(const Duration(milliseconds: 800), () async {
+      // Store the query we're searching for
+      _lastSearchedQuery = cityName.trim();
 
-        result.fold(
-          (failure) => emit(SearchCityFailure(message: failure.message)),
-          (cities) => emit(
-            SearchCitySuccess(cities: cities),
-          ),
-        );
-      },
-    );
+      emit(SearchCityLoading());
+
+      var result = await weatherRepo.searchLocation(cityName.trim());
+
+      result.fold(
+        (failure) => emit(SearchCityFailure(message: failure.message)),
+        (cities) => emit(SearchCitySuccess(cities: cities)),
+      );
+    });
   }
 
   @override

@@ -15,7 +15,7 @@ class CitySearchBar extends StatelessWidget {
       padding: const WidgetStatePropertyAll<EdgeInsets>(
         EdgeInsets.symmetric(horizontal: 24.0),
       ),
-      leading: Icon(Icons.search, color: AppColors.brownWriting, size: 24),
+      leading: Icon(Icons.search, color: AppColors.brownWriting, size: 24.sp),
       backgroundColor: WidgetStatePropertyAll(Colors.transparent),
       shadowColor: const WidgetStatePropertyAll(Colors.transparent),
       overlayColor: const WidgetStatePropertyAll(AppColors.blurColor),
