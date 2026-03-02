@@ -5,6 +5,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_error_widget.dart';
 import 'package:timelens/features/weather/presentation/cubits/search_city_cubit/search_city_cubit.dart';
+import 'package:timelens/features/weather/presentation/cubits/weather_cubit/weather_cubit.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/search_list_tile.dart';
 
 class SearchSuggestionBlocBuilder extends StatelessWidget {
@@ -58,6 +59,8 @@ class SearchSuggestionBlocBuilder extends StatelessWidget {
                 location: city,
                 onTap: () {
                   controller.closeView(city.locationName);
+                  
+                 // context.read<WeatherCubit>().getWeatherDetails(city.locationName);
                 },
               );
             },

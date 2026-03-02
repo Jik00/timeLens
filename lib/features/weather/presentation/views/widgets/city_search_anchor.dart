@@ -14,6 +14,8 @@ class CitySearchAnchor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchCubit = context.read<SearchCityCubit>();
+    final weatherCubit = context.read<WeatherCubit>();
+
     return SizedBox(
       width: 350.w,
       child: Stack(
@@ -54,8 +56,15 @@ class CitySearchAnchor extends StatelessWidget {
             suggestionsBuilder:
                 (BuildContext context, SearchController controller) {
               return [
-                BlocProvider.value(
-                  value: searchCubit,
+                MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: searchCubit,
+                    ),
+                    BlocProvider.value(
+                      value: weatherCubit,
+                    ),
+                  ],
                   child: SearchSuggestionBlocBuilder(controller: controller),
                 ),
               ];
