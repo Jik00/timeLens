@@ -11,7 +11,8 @@ class HumidityRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      // mainAxisSize: MainAxisSize.min,
       children: [
         Transform.scale(
           scale: icon == Assets.assetsImagesIconsHumidity ? 0.76 : 1,
@@ -21,10 +22,10 @@ class HumidityRow extends StatelessWidget {
             width: 35.w,
           ),
         ),
-        SizedBox(width: 16.w),
+        // Spacer(),
         Text(
-          textAlign: TextAlign.center,
-          '66%',
+          textAlign: TextAlign.end,
+          text,
           style: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.bold,

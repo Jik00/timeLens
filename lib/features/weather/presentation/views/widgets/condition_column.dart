@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
-import 'package:timelens/core/utils/app_images.dart';
 
 class ConditionColumn extends StatelessWidget {
   const ConditionColumn(
@@ -14,16 +13,16 @@ class ConditionColumn extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(
-          Assets.assetsImagesIconsUvIndex,
-          height: 55.h,
-          width: 55.w,
+        Image.network(
+          conditionIcon,
+          height: 50.h,
+          width: 50.w,
         ),
         SizedBox(height: 12.h),
         Text(
-          "Sunny",
+          conditionText,
           style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 14.sp,
             fontWeight: FontWeight.bold,
             color: AppColors.brownWriting,
           ),

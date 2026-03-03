@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/helper_functions/trim_1st_2_words.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
@@ -37,7 +38,7 @@ class SearchListTile extends StatelessWidget {
               top: 20.h,
               left: 75.w,
               child: Text(
-                location.locationName,
+                smartTrimMax18(location.locationName),
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,

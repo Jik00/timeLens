@@ -11,6 +11,7 @@ class CitySearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SearchBar(
+      
       controller: controller,
       padding: const WidgetStatePropertyAll<EdgeInsets>(
         EdgeInsets.symmetric(horizontal: 24.0),

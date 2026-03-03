@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/helper_functions/file_to_htttp_url.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/features/weather/domain/entities/weather_entity.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_name_container.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/condition_column.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/humidity_row.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/temp_column.dart';
 
 class WeatherCard extends StatelessWidget {
-  const WeatherCard({super.key});
+  const WeatherCard({super.key, required this.weatherEntity});
+
+  final WeatherEntity weatherEntity;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 220.h,
-      width: 340.w,
+      width: 350.w,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -32,7 +36,7 @@ class WeatherCard extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 6.w, top: 4.h),
               child: CityNameContainer(
-                cityName: 'New York',
+                cityName: weatherEntity.locationName,
               ),
             ),
           ),
@@ -57,12 +61,16 @@ class WeatherCard extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 8.h),
                     child: ConditionColumn(
-                        conditionIcon: 'conditionIcon',
-                        conditionText: 'conditionText'),
+                        conditionIcon: fileToHttp(weatherEntity.iconUrl),
+                        conditionText: weatherEntity.conditionText),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 14.h),
-                    child: TempColumn(),
+                    padding: EdgeInsets.only(top: 11.h),
+                    child: TempColumn(
+                      temp: weatherEntity.temperatureCelsius,
+                      minTemp: weatherEntity.minTemp,
+                      maxTemp: weatherEntity.maxTemp,
+                    ),
                   ),
                   VerticalDivider(
                     indent: 10.h,
@@ -72,19 +80,20 @@ class WeatherCard extends StatelessWidget {
                     thickness: 1.5.w,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       HumidityRow(
                         icon: Assets.assetsImagesIconsWind,
-                        text: 'humidity',
+                        text: '${weatherEntity.windmph}m/h',
                       ),
                       HumidityRow(
                         icon: Assets.assetsImagesIconsUvIndex,
-                        text: 'humidity',
+                        text: '${weatherEntity.uvIndex}',
                       ),
                       HumidityRow(
                         icon: Assets.assetsImagesIconsHumidity,
-                        text: 'humidity',
+                        text: '${weatherEntity.humidity}%',
                       ),
                     ],
                   ),

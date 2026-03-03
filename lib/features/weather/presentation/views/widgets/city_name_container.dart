@@ -31,7 +31,7 @@ class CityNameContainer extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 10.w),
               child: Text(
-                "New York",
+                cityName,
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,

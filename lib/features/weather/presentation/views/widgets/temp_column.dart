@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 
 class TempColumn extends StatelessWidget {
-  const TempColumn({super.key});
+  const TempColumn({super.key, required this.temp, required this.minTemp, required this.maxTemp});
+
+  final String temp, minTemp, maxTemp;
 
   @override
   Widget build(BuildContext context) {
@@ -11,19 +13,19 @@ class TempColumn extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          '27°',
+          '$temp°',
           style: TextStyle(
-            fontSize: 42.sp,
+            fontSize: 40.sp,
             fontWeight: FontWeight.bold,
             color: AppColors.brownWriting,
           ),
         ),
-        // SizedBox(height: 4.h),
+
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '12/27 ',
+              '$minTemp/$maxTemp ',
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,

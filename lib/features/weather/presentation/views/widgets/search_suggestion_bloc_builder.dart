@@ -60,7 +60,7 @@ class SearchSuggestionBlocBuilder extends StatelessWidget {
                 onTap: () {
                   controller.closeView(city.locationName);
                   
-                 // context.read<WeatherCubit>().getWeatherDetails(city.locationName);
+                  context.read<WeatherCubit>().getWeatherDetails(city.locationName);
                 },
               );
             },

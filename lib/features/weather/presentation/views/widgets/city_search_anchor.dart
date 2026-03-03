@@ -34,10 +34,6 @@ class CitySearchAnchor extends StatelessWidget {
               context.read<SearchCityCubit>().searchCity(value);
             },
 
-            // viewOnSubmitted: (value) {
-            //    context.read<WeatherCubit>().getWeatherDetails(value);
-            // },
-
             dividerColor: AppColors.primaryColor,
             viewPadding: EdgeInsets.only(bottom: 4.h),
             isFullScreen: false,
