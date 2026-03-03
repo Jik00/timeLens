@@ -7,8 +7,6 @@ sealed class WeatherState extends Equatable {
   List<Object> get props => [];
 }
 
-class WeatherIdle extends WeatherState {}
-
 final class WeatherInitial extends WeatherState {}
 
 final class WeatherLoading extends WeatherState {}
