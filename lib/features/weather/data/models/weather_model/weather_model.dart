@@ -32,10 +32,10 @@ class WeatherModel extends Equatable {
     return WeatherEntity(
       locationName: location.name,
       country: location.country,
-      temperatureCelsius: current.tempC,
+      temperatureCelsius: current.tempC.toString(),
       conditionText: current.condition.text,
       iconUrl: current.condition.icon,
-      windKph: current.windKph,
+      windmph: current.windMph,
       humidity: current.humidity,
       uvIndex: current.uv,
       maxTemp: forecast.forecastday.first.day.maxtempC.toString(),
