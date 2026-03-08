@@ -243,6 +243,11 @@ class S {
   String get lon {
     return Intl.message('Lon', name: 'lon', desc: '', args: []);
   }
+
+  /// `THOTH`
+  String get thoth {
+    return Intl.message('THOTH', name: 'thoth', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

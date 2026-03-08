@@ -12,7 +12,7 @@ class WeatherEntity  extends Equatable {
   final String maxTemp;
   final String minTemp;
 
-  WeatherEntity({
+  const WeatherEntity({
     required this.locationName,
     required this.country,
     required this.temperatureCelsius,

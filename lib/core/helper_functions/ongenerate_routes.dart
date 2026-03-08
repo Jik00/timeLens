@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
+import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/figures/presentation/views/display_detail_view.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
@@ -71,6 +72,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case WeatherView.routeName:
       return MaterialPageRoute(
         builder: (_) => const WeatherView(),
+        settings: settings,
+      );
+
+    case ChatbotView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const ChatbotView(),
         settings: settings,
       );
 

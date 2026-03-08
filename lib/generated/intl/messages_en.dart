@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
+    "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
   };
 }

@@ -5,8 +5,8 @@ import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
+import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
@@ -149,7 +149,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           if (isOnboardingSeen) {
             //Navigator.pushReplacementNamed(context, LoginView.routeName);
             //navigator.pushReplacementNamed(HomeView.routeName);
-            navigator.pushReplacementNamed(WeatherView.routeName);
+            navigator.pushReplacementNamed(ChatbotView.routeName);
           } else {
             navigator.pushReplacementNamed(OnboardingView.routeName);
           }

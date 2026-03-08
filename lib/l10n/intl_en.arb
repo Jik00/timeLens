@@ -23,5 +23,7 @@
     "noCitiesFound": "No cities found",
     "enterCityName": "Enter a city name",
     "lat": "Lat",
-    "lon": "Lon"
+    "lon": "Lon",
+    "thoth": "THOTH"
+
 }
