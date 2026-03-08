@@ -64,6 +64,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
+    "thothAskAbout": MessageLookupByLibrary.simpleMessage(
+      "Ask about million of years",
+    ),
+    "thothCanMakemistakes": MessageLookupByLibrary.simpleMessage(
+      "Thoth can make mistakes",
+    ),
+    "thothWhatWouldU": MessageLookupByLibrary.simpleMessage(
+      "What would you like to know?",
+    ),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
   };
 }

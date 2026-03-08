@@ -24,6 +24,9 @@
     "enterCityName": "Enter a city name",
     "lat": "Lat",
     "lon": "Lon",
-    "thoth": "THOTH"
+    "thoth": "THOTH",
+    "thothAskAbout": "Ask about million of years",
+    "thothCanMakemistakes": "Thoth can make mistakes",
+    "thothWhatWouldU":"What would you like to know?"
 
 }

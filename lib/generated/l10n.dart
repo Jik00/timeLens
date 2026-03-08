@@ -248,6 +248,36 @@ class S {
   String get thoth {
     return Intl.message('THOTH', name: 'thoth', desc: '', args: []);
   }
+
+  /// `Ask about million of years`
+  String get thothAskAbout {
+    return Intl.message(
+      'Ask about million of years',
+      name: 'thothAskAbout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thoth can make mistakes`
+  String get thothCanMakemistakes {
+    return Intl.message(
+      'Thoth can make mistakes',
+      name: 'thothCanMakemistakes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What would you like to know?`
+  String get thothWhatWouldU {
+    return Intl.message(
+      'What would you like to know?',
+      name: 'thothWhatWouldU',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
