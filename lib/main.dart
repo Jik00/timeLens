@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
               colorScheme:
                   ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
               textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
+
+            visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
 
             debugShowCheckedModeBanner: false,
