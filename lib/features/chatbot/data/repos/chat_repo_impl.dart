@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -27,7 +26,6 @@ class ChatRepoImpl implements ChatRepo {
       );
 
       final data = response.data;
-      log("Data from chat repo: ${data.toString()} ");
 
       if (data == null) {
         throw Exception('No response from edge function');

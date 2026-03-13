@@ -5,18 +5,18 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/features/home/domain/repos/era_repo.dart';
-import 'package:timelens/features/home/data/data_sources/supa_era_data_source.dart';
+import 'package:timelens/core/data_sources/supa_era_data_source.dart';
 import 'package:timelens/features/home/domain/entities/era_entity.dart';
 
 class EraRepoImpl implements EraRepo {
-  final SupabaseEraDataSource dataSource;
+  final SupabaseDataSource dataSource;
 
   EraRepoImpl({required this.dataSource});
 
   @override
   Future<Either<Failure, List<EraEntity>>> getEras() async {
     try {
-      final response = await dataSource.fetchEras(tableName: kSupaErasTable);
+      final response = await dataSource.fetchData(tableName: kSupaErasTable);
 
       // Convert each map to EraEntity
       final eras = response.map((json) => EraEntity.fromMap(json)).toList();

@@ -4,18 +4,20 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 
 class SendIcon extends StatelessWidget {
-  const SendIcon({super.key});
+  const SendIcon({super.key, required this.onSend});
+
+  final void Function()? onSend;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 38.w,
-      height: 38.h,
+      width: 36.w,
+      height: 36.h,
       child: Stack(
         children: [
           Container(
-            width: 37.w,
-            height: 37.h,
+            width: 36.w,
+            height: 36.h,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(color: AppColors.brownWriting, width: 3.w),
@@ -28,9 +30,9 @@ class SendIcon extends StatelessWidget {
           ),
           Positioned(
             top: -3.h,
-            left: -3.w,
+            left: -3.5.w,
             child: IconButton(
-              onPressed: () {},
+              onPressed: onSend,
               icon: Icon(
                 Icons.arrow_upward_rounded,
                 color: AppColors.brownWriting.withAlpha(240),

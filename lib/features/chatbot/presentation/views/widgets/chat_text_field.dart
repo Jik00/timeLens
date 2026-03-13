@@ -1,10 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/chat_cubit/chat_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/send_icon.dart';
 
 class ChatTextField extends StatefulWidget {
@@ -55,13 +57,19 @@ class _ChatTextFieldState extends State<ChatTextField> {
                 ),
                 suffixIcon: Padding(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
                   child: Visibility(
                     visible: controller.text.isNotEmpty,
                     replacement: SizedBox(
-                      height: 38.h,
+                      height: 36.h,
                     ),
-                    child: SendIcon(),
+                    child: SendIcon(
+                      onSend: () {
+                        context
+                            .read<ChatCubit>()
+                            .exchangeMssg(chatId: 'i', mssg: controller.text);
+                      },
+                    ),
                   ),
                 ),
               ),

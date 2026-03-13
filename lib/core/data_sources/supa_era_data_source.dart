@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SupabaseEraDataSource {
+class SupabaseDataSource {
   final SupabaseClient supabase;
 
-  SupabaseEraDataSource(this.supabase);
+  SupabaseDataSource(this.supabase);
 
-  Future<List<Map<String, dynamic>>> fetchEras(
+  Future<List<Map<String, dynamic>>> fetchData(
       {required String tableName}) async {
     try {
       final response = await supabase
@@ -15,10 +15,10 @@ class SupabaseEraDataSource {
           .select()
           .order('created_at', ascending: true);
 
-      log("Fetched ${response.length} eras");
+      log("Fetched ${response.length} objects");
       return response;
     } catch (e) {
-      log("Error fetching eras: $e");
+      log("Error fetching data: $e");
       rethrow;
     }
   }
