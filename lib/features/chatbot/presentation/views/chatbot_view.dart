@@ -15,6 +15,7 @@ class ChatbotView extends StatelessWidget {
       appBar: buildAppBar(
         AppBarBody(),
       ),
+      extendBody: true,
       extendBodyBehindAppBar: true,
       body: ChatbotViewBody(),
     );

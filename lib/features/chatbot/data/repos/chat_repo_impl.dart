@@ -17,6 +17,7 @@ class ChatRepoImpl implements ChatRepo {
   Future<Either<Failure, MssgEntity>> exchangeMessage(
       String chatId, String message) async {
     try {
+      debugPrint("chatId: $chatId, message: $message");
       final response = await supabase.functions.invoke(
         'chat',
         body: {
@@ -38,7 +39,7 @@ class ChatRepoImpl implements ChatRepo {
         chatId: chatId,
       );
 
-      log("successfuly got reply: ${reply.content}");
+      debugPrint("successfuly got reply: ${reply.content}");
       return Right(reply);
     } on PostgrestException catch (e) {
       debugPrint("Database error: ${e.message}");

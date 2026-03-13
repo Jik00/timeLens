@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/features/chatbot/presentation/views/widgets/chat_text_field.dart';
 
 class ChatbotViewBody extends StatelessWidget {
   const ChatbotViewBody({super.key});
@@ -30,6 +31,13 @@ class ChatbotViewBody extends StatelessWidget {
                 fontFamily: GoogleFonts.lora().fontFamily,
               ),
             ),
+          ),
+        ),
+        Align(
+          alignment: AlignmentGeometry.bottomCenter,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 60.h),
+            child: ChatTextField(),
           ),
         ),
         Align(
