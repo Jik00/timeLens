@@ -16,7 +16,7 @@ class EraRepoImpl implements EraRepo {
   @override
   Future<Either<Failure, List<EraEntity>>> getEras() async {
     try {
-      final response = await dataSource.fetchData(tableName: kSupaErasTable);
+      final response = await dataSource.fetchAllData(tableName: kSupaErasTable);
 
       // Convert each map to EraEntity
       final eras = response.map((json) => EraEntity.fromMap(json)).toList();

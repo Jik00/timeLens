@@ -25,5 +25,8 @@ void setupGetIt() {
   getIt.registerSingleton<WeatherRepo>(
       WeatherRepoImpl(apiService: getIt<WeatherApiService>()));
 
-  getIt.registerSingleton<ChatRepo>(ChatRepoImpl(supabase: supabase));
+  getIt.registerSingleton<ChatRepo>(ChatRepoImpl(
+    supabase: supabase,
+    dataSource: getIt<SupabaseDataSource>(),
+  ));
 }

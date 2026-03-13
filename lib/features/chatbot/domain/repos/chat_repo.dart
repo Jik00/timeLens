@@ -6,4 +6,6 @@ abstract class ChatRepo {
 
   Future<Either<Failure, MssgEntity>> exchangeMessage(String chatId, String message);
 
+  Future <Either <Failure, List<MssgEntity>>> getMessages(String chatId);
+
 }
