@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/chat_cubit/chat_cubit.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/get_mssgs_cubit/get_mssgs_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/send_icon.dart';
 
 class ChatTextField extends StatefulWidget {
@@ -68,6 +69,10 @@ class _ChatTextFieldState extends State<ChatTextField> {
                         context
                             .read<ChatCubit>()
                             .exchangeMssg(chatId: 'i', mssg: controller.text);
+
+                        context.read<GetMssgsCubit>().getMssgs(chatId: 'i');
+                        controller.clear();
+                        FocusManager.instance.primaryFocus?.unfocus();
                       },
                     ),
                   ),
