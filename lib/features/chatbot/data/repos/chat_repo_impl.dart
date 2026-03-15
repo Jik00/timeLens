@@ -57,7 +57,8 @@ class ChatRepoImpl implements ChatRepo {
   @override
   Future<Either<Failure, List<MssgEntity>>> getMessages(String chatId) async {
     try {
-      final response = await dataSource.fetchDataBy(tableName: kSupaChatTable, query: kSupaChatId, value: chatId);
+      final response = await dataSource.fetchDataBy(
+          tableName: kSupaChatTable, query: kSupaChatId, value: chatId);
 
       // Convert each map to MssgEntity
       final mssgs = response.map((json) => MssgEntity.fromMap(json)).toList();
@@ -74,5 +75,17 @@ class ChatRepoImpl implements ChatRepo {
       debugPrint("Unexpected error: $e");
       return Left(ServerFailure('Failed to load mssgs: ${e.toString()}'));
     }
+  }
+
+  @override
+  Stream<List<MssgEntity>> messagesStream(String chatId) {
+    return dataSource
+        .fetchDataByStream(
+            tableName: kSupaChatTable, query: kSupaChatId, value: chatId)
+        .map(
+      (response) {
+        return response.map((json) => MssgEntity.fromMap(json)).toList();
+      },
+    );
   }
 }

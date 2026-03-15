@@ -8,4 +8,6 @@ abstract class ChatRepo {
 
   Future <Either <Failure, List<MssgEntity>>> getMessages(String chatId);
 
+  Stream<List<MssgEntity>> messagesStream(String chatId);
+
 }

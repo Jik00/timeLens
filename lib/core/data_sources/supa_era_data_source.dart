@@ -22,13 +22,16 @@ class SupabaseDataSource {
       rethrow;
     }
   }
+
   Future<List<Map<String, dynamic>>> fetchDataBy(
-      {required String tableName, required String query, required String value}) async {
+      {required String tableName,
+      required String query,
+      required String value}) async {
     try {
       final response = await supabase
           .from(tableName)
           .select()
-          .filter(query, 'eq', value)
+          .eq(query, value)
           .order('created_at', ascending: true);
 
       log("Fetched ${response.length} objects");
@@ -37,5 +40,17 @@ class SupabaseDataSource {
       log("Error fetching data: $e");
       rethrow;
     }
+  }
+
+  Stream<List<Map<String, dynamic>>> fetchDataByStream(
+      {required String tableName,
+      required String query,
+      required String value}) {
+    return supabase
+        .from(tableName)
+        .select()
+        .eq(query, value)
+        .order('created_at', ascending: true)
+        .asStream();
   }
 }
