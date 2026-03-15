@@ -34,6 +34,10 @@ class Assets {
   /// assets/images/figure_base_square.png
   static const String assetsImagesFigureBaseSquare = "assets/images/figure_base_square.png";
 
+  /// Assets for assetsImagesGlass
+  /// assets/images/glass.png
+  static const String assetsImagesGlass = "assets/images/glass.png";
+
   /// Assets for assetsImagesGlassRectangle
   /// assets/images/glass_rectangle.png
   static const String assetsImagesGlassRectangle = "assets/images/glass_rectangle.png";
@@ -61,10 +65,6 @@ class Assets {
   /// Assets for assetsImagesIconsHumidity
   /// assets/images/icons/humidity.png
   static const String assetsImagesIconsHumidity = "assets/images/icons/humidity.png";
-
-  /// Assets for assetsImagesIconsHumidityGradient
-  /// assets/images/icons/humidity_gradient.png
-  static const String assetsImagesIconsHumidityGradient = "assets/images/icons/humidity_gradient.png";
 
   /// Assets for assetsImagesIconsLottieArrowDownLottie
   /// assets/images/icons/lottie/Arrow_down_lottie.json
@@ -122,10 +122,6 @@ class Assets {
   /// assets/images/remses_statue.png
   static const String assetsImagesRemsesStatue = "assets/images/remses_statue.png";
 
-  /// Assets for assetsImagesSearchBar
-  /// assets/images/search_bar.png
-  static const String assetsImagesSearchBar = "assets/images/search_bar.png";
-
   /// Assets for assetsImagesSearchCityCard
   /// assets/images/search_city_card.png
   static const String assetsImagesSearchCityCard = "assets/images/search_city_card.png";
@@ -146,6 +142,10 @@ class Assets {
   /// assets/images/test_figure_backgroung.png
   static const String assetsImagesTestFigureBackgroung = "assets/images/test_figure_backgroung.png";
 
+  /// Assets for assetsImagesThothMssgBubble
+  /// assets/images/thoth_mssg_bubble.png
+  static const String assetsImagesThothMssgBubble = "assets/images/thoth_mssg_bubble.png";
+
   /// Assets for assetsImagesThothSendIconBackground
   /// assets/images/thoth_send_icon_background.png
   static const String assetsImagesThothSendIconBackground = "assets/images/thoth_send_icon_background.png";
@@ -153,6 +153,10 @@ class Assets {
   /// Assets for assetsImagesTopFrame
   /// assets/images/top_frame.png
   static const String assetsImagesTopFrame = "assets/images/top_frame.png";
+
+  /// Assets for assetsImagesUserMssgBubble
+  /// assets/images/user_mssg_bubble.png
+  static const String assetsImagesUserMssgBubble = "assets/images/user_mssg_bubble.png";
 
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png

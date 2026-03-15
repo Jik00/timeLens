@@ -6,7 +6,7 @@ abstract class AppColors {
   static const brownWriting = Color(0xFF471806);
   static const primaryColor = Color(0xFFCE861A);
   static const secondaryColor = Color(0xFF5E4A1A);
-  static const newsecondaryColor = Color(0xFF614317);
+  static const newsecondaryColor = Color(0xFFC49B37);
   static const middleColor = Color(0xFFF7F2E4);
   static const timeLensColor = Color(0xFFDF9309);
   static const blurColor = Color(0xFFFEDFB3);

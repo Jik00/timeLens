@@ -21,7 +21,7 @@ class CitySearchAnchor extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            Assets.assetsImagesSearchBar,
+            Assets.assetsImagesGlass,
             width: 350.w,
             fit: BoxFit.fill,
           ),
