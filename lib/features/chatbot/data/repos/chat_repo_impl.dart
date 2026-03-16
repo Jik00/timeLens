@@ -84,6 +84,7 @@ class ChatRepoImpl implements ChatRepo {
             tableName: kSupaChatTable, query: kSupaChatId, value: chatId)
         .map(
       (response) {
+        debugPrint("Successfully fetched ${response.length} mssgs");
         return response.map((json) => MssgEntity.fromMap(json)).toList();
       },
     );

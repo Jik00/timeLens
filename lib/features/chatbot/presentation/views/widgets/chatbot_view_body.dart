@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/features/chatbot/presentation/views/widgets/chat_body_bloc_builder.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/chat_text_field.dart';
 
 class ChatbotViewBody extends StatelessWidget {
@@ -20,15 +21,10 @@ class ChatbotViewBody extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: AlignmentGeometry.center,
-          child: Text(
-            context.loc.thothAskAbout,
-            style: TextStyle(
-              fontSize: 20.sp,
-              color: AppColors.brownWriting.withAlpha(150),
-              fontWeight: FontWeight.bold,
-              fontFamily: GoogleFonts.lora().fontFamily,
-            ),
+          child: Padding(
+            padding: EdgeInsets.only(
+                left: 16.w, right: 16.w, bottom: 120.h, top: 20.h),
+            child: ChatBodyBlocBuilder(),
           ),
         ),
         Align(

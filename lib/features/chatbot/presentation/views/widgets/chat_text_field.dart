@@ -66,9 +66,8 @@ class _ChatTextFieldState extends State<ChatTextField> {
                   onSend: () {
                     context
                         .read<ChatCubit>()
-                        .exchangeMssg(chatId: 'i', mssg: controller.text);
-
-                    context.read<GetMssgsCubit>().getMssgs(chatId: 'i');
+                        .exchangeMssg(chatId: '1', mssg: controller.text);
+                    
                     controller.clear();
                     FocusManager.instance.primaryFocus?.unfocus();
                   },
