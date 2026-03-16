@@ -18,7 +18,7 @@ class ChatBubble extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(Assets.assetsImagesUserMssgBubble),
-                fit: BoxFit.cover,
+                centerSlice: Rect.fromLTWH(20, 20, 10, 10),
               ),
               borderRadius: BorderRadius.circular(28.r),
             ),

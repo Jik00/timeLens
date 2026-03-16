@@ -19,17 +19,15 @@ class ChatbotViewBody extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        Visibility(
-          child: Align(
-            alignment: AlignmentGeometry.center,
-            child: Text(
-              context.loc.thothAskAbout,
-              style: TextStyle(
-                fontSize: 20.sp,
-                color: AppColors.brownWriting.withAlpha(150),
-                fontWeight: FontWeight.bold,
-                fontFamily: GoogleFonts.lora().fontFamily,
-              ),
+        Align(
+          alignment: AlignmentGeometry.center,
+          child: Text(
+            context.loc.thothAskAbout,
+            style: TextStyle(
+              fontSize: 20.sp,
+              color: AppColors.brownWriting.withAlpha(150),
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.lora().fontFamily,
             ),
           ),
         ),

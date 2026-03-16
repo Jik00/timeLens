@@ -26,7 +26,8 @@ class _ChatTextFieldState extends State<ChatTextField> {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(Assets.assetsImagesGlass),
-          fit: BoxFit.cover,
+          //fit: BoxFit.cover,
+          centerSlice: Rect.fromLTWH(20, 20, 10, 10),
         ),
         borderRadius: BorderRadius.circular(28.r),
         border: Border.all(color: AppColors.primaryColor, width: 1.5.w),
