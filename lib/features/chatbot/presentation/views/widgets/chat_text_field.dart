@@ -67,8 +67,10 @@ class _ChatTextFieldState extends State<ChatTextField> {
                         .read<ChattingCubit>()
                         .addMssg(chatId: 'z', mssg: controller.text);
 
-                    controller.clear();
-                    FocusManager.instance.primaryFocus?.unfocus();
+                    setState(() {
+                      controller.clear();
+                      FocusManager.instance.primaryFocus?.unfocus();
+                    });
                   },
                 ),
               ),

@@ -23,7 +23,11 @@ class ChatbotViewBody extends StatelessWidget {
         Align(
           child: Padding(
             padding: EdgeInsets.only(
-                left: 16.w, right: 16.w, bottom: 120.h, top: 20.h),
+              left: 16.w,
+              right: 16.w,
+              bottom: 120.h,
+              top: 12.h,
+            ),
             child: ChatBodyBlocBuilder(),
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timelens/constants.dart';
 import 'package:timelens/features/chatbot/domain/entities/mssg_entity.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
 
@@ -12,13 +13,13 @@ class ChattingCubit extends Cubit<ChattingState> {
   final List<MssgEntity> _mssgs = [];
 
   Future<void> addMssg({required String mssg, required String chatId}) async {
-    final userMssg = MssgEntity(content: mssg, role: 'user', chatId: chatId);
+    final userMssg = MssgEntity(content: mssg, role: kUser, chatId: chatId);
 
     _mssgs.add(userMssg);
 
     final typing = MssgEntity(
-      content: 'Typing...',
-      role: 'assistant',
+      content: kTyping,
+      role: kAssistant,
       chatId: chatId,
     );
 

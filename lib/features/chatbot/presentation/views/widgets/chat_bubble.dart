@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:timelens/constants.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/chatbot/domain/entities/mssg_entity.dart';
+import 'package:timelens/features/chatbot/presentation/views/widgets/typing_indicator.dart';
 
 class ChatBubble extends StatelessWidget {
   const ChatBubble({super.key, required this.mssg});
@@ -12,7 +14,7 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isUserMssg = mssg.role == 'user';
+    final bool isUserMssg = mssg.role == kUser;
     return Row(
       mainAxisAlignment:
           isUserMssg ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -30,7 +32,11 @@ class ChatBubble extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
-              child: Text(
+              child: (mssg.content == kTyping) ?
+              
+              const TypingIndicator()
+              
+              : Text(
                 mssg.content,
                 style: TextStyle(
                   fontSize: 18.sp,

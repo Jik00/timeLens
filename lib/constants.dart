@@ -12,6 +12,9 @@ const String kHeroTagImg = "Img";
 
 /// strings //////
 const String kAppTitle = 'Time Lens';
+const String kTyping = 'Typing...';
+const String kUser = 'user';
+const String kAssistant = 'assistant';
 
 
 /// Shared Preferences Keys ///

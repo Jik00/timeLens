@@ -36,7 +36,7 @@ class ChatRepoImpl implements ChatRepo {
 
       final reply = MssgEntity(
         content: data['reply'],
-        role: 'assistant',
+        role: kAssistant,
         chatId: chatId,
       );
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/features/chatbot/domain/entities/mssg_entity.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/get_mssgs_cubit/get_mssgs_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/chat_bubble.dart';
 
@@ -27,12 +28,17 @@ class _StreamMssgsState extends State<StreamMssgs>
       child: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              itemCount: widget.mssgs.length,
-              itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
-                child: ChatBubble(mssg: widget.mssgs[index]),
+            child: BlocListener<ChattingCubit, ChattingState>(
+              listener: (context, state) {
+                scrollToBottom();
+              },
+              child: ListView.builder(
+                controller: _scrollController,
+                itemCount: widget.mssgs.length,
+                itemBuilder: (context, index) => Padding(
+                  padding: EdgeInsets.only(bottom: 12.h),
+                  child: ChatBubble(mssg: widget.mssgs[index]),
+                ),
               ),
             ),
           ),
@@ -42,12 +48,12 @@ class _StreamMssgsState extends State<StreamMssgs>
   }
 
   void scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    Future.delayed(const Duration(milliseconds: 100), () {
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOutCubic,
+          curve: Curves.easeOut,
         );
       }
     });
