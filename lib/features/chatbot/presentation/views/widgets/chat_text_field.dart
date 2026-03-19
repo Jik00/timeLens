@@ -5,8 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
-import 'package:timelens/features/chatbot/presentation/cubits/chat_cubit/chat_cubit.dart';
-import 'package:timelens/features/chatbot/presentation/cubits/get_mssgs_cubit/get_mssgs_cubit.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/send_icon.dart';
 
 class ChatTextField extends StatefulWidget {
@@ -65,9 +64,9 @@ class _ChatTextFieldState extends State<ChatTextField> {
                 child: SendIcon(
                   onSend: () {
                     context
-                        .read<ChatCubit>()
-                        .exchangeMssg(chatId: '1', mssg: controller.text);
-                    
+                        .read<ChattingCubit>()
+                        .addMssg(chatId: 'z', mssg: controller.text);
+
                     controller.clear();
                     FocusManager.instance.primaryFocus?.unfocus();
                   },
