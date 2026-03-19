@@ -77,16 +77,16 @@ class ChatRepoImpl implements ChatRepo {
     }
   }
 
-  @override
-  Stream<List<MssgEntity>> messagesStream(String chatId) {
-    return dataSource
-        .fetchDataByStream(
-            tableName: kSupaChatTable, query: kSupaChatId, value: chatId)
-        .map(
-      (response) {
-        debugPrint("Successfully fetched ${response.length} mssgs");
-        return response.map((json) => MssgEntity.fromMap(json)).toList();
-      },
-    );
-  }
+  // @override
+  // Stream<List<MssgEntity>> messagesStream(String chatId) {
+  //   return dataSource
+  //       .fetchDataByStream(
+  //           tableName: kSupaChatTable, query: kSupaChatId, value: chatId)
+  //       .map(
+  //     (response) {
+  //       debugPrint("Successfully fetched ${response.length} mssgs");
+  //       return response.map((json) => MssgEntity.fromMap(json)).toList();
+  //     },
+  //   );
+  // }
 }
