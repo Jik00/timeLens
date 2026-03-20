@@ -259,10 +259,10 @@ class S {
     );
   }
 
-  /// `Thoth can make mistakes`
+  /// `Thoth may err, wisdom is ever evolving`
   String get thothCanMakemistakes {
     return Intl.message(
-      'Thoth can make mistakes',
+      'Thoth may err, wisdom is ever evolving',
       name: 'thothCanMakemistakes',
       desc: '',
       args: [],

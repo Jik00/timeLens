@@ -68,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ask about million of years",
     ),
     "thothCanMakemistakes": MessageLookupByLibrary.simpleMessage(
-      "Thoth can make mistakes",
+      "Thoth may err, wisdom is ever evolving",
     ),
     "thothWhatWouldU": MessageLookupByLibrary.simpleMessage(
       "What would you like to know?",
