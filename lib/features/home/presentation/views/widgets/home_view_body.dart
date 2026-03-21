@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
-import 'package:timelens/features/home/presentation/cubit/cubit/get_eras_list_cubit.dart';
+import 'package:timelens/features/home/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
 import 'package:timelens/features/home/presentation/views/widgets/eras_list_view_bloc_builder.dart';
 
 import '../../../../../core/utils/app_images.dart';

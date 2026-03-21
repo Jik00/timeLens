@@ -4,6 +4,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/core/network/dio_factory.dart';
 import 'package:timelens/features/chatbot/data/repos/chat_repo_impl.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
+import 'package:timelens/features/figures/data/repo/figure_repo_impl.dart';
+import 'package:timelens/features/figures/domain/repos/figure_repo.dart';
 import 'package:timelens/features/home/domain/repos/era_repo.dart';
 import 'package:timelens/features/home/data/repos/era_repo_impl.dart';
 import 'package:timelens/core/services/weather_api_service.dart';
@@ -15,15 +17,23 @@ final getIt = GetIt.instance;
 final supabase = Supabase.instance.client;
 
 void setupGetIt() {
+  
   getIt.registerSingleton(SupabaseDataSource(supabase));
+  
+  
   getIt.registerSingleton<EraRepo>(EraRepoImpl(
     dataSource: getIt<SupabaseDataSource>(),
   ));
+  getIt.registerSingleton<FigureRepo>(FigureRepoImpl(
+    dataSource: getIt<SupabaseDataSource>(),
+  ));
+
 
   getIt.registerSingleton<Dio>(DioFactory().createDio());
   getIt.registerSingleton(WeatherApiService(dio: getIt<Dio>()));
   getIt.registerSingleton<WeatherRepo>(
       WeatherRepoImpl(apiService: getIt<WeatherApiService>()));
+
 
   getIt.registerSingleton<ChatRepo>(ChatRepoImpl(
     supabase: supabase,

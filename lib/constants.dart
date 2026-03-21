@@ -30,6 +30,8 @@ const String kSupaBucketForEras = "eras";
 const String kSupaErasTable = "eras_table";
 const String kSupaChatTable = "mssgs_table";
 const String kSupaChatId = "chat_id";
+const String kSupaFiguresTable = "figures_table";
+const String kSupaBelongEra = "belong_era";
 
 
 /// Dio Constants /////////////
