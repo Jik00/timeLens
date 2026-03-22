@@ -42,6 +42,7 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
                       setState(() {
                         selectedIndex = index;
                       });
+                      Navigator.pushNamed(context, entity.routeName);
                     },
                     child: ButtonNavBarItem(
                         buttonNavBarEntity: entity,

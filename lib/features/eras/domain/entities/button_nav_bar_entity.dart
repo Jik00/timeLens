@@ -1,4 +1,5 @@
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 
 class ButtomNavBarEntity {
@@ -21,7 +22,7 @@ List<ButtomNavBarEntity> get bottomNavBarItems => [
           name: 'Chatbot',
           activeImg: Assets.assetsImagesIconsChatbotFill,
           inActiveImg: Assets.assetsImagesIconsChatbot,
-          routeName: ErasView.routeName),
+          routeName: ChatbotView.routeName),
       ButtomNavBarEntity(
           name: 'Web',
           activeImg: Assets.assetsImagesIconsWebFill,
