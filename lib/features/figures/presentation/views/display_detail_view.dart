@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/widgets/build_app_bar.dart';
 import 'package:timelens/core/widgets/custom_button_navigation_bar.dart';
+import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/display_detail_view_body.dart';
 
 class DisplayDetailView extends StatelessWidget {
-  const DisplayDetailView({super.key});
+  const DisplayDetailView({super.key, required this.figure});
 
   static const String routeName = 'displayDetailView';
+
+  final FigureEntity figure;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class DisplayDetailView extends StatelessWidget {
       ),
       bottomNavigationBar: const CustomButtonNavigationBar(),
       extendBody: true,
-      body: const DisplayDetailViewBody(),
+      body: DisplayDetailViewBody( figure: figure),
     );
   }
 }

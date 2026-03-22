@@ -199,6 +199,16 @@ class S {
     );
   }
 
+  /// `Dynasty`
+  String get figureDynasty {
+    return Intl.message('Dynasty', name: 'figureDynasty', desc: '', args: []);
+  }
+
+  /// `Reign`
+  String get figureReign {
+    return Intl.message('Reign', name: 'figureReign', desc: '', args: []);
+  }
+
   /// `Weather`
   String get weather {
     return Intl.message('Weather', name: 'weather', desc: '', args: []);

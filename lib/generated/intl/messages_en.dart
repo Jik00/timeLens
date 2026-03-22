@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
+    "figureDynasty": MessageLookupByLibrary.simpleMessage("Dynasty"),
+    "figureReign": MessageLookupByLibrary.simpleMessage("Reign"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(
       "Rulers of Ancient Egypt",
     ),

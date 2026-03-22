@@ -18,6 +18,8 @@
     "retry" : "Retry",
     "errorOccurred" : "An error occurred",
     "figuresTitle": "Rulers of Ancient Egypt",
+    "figureDynasty": "Dynasty",
+    "figureReign": "Reign",
     "weather": "Weather",
     "searchCity": "Search for a city",
     "noCitiesFound": "No cities found",

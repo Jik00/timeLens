@@ -69,7 +69,7 @@ class _GradientBorderTextPainter extends CustomPainter {
         style: TextStyle(
           letterSpacing: 2,
           fontFamily: GoogleFonts.cinzelDecorative().fontFamily,
-          fontSize: fontSize,
+          fontSize: fontSize.sp,
           fontWeight: FontWeight.w700,
           foreground: borderPaint,
         ),
@@ -104,7 +104,7 @@ class _GradientBorderTextPainter extends CustomPainter {
           decoration: textDecoration,
           letterSpacing: 2,
           fontFamily: GoogleFonts.cinzelDecorative().fontFamily,
-          fontSize: fontSize,
+          fontSize: fontSize.sp,
           fontWeight: FontWeight.w700,
           foreground: Paint()
             ..shader = shader

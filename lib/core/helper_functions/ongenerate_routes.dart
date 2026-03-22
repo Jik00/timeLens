@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
+import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/display_detail_view.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 import 'package:timelens/features/eras/presentation/views/eras_view.dart';
@@ -51,11 +52,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       );
 
     case DisplayDetailView.routeName:
+      final FigureEntity figure = settings.arguments as FigureEntity;
       return PageRouteBuilder(
         settings: settings,
         transitionDuration: const Duration(milliseconds: 900),
         reverseTransitionDuration: const Duration(milliseconds: 900),
-        pageBuilder: (_, animation, __) => const DisplayDetailView(),
+        pageBuilder: (_, animation, __) => DisplayDetailView( figure: figure),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(
             opacity: Tween<double>(

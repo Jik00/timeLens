@@ -1,10 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/carousel_item.dart';
 
 class FiguresSlider extends StatefulWidget {
-  const FiguresSlider({super.key});
+  const FiguresSlider({super.key, required this.figures});
+
+  final List<FigureEntity> figures;
 
   @override
   State<FiguresSlider> createState() => _FiguresSliderState();
@@ -33,12 +36,13 @@ class _FiguresSliderState extends State<FiguresSlider> {
             });
           },
         ),
-        itemCount: 3,
+        itemCount: widget.figures.length,
         itemBuilder: (context, index, realIndex) {
           final bool isCenter = index == _currentIndex;
 
           return CarouselItem(
             isCenter: isCenter,
+            figure: widget.figures[index],
           );
         },
       ),
