@@ -7,12 +7,13 @@ import 'package:timelens/features/figures/domain/repos/figure_repo.dart';
 part 'get_figures_list_state.dart';
 
 class GetFiguresListCubit extends Cubit<GetFiguresListState> {
-  GetFiguresListCubit({required this.figureRepo})
+  GetFiguresListCubit({required this.figureRepo, required this.eraName})
       : super(GetFiguresListInitial());
 
   final FigureRepo figureRepo;
+  final String eraName;
 
-  Future<void> getFiguresList({required String eraName}) async {
+  Future<void> getFiguresList() async {
     emit(GetFiguresListLoading());
 
     final response = await figureRepo.getFigures(eraName: eraName);
