@@ -97,7 +97,7 @@ class SlideToActionButton extends StatelessWidget {
           );
         },
         action: () {
-          Navigator.pushNamed(context, FigureView.routeName);
+          Navigator.pushNamed(context, FigureView.routeName, arguments: title);
         },
       ),
     );

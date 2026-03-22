@@ -189,10 +189,10 @@ class S {
     );
   }
 
-  /// `Meet The Rulers Whose Reigns Shaped a Legacy`
+  /// `Rulers of Ancient Egypt`
   String get figuresTitle {
     return Intl.message(
-      'Meet The Rulers Whose Reigns Shaped a Legacy',
+      'Rulers of Ancient Egypt',
       name: 'figuresTitle',
       desc: '',
       args: [],

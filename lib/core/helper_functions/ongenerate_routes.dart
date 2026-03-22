@@ -36,8 +36,11 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       );
 
     case FigureView.routeName:
+      final String eraName = settings.arguments as String;
       return MaterialPageRoute(
-        builder: (_) => const FigureView(),
+        builder: (_) => FigureView(
+          eraName: eraName,
+        ),
         settings: settings,
       );
 

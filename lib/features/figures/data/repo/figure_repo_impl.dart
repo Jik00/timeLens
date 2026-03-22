@@ -14,12 +14,14 @@ class FigureRepoImpl implements FigureRepo {
   FigureRepoImpl({required this.dataSource});
 
   @override
-  Future<Either<Failure, List<FigureEntity>>> getFigures( {required String eraCode}) async {
+  Future<Either<Failure, List<FigureEntity>>> getFigures(
+      {required String eraName}) async {
     try {
       final response = await dataSource.fetchDataBy(
-          tableName: kSupaFiguresTable, query: kSupaBelongEra, value: eraCode);
+          tableName: kSupaFiguresTable, query: kSupaBelongEra, value: eraName);
 
-      final figures = response.map((json) => FigureEntity.fromMap(json)).toList();
+      final figures =
+          response.map((json) => FigureEntity.fromMap(json)).toList();
 
       debugPrint("Successfully fetched ${figures.length} figures");
       return Right(figures);

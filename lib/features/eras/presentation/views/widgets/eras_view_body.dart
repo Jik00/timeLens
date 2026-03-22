@@ -5,7 +5,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
-import 'package:timelens/features/eras/presentation/views/widgets/eras_list_view_bloc_builder.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/eras_view_bloc_builder.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
@@ -59,7 +59,7 @@ class _ErasViewBodyState extends State<ErasViewBody> {
                   ],
                 ),
               ),
-              const ErasListViewBlocBuilder(),
+              const ErasViewBlocBuilder(),
               SliverToBoxAdapter(
                 child: SizedBox(
                   height: 40.h,

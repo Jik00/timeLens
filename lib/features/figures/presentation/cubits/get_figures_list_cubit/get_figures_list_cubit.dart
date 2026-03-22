@@ -12,11 +12,10 @@ class GetFiguresListCubit extends Cubit<GetFiguresListState> {
 
   final FigureRepo figureRepo;
 
-  Future<void> getFiguresList({required String eraCode}) async {
-
+  Future<void> getFiguresList({required String eraName}) async {
     emit(GetFiguresListLoading());
 
-    final response = await figureRepo.getFigures(eraCode: eraCode);
+    final response = await figureRepo.getFigures(eraName: eraName);
 
     response.fold(
       (failure) => emit(GetFiguresListFailure(failure: failure)),

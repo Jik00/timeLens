@@ -1,6 +1,6 @@
 import 'package:timelens/features/eras/domain/entities/era_entity.dart';
 
-EraEntity getDummyEra() {
+EraEntity dummyEra() {
   return EraEntity(
     eraCode: "1",
     eraName: "The Roman Empire",
@@ -10,4 +10,4 @@ EraEntity getDummyEra() {
   );
 }
 
-List<EraEntity> getDummyEras() => List.generate(5, (index) => getDummyEra());
+List<EraEntity> dummyEras() => List.generate(5, (index) => dummyEra());
