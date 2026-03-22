@@ -8,7 +8,7 @@ import 'package:timelens/features/auth/presentation/views/widgets/custom_form_te
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/password_field.dart';
 
-import '../../../../home/presentation/views/home_view.dart';
+import '../../../../eras/presentation/views/eras_view.dart';
 
 class TextFieldsColumn extends StatefulWidget {
   const TextFieldsColumn({super.key});
@@ -64,7 +64,7 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
 
                 //////////////// backend login ///////////////////////
                 //
-                Navigator.pushReplacementNamed(context, HomeView.routeName);
+                Navigator.pushReplacementNamed(context, ErasView.routeName);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

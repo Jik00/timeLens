@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/errors/failures.dart';
-import 'package:timelens/features/home/domain/repos/era_repo.dart';
+import 'package:timelens/features/eras/domain/repos/era_repo.dart';
 import 'package:timelens/core/data_sources/supa_era_data_source.dart';
-import 'package:timelens/features/home/domain/entities/era_entity.dart';
+import 'package:timelens/features/eras/domain/entities/era_entity.dart';
 
 class EraRepoImpl implements EraRepo {
   final SupabaseDataSource dataSource;

@@ -4,19 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
-import 'package:timelens/features/home/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
-import 'package:timelens/features/home/presentation/views/widgets/eras_list_view_bloc_builder.dart';
+import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/eras_list_view_bloc_builder.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
-class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+class ErasViewBody extends StatefulWidget {
+  const ErasViewBody({super.key});
 
   @override
-  State<HomeViewBody> createState() => _HomeViewBodyState();
+  State<ErasViewBody> createState() => _ErasViewBodyState();
 }
 
-class _HomeViewBodyState extends State<HomeViewBody> {
+class _ErasViewBodyState extends State<ErasViewBody> {
   @override
   void initState() {
     super.initState();

@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timelens/features/home/domain/repos/era_repo.dart';
-import 'package:timelens/features/home/domain/entities/era_entity.dart';
+import 'package:timelens/features/eras/domain/repos/era_repo.dart';
+import 'package:timelens/features/eras/domain/entities/era_entity.dart';
 
 part 'get_eras_list_state.dart';
 

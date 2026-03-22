@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:timelens/features/home/domain/entities/era_entity.dart';
-import 'package:timelens/features/home/presentation/views/widgets/back_drop_filter.dart';
-import 'package:timelens/features/home/presentation/views/widgets/slide_to_action_button.dart';
+import 'package:timelens/features/eras/domain/entities/era_entity.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/back_drop_filter.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/slide_to_action_button.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 

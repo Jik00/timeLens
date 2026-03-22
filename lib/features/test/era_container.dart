@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
-import 'package:timelens/features/home/domain/entities/era_entity.dart';
+import 'package:timelens/features/eras/domain/entities/era_entity.dart';
 
 class EraContainer extends StatelessWidget {
   const EraContainer({super.key, required this.eraEntity});

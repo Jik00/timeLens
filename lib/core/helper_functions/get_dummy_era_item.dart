@@ -1,4 +1,4 @@
-import 'package:timelens/features/home/domain/entities/era_entity.dart';
+import 'package:timelens/features/eras/domain/entities/era_entity.dart';
 
 EraEntity getDummyEra() {
   return EraEntity(

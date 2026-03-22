@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:timelens/core/helper_functions/get_dummy_era_item.dart';
 import 'package:timelens/core/widgets/custom_error_widget.dart';
-import 'package:timelens/features/home/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
-import 'package:timelens/features/home/presentation/views/widgets/era_listview.dart';
+import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/era_listview.dart';
 
 class ErasListViewBlocBuilder extends StatelessWidget {
   const ErasListViewBlocBuilder({super.key});

@@ -3,7 +3,7 @@ import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/figures/presentation/views/display_detail_view.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
-import 'package:timelens/features/home/presentation/views/home_view.dart';
+import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/features/test/test_view.dart';
@@ -29,9 +29,9 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         settings: settings,
       );
 
-    case HomeView.routeName:
+    case ErasView.routeName:
       return MaterialPageRoute(
-        builder: (_) => const HomeView(),
+        builder: (_) => const ErasView(),
         settings: settings,
       );
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_images.dart';
-import 'package:timelens/features/home/domain/entities/button_nav_bar_entity.dart';
-import 'package:timelens/features/home/presentation/views/widgets/button_nav_bar_item.dart';
+import 'package:timelens/features/eras/domain/entities/button_nav_bar_entity.dart';
+import 'package:timelens/features/eras/presentation/views/widgets/button_nav_bar_item.dart';
 
 class CustomButtonNavigationBar extends StatefulWidget {
   const CustomButtonNavigationBar({super.key});
