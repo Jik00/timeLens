@@ -19,7 +19,7 @@ class ErasView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => GetErasListCubit(
           getIt.get<EraRepo>(),
-        ),
+        )..getErasList(),
         child: const ErasViewBody(),
       ),
     );

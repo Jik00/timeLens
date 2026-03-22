@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
-import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
 import 'package:timelens/features/eras/presentation/views/widgets/eras_view_bloc_builder.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
-class ErasViewBody extends StatefulWidget {
+class ErasViewBody extends StatelessWidget {
   const ErasViewBody({super.key});
-
-  @override
-  State<ErasViewBody> createState() => _ErasViewBodyState();
-}
-
-class _ErasViewBodyState extends State<ErasViewBody> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<GetErasListCubit>().getErasList();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +33,6 @@ class _ErasViewBodyState extends State<ErasViewBody> {
                     StrokeTextCizel(
                       title: context.loc.homeTitle,
                       colors: const [Colors.white, Colors.white],
-                      // colors: const [
-                      //   AppColors.brownWriting,
-                      //   AppColors.brownWriting
-                      // ],
                       titleSize: 18,
                       borderColor: AppColors.primaryColor,
                     ),
@@ -68,10 +51,6 @@ class _ErasViewBodyState extends State<ErasViewBody> {
             ],
           ),
         ),
-        // const Align(
-        //   alignment: Alignment.bottomCenter,
-        //   child: CustomButtonNavigationBar(),
-        // ),
       ],
     );
   }

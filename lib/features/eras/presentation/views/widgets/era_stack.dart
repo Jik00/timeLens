@@ -24,7 +24,6 @@ class EraStack extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       decoration: BoxDecoration(
-        //color: bgColor!,
         borderRadius: BorderRadius.circular(34.r),
         border: Border.all(
           width: 3,
