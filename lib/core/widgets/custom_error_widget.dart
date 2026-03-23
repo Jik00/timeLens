@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 
@@ -23,7 +25,7 @@ class CustomErrorWidget extends StatelessWidget {
           SizedBox(height: 200.h),
           Icon(
             Icons.error,
-            color: Colors.grey,
+            color: AppColors.textColor,
             size: 100.sp,
           ),
           const SizedBox(height: 16),
@@ -31,8 +33,10 @@ class CustomErrorWidget extends StatelessWidget {
             message,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.white,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              color: AppColors.brownWriting.withAlpha(200),
+              fontFamily: GoogleFonts.lora().fontFamily,
             ),
           ),
           const SizedBox(height: 24),

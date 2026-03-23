@@ -19,22 +19,19 @@ class DetailsColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.w, top: 115.h),
+      padding: EdgeInsets.only(left: 20.w, top: 105.h),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Transform.translate(
-            offset: Offset(-75.w, 0),
-            child: Hero(
-              tag: kHeroTagName,
-              child: StrokeTextCizel(
-                title: figure.figureName,
-                colors: const [AppColors.timeLensColor, Colors.white],
-                titleSize: 39,
-                borderColor: AppColors.brownWriting,
-              ),
+          Hero(
+            tag: kHeroTagName,
+            child: StrokeTextCizel(
+              title: figure.figureName,
+              colors: const [AppColors.timeLensColor, Colors.white],
+              titleSize: 39,
+              borderColor: AppColors.brownWriting,
             ),
           ),
           SizedBox(height: 15.h),
@@ -52,18 +49,7 @@ class DetailsColumn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 40.h,
-                ),
-                Text(
-                  'Age: ~ 90 years',
-                  style: TextStyle(
-                    color: AppColors.brownWriting.withAlpha(210),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 5.h,
+                  height: 34.h,
                 ),
                 Text(
                   '${context.loc.figureDynasty}: ${figure.dynasty}',
@@ -77,7 +63,18 @@ class DetailsColumn extends StatelessWidget {
                   height: 5.h,
                 ),
                 Text(
-                  '(${figure.reignPeriod} BC)',
+                  '${context.loc.figureReign}:',
+                  style: TextStyle(
+                    color: AppColors.brownWriting.withAlpha(210),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                  figure.reignPeriod,
                   style: TextStyle(
                     color: AppColors.brownWriting.withAlpha(210),
                     fontSize: 24.sp,
@@ -88,10 +85,9 @@ class DetailsColumn extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 24.h,
+            height: 40.h,
           ),
-          Transform.translate(
-            offset: Offset(-20.w, 0),
+          Center(
             child: CustomButton(
               hint: 'let\'s dive',
               scaleX: 0.8,

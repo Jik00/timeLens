@@ -26,8 +26,8 @@ class DisplayDetailViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 85.h,
-            right: 10.w,
+            bottom: 155.h,
+            right: 15.w,
             child: GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -36,7 +36,7 @@ class DisplayDetailViewBody extends StatelessWidget {
                 tag: kHeroTagImg,
                 child: CachedNetworkImage(
                   imageUrl: figure.imageUrl,
-                  width: 175.w,
+                  width: 170.w,
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(
@@ -47,7 +47,7 @@ class DisplayDetailViewBody extends StatelessWidget {
               ),
             ),
           ),
-          DetailsColumn( figure: figure),
+          DetailsColumn(figure: figure),
         ],
       ),
     );

@@ -204,9 +204,9 @@ class S {
     return Intl.message('Dynasty', name: 'figureDynasty', desc: '', args: []);
   }
 
-  /// `Reign`
+  /// `Reign in BC`
   String get figureReign {
-    return Intl.message('Reign', name: 'figureReign', desc: '', args: []);
+    return Intl.message('Reign in BC', name: 'figureReign', desc: '', args: []);
   }
 
   /// `Weather`
