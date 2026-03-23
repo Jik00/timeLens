@@ -29,4 +29,12 @@ class Prefs {
   static String _getDeviceLanguage() {
     return PlatformDispatcher.instance.locale.languageCode;
   }
+
+    static Future<bool> setString(String key, String value) async {
+      return await _instance.setString(key, value);
+  }
+
+  static String getString(String key) {
+    return _instance.getString(key) ?? 'Cario';
+  }
 }

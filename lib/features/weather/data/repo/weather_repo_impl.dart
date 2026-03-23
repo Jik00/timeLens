@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:timelens/constants.dart';
 import 'package:timelens/core/errors/failures.dart';
+import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/features/weather/data/models/weather_model/location.dart';
 import 'package:timelens/features/weather/data/models/weather_model/weather_model.dart';
 import 'package:timelens/features/weather/domain/entities/location_entity.dart';
@@ -19,13 +21,11 @@ class WeatherRepoImpl implements WeatherRepo {
   Future<Either<Failure, WeatherEntity>> getWeatherDetails(
       String cityName) async {
     try {
-
       final response = await apiService.getWeatherDetails(cityName);
 
       final WeatherModel weatherModel = WeatherModel.fromMap(response.data);
 
       return Right(weatherModel.toWeatherEntity());
-
     } on DioException catch (e) {
       return Left(ServerFailure(e.toString()));
     } on Exception catch (e) {
@@ -38,11 +38,13 @@ class WeatherRepoImpl implements WeatherRepo {
       String cityName) async {
     try {
 
+      await saveLastCity(cityName);
+      
       final response = await apiService.searchLocation(cityName);
 
       log("Raw response: ${response.data}");
 
-      final List <Location> locationModels = (response.data as List)
+      final List<Location> locationModels = (response.data as List)
           .map((locationJson) => Location.fromMap(locationJson))
           .toList();
 
@@ -55,5 +57,10 @@ class WeatherRepoImpl implements WeatherRepo {
     } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<void> saveLastCity(String city) {
+    return Prefs.setString(kLastCityKey, city);
   }
 }

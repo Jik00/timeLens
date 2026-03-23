@@ -8,4 +8,6 @@ abstract class WeatherRepo {
       String cityName);
 
   Future<Either<Failure, List<LocationEntity>>> searchLocation(String cityName);
+  
+  Future <void> saveLastCity(String city);
 }

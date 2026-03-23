@@ -32,7 +32,7 @@ class Current extends Equatable {
   final double uv;
   final double gustMph;
   final double gustKph;
-  final int shortRad;
+  final int? shortRad;
   final int diffRad;
   final int dni;
   final int gti;
@@ -67,7 +67,7 @@ class Current extends Equatable {
     required this.uv,
     required this.gustMph,
     required this.gustKph,
-    required this.shortRad,
+    this.shortRad,
     required this.diffRad,
     required this.dni,
     required this.gti,
@@ -103,7 +103,7 @@ class Current extends Equatable {
         uv: (data['uv'] as num).toDouble(),
         gustMph: (data['gust_mph'] as num).toDouble(),
         gustKph: (data['gust_kph'] as num).toDouble(),
-        shortRad: ( data['short_rad'] as num).toInt(),
+        shortRad: ( data['short_rad']) ?? 0,
         diffRad: (data['diff_rad'] as num).toInt(),
         dni: (data['dni'] as num).toInt(),
         gti: (data['gti'] as num).toInt(),
