@@ -5,7 +5,9 @@ import 'package:timelens/features/eras/domain/entities/button_nav_bar_entity.dar
 import 'package:timelens/features/eras/presentation/views/widgets/button_nav_bar_item.dart';
 
 class CustomButtonNavigationBar extends StatefulWidget {
-  const CustomButtonNavigationBar({super.key});
+  const CustomButtonNavigationBar({super.key, required this.onItemTapped, });
+
+ final ValueChanged<int> onItemTapped;
 
   @override
   State<CustomButtonNavigationBar> createState() =>
@@ -41,12 +43,13 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
                     onTap: () {
                       setState(() {
                         selectedIndex = index;
+                        widget.onItemTapped(index);
                       });
-                      Navigator.pushNamed(context, entity.routeName);
                     },
                     child: ButtonNavBarItem(
-                        buttonNavBarEntity: entity,
-                        isSelected: selectedIndex == index),
+                      buttonNavBarEntity: entity,
+                      isSelected: selectedIndex == index,
+                    ),
                   );
                 }).toList(),
               ),

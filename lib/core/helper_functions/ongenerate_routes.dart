@@ -5,6 +5,7 @@ import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/display_detail_view.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 import 'package:timelens/features/eras/presentation/views/eras_view.dart';
+import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/features/test/test_view.dart';
@@ -27,6 +28,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case LoginView.routeName:
       return MaterialPageRoute(
         builder: (_) => const LoginView(),
+        settings: settings,
+      );
+
+    case MainLayout.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const MainLayout(),
         settings: settings,
       );
 
