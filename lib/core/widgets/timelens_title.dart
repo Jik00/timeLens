@@ -14,6 +14,7 @@ class TimelensTitle extends StatelessWidget {
       kAppTitle,
       style: TextStyle(
         fontSize: size.sp,
+        fontWeight: FontWeight.bold,
         foreground: Paint()
           ..shader = const LinearGradient(
             colors: [AppColors.brownWriting, AppColors.brownWriting],

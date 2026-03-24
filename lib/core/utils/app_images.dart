@@ -162,6 +162,10 @@ class Assets {
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";
 
+  /// Assets for assetsImagesWeatherClouds
+  /// assets/images/weather_clouds.png
+  static const String assetsImagesWeatherClouds = "assets/images/weather_clouds.png";
+
   /// Assets for assetsImagesWeatherHeading
   /// assets/images/weather_heading.png
   static const String assetsImagesWeatherHeading = "assets/images/weather_heading.png";
@@ -173,6 +177,10 @@ class Assets {
   /// Assets for assetsImagesWeatherPic
   /// assets/images/weather_pic.png
   static const String assetsImagesWeatherPic = "assets/images/weather_pic.png";
+
+  /// Assets for assetsImagesWeatherPicCut
+  /// assets/images/weather_pic_cut.png
+  static const String assetsImagesWeatherPicCut = "assets/images/weather_pic_cut.png";
 
   /// Assets for assetsImagesWhiteLight
   /// assets/images/white-light.png

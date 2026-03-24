@@ -5,8 +5,9 @@ import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
-import 'package:timelens/features/eras/presentation/views/eras_view.dart';
+//import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 //import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
+import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../../../../core/utils/app_colors.dart';
@@ -147,7 +148,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
         if (mounted) {
           if (isOnboardingSeen) {
             //Navigator.pushReplacementNamed(context, LoginView.routeName);
-            navigator.pushReplacementNamed(ErasView.routeName);
+            //navigator.pushReplacementNamed(ErasView.routeName);
+            //navigator.pushReplacementNamed(ChatbotView.routeName);
+            navigator.pushReplacementNamed(MainLayout.routeName);
+
           } else {
             navigator.pushReplacementNamed(OnboardingView.routeName);
           }

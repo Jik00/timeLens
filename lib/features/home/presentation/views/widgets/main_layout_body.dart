@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
+import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 class MainLayoutBody extends StatefulWidget {
   const MainLayoutBody({super.key, required this.currentViewIndex});
@@ -15,10 +16,10 @@ class _MainLayoutBodyState extends State<MainLayoutBody> {
   Widget build(BuildContext context) {
     return IndexedStack(
       index: widget.currentViewIndex,
-      children: const[
+      children: const [
         HomeView(),
         ChatbotView(),
-        //ProfileView(),
+        WeatherView(),
         //WebView(),
       ],
     );

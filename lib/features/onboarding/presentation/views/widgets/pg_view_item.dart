@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_colors.dart';
-import 'package:timelens/core/widgets/background_theme.dart';
+import 'package:timelens/features/onboarding/presentation/views/widgets/background_theme.dart';
 import 'package:timelens/features/auth/presentation/views/login_view.dart';
 import 'package:timelens/features/onboarding/presentation/views/widgets/skip_widget.dart';
 

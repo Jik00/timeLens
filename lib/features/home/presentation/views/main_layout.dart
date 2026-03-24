@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timelens/core/widgets/custom_button_navigation_bar.dart';
+import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/home/presentation/views/widgets/main_layout_body.dart';
 
 class MainLayout extends StatefulWidget {

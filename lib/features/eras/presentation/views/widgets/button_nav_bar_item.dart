@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timelens/features/eras/domain/entities/button_nav_bar_entity.dart';
+import 'package:timelens/features/home/domain/entities/button_nav_bar_entity.dart';
 import 'package:timelens/features/eras/presentation/views/widgets/active_nav_bar_item.dart';
 import 'package:timelens/features/eras/presentation/views/widgets/inactive_nav_bar_item.dart';
 
