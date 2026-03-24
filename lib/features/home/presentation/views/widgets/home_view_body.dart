@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/widgets/timelens_title.dart';
-import 'package:timelens/features/home/presentation/views/widgets/weather_glimpse.dart';
+import 'package:timelens/features/home/presentation/views/widgets/weather_glimpse_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -28,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
           alignment: AlignmentGeometry.topCenter,
           child: Padding(
             padding: EdgeInsets.only(top: 110.h, right: 5.w),
-            child: WeatherGlimpse(),
+            child: const WeatherGlimpseBlocBuilder(),
           ),
         ),
       ],
