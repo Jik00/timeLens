@@ -8,6 +8,7 @@ import 'package:timelens/constants.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
 import 'package:timelens/core/services/custom_bloc_observer.dart';
 import 'package:timelens/core/services/get_it_service.dart';
+import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
             // showPerformanceOverlay: false,
             onGenerateRoute: onGenerateRoutes,
             initialRoute: SplashView.routeName,
+            navigatorKey: navigatorKey,
 
             // flutter localization
             locale: const Locale('en'),
