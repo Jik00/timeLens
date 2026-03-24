@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:timelens/core/helper_functions/trim_1st_2_words.dart';
 import 'package:timelens/features/weather/domain/entities/weather_entity.dart';
 
 import 'alerts.dart';
@@ -32,14 +33,14 @@ class WeatherModel extends Equatable {
     return WeatherEntity(
       locationName: location.name,
       country: location.country,
-      temperatureCelsius: current.tempC.toString(),
-      conditionText: current.condition.text,
+      temperatureCelsius: current.tempC.toInt().toString(),
+      conditionText: smartTrimMax18(current.condition.text, maxLength: 15),
       iconUrl: current.condition.icon,
       windmph: current.windMph,
       humidity: current.humidity,
       uvIndex: current.uv,
-      maxTemp: forecast.forecastday.first.day.maxtempC.toString(),
-      minTemp: forecast.forecastday.first.day.mintempC.toString(),
+      maxTemp: forecast.forecastday.first.day.maxtempC.toInt().toString(),
+      minTemp: forecast.forecastday.first.day.mintempC.toInt().toString(),
     );
   }
 

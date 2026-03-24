@@ -29,6 +29,7 @@
     "thoth": "THOTH",
     "thothAskAbout": "Ask about million of years",
     "thothCanMakemistakes": "Thoth may err, wisdom is ever evolving",
-    "thothWhatWouldU":"What would you like to know?"
+    "thothWhatWouldU":"What would you like to know?",
+    "loading": "Loading..."
 
 }

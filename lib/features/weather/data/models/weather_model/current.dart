@@ -74,40 +74,57 @@ class Current extends Equatable {
   });
 
   factory Current.fromMap(Map<String, dynamic> data) => Current(
-        lastUpdatedEpoch: data['last_updated_epoch'] as int,
-        lastUpdated: data['last_updated'] as String,
-        tempC: (data['temp_c'] as num).toDouble(),
-        tempF: (data['temp_f'] as num).toDouble(),
-        isDay: data['is_day'] as int,
-        condition: Condition.fromMap(data['condition'] as Map<String, dynamic>),
-        windMph: (data['wind_mph'] as num).toDouble(),
-        windKph: (data['wind_kph'] as num).toDouble(),
-        windDegree: data['wind_degree'] as int,
-        windDir: data['wind_dir'] as String,
-        pressureMb: (data['pressure_mb'] as num).toInt(),
-        pressureIn: (data['pressure_in'] as num).toDouble(),
-        precipMm: (data['precip_mm'] as num).toDouble(),
-        precipIn: (data['precip_in'] as num).toDouble(),
-        humidity: (data['humidity'] as num).toInt(),
-        cloud: (data['cloud'] as num).toInt(),
-        feelslikeC: (data['feelslike_c'] as num).toDouble(),
-        feelslikeF: (data['feelslike_f'] as num).toDouble(),
-        windchillC: (data['windchill_c'] as num).toDouble(),
-        windchillF: (data['windchill_f'] as num).toDouble(),
-        heatindexC: (data['heatindex_c'] as num).toDouble(),
-        heatindexF: (data['heatindex_f'] as num).toDouble(),
-        dewpointC: (data['dewpoint_c'] as num).toDouble(),
-        dewpointF: (data['dewpoint_f'] as num).toDouble(),
-        visKm: (  data['vis_km'] as num).toInt(),
-        visMiles: (data['vis_miles'] as num ).toInt(),
-        uv: (data['uv'] as num).toDouble(),
-        gustMph: (data['gust_mph'] as num).toDouble(),
-        gustKph: (data['gust_kph'] as num).toDouble(),
-        shortRad: ( data['short_rad']) ?? 0,
-        diffRad: (data['diff_rad'] as num).toInt(),
-        dni: (data['dni'] as num).toInt(),
-        gti: (data['gti'] as num).toInt(),
-      );
+  lastUpdatedEpoch: (data['last_updated_epoch'] as num?)?.toInt() ?? 0,
+  lastUpdated: data['last_updated'] as String? ?? '',
+
+  tempC: (data['temp_c'] as num?)?.toDouble() ?? 0.0,
+  tempF: (data['temp_f'] as num?)?.toDouble() ?? 0.0,
+
+  isDay: (data['is_day'] as num?)?.toInt() ?? 0,
+
+  condition: Condition.fromMap(data['condition'] as Map<String, dynamic>),
+
+  windMph: (data['wind_mph'] as num?)?.toDouble() ?? 0.0,
+  windKph: (data['wind_kph'] as num?)?.toDouble() ?? 0.0,
+
+  windDegree: (data['wind_degree'] as num?)?.toInt() ?? 0,
+  windDir: data['wind_dir'] as String? ?? '',
+
+  pressureMb: (data['pressure_mb'] as num?)?.toInt() ?? 0,
+  pressureIn: (data['pressure_in'] as num?)?.toDouble() ?? 0.0,
+
+  precipMm: (data['precip_mm'] as num?)?.toDouble() ?? 0.0,
+  precipIn: (data['precip_in'] as num?)?.toDouble() ?? 0.0,
+
+  humidity: (data['humidity'] as num?)?.toInt() ?? 0,
+  cloud: (data['cloud'] as num?)?.toInt() ?? 0,
+
+  feelslikeC: (data['feelslike_c'] as num?)?.toDouble() ?? 0.0,
+  feelslikeF: (data['feelslike_f'] as num?)?.toDouble() ?? 0.0,
+
+  windchillC: (data['windchill_c'] as num?)?.toDouble() ?? 0.0,
+  windchillF: (data['windchill_f'] as num?)?.toDouble() ?? 0.0,
+
+  heatindexC: (data['heatindex_c'] as num?)?.toDouble() ?? 0.0,
+  heatindexF: (data['heatindex_f'] as num?)?.toDouble() ?? 0.0,
+
+  dewpointC: (data['dewpoint_c'] as num?)?.toDouble() ?? 0.0,
+  dewpointF: (data['dewpoint_f'] as num?)?.toDouble() ?? 0.0,
+
+  visKm: (data['vis_km'] as num?)?.toInt() ?? 0,
+  visMiles: (data['vis_miles'] as num?)?.toInt() ?? 0,
+
+  uv: (data['uv'] as num?)?.toDouble() ?? 0.0,
+
+  gustMph: (data['gust_mph'] as num?)?.toDouble() ?? 0.0,
+  gustKph: (data['gust_kph'] as num?)?.toDouble() ?? 0.0,
+
+  shortRad: (data['short_rad'] as num?)?.toInt() ?? 0,
+
+  diffRad: (data['diff_rad'] as num?)?.toInt() ?? 0,
+  dni: (data['dni'] as num?)?.toInt() ?? 0,
+  gti: (data['gti'] as num?)?.toInt() ?? 0,
+);
 
   Map<String, dynamic> toMap() => {
         'last_updated_epoch': lastUpdatedEpoch,

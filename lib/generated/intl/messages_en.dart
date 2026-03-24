@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "learn Across The Millennia",
     ),
     "lat": MessageLookupByLibrary.simpleMessage("Lat"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),

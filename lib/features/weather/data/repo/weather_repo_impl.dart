@@ -21,6 +21,9 @@ class WeatherRepoImpl implements WeatherRepo {
   Future<Either<Failure, WeatherEntity>> getWeatherDetails(
       String cityName) async {
     try {
+
+      await saveLastCity(cityName);
+
       final response = await apiService.getWeatherDetails(cityName);
 
       final WeatherModel weatherModel = WeatherModel.fromMap(response.data);
@@ -37,8 +40,6 @@ class WeatherRepoImpl implements WeatherRepo {
   Future<Either<Failure, List<LocationEntity>>> searchLocation(
       String cityName) async {
     try {
-
-      await saveLastCity(cityName);
       
       final response = await apiService.searchLocation(cityName);
 
@@ -61,6 +62,6 @@ class WeatherRepoImpl implements WeatherRepo {
 
   @override
   Future<void> saveLastCity(String city) {
-    return Prefs.setString(kLastCityKey, city);
+    return Prefs.setLastCity(kLastCityKey, city);
   }
 }
