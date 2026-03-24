@@ -5,6 +5,7 @@ import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/display_detail_view.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 import 'package:timelens/features/eras/presentation/views/eras_view.dart';
+import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
@@ -13,6 +14,7 @@ import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
+
     case SplashView.routeName:
       return MaterialPageRoute(
         builder: (_) => const SplashView(),
@@ -34,6 +36,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case MainLayout.routeName:
       return MaterialPageRoute(
         builder: (_) => const MainLayout(),
+        settings: settings,
+      );
+
+    case HomeView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const HomeView(),
         settings: settings,
       );
 

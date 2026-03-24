@@ -110,6 +110,10 @@ class Assets {
   /// assets/images/phoarh_face.jpg
   static const String assetsImagesPhoarhFace = "assets/images/phoarh_face.jpg";
 
+  /// Assets for assetsImagesPyramidOnboarding
+  /// assets/images/pyramid_onboarding.jpg
+  static const String assetsImagesPyramidOnboarding = "assets/images/pyramid_onboarding.jpg";
+
   /// Assets for assetsImagesPyramidSplash
   /// assets/images/pyramid_splash.png
   static const String assetsImagesPyramidSplash = "assets/images/pyramid_splash.png";
@@ -157,6 +161,14 @@ class Assets {
   /// Assets for assetsImagesUserMssgBubble
   /// assets/images/user_mssg_bubble.png
   static const String assetsImagesUserMssgBubble = "assets/images/user_mssg_bubble.png";
+
+  /// Assets for assetsImagesVr1
+  /// assets/images/vr-1.png
+  static const String assetsImagesVr1 = "assets/images/vr-1.png";
+
+  /// Assets for assetsImagesVr2
+  /// assets/images/vr-2.png
+  static const String assetsImagesVr2 = "assets/images/vr-2.png";
 
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png

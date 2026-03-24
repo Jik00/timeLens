@@ -35,6 +35,6 @@ class Prefs {
   }
 
   static String getString(String key) {
-    return _instance.getString(key) ?? 'Cario';
+    return _instance.getString(key) ?? 'Cairo';
   }
 }
