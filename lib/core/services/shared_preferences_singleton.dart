@@ -30,7 +30,7 @@ class Prefs {
     return PlatformDispatcher.instance.locale.languageCode;
   }
 
-    static Future<bool> setString(String key, String value) async {
+    static Future<bool> setLastCity(String key, String value) async {
       return await _instance.setString(key, value);
   }
 
