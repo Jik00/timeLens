@@ -21,10 +21,8 @@ class WeatherView extends StatelessWidget {
             weatherRepo: getIt.get<WeatherRepo>(),
           ),
         ),
-        BlocProvider(
-          create: (context) => WeatherCubit(
-            weatherRepo: getIt.get<WeatherRepo>(),
-          ),
+        BlocProvider.value(
+          value: context.read<WeatherCubit>(),
         ),
       ],
       child: Scaffold(
