@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timelens/core/widgets/build_app_bar.dart';
 import 'package:timelens/features/eras/domain/repos/era_repo.dart';
 import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
@@ -13,7 +14,9 @@ class ErasView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(null),
       extendBody: true,
+      extendBodyBehindAppBar: true,
       body: BlocProvider(
         create: (context) => GetErasListCubit(
           getIt.get<EraRepo>(),

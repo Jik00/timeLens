@@ -259,10 +259,10 @@ class S {
     return Intl.message('THOTH', name: 'thoth', desc: '', args: []);
   }
 
-  /// `Speak and the knowledge shall answer`
+  /// `Speak and time shall answer`
   String get thothAskAbout {
     return Intl.message(
-      'Speak and the knowledge shall answer',
+      'Speak and time shall answer',
       name: 'thothAskAbout',
       desc: '',
       args: [],

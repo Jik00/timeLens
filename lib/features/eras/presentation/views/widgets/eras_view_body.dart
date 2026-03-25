@@ -28,7 +28,7 @@ class ErasViewBody extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 62.h,
+                      height: 82.h,
                     ),
                     StrokeTextCizel(
                       title: context.loc.homeTitle,

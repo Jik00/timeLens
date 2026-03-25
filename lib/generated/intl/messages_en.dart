@@ -72,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(
-      "Speak and the knowledge shall answer",
+      "Speak and time shall answer",
     ),
     "thothCanMakemistakes": MessageLookupByLibrary.simpleMessage(
       "Thoth may err, wisdom is ever evolving",

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/features/home/domain/entities/button_nav_bar_entity.dart';
 import 'package:timelens/features/eras/presentation/views/widgets/button_nav_bar_item.dart';
 
 class CustomButtonNavigationBar extends StatefulWidget {
-  const CustomButtonNavigationBar({super.key, required this.onItemTapped, });
+  const CustomButtonNavigationBar({
+    super.key,
+    required this.onItemTapped,
+  });
 
- final ValueChanged<int> onItemTapped;
+  final ValueChanged<int> onItemTapped;
 
   @override
   State<CustomButtonNavigationBar> createState() =>
@@ -20,15 +24,21 @@ class _CustomButtonNavigationBarState extends State<CustomButtonNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 6),
       child: SizedBox(
-        height: 50.h,
+        height: 51.h,
         child: Stack(
           children: [
             Positioned.fill(
-              child: Image.asset(
-                Assets.assetsImagesNavBarBackground,
-                fit: BoxFit.fill,
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.blurColor, width: 1.5.sp),
+                  borderRadius: BorderRadius.circular(17.r),
+                ),
+                child: Image.asset(
+                  Assets.assetsImagesNavBarBackground,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             Padding(

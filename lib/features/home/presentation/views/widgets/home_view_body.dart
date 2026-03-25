@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
         Align(
           alignment: AlignmentGeometry.topCenter,
           child: Padding(
-            padding: EdgeInsets.only(top: 105.h,  bottom: 7.h),
+            padding: EdgeInsets.only(top: 105.h, bottom: 7.h),
             child: SingleChildScrollView(
               child: Column(
                 children: [
