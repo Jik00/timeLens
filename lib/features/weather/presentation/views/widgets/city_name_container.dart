@@ -5,10 +5,13 @@ import 'package:timelens/core/utils/app_images.dart';
 
 class CityNameContainer extends StatelessWidget {
   const CityNameContainer({
-    super.key, required this.cityName,
+    super.key,
+    required this.cityName,
+    this.icon, 
   });
 
   final String cityName;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class CityNameContainer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              Assets.assetsImagesEgyptianEye,
+              icon ?? Assets.assetsImagesEgyptianEye,
               height: 28.h,
               width: 28.w,
             ),

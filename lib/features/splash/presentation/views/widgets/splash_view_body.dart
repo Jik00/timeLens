@@ -91,7 +91,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
               position: _pyramidSlide,
               child: SizedBox(
                 height: 230.h,
-                width: MediaQuery.of(context).size.width,
+                width: double.maxFinite,
                 child: Image.asset(
                   Assets.assetsImagesPyramidSplash,
                   fit: BoxFit.fitHeight,

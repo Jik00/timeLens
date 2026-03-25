@@ -3,6 +3,8 @@ const String kSplashAnimation =
     'assets/animation/Rotating Pyramid Segments.json';
 const String kLottieRightArrow =
     'assets/images/icons/lottie/Arrow_down_lottie.json';
+const String kLottieChatbot =
+    'assets/images/icons/lottie/chatbot_lottie.json';
 
 
 /// Hero Tags /////////////

@@ -259,10 +259,10 @@ class S {
     return Intl.message('THOTH', name: 'thoth', desc: '', args: []);
   }
 
-  /// `Ask about million of years`
+  /// `Speak and the knowledge shall answer`
   String get thothAskAbout {
     return Intl.message(
-      'Ask about million of years',
+      'Speak and the knowledge shall answer',
       name: 'thothAskAbout',
       desc: '',
       args: [],
@@ -292,6 +292,31 @@ class S {
   /// `Loading...`
   String get loading {
     return Intl.message('Loading...', name: 'loading', desc: '', args: []);
+  }
+
+  /// `virtual reality`
+  String get vr {
+    return Intl.message('virtual reality', name: 'vr', desc: '', args: []);
+  }
+
+  /// `Explore the world`
+  String get exploreTheWorld {
+    return Intl.message(
+      'Explore the world',
+      name: 'exploreTheWorld',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat with Thoth`
+  String get chatWithThoth {
+    return Intl.message(
+      'Chat with Thoth',
+      name: 'chatWithThoth',
+      desc: '',
+      args: [],
+    );
   }
 }
 

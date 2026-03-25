@@ -23,9 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
+    "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
+    "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
+      "Explore the world",
+    ),
     "figureDynasty": MessageLookupByLibrary.simpleMessage("Dynasty"),
     "figureReign": MessageLookupByLibrary.simpleMessage("Reign in BC"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(
@@ -68,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(
-      "Ask about million of years",
+      "Speak and the knowledge shall answer",
     ),
     "thothCanMakemistakes": MessageLookupByLibrary.simpleMessage(
       "Thoth may err, wisdom is ever evolving",
@@ -76,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thothWhatWouldU": MessageLookupByLibrary.simpleMessage(
       "What would you like to know?",
     ),
+    "vr": MessageLookupByLibrary.simpleMessage("virtual reality"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
   };
 }

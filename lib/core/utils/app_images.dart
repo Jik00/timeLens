@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/button_frame.png
   static const String assetsImagesButtonFrame = "assets/images/button_frame.png";
 
+  /// Assets for assetsImagesChatbot
+  /// assets/images/chatbot.png
+  static const String assetsImagesChatbot = "assets/images/chatbot.png";
+
   /// Assets for assetsImagesCountyNameContainer
   /// assets/images/county_name_container.png
   static const String assetsImagesCountyNameContainer = "assets/images/county_name_container.png";
@@ -69,6 +73,10 @@ class Assets {
   /// Assets for assetsImagesIconsLottieArrowDownLottie
   /// assets/images/icons/lottie/Arrow_down_lottie.json
   static const String assetsImagesIconsLottieArrowDownLottie = "assets/images/icons/lottie/Arrow_down_lottie.json";
+
+  /// Assets for assetsImagesIconsLottieChatbotLottie
+  /// assets/images/icons/lottie/chatbot_lottie.json
+  static const String assetsImagesIconsLottieChatbotLottie = "assets/images/icons/lottie/chatbot_lottie.json";
 
   /// Assets for assetsImagesIconsPadlock
   /// assets/images/icons/padlock.png
@@ -142,6 +150,10 @@ class Assets {
   /// assets/images/statue-square.png
   static const String assetsImagesStatueSquare = "assets/images/statue-square.png";
 
+  /// Assets for assetsImagesSunIcon
+  /// assets/images/sun_icon.png
+  static const String assetsImagesSunIcon = "assets/images/sun_icon.png";
+
   /// Assets for assetsImagesTestFigureBackgroung
   /// assets/images/test_figure_backgroung.png
   static const String assetsImagesTestFigureBackgroung = "assets/images/test_figure_backgroung.png";
@@ -162,9 +174,9 @@ class Assets {
   /// assets/images/user_mssg_bubble.png
   static const String assetsImagesUserMssgBubble = "assets/images/user_mssg_bubble.png";
 
-  /// Assets for assetsImagesVr1
-  /// assets/images/vr-1.png
-  static const String assetsImagesVr1 = "assets/images/vr-1.png";
+  /// Assets for assetsImagesVr
+  /// assets/images/vr.jpg
+  static const String assetsImagesVr = "assets/images/vr.jpg";
 
   /// Assets for assetsImagesVr2
   /// assets/images/vr-2.png
