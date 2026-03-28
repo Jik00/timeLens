@@ -24,26 +24,27 @@ class ChatBubble extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(isUserMssg
+                image: AssetImage(
+                  isUserMssg
                       ? Assets.assetsImagesUserMssgBubble
-                      : Assets.assetsImagesThothMssgBubble),
-                  fit: BoxFit.cover),
+                      : Assets.assetsImagesThothMssgBubble,
+                ),
+                fit: BoxFit.cover,
+              ),
               borderRadius: BorderRadius.circular(28.r),
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
-              child: (mssg.content == kTyping) ?
-              
-              const TypingIndicator()
-              
-              : Text(
-                mssg.content,
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  color: AppColors.brownWriting,
-                  fontFamily: GoogleFonts.lora().fontFamily,
-                ),
-              ),
+              child: (mssg.content == kTyping)
+                  ? const TypingIndicator()
+                  : Text(
+                      mssg.content,
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        color: AppColors.brownWriting,
+                        fontFamily: GoogleFonts.lora().fontFamily,
+                      ),
+                    ),
             ),
           ),
         ),

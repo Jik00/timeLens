@@ -27,16 +27,17 @@ class _StreamMssgsState extends State<StreamMssgs>
       },
       child: Column(
         children: [
-          Expanded(
-            child: BlocListener<ChattingCubit, ChattingState>(
-              listener: (context, state) {
-                scrollToBottom();
-              },
+          BlocListener<ChattingCubit, ChattingState>(
+            listener: (context, state) {
+              scrollToBottom();
+            },
+            child: Expanded(
               child: ListView.builder(
+                padding: EdgeInsets.zero,
                 controller: _scrollController,
                 itemCount: widget.mssgs.length,
                 itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsets.only(bottom: 12.h),
+                  padding: EdgeInsets.only(bottom: 16.h),
                   child: ChatBubble(mssg: widget.mssgs[index]),
                 ),
               ),

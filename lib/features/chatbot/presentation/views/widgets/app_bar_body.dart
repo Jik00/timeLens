@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 
 class AppBarBody extends StatelessWidget {
@@ -10,6 +11,22 @@ class AppBarBody extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        Visibility(
+          visible: Navigator.canPop(context),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              size: 28.sp,
+              color: AppColors.brownWriting,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 85.w,
+        ),
         Text(
           context.loc.thoth,
           style: TextStyle(
@@ -24,7 +41,8 @@ class AppBarBody extends StatelessWidget {
           onPressed: () {},
           icon: Icon(
             Icons.history_rounded,
-            size: 28,
+            size: 28.sp,
+            color: AppColors.brownWriting,
           ),
         ),
       ],

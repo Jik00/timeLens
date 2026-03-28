@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timelens/core/services/get_it_service.dart';
-import 'package:timelens/core/widgets/build_app_bar.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/get_mssgs_cubit/get_mssgs_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
-import 'package:timelens/features/chatbot/presentation/views/widgets/app_bar_body.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/chatbot_view_body.dart';
 
 class ChatbotView extends StatelessWidget {
@@ -26,11 +24,7 @@ class ChatbotView extends StatelessWidget {
       ],
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: buildAppBar(
-          AppBarBody(),
-        ),
         extendBody: true,
-        extendBodyBehindAppBar: true,
         body: ChatbotViewBody(),
       ),
     );

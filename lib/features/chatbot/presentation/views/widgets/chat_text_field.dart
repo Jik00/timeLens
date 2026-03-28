@@ -57,15 +57,16 @@ class _ChatTextFieldState extends State<ChatTextField> {
             suffixIcon: Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
               child: Visibility(
-                visible: controller.text.isNotEmpty,
+                visible: controller.text.trim().isNotEmpty,
                 replacement: SizedBox(
                   height: 36.h,
                 ),
                 child: SendIcon(
                   onSend: () {
-                    context
-                        .read<ChattingCubit>()
-                        .addMssg(chatId: 'z', mssg: controller.text);
+                    context.read<ChattingCubit>().addMssg(
+                          chatId: 'z',
+                          mssg: controller.text.trim(),
+                        );
 
                     setState(() {
                       controller.clear();
