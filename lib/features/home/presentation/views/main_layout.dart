@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/services/get_it_service.dart';
+import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/features/home/presentation/views/widgets/custom_button_navigation_bar.dart';
 import 'package:timelens/features/home/presentation/views/widgets/main_layout_body.dart';
@@ -18,7 +19,7 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  int currentViewIndex = 0;
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +33,20 @@ class _MainLayoutState extends State<MainLayout> {
         extendBodyBehindAppBar: true,
         bottomNavigationBar: CustomButtonNavigationBar(
           onItemTapped: (index) {
-            setState(() {
-              currentViewIndex = index;
-            });
+            NavigationService.handleTabTap(
+              index: index,
+              currentIndex: currentIndex,
+              onTabChanged: (newIndex) {
+                setState(() {
+                  currentIndex = newIndex;
+                });
+              },
+            );
           },
         ),
-        body: MainLayoutBody(currentViewIndex: currentViewIndex),
+        body: MainLayoutBody(
+          currentViewIndex: currentIndex,
+        ),
       ),
     );
   }
