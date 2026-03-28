@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:timelens/core/helper_functions/dummy_figures.dart';
 import 'package:timelens/core/widgets/custom_error_widget.dart';
 import 'package:timelens/features/figures/presentation/cubits/get_figures_list_cubit/get_figures_list_cubit.dart';
@@ -19,16 +18,11 @@ class FiguresListBlocBuilder extends StatelessWidget {
           return CustomErrorWidget(
             message: state.failure.message,
             onTap: () {
-              context
-                  .read<GetFiguresListCubit>()
-                  .getFiguresList();
+              context.read<GetFiguresListCubit>().getFiguresList();
             },
           );
         } else {
-          return Skeletonizer(
-            enabled: true,
-            child: FiguresSlider(figures: dummyFigures()),
-          );
+          return FiguresSlider(figures: dummyFigures());
         }
       },
     );

@@ -38,7 +38,8 @@ class EraStack extends StatelessWidget {
             imageUrl: eraEntity.imageUrl,
             fit: BoxFit.fill,
             width: double.maxFinite,
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            errorWidget: (context, url, error) =>
+                Center(child: const Icon(Icons.error)),
             placeholder: (context, url) => const Center(
               child: CircularProgressIndicator(
                 color: AppColors.primaryColor,
@@ -62,13 +63,17 @@ class EraStack extends StatelessWidget {
           ),
           Positioned(
             bottom: 16,
-            left: 35,
-            child: BackDropFilter(
-              sigmaX: 8,
-              sigmaY: 8,
-              child: SlideToActionButton(
-                progressNotifier: slideProgress,
-                title: eraEntity.eraName,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: BackDropFilter(
+                sigmaX: 8,
+                sigmaY: 8,
+                child: SlideToActionButton(
+                  progressNotifier: slideProgress,
+                  title: eraEntity.eraName,
+                ),
               ),
             ),
           ),

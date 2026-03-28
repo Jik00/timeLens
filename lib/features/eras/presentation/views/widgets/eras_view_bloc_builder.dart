@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:timelens/core/helper_functions/dummy_eras.dart';
 import 'package:timelens/core/widgets/custom_error_widget.dart';
 import 'package:timelens/features/eras/presentation/cubits/get_eras_cubit/get_eras_list_cubit.dart';
@@ -25,10 +24,7 @@ class ErasViewBlocBuilder extends StatelessWidget {
             ),
           );
         } else {
-          return Skeletonizer.sliver(
-            enabled: true,
-            child: EraListview(eras: dummyEras()),
-          );
+          return EraListview(eras: dummyEras());
         }
       },
     );
