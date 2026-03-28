@@ -23,7 +23,10 @@ class _MainLayoutBodyState extends State<MainLayoutBody> {
       index: widget.currentViewIndex,
       children: [
         // Wrapped Navigator fun to handle inside navigation stack
-        _buildNavigator(0, HomeView.routeName),
+        HeroControllerScope(
+          controller: MaterialApp.createMaterialHeroController(),
+          child: _buildNavigator(0, HomeView.routeName),
+        ),
         _buildNavigator(1, ChatbotView.routeName),
         _buildNavigator(2, WeatherView.routeName),
       ],
@@ -37,5 +40,4 @@ class _MainLayoutBodyState extends State<MainLayoutBody> {
       onGenerateRoute: onGenerateRoutes,
     );
   }
-  
 }

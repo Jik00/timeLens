@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
@@ -21,7 +22,7 @@ class CarouselItem extends StatelessWidget {
         GestureDetector(
           onTap: () {
             if (isCenter) {
-              Navigator.pushNamed(context, DisplayDetailView.routeName,
+              NavigationService.navigateWithinTab(context, DisplayDetailView.routeName,
                   arguments: figure);
             }
           },

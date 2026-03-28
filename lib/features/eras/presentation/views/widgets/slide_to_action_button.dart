@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:slide_action/slide_action.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/features/figures/presentation/views/figure_view.dart';
 
@@ -97,7 +98,7 @@ class SlideToActionButton extends StatelessWidget {
           );
         },
         action: () {
-          Navigator.pushNamed(context, FigureView.routeName, arguments: title);
+          NavigationService.navigateWithinTab(context, FigureView.routeName, arguments: title);
         },
       ),
     );
