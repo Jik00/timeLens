@@ -74,9 +74,13 @@ class Assets {
   /// assets/images/icons/lottie/Arrow_down_lottie.json
   static const String assetsImagesIconsLottieArrowDownLottie = "assets/images/icons/lottie/Arrow_down_lottie.json";
 
-  /// Assets for assetsImagesIconsLottieChatbotLottie
-  /// assets/images/icons/lottie/chatbot_lottie.json
-  static const String assetsImagesIconsLottieChatbotLottie = "assets/images/icons/lottie/chatbot_lottie.json";
+  /// Assets for assetsImagesIconsLottiePyramid
+  /// assets/images/icons/lottie/Pyramid.json
+  static const String assetsImagesIconsLottiePyramid = "assets/images/icons/lottie/Pyramid.json";
+
+  /// Assets for assetsImagesIconsLottieVirtualRealityGlasses
+  /// assets/images/icons/lottie/VirtualRealityGlasses.json
+  static const String assetsImagesIconsLottieVirtualRealityGlasses = "assets/images/icons/lottie/VirtualRealityGlasses.json";
 
   /// Assets for assetsImagesIconsPadlock
   /// assets/images/icons/padlock.png
@@ -129,6 +133,10 @@ class Assets {
   /// Assets for assetsImagesRamses2Statue
   /// assets/images/ramses-2-statue.png
   static const String assetsImagesRamses2Statue = "assets/images/ramses-2-statue.png";
+
+  /// Assets for assetsImagesRealPyramids
+  /// assets/images/real_pyramids.png
+  static const String assetsImagesRealPyramids = "assets/images/real_pyramids.png";
 
   /// Assets for assetsImagesRemsesStatue
   /// assets/images/remses_statue.png

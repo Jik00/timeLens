@@ -90,10 +90,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
             child: SlideTransition(
               position: _pyramidSlide,
               child: SizedBox(
-                height: 230.h,
+                height: 260.h,
                 width: double.maxFinite,
                 child: Image.asset(
-                  Assets.assetsImagesPyramidSplash,
+                  Assets.assetsImagesRealPyramids,
                   fit: BoxFit.fitHeight,
                 ),
               ),

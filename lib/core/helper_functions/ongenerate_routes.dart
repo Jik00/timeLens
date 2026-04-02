@@ -9,7 +9,7 @@ import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
-import 'package:timelens/features/test/test_view.dart';
+import 'package:timelens/features/vr_instructions/presentation/views/vr_instructions_view.dart';
 import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
@@ -60,12 +60,6 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         settings: settings,
       );
 
-    case TestView.routeName:
-      return MaterialPageRoute(
-        builder: (_) => const TestView(),
-        settings: settings,
-      );
-
     case DisplayDetailView.routeName:
       final FigureEntity figure = settings.arguments as FigureEntity;
       return PageRouteBuilder(
@@ -98,6 +92,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case ChatbotView.routeName:
       return MaterialPageRoute(
         builder: (_) => const ChatbotView(),
+        settings: settings,
+      );
+
+    case VrInstructionsView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const VrInstructionsView(),
         settings: settings,
       );
 
