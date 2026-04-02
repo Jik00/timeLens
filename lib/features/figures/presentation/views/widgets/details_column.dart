@@ -20,22 +20,25 @@ class DetailsColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.w, top: 105.h),
+      padding: EdgeInsets.only(left: 20.w, top: 95.h),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Hero(
-            tag: kHeroTagName,
-            child: StrokeTextCizel(
-              title: figure.figureName,
-              colors: const [AppColors.timeLensColor, Colors.white],
-              titleSize: 39,
-              borderColor: AppColors.brownWriting,
+          Transform.translate(
+            offset: Offset(-10.w, 0),
+            child: Hero(
+              tag: kHeroTagName,
+              child: StrokeTextCizel(
+                title: figure.figureName,
+                colors: const [AppColors.timeLensColor, Colors.white],
+                titleSize: 39,
+                borderColor: AppColors.brownWriting,
+              ),
             ),
           ),
-          SizedBox(height: 15.h),
+          SizedBox(height: 25.h),
           SlideTransitionAnimation(
             child: Image.asset(
               Assets.assetsImagesWriting,
@@ -91,9 +94,9 @@ class DetailsColumn extends StatelessWidget {
           Center(
             child: CustomButton(
               hint: figure.ready,
-              scaleX: 0.8,
+              isIgnored: figure.ready == "Coming Soon",
               onTap: () {
-                NavigationService.pushGlobal( VrInstructionsView.routeName);
+                NavigationService.pushGlobal(VrInstructionsView.routeName);
               },
             ),
           ),

@@ -9,47 +9,52 @@ class CustomButton extends StatelessWidget {
     required this.hint,
     this.onTap,
     this.scaleX,
+    this.isIgnored = false,
   });
 
   final String hint;
   final VoidCallback? onTap;
   final double? scaleX;
+  final bool? isIgnored;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: SizedBox(
-        width: 220.w,
-        height: 70.h,
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Transform.scale(
-                scaleX: scaleX ?? 1,
-                child: Image.asset(
-                  Assets.assetsImagesButtonFrame,
-                  height: 65.h,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  hint,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 22.sp,
-                    color: AppColors.brownWriting.withAlpha(227),
+    return IgnorePointer(
+      ignoring: isIgnored ?? false,
+      child: GestureDetector(
+        onTap: onTap,
+        child: SizedBox(
+          width: 220.w,
+          height: 70.h,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Transform.scale(
+                  scaleX: scaleX ?? 1,
+                  child: Image.asset(
+                    Assets.assetsImagesButtonFrame,
+                    height: 65.h,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-            ),
-          ],
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    hint,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 22.sp,
+                      color: AppColors.brownWriting.withAlpha(227),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

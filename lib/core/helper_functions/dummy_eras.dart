@@ -11,4 +11,4 @@ EraEntity dummyEra() {
   );
 }
 
-List<EraEntity> dummyEras() => List.generate(3, (index) => dummyEra());
+List<EraEntity> dummyEras() => List.generate(2, (index) => dummyEra());

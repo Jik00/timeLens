@@ -26,7 +26,7 @@ class DisplayDetailViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 155.h,
+            bottom: 140.h,
             right: 15.w,
             child: GestureDetector(
               onTap: () {
