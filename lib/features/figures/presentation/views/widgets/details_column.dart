@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/slide_transition_animation.dart';
-import 'package:timelens/features/test/test_view.dart';
+import 'package:timelens/features/vr_instructions/presentation/views/vr_instructions_view.dart';
 
 import '../../../../../core/utils/app_images.dart';
 
@@ -89,10 +90,10 @@ class DetailsColumn extends StatelessWidget {
           ),
           Center(
             child: CustomButton(
-              hint: 'let\'s dive',
+              hint: figure.ready,
               scaleX: 0.8,
               onTap: () {
-                Navigator.pushNamed(context, TestView.routeName);
+                NavigationService.pushGlobal( VrInstructionsView.routeName);
               },
             ),
           ),

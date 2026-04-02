@@ -318,6 +318,76 @@ class S {
       args: [],
     );
   }
+
+  /// `More About ...`
+  String get moreAbout {
+    return Intl.message(
+      'More About ...',
+      name: 'moreAbout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instructions`
+  String get instructions {
+    return Intl.message(
+      'Instructions',
+      name: 'instructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Put on your VR headset and ensure it is properly adjusted for comfort.`
+  String get instructions1 {
+    return Intl.message(
+      '1. Put on your VR headset and ensure it is properly adjusted for comfort.',
+      name: 'instructions1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2. Use the controllers to navigate through the virtual environment and interact with objects.`
+  String get instructions2 {
+    return Intl.message(
+      '2. Use the controllers to navigate through the virtual environment and interact with objects.',
+      name: 'instructions2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3. Follow the on-screen prompts to access different features and experiences within the VR world.`
+  String get instructions3 {
+    return Intl.message(
+      '3. Follow the on-screen prompts to access different features and experiences within the VR world.',
+      name: 'instructions3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `4. To chat with Figures, approach the designated area and talk to initiate the conversation.`
+  String get instructions4 {
+    return Intl.message(
+      '4. To chat with Figures, approach the designated area and talk to initiate the conversation.',
+      name: 'instructions4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past.`
+  String get instructions5 {
+    return Intl.message(
+      '5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past.',
+      name: 'instructions5',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

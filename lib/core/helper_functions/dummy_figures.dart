@@ -8,6 +8,7 @@ FigureEntity dummyFigure() {
     belongEra: 'The New Kingdom',
     imageUrl:
         'https://bgiyysstohukhiztkyju.supabase.co/storage/v1/object/public/figures/ramses_ii/remses_statue.png',
+    ready: 'Ready',
   );
 }
 

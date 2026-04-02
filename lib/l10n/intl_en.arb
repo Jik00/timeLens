@@ -33,6 +33,13 @@
     "loading": "Loading...",
     "vr": "virtual reality",
     "exploreTheWorld": "Explore the world",
-    "chatWithThoth": "Chat with Thoth"
+    "chatWithThoth": "Chat with Thoth",
+    "moreAbout": "More About ...",
+    "instructions": "Instructions",
+    "instructions1": "1. Put on your VR headset and ensure it is properly adjusted for comfort.",
+    "instructions2": "2. Use the controllers to navigate through the virtual environment and interact with objects.",
+    "instructions3": "3. Follow the on-screen prompts to access different features and experiences within the VR world.",
+    "instructions4": "4. To chat with Figures, approach the designated area and talk to initiate the conversation.",
+    "instructions5": "5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past."
 
 }

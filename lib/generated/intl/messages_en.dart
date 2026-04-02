@@ -39,10 +39,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
+    "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
+    "instructions1": MessageLookupByLibrary.simpleMessage(
+      "1. Put on your VR headset and ensure it is properly adjusted for comfort.",
+    ),
+    "instructions2": MessageLookupByLibrary.simpleMessage(
+      "2. Use the controllers to navigate through the virtual environment and interact with objects.",
+    ),
+    "instructions3": MessageLookupByLibrary.simpleMessage(
+      "3. Follow the on-screen prompts to access different features and experiences within the VR world.",
+    ),
+    "instructions4": MessageLookupByLibrary.simpleMessage(
+      "4. To chat with Figures, approach the designated area and talk to initiate the conversation.",
+    ),
+    "instructions5": MessageLookupByLibrary.simpleMessage(
+      "5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past.",
+    ),
     "lat": MessageLookupByLibrary.simpleMessage("Lat"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
+    "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Step into immersive worlds and relive the past like never before",

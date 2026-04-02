@@ -25,7 +25,7 @@ class ChatbotView extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         extendBody: true,
-        body: ChatbotViewBody(),
+        body: const ChatbotViewBody(),
       ),
     );
   }
