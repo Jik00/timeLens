@@ -388,6 +388,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Login failed. Please check your credentials and try again.`
+  String get loginError {
+    return Intl.message(
+      'Login failed. Please check your credentials and try again.',
+      name: 'loginError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

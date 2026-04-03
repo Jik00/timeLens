@@ -32,7 +32,7 @@ class VrInstructionsViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Lottie.asset(
-                    kLottiePyramid,
+                    kLottieVR,
                     width: 300.w,
                   ),
                   SizedBox(height: 20.h),

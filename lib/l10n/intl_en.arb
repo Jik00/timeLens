@@ -40,6 +40,7 @@
     "instructions2": "2. Use the controllers to navigate through the virtual environment and interact with objects.",
     "instructions3": "3. Follow the on-screen prompts to access different features and experiences within the VR world.",
     "instructions4": "4. To chat with Figures, approach the designated area and talk to initiate the conversation.",
-    "instructions5": "5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past."
+    "instructions5": "5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past.",
+    "loginError": "Login failed. Please check your credentials and try again."
 
 }

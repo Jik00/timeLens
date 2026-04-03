@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
+import 'package:timelens/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/password_field.dart';
-
-import '../../../../eras/presentation/views/eras_view.dart';
 
 class TextFieldsColumn extends StatefulWidget {
   const TextFieldsColumn({super.key});
@@ -62,9 +62,11 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
 
-                //////////////// backend login ///////////////////////
-                //
-                Navigator.pushReplacementNamed(context, ErasView.routeName);
+                context
+                    .read<SignInCubit>()
+                    .signInWithEmailAndPassword(email: email, password: pass);
+
+
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

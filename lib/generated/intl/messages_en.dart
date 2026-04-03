@@ -58,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lat": MessageLookupByLibrary.simpleMessage("Lat"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginError": MessageLookupByLibrary.simpleMessage(
+      "Login failed. Please check your credentials and try again.",
+    ),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),

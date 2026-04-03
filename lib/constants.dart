@@ -5,8 +5,8 @@ const String kLottieRightArrow =
     'assets/images/icons/lottie/Arrow_down_lottie.json';
 const String kLottiePyramid =
     'assets/images/icons/lottie/Pyramidal.json';
-const String kLottieVirtualRealityGlasses =
-    'assets/images/icons/lottie/VirtualRealityGlasses.json';
+const String kLottieVR =
+    'assets/images/icons/lottie/vr.json';
 
 
 /// Hero Tags /////////////
