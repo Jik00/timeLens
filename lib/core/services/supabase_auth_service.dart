@@ -38,7 +38,7 @@ class SupabaseAuthService {
       return user;
     } on Exception catch (e) {
       log('Error in SupabaseAuthService.signInWithEmail: ${e.toString()}');
-      throw Exception(S().loginError);
+      throw Exception('Login failed. Please check your credentials and try again.');
     }
   }
 
@@ -50,7 +50,7 @@ class SupabaseAuthService {
       );
     } on Exception catch (e) {
       log('Error in SupabaseAuthService.signInWithGoogle: ${e.toString()}');
-      throw Exception(S().loginError);
+      throw Exception('Login failed. Please check your credentials and try again.');
     }
   }
   

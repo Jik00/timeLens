@@ -1,5 +1,7 @@
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
+import 'package:timelens/constants.dart';
+import 'package:timelens/core/data_sources/supa_data_source.dart';
 import 'package:timelens/core/errors/cutoms_exception.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
@@ -11,17 +13,29 @@ import '../../../../core/services/get_it_service.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final SupabaseAuthService supabaseAuthService;
+  final SupabaseDataSource dataSource;
 
-  AuthRepoImpl({required this.supabaseAuthService});
+  AuthRepoImpl({required this.supabaseAuthService, required this.dataSource});
 
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmail(
       String email, String password, String username) async {
     try {
+
       final user = await supabaseAuthService.signUpWithEmail(
           email: email, password: password, username: username);
 
+     await dataSource.addData(
+        tableName: kUsersTable,
+        data: {
+          'id': user.id,
+          'email': user.email,
+          'username': username,
+        },
+      );
+
       return Right(UserModel.fromSupabaseUser(user));
+
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
@@ -40,7 +54,7 @@ class AuthRepoImpl extends AuthRepo {
           email: email, password: password);
 
       return Right( UserModel.fromSupabaseUser(user));
-      
+
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {

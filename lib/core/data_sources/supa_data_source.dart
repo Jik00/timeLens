@@ -1,12 +1,27 @@
 import 'dart:developer';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:timelens/core/data_sources/data_source.dart';
 
-class SupabaseDataSource {
+class SupabaseDataSource extends DataSource {
   final SupabaseClient supabase;
 
   SupabaseDataSource(this.supabase);
 
+  @override
+  Future<void> addData(
+      {required String tableName, required Map<String, dynamic> data}) async {
+    try {
+      log(data.toString());
+
+      await supabase.from(tableName).insert(data);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+
+  @override
   Future<List<Map<String, dynamic>>> fetchAllData(
       {required String tableName}) async {
     try {
@@ -23,6 +38,7 @@ class SupabaseDataSource {
     }
   }
 
+  @override
   Future<List<Map<String, dynamic>>> fetchDataBy(
       {required String tableName,
       required String query,
@@ -42,6 +58,7 @@ class SupabaseDataSource {
     }
   }
 
+  @override
   Stream<List<Map<String, dynamic>>> fetchDataByStream(
       {required String tableName,
       required String query,

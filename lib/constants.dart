@@ -37,6 +37,7 @@ const String kSupaChatTable = "mssgs_table";
 const String kSupaChatId = "chat_id";
 const String kSupaFiguresTable = "figures_table";
 const String kSupaBelongEra = "belong_era";
+const String kUsersTable = "users_table";
 
 
 /// Dio Constants /////////////

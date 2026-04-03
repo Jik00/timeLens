@@ -6,7 +6,7 @@ import 'package:timelens/constants.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/domain/repos/figure_repo.dart';
-import 'package:timelens/core/data_sources/supa_era_data_source.dart';
+import 'package:timelens/core/data_sources/supa_data_source.dart';
 
 class FigureRepoImpl implements FigureRepo {
   final SupabaseDataSource dataSource;
