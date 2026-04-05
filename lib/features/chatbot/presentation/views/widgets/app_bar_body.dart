@@ -8,11 +8,16 @@ class AppBarBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final bool canPop = Navigator.canPop(context);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Visibility(
-          visible: Navigator.canPop(context),
+          visible: canPop,
+          maintainAnimation: true,
+          maintainState: true,
+          maintainSize: true,
           child: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -24,19 +29,16 @@ class AppBarBody extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          width: 85.w,
-        ),
+        Spacer(),
         Text(
           context.loc.thoth,
           style: TextStyle(
             fontSize: 23.sp,
             fontWeight: FontWeight.bold,
+            color: AppColors.brownWriting,
           ),
         ),
-        SizedBox(
-          width: 85.w,
-        ),
+       Spacer(),
         IconButton(
           onPressed: () {},
           icon: Icon(

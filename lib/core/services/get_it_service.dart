@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:timelens/core/data_sources/data_source.dart';
 import 'package:timelens/core/network/dio_factory.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/features/auth/data/repos/auth_repo_impl.dart';
@@ -22,7 +21,7 @@ final supabase = Supabase.instance.client;
 
 void setupGetIt() {
   /// data source \\\
-  getIt.registerSingleton<DataSource>(SupabaseDataSource(supabase));
+  getIt.registerSingleton(SupabaseDataSource(supabase));
 
   /// services \\\
   getIt.registerSingleton<SupabaseAuthService>(SupabaseAuthService());

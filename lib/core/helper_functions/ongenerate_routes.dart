@@ -8,6 +8,7 @@ import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:timelens/features/profile/presentation/views/profile_view.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/features/vr_instructions/presentation/views/vr_instructions_view.dart';
 import 'package:timelens/features/weather/presentation/views/weather_view.dart';
@@ -98,6 +99,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case VrInstructionsView.routeName:
       return MaterialPageRoute(
         builder: (_) => const VrInstructionsView(),
+        settings: settings,
+      );
+
+    case ProfileView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const ProfileView(),
         settings: settings,
       );
 

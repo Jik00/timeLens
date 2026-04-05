@@ -23,7 +23,7 @@ class LoginViewBody extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              const BackgroundWithTopFrame( 
+              const BackgroundWithTopFrame(
                 img: Assets.assetsImagesTopFrame,
               ),
               Positioned(
@@ -42,10 +42,6 @@ class LoginViewBody extends StatelessWidget {
                             AppColors.middleColor,
                             Colors.white
                           ],
-                          // colors: [
-                          //   AppColors.brownWriting.withOpacity(0.5),
-                          //   AppColors.brownWriting.withOpacity(0.5),
-                          // ],
                           titleSize: 50,
                           borderColor: AppColors.brownWriting),
                     ),
@@ -59,8 +55,8 @@ class LoginViewBody extends StatelessWidget {
                 right: 0,
                 top: 320.h,
                 child: Transform.scale(
-                  scaleX: 1.65,
-                  scaleY: 1.85,
+                  scaleX: 1.5.w,
+                  scaleY: 1.7.h,
                   child: Image.asset(
                     Assets.assetsImagesSquareFrame,
                   ),

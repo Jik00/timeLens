@@ -12,37 +12,39 @@ class WeatherViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: double.maxFinite,
-      child: Stack(
-        children: [
-          BackgroundWithTopFrame(img: Assets.assetsImagesWeatherHeadingCut),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: EdgeInsets.only(top: 105.h),
-              child: Text(
-                context.loc.weather,
-                style: TextStyle(
-                  fontSize: 23.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.brownWriting,
+    return SingleChildScrollView(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 1.2,
+        child: Stack(
+          children: [
+            BackgroundWithTopFrame(img: Assets.assetsImagesWeatherHeadingCut),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(top: 105.h),
+                child: Text(
+                  context.loc.weather,
+                  style: TextStyle(
+                    fontSize: 23.sp,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.brownWriting,
+                  ),
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment(0, -0.5),
-            child: CitySearchAnchor(),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: EdgeInsets.only(top: 50.h),
-              child: const WeatherBodyBlocBuilder(),
+            Align(
+              alignment: Alignment(0, -0.5),
+              child: CitySearchAnchor(),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(top: 50.h),
+                child: const WeatherBodyBlocBuilder(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

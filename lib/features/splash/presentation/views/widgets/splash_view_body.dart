@@ -7,13 +7,15 @@ import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
 //import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 //import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
-import 'package:timelens/features/home/presentation/views/main_layout.dart';
+//import 'package:timelens/features/home/presentation/views/main_layout.dart';
 import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
 import '../../../../../core/widgets/stroke_text_cinzel.dart';
-//import '../../../../auth/presentation/views/login_view.dart';
+import '../../../../auth/presentation/views/login_view.dart';
+
+
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -90,10 +92,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
             child: SlideTransition(
               position: _pyramidSlide,
               child: SizedBox(
-                height: 260.h,
+                height: 230.h,
                 width: double.maxFinite,
                 child: Image.asset(
-                  Assets.assetsImagesRealPyramids,
+                  Assets.assetsImagesPyramidSplash,
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -147,10 +149,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
       () {
         if (mounted) {
           if (isOnboardingSeen) {
-            //Navigator.pushReplacementNamed(context, LoginView.routeName);
+            Navigator.pushReplacementNamed(context, LoginView.routeName);
             //navigator.pushReplacementNamed(ErasView.routeName);
             //navigator.pushReplacementNamed(ChatbotView.routeName);
-            navigator.pushReplacementNamed(MainLayout.routeName);
+           // navigator.pushReplacementNamed(MainLayout.routeName);
 
           } else {
             navigator.pushReplacementNamed(OnboardingView.routeName);

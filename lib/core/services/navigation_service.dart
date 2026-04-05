@@ -6,6 +6,7 @@ final List<GlobalKey<NavigatorState>> tabNavigatorKeys = [
   GlobalKey<NavigatorState>(), // HomeView
   GlobalKey<NavigatorState>(), // ChatbotView
   GlobalKey<NavigatorState>(), // For WeatherView
+  GlobalKey<NavigatorState>(), // For ProfileView
 ];
 
 class NavigationService {

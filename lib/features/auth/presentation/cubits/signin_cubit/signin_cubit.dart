@@ -8,14 +8,14 @@ part 'signin_state.dart';
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit(this.authRepo) : super(SignInInitial()) {
 
-    // Listen to auth state changes
-    authRepo.authStateChanges().listen((user) {
-      if (user != null) {
-        emit(SignInSuccess(user: user));
-      } else {
-        emit(SignInInitial());
-      }
-    });
+    // // Listen to auth state changes
+    // authRepo.authStateChanges().listen((user) {
+    //   if (user != null) {
+    //     emit(SignInSuccess(user: user));
+    //   } else {
+    //     emit(SignInInitial());
+    //   }
+    // });
   }
 
   final AuthRepo authRepo;
@@ -30,8 +30,8 @@ class SignInCubit extends Cubit<SignInState> {
 
     result.fold(
       (failure) => emit(SignInFailure(message: failure.message)),
-      (_) {
-        // Do nothing — wait for authStateChanges to emit SignInSuccess
+      (userEntity) {
+        emit(SignInSuccess(user: userEntity));
       },
     );
   }

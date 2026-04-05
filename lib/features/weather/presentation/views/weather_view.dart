@@ -26,7 +26,7 @@ class WeatherView extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        resizeToAvoidBottomInset: true,
+        // resizeToAvoidBottomInset: true,
         extendBodyBehindAppBar: true,
         appBar: buildAppBar(null),
         extendBody: true,

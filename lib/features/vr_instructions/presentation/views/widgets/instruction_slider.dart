@@ -20,7 +20,7 @@ class _InstructionSliderState extends State<InstructionSlider> {
   void initState() {
     super.initState();
 
-    _timer = Timer.periodic(const Duration(seconds: 5), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 4), (_) {
       setState(() {
         _index = (_index + 1) % 5;
       });

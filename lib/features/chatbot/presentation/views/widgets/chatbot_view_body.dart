@@ -26,7 +26,7 @@ class ChatbotViewBody extends StatelessWidget {
             padding: EdgeInsets.only(
               left: 16.w,
               right: 16.w,
-              bottom: 120.h,
+              bottom: 130.h,
               top: 95.h,
             ),
             child: ChatBodyBlocBuilder(),
@@ -36,7 +36,7 @@ class ChatbotViewBody extends StatelessWidget {
           alignment: AlignmentGeometry.topCenter,
           child: Padding(
             padding: EdgeInsets.only(
-              right: 18.w,
+             // right: 18.w,
               top: 45.h,
               bottom: 100.h,
             ),
@@ -46,14 +46,14 @@ class ChatbotViewBody extends StatelessWidget {
         Align(
           alignment: AlignmentGeometry.bottomCenter,
           child: Padding(
-            padding: EdgeInsets.only(bottom: 60.h),
+            padding: EdgeInsets.only(bottom: 65.h),
             child: ChatTextField(),
           ),
         ),
         Align(
           alignment: AlignmentGeometry.bottomCenter,
           child: Padding(
-            padding: EdgeInsets.only(bottom: 28.h),
+            padding: EdgeInsets.only(bottom: 33.h),
             child: Text(
               context.loc.thothCanMakemistakes,
               style: TextStyle(

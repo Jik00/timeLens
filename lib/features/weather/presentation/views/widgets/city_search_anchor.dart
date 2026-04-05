@@ -29,26 +29,21 @@ class CitySearchAnchor extends StatelessWidget {
             builder: (BuildContext context, SearchController controller) {
               return CitySearchBar(controller: controller);
             },
-
             viewOnChanged: (value) {
               context.read<SearchCityCubit>().searchCity(value);
             },
-
             dividerColor: AppColors.primaryColor,
             viewPadding: EdgeInsets.only(bottom: 4.h),
             isFullScreen: false,
             viewBackgroundColor: Colors.white.withAlpha(110),
-
             viewElevation: 0,
             viewShape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(28),
             ),
-
             viewConstraints: BoxConstraints(
               minHeight: 100.h,
             ),
             shrinkWrap: true,
-
             suggestionsBuilder:
                 (BuildContext context, SearchController controller) {
               return [

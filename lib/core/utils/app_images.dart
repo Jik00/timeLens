@@ -78,9 +78,17 @@ class Assets {
   /// assets/images/icons/lottie/Pyramid.json
   static const String assetsImagesIconsLottiePyramid = "assets/images/icons/lottie/Pyramid.json";
 
+  /// Assets for assetsImagesIconsLottiePyramidal
+  /// assets/images/icons/lottie/Pyramidal.json
+  static const String assetsImagesIconsLottiePyramidal = "assets/images/icons/lottie/Pyramidal.json";
+
   /// Assets for assetsImagesIconsLottieVirtualRealityGlasses
   /// assets/images/icons/lottie/VirtualRealityGlasses.json
   static const String assetsImagesIconsLottieVirtualRealityGlasses = "assets/images/icons/lottie/VirtualRealityGlasses.json";
+
+  /// Assets for assetsImagesIconsLottieVr
+  /// assets/images/icons/lottie/vr.json
+  static const String assetsImagesIconsLottieVr = "assets/images/icons/lottie/vr.json";
 
   /// Assets for assetsImagesIconsPadlock
   /// assets/images/icons/padlock.png
@@ -137,10 +145,6 @@ class Assets {
   /// Assets for assetsImagesRealPyramids
   /// assets/images/real_pyramids.png
   static const String assetsImagesRealPyramids = "assets/images/real_pyramids.png";
-
-  /// Assets for assetsImagesRemsesStatue
-  /// assets/images/remses_statue.png
-  static const String assetsImagesRemsesStatue = "assets/images/remses_statue.png";
 
   /// Assets for assetsImagesSearchCityCard
   /// assets/images/search_city_card.png
@@ -213,10 +217,6 @@ class Assets {
   /// Assets for assetsImagesWeatherPicCut
   /// assets/images/weather_pic_cut.png
   static const String assetsImagesWeatherPicCut = "assets/images/weather_pic_cut.png";
-
-  /// Assets for assetsImagesWhiteLight
-  /// assets/images/white-light.png
-  static const String assetsImagesWhiteLight = "assets/images/white-light.png";
 
   /// Assets for assetsImagesWriting
   /// assets/images/writing.png
