@@ -17,4 +17,9 @@ abstract class DataSource {
     required String query,
     required String value,
   });
+
+  Future<Map<String, dynamic>> fetchSingleById({
+    required String tableName,
+    required String id,
+  });
 }

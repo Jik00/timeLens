@@ -20,7 +20,6 @@ class SupabaseDataSource extends DataSource {
     }
   }
 
-
   @override
   Future<List<Map<String, dynamic>>> fetchAllData(
       {required String tableName}) async {
@@ -39,18 +38,15 @@ class SupabaseDataSource extends DataSource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> fetchDataBy(
-      {required String tableName,
-      required String query,
-      required String value,
-      String? query2,
-      String? value2,
-      }) async {
+  Future<List<Map<String, dynamic>>> fetchDataBy({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
+  }) async {
     try {
-      var dbQuery = supabase
-        .from(tableName)
-        .select()
-        .eq(query, value);
+      var dbQuery = supabase.from(tableName).select().eq(query, value);
 
       // Conditionally chain before executing
       if (query2 != null && value2 != null) {
@@ -78,5 +74,20 @@ class SupabaseDataSource extends DataSource {
         .eq(query, value)
         .order('created_at', ascending: true)
         .asStream();
+  }
+
+  @override
+  Future<Map<String, dynamic>> fetchSingleById({
+    required String tableName,
+    required String id,
+  }) async {
+    try {
+      final response =
+          await supabase.from(tableName).select().eq('id', id).single();
+      return response;
+    } catch (e) {
+      log("Error fetching single record: $e");
+      rethrow;
+    }
   }
 }
