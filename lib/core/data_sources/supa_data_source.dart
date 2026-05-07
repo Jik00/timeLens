@@ -42,13 +42,22 @@ class SupabaseDataSource extends DataSource {
   Future<List<Map<String, dynamic>>> fetchDataBy(
       {required String tableName,
       required String query,
-      required String value}) async {
+      required String value,
+      String? query2,
+      String? value2,
+      }) async {
     try {
-      final response = await supabase
-          .from(tableName)
-          .select()
-          .eq(query, value)
-          .order('created_at', ascending: true);
+      var dbQuery = supabase
+        .from(tableName)
+        .select()
+        .eq(query, value);
+
+      // Conditionally chain before executing
+      if (query2 != null && value2 != null) {
+        dbQuery = dbQuery.eq(query2, value2);
+      }
+
+      final response = await dbQuery.order('created_at', ascending: true);
 
       log("Fetched ${response.length} objects");
       return response;
