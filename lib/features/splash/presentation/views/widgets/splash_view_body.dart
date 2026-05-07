@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:timelens/constants.dart';
-import 'package:timelens/core/services/shared_preferences_singleton.dart';
+import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/app_logo.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 //import 'package:timelens/features/eras/presentation/views/eras_view.dart';
 //import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 //import 'package:timelens/features/home/presentation/views/main_layout.dart';
-import 'package:timelens/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:timelens/features/splash/presentation/manager/splash_nav_manager.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/widgets/background_with_top_frame.dart';
 import '../../../../../core/widgets/stroke_text_cinzel.dart';
-import '../../../../auth/presentation/views/login_view.dart';
-
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -36,7 +34,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _initAnimationController();
     _initAnimations();
     _startAnimation();
-    _scheduleNavigation();
+    _navigate();
   }
 
   @override
@@ -50,7 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return SizedBox.expand(
       child: Stack(
         children: [
-          const BackgroundWithTopFrame( 
+          const BackgroundWithTopFrame(
             img: Assets.assetsImagesTopFrame,
           ),
 
@@ -141,24 +139,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _controller.forward();
   }
 
-  void _scheduleNavigation() {
-    bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
-    final navigator = Navigator.of(context);
-    Future.delayed(
-      const Duration(milliseconds: 4000),
-      () {
-        if (mounted) {
-          if (isOnboardingSeen) {
-            Navigator.pushReplacementNamed(context, LoginView.routeName);
-            //navigator.pushReplacementNamed(ErasView.routeName);
-            //navigator.pushReplacementNamed(ChatbotView.routeName);
-           // navigator.pushReplacementNamed(MainLayout.routeName);
+  Future<void> _navigate() async {
+    final manager = SplashNavManager(getIt<AuthController>());
 
-          } else {
-            navigator.pushReplacementNamed(OnboardingView.routeName);
-          }
-        }
-      },
-    );
+    final nextRoute = await manager.determineNextRoute();
+
+    if (mounted) {
+      Navigator.pushReplacementNamed(context, nextRoute);
+    }
   }
 }
