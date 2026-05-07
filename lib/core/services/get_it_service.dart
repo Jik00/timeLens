@@ -5,6 +5,8 @@ import 'package:timelens/core/network/dio_factory.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:timelens/features/auth/domain/repos/auth_repo.dart';
+import 'package:timelens/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 import 'package:timelens/features/chatbot/data/repos/chat_repo_impl.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
 import 'package:timelens/features/figures/data/repo/figure_repo_impl.dart';
@@ -56,4 +58,21 @@ void setupGetIt() {
     supabase: supabase,
     dataSource: getIt<SupabaseDataSource>(),
   ));
+
+
+
+
+  /// usecases \\\
+  getIt.registerSingleton<CheckAuthStatusUseCase>(
+    CheckAuthStatusUseCase(getIt<AuthRepo>()),
+  );
+
+
+  /// cubits \\\
+  getIt.registerSingleton<AuthController>(
+    AuthController(
+      getIt<CheckAuthStatusUseCase>(),
+      getIt<ProfileRepo>(),
+    ),
+  );
 }
