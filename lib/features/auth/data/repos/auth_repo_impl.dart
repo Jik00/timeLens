@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/data_sources/supa_data_source.dart';
-import 'package:timelens/core/errors/cutoms_exception.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/features/auth/data/models/user_model.dart';
@@ -21,11 +20,10 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, UserEntity>> createUserWithEmail(
       String email, String password, String username) async {
     try {
-
       final user = await supabaseAuthService.signUpWithEmail(
           email: email, password: password, username: username);
 
-     await dataSource.addData(
+      await dataSource.addData(
         tableName: kUsersTable,
         data: {
           'id': user.id,
@@ -35,7 +33,6 @@ class AuthRepoImpl extends AuthRepo {
       );
 
       return Right(UserModel.fromSupabaseUser(user));
-
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
@@ -53,8 +50,7 @@ class AuthRepoImpl extends AuthRepo {
       final user = await supabaseAuthService.signInWithEmail(
           email: email, password: password);
 
-      return Right( UserModel.fromSupabaseUser(user));
-
+      return Right(UserModel.fromSupabaseUser(user));
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
@@ -89,5 +85,12 @@ class AuthRepoImpl extends AuthRepo {
 
       return UserModel.fromSupabaseUser(session.user);
     });
+  }
+
+  @override
+  Future<UserEntity?> getCurrentUser() async {
+    final session = supabase.auth.currentSession;
+    if (session == null) return null;
+    return UserModel.fromSupabaseUser(session.user);
   }
 }

@@ -13,4 +13,5 @@ abstract class AuthRepo {
 
   Stream<UserEntity?> authStateChanges();
 
+  Future<UserEntity?> getCurrentUser();
 }
