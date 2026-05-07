@@ -19,3 +19,7 @@ class StorageFailure extends Failure {
 class DatabaseFailure extends Failure {
   DatabaseFailure(super.message);
 }
+
+class CustomException extends Failure {
+  CustomException(super.message);
+}
