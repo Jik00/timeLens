@@ -39,7 +39,9 @@ const String kSupaFiguresTable = "figures_table";
 const String kSupaBelongEra = "belong_era";
 const String kUsersTable = "users_table";
 const String kSupaProfilesTable = "profiles";
+const String kUserIdQuery = "user_id";
 
+const String kHiveProfilesBox = 'profiles';
 
 /// Dio Constants /////////////
 const String kApiKey = '1344a7f8315943e2856153511262402';

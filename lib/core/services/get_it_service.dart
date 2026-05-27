@@ -15,7 +15,8 @@ import 'package:timelens/features/eras/domain/repos/era_repo.dart';
 import 'package:timelens/features/eras/data/repos/era_repo_impl.dart';
 import 'package:timelens/core/services/weather_api_service.dart';
 import 'package:timelens/core/data_sources/supa_data_source.dart';
-import 'package:timelens/features/profile/data/repos/profile_repo_impl.dart';
+import 'package:timelens/features/profile/data/datasource/hive_profile_datasource.dart';
+import 'package:timelens/features/profile/data/repo/profile_repo_impl.dart';
 import 'package:timelens/features/profile/domain/repo/profile_repo.dart';
 import 'package:timelens/features/weather/data/repo/weather_repo_impl.dart';
 import 'package:timelens/features/weather/domain/repo/weather_repo.dart';
@@ -26,6 +27,7 @@ final supabase = Supabase.instance.client;
 void setupGetIt() {
   /// data source \\\
   getIt.registerSingleton(SupabaseDataSource(supabase));
+  getIt.registerSingleton(HiveProfileDataSource());
 
   /// services \\\
   getIt.registerSingleton<SupabaseAuthService>(SupabaseAuthService());
@@ -35,13 +37,16 @@ void setupGetIt() {
 
   /// repos \\\
   getIt.registerSingleton<AuthRepo>(AuthRepoImpl(
-    dataSource: getIt<SupabaseDataSource>(),
     supabaseAuthService: getIt<SupabaseAuthService>(),
   ));
 
-  getIt.registerSingleton<ProfileRepo>(ProfileRepoImpl(
-    dataSource: getIt<SupabaseDataSource>(),
-  ));
+  getIt.registerSingleton<ProfileRepo>(
+    ProfileRepoImpl(
+      supabaseDataSource: getIt<SupabaseDataSource>(),
+      localDataSource: getIt<HiveProfileDataSource>(),
+    ),
+  );
+
 
   getIt.registerSingleton<EraRepo>(EraRepoImpl(
     dataSource: getIt<SupabaseDataSource>(),

@@ -8,14 +8,27 @@ abstract class DataSource {
     required String tableName,
     required String query,
     required String value,
-    String? query2,
-    String? value2,
   });
 
   Stream<List<Map<String, dynamic>>> fetchDataByStream({
     required String tableName,
     required String query,
     required String value,
+  });
+
+  Future<void> updateData({
+    required String tableName,
+    required String query,
+    required String value,
+    required Map<String, dynamic> newData,
+  });
+
+  Future<void> deleteData({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
   });
 
   Future<Map<String, dynamic>> fetchSingleById({

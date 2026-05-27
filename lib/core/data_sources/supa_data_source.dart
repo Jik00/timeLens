@@ -38,22 +38,16 @@ class SupabaseDataSource extends DataSource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> fetchDataBy({
-    required String tableName,
-    required String query,
-    required String value,
-    String? query2,
-    String? value2,
-  }) async {
+  Future<List<Map<String, dynamic>>> fetchDataBy(
+      {required String tableName,
+      required String query,
+      required String value}) async {
     try {
-      var dbQuery = supabase.from(tableName).select().eq(query, value);
-
-      // Conditionally chain before executing
-      if (query2 != null && value2 != null) {
-        dbQuery = dbQuery.eq(query2, value2);
-      }
-
-      final response = await dbQuery.order('created_at', ascending: true);
+      final response = await supabase
+          .from(tableName)
+          .select()
+          .eq(query, value)
+          .order('created_at', ascending: true);
 
       log("Fetched ${response.length} objects");
       return response;
@@ -74,6 +68,55 @@ class SupabaseDataSource extends DataSource {
         .eq(query, value)
         .order('created_at', ascending: true)
         .asStream();
+  }
+
+  @override
+  Future<void> updateData({
+    required String tableName,
+    required String query,
+    required String value,
+    required Map<String, dynamic> newData,
+    String? query2,
+    String? value2,
+  }) async {
+    try {
+      var request = supabase.from(tableName).update(newData).eq(query, value);
+
+      if (query2 != null && value2 != null) {
+        request = request.eq(query2, value2);
+      }
+
+      final response = await request;
+
+      //log("Updated data: $response");
+      return response;
+    } catch (e) {
+      log("Error updating data: $e");
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> deleteData({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
+  }) async {
+    try {
+      var request = supabase.from(tableName).delete().eq(query, value);
+
+      if (query2 != null && value2 != null) {
+        request = request.eq(query2, value2);
+      }
+
+      final response = await request;
+      log("Deleted data: $response");
+    } catch (e) {
+      log("Error deleting data: $e");
+      rethrow;
+    }
   }
 
   @override

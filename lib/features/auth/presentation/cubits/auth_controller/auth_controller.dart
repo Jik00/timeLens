@@ -25,36 +25,37 @@ class AuthController extends ChangeNotifier {
   void _listenToAuthChanges() {
     _checkAuthStatusUseCase.execute().listen((status) async {
       _status = status;
-
-      if (status == AuthStatus.authenticated) {
-        await _onAuthenticated();
-      } else {
-        _onUnauthenticated();
-      }
-
+      status == AuthStatus.authenticated
+          ? await _onAuthenticated()
+          : _onUnauthenticated();
       notifyListeners();
     });
   }
 
   Future<void> _onAuthenticated() async {
-    try {
-      final user = await _checkAuthStatusUseCase.authRepo.getCurrentUser();
-      if (user == null) return;
+    final user = await _checkAuthStatusUseCase.authRepo.getCurrentUser();
+    if (user == null) return;
 
-      _userId = user.uId;
+    _userId = user.uId;
 
-      final result = await _profileRepo.getProfile(user.uId);
-      result.fold(
-        (failure) => debugPrint('Profile load failed: $failure'),
-        (profile) => _currentProfile = profile,
-      );
-    } catch (e) {
-      debugPrint('Error during auth setup: $e');
-    }
+    final result = await _profileRepo.getProfile(user.uId);
+
+    debugPrint('AuthController: profile fetch result: $result');
+   
+    result.fold(
+      (failure) => debugPrint('Profile load failed: $failure'),
+      (profile) => _currentProfile = profile,
+    );
   }
 
   void _onUnauthenticated() {
     _userId = null;
     _currentProfile = null;
+  }
+
+  // Called from profile edit screen after successful update // profile cubit
+  void onProfileUpdated(ProfileEntity updated) {
+    _currentProfile = updated;
+    notifyListeners();
   }
 }

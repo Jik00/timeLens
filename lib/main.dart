@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/constants.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
@@ -11,20 +13,30 @@ import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/core/utils/app_colors.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
+import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
 import 'package:timelens/features/splash/presentation/views/splash_view.dart';
 import 'package:timelens/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Prefs.init();
+
   await Supabase.initialize(
     url: kSupaURL,
     anonKey: kSupaKey,
   );
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProfileEntityAdapter());
+
   setupGetIt();
   Bloc.observer = CustomBlocObserver();
+  
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -32,17 +44,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (_, child) {
-          return MaterialApp(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+
+        return ChangeNotifierProvider(
+          create: (_) => getIt<AuthController>(),
+          child: MaterialApp(
             theme: ThemeData(
               colorScheme:
                   ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
               textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
-
-            visualDensity: VisualDensity.adaptivePlatformDensity,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
 
             debugShowCheckedModeBanner: false,
@@ -60,7 +74,9 @@ class MyApp extends StatelessWidget {
               GlobalCupertinoLocalizations.delegate,
             ],
             supportedLocales: S.delegate.supportedLocales,
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }
