@@ -130,6 +130,10 @@ class Assets {
   /// assets/images/phoarh_face.jpg
   static const String assetsImagesPhoarhFace = "assets/images/phoarh_face.jpg";
 
+  /// Assets for assetsImagesProfileFrame
+  /// assets/images/profile_frame.png
+  static const String assetsImagesProfileFrame = "assets/images/profile_frame.png";
+
   /// Assets for assetsImagesPyramidOnboarding
   /// assets/images/pyramid_onboarding.jpg
   static const String assetsImagesPyramidOnboarding = "assets/images/pyramid_onboarding.jpg";

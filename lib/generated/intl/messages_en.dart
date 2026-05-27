@@ -22,8 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Country": MessageLookupByLibrary.simpleMessage("Country"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
@@ -55,12 +57,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "instructions5": MessageLookupByLibrary.simpleMessage(
       "5. Enjoy exploring the immersive world and engaging with figures to learn more about history and the past.",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lat": MessageLookupByLibrary.simpleMessage("Lat"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginError": MessageLookupByLibrary.simpleMessage(
       "Login failed. Please check your credentials and try again.",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),
@@ -85,6 +89,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("Skip"),
     "onboardingStart": MessageLookupByLibrary.simpleMessage("Start"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "personalInfo": MessageLookupByLibrary.simpleMessage(
+      "Personal Information",
+    ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "requiredField": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
@@ -100,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thothWhatWouldU": MessageLookupByLibrary.simpleMessage(
       "What would you like to know?",
     ),
+    "userName": MessageLookupByLibrary.simpleMessage("User Name"),
     "vr": MessageLookupByLibrary.simpleMessage("virtual reality"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
   };
