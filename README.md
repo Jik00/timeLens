@@ -19,16 +19,15 @@
 
 ## 🎬 Demo
 
-> 📸 *GIFs below showcase the golden UI experience across key app flows.*
+> 📸 *Screenshots showcasing the golden UI experience across key app flows.*
 
-| Home & Weather | Era Selection | Character Pick | Charater details
+| Home & Weather | Era Selection | Character Pick | Character Details |
+|:-:|:-:|:-:|:-:|
+| ![Home](assets/images/home_view.png) | ![Era](assets/images/eras_view.png) | ![Character](assets/images/figures_view.png) | ![Character Details](assets/images/figure_details_view.png) |
+
+| Weather Search | Weather Result | Chatbot — Thoth |
 |:-:|:-:|:-:|
-| ![Home](assets/images/home_view.png) | ![Era](assets/images/eras_view.png) | ![Character](assets/images/figures_view.png) | ![Charater Details](assets/images/figure_details_view.png) |
-
-| weather Search | weather Result | Chatbot — Thoth |
-|:-:|:-:|:-:|
-| ![weather search](assets/images/weather-3.png) | ![weather result](assets/images/weather-4.png) | ![Multilingual Chatbot](assets/images/chatbot.jpeg) | 
-
+| ![Weather Search](assets/images/weather-3.png) | ![Weather Result](assets/images/weather-4.png) | ![Multilingual Chatbot](assets/images/chatbot.jpeg) |
 
 ---
 
@@ -117,6 +116,7 @@ lib/
 | **Language** | Dart 3.x |
 | **Architecture** | Clean Architecture + Feature-first |
 | **State Management** | flutter_bloc / Cubit |
+| **Navigation** | go_router |
 | **Localization** | flutter_localizations + ARB |
 | **Networking** | Dio |
 | **VR Integration** | Meta Quest 3S VR Set |
@@ -140,7 +140,7 @@ lib/
 git clone https://github.com/Jik00/timeLens.git
 
 # 2. Navigate to the project
-cd timelens
+cd timeLens
 
 # 3. Install dependencies
 flutter pub get
@@ -168,7 +168,7 @@ Time Lens uses a **golden royal theme** inspired by the grandeur of Ancient Egyp
 
 ## 👤 Author
 
-**[Youstina Habib]**
+**Youstina Habib**
 - GitHub: [@Jik00](https://github.com/Jik00)
 - LinkedIn: [Youstina Habib](https://www.linkedin.com/in/youstina-habib-16349a319)
 
