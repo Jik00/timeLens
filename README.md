@@ -21,6 +21,10 @@
 
 > 📸 *Screenshots showcasing the golden UI experience across key app flows.*
 
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/29c55766-2c7a-435d-b2df-2df21eb304ac" controls width="80%"></video>
+</div>
+
 | Home & Weather | Era Selection | Character Pick | Character Details |
 |:-:|:-:|:-:|:-:|
 | ![Home](assets/images/home_view.png) | ![Era](assets/images/eras_view.png) | ![Character](assets/images/figures_view.png) | ![Character Details](assets/images/figure_details_view.png) |
