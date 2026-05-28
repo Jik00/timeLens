@@ -19,8 +19,8 @@ class Assets {
   static const String assetsImagesButtonFrame = "assets/images/button_frame.png";
 
   /// Assets for assetsImagesChatbot
-  /// assets/images/chatbot.png
-  static const String assetsImagesChatbot = "assets/images/chatbot.png";
+  /// assets/images/chatbot.jpeg
+  static const String assetsImagesChatbot = "assets/images/chatbot.jpeg";
 
   /// Assets for assetsImagesCountyNameContainer
   /// assets/images/county_name_container.png
@@ -34,9 +34,21 @@ class Assets {
   /// assets/images/era_photo.png
   static const String assetsImagesEraPhoto = "assets/images/era_photo.png";
 
+  /// Assets for assetsImagesErasView
+  /// assets/images/eras_view.png
+  static const String assetsImagesErasView = "assets/images/eras_view.png";
+
   /// Assets for assetsImagesFigureBaseSquare
   /// assets/images/figure_base_square.png
   static const String assetsImagesFigureBaseSquare = "assets/images/figure_base_square.png";
+
+  /// Assets for assetsImagesFigureDetailsView
+  /// assets/images/figure_details_view.png
+  static const String assetsImagesFigureDetailsView = "assets/images/figure_details_view.png";
+
+  /// Assets for assetsImagesFiguresView
+  /// assets/images/figures_view.png
+  static const String assetsImagesFiguresView = "assets/images/figures_view.png";
 
   /// Assets for assetsImagesGlass
   /// assets/images/glass.png
@@ -45,6 +57,14 @@ class Assets {
   /// Assets for assetsImagesGlassRectangle
   /// assets/images/glass_rectangle.png
   static const String assetsImagesGlassRectangle = "assets/images/glass_rectangle.png";
+
+  /// Assets for assetsImagesHomeView
+  /// assets/images/home_view.png
+  static const String assetsImagesHomeView = "assets/images/home_view.png";
+
+  /// Assets for assetsImagesHomeView2
+  /// assets/images/home_view_2.png
+  static const String assetsImagesHomeView2 = "assets/images/home_view_2.png";
 
   /// Assets for assetsImagesIconsChatbot
   /// assets/images/icons/chatbot.png
@@ -201,6 +221,26 @@ class Assets {
   /// Assets for assetsImagesWallsOnboarding
   /// assets/images/walls_onboarding.png
   static const String assetsImagesWallsOnboarding = "assets/images/walls_onboarding.png";
+
+  /// Assets for assetsImagesWeather1
+  /// assets/images/weather-1.png
+  static const String assetsImagesWeather1 = "assets/images/weather-1.png";
+
+  /// Assets for assetsImagesWeather2
+  /// assets/images/weather-2.png
+  static const String assetsImagesWeather2 = "assets/images/weather-2.png";
+
+  /// Assets for assetsImagesWeather3
+  /// assets/images/weather-3.png
+  static const String assetsImagesWeather3 = "assets/images/weather-3.png";
+
+  /// Assets for assetsImagesWeather4
+  /// assets/images/weather-4.png
+  static const String assetsImagesWeather4 = "assets/images/weather-4.png";
+
+  /// Assets for assetsImagesWeather5
+  /// assets/images/weather-5.png
+  static const String assetsImagesWeather5 = "assets/images/weather-5.png";
 
   /// Assets for assetsImagesWeatherClouds
   /// assets/images/weather_clouds.png
