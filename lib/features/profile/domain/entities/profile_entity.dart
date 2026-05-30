@@ -25,7 +25,7 @@ class ProfileEntity {
     return ProfileEntity(
       id: data['id'] ?? '',
       email: data['email'] ?? '',
-      name: data['name'] ?? '',
+      name: data['full_name'] ?? '',
       avatarUrl: data['avatar_url'] ?? '',
     );
   }
@@ -34,8 +34,22 @@ class ProfileEntity {
     return {
       'id': id,
       'email': email,
-      'name': name,
+      'full_name': name,
       'avatar_url': avatarUrl,
     };
+  }
+
+  ProfileEntity copyWith({
+    final String? id,
+    final String? email,
+    final String? name,
+    final String? avatarUrl,
+  }) {
+    return ProfileEntity(
+      id: id ?? this.id,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      avatarUrl: avatarUrl ?? this.avatarUrl,
+    );
   }
 }

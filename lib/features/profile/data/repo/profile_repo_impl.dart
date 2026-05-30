@@ -1,9 +1,11 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:timelens/core/data_sources/supa_data_source.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/supabase_storage_service.dart';
 import 'package:timelens/features/profile/data/datasource/hive_profile_datasource.dart';
 import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
 import 'package:timelens/features/profile/domain/repo/profile_repo.dart';
@@ -11,11 +13,14 @@ import 'package:timelens/features/profile/domain/repo/profile_repo.dart';
 class ProfileRepoImpl extends ProfileRepo {
   final SupabaseDataSource _supabaseDataSource;
   final HiveProfileDataSource _localDataSource;
+  final SupabaseStorageService _supabaseStorageService;
 
   ProfileRepoImpl({
     required SupabaseDataSource supabaseDataSource,
     required HiveProfileDataSource localDataSource,
-  })  : _supabaseDataSource = supabaseDataSource,
+    required SupabaseStorageService storageService,
+  })  : _supabaseStorageService = storageService,
+        _supabaseDataSource = supabaseDataSource,
         _localDataSource = localDataSource;
 
   @override
@@ -40,7 +45,6 @@ class ProfileRepoImpl extends ProfileRepo {
       final profile = ProfileEntity.fromMap(data);
       await _localDataSource.cacheProfile(profile); // updates timestamp too
       return Right(profile);
-
     } catch (e) {
       log('ProfileRepo: fetch failed — $e');
 
@@ -56,8 +60,38 @@ class ProfileRepoImpl extends ProfileRepo {
   }
 
   @override
-  Future<Either<Failure, ProfileEntity>> updateProfile(ProfileEntity updated) async {
+  Future<Either<Failure, ProfileEntity>> updateProfile(
+      ProfileEntity updated) async {
     try {
+      await _supabaseDataSource.updateData(
+        tableName: kSupaProfilesTable,
+        query: kUserIdQuery,
+        value: updated.id,
+        newData: updated.toMap(),
+      );
+
+      // ✅ Write directly to cache — no re-fetch needed
+      await _localDataSource.cacheProfile(updated);
+      return Right(updated);
+    } catch (e) {
+      log('ProfileRepo: update failed — $e');
+      return Left(CustomException('Failed to update profile'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ProfileEntity>> updateProfilePic(
+      ProfileEntity updated, File imgFile) async {
+    try {
+
+      String newPicUrl = await _supabaseStorageService.uploadFile(
+        file: imgFile,
+        filePath: updated.id,
+        bucketName: kProfilesPicsBucket,
+      );
+
+      updated = updated.copyWith(avatarUrl: newPicUrl);
+
       await _supabaseDataSource.updateData(
         tableName: kSupaProfilesTable,
         query: kUserIdQuery,

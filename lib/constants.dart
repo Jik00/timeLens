@@ -3,16 +3,12 @@ const String kSplashAnimation =
     'assets/animation/Rotating Pyramid Segments.json';
 const String kLottieRightArrow =
     'assets/images/icons/lottie/Arrow_down_lottie.json';
-const String kLottiePyramid =
-    'assets/images/icons/lottie/Pyramidal.json';
-const String kLottieVR =
-    'assets/images/icons/lottie/vr.json';
-
+const String kLottiePyramid = 'assets/images/icons/lottie/Pyramidal.json';
+const String kLottieVR = 'assets/images/icons/lottie/vr.json';
 
 /// Hero Tags /////////////
 const String kHeroTagName = "Name";
 const String kHeroTagImg = "Img";
-
 
 /// strings //////
 const String kAppTitle = 'Time Lens';
@@ -20,12 +16,11 @@ const String kTyping = 'Typing...';
 const String kUser = 'user';
 const String kAssistant = 'assistant';
 
-
 /// Shared Preferences Keys ///
-const String kIsOnboardingSeen = 'isOnboardingSeen'; // check if onboarding has been seen
+const String kIsOnboardingSeen =
+    'isOnboardingSeen'; // check if onboarding has been seen
 const String kAppLanguage = 'app_language'; // store selected language
 const String kLastCityKey = 'last_city'; // store selected theme
-
 
 /// Supabase Constants ////////
 const String kSupaURL = "https://bgiyysstohukhiztkyju.supabase.co";
@@ -37,9 +32,9 @@ const String kSupaChatTable = "mssgs_table";
 const String kSupaChatId = "chat_id";
 const String kSupaFiguresTable = "figures_table";
 const String kSupaBelongEra = "belong_era";
-const String kUsersTable = "users_table";
 const String kSupaProfilesTable = "profiles";
-const String kUserIdQuery = "user_id";
+const String kUserIdQuery = "id";
+const String kProfilesPicsBucket = "profiles_pics";
 
 const String kHiveProfilesBox = 'profiles';
 
