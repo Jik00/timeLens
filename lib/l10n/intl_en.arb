@@ -48,6 +48,10 @@
     "userName": "User Name",
     "language": "Language",
     "Country": "Country",
-    "edit" : "Edit"
+    "edit" : "Edit",
+    "egypt": "Egypt",
+    "englishCode": "en",
+    "arabicCode": "ar",
+    "timeTraveler": "TimeTraveler"
 
 }

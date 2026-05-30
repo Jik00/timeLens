@@ -24,9 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Country": MessageLookupByLibrary.simpleMessage("Country"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
+    "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "englishCode": MessageLookupByLibrary.simpleMessage("en"),
     "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
@@ -108,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thothWhatWouldU": MessageLookupByLibrary.simpleMessage(
       "What would you like to know?",
     ),
+    "timeTraveler": MessageLookupByLibrary.simpleMessage("TimeTraveler"),
     "userName": MessageLookupByLibrary.simpleMessage("User Name"),
     "vr": MessageLookupByLibrary.simpleMessage("virtual reality"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),

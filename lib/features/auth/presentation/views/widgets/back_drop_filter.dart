@@ -6,9 +6,10 @@ import 'package:timelens/core/utils/app_colors.dart';
 
 class BackDropFilter extends StatelessWidget {
   const BackDropFilter({
-    super.key,
+    super.key, this.h,
   });
 
+  final double? h;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -17,7 +18,7 @@ class BackDropFilter extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
         child: Container(
           width: 340.w,
-          height: 320.h,
+          height: h ?? 320.h,
           decoration: BoxDecoration(
             color: AppColors.blurColor.withAlpha(77),
             borderRadius: BorderRadius.circular(34),

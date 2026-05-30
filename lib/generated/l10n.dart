@@ -438,6 +438,31 @@ class S {
   String get edit {
     return Intl.message('Edit', name: 'edit', desc: '', args: []);
   }
+
+  /// `Egypt`
+  String get egypt {
+    return Intl.message('Egypt', name: 'egypt', desc: '', args: []);
+  }
+
+  /// `en`
+  String get englishCode {
+    return Intl.message('en', name: 'englishCode', desc: '', args: []);
+  }
+
+  /// `ar`
+  String get arabicCode {
+    return Intl.message('ar', name: 'arabicCode', desc: '', args: []);
+  }
+
+  /// `TimeTraveler`
+  String get timeTraveler {
+    return Intl.message(
+      'TimeTraveler',
+      name: 'timeTraveler',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

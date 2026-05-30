@@ -19,8 +19,12 @@ class Assets {
   static const String assetsImagesButtonFrame = "assets/images/button_frame.png";
 
   /// Assets for assetsImagesChatbot
-  /// assets/images/chatbot.jpeg
-  static const String assetsImagesChatbot = "assets/images/chatbot.jpeg";
+  /// assets/images/chatbot.png
+  static const String assetsImagesChatbot = "assets/images/chatbot.png";
+
+  /// Assets for assetsImagesChatbotDemo
+  /// assets/images/chatbot_demo.jpeg
+  static const String assetsImagesChatbotDemo = "assets/images/chatbot_demo.jpeg";
 
   /// Assets for assetsImagesCountyNameContainer
   /// assets/images/county_name_container.png
@@ -169,6 +173,10 @@ class Assets {
   /// Assets for assetsImagesRealPyramids
   /// assets/images/real_pyramids.png
   static const String assetsImagesRealPyramids = "assets/images/real_pyramids.png";
+
+  /// Assets for assetsImagesRectangleFrame
+  /// assets/images/rectangle_frame.png
+  static const String assetsImagesRectangleFrame = "assets/images/rectangle_frame.png";
 
   /// Assets for assetsImagesSearchCityCard
   /// assets/images/search_city_card.png
