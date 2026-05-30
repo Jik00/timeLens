@@ -31,7 +31,7 @@
 
 | Weather Search | Weather Result | Chatbot — Thoth |
 |:-:|:-:|:-:|
-| ![Weather Search](assets/images/weather-3.png) | ![Weather Result](assets/images/weather-4.png) | ![Multilingual Chatbot](assets/images/chatbot.jpeg) |
+| ![Weather Search](assets/images/weather-3.png) | ![Weather Result](assets/images/weather-4.png) | ![Multilingual Chatbot](assets/images/chatbot_demo.jpeg) |
 
 ---
 
