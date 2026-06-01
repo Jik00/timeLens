@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:timelens/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:timelens/generated/l10n.dart';
 
 class EditButton extends StatelessWidget {
@@ -9,7 +10,9 @@ class EditButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, EditProfileView.routeName);
+      },
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -18,8 +21,6 @@ class EditButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 16.sp,
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.white,
               decorationThickness: 1.5,
               fontFamily: GoogleFonts.lora().fontFamily,
             ),

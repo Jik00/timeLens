@@ -25,8 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "Country": MessageLookupByLibrary.simpleMessage("Country"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "englishCode": MessageLookupByLibrary.simpleMessage("en"),
@@ -41,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Rulers of Ancient Egypt",
     ),
     "forgetPass": MessageLookupByLibrary.simpleMessage("Forget password?"),
+    "germanCode": MessageLookupByLibrary.simpleMessage("de"),
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
@@ -100,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(

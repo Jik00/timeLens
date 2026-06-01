@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
+import 'package:timelens/features/profile/presentation/views/widgets/edit_button.dart';
 //import 'package:timelens/features/profile/presentation/views/widgets/edit_button.dart';
 import 'package:timelens/features/profile/presentation/views/widgets/menu_item.dart';
 
@@ -20,22 +21,21 @@ class ProfileMenu extends StatelessWidget {
       ),
       child: Column(
         children: [
-          // Row(
-          //   children: [
-          //     SizedBox(width: 42.w),
-          //     Text(
-          //       context.loc.profile,
-          //       style: TextStyle(
-          //         fontSize: 16.sp,
-          //         fontWeight: FontWeight.w600,
-          //         color: AppColors.brownWriting,
-          //       ),
-          //     ),
-          //     const Spacer(flex: 6),
-          //     const EditButton(),
-          //     const Spacer(),
-          //   ],
-          // ),
+          Row(
+            children: [
+              SizedBox(width: 42.w),
+              Text(
+                context.loc.profile,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.brownWriting,
+                ),
+              ),
+              const Spacer(flex: 6),
+              const EditButton(),
+            ],
+          ),
           const SizedBox(height: 2),
           const Divider(
             height: 1,

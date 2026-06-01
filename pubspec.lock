@@ -909,6 +909,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.2"
+  pick_country_picker:
+    dependency: "direct main"
+    description:
+      name: pick_country_picker
+      sha256: "409f66ab8d885244bff572bc1f29add2e169e79ebd37f70fb0675f54b97180d1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   platform:
     dependency: transitive
     description:

@@ -13,12 +13,15 @@ class ProfileEntity {
   final String name;
   @HiveField(3)
   final String avatarUrl;
+  @HiveField(4)
+  final String language;
 
   ProfileEntity({
     required this.id,
     required this.email,
     required this.name,
     required this.avatarUrl,
+    required this.language,
   });
 
   factory ProfileEntity.fromMap(Map<String, dynamic> data) {
@@ -27,6 +30,7 @@ class ProfileEntity {
       email: data['email'] ?? '',
       name: data['full_name'] ?? '',
       avatarUrl: data['avatar_url'] ?? '',
+      language: data['language'] ?? '',
     );
   }
 
@@ -36,6 +40,7 @@ class ProfileEntity {
       'email': email,
       'full_name': name,
       'avatar_url': avatarUrl,
+      'language': language,
     };
   }
 
@@ -44,12 +49,14 @@ class ProfileEntity {
     final String? email,
     final String? name,
     final String? avatarUrl,
+    final String? language,
   }) {
     return ProfileEntity(
       id: id ?? this.id,
       email: email ?? this.email,
       name: name ?? this.name,
       avatarUrl: avatarUrl ?? this.avatarUrl,
+      language: language ?? this.language,
     );
   }
 }

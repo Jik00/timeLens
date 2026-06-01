@@ -49,9 +49,13 @@
     "language": "Language",
     "Country": "Country",
     "edit" : "Edit",
-    "egypt": "Egypt",
+    "egypt": "Egypt",  
     "englishCode": "en",
     "arabicCode": "ar",
-    "timeTraveler": "TimeTraveler"
+    "germanCode": "de",
+    "timeTraveler": "TimeTraveler",
+    "editProfile": "Edit Profile",
+    "save": "Save",
+    "cancel": "Cancel"
 
 }

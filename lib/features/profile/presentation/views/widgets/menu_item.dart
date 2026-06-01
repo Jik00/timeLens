@@ -12,6 +12,7 @@ class MenuItem extends StatelessWidget {
     this.trailingColor,
     this.iconColor,
     this.noDivider,
+    this.centered,
   });
 
   final IconData icon;
@@ -20,6 +21,7 @@ class MenuItem extends StatelessWidget {
   final String? trailingText;
   final Color? trailingColor, iconColor;
   final bool? noDivider;
+  final bool? centered;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,9 @@ class MenuItem extends StatelessWidget {
               vertical: 10.h,
             ),
             child: Row(
+              mainAxisAlignment: centered == true
+                  ? MainAxisAlignment.center
+                  : MainAxisAlignment.start,
               children: [
                 Icon(
                   icon,
@@ -40,25 +45,37 @@ class MenuItem extends StatelessWidget {
                   color: iconColor ?? AppColors.primaryColor,
                 ),
                 SizedBox(width: 12.w),
-                Expanded(
-                  child: Text(
-                    title,
+                centered == true
+                    ? Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          color: icon == Icons.logout
+                              ? Colors.red
+                              : AppColors.brownWriting,
+                        ),
+                      )
+                    : Expanded(
+                        child: Text(
+                          title,
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: icon == Icons.logout
+                                ? Colors.red
+                                : AppColors.brownWriting,
+                          ),
+                        ),
+                      ),
+                if (centered != true)
+                  Text(
+                    trailingText ?? "",
                     style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                      color: icon == Icons.logout
-                          ? Colors.red
-                          : AppColors.brownWriting,
+                      fontSize: 10.sp,
+                      color: trailingColor ?? AppColors.brownWriting,
                     ),
                   ),
-                ),
-                Text(
-                  trailingText ?? "",
-                  style: TextStyle(
-                    fontSize: 10.sp,
-                    color: trailingColor ?? AppColors.brownWriting,
-                  ),
-                ),
               ],
             ),
           ),

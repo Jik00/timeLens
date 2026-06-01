@@ -178,6 +178,10 @@ class Assets {
   /// assets/images/rectangle_frame.png
   static const String assetsImagesRectangleFrame = "assets/images/rectangle_frame.png";
 
+  /// Assets for assetsImagesSandFrame
+  /// assets/images/sand_frame.png
+  static const String assetsImagesSandFrame = "assets/images/sand_frame.png";
+
   /// Assets for assetsImagesSearchCityCard
   /// assets/images/search_city_card.png
   static const String assetsImagesSearchCityCard = "assets/images/search_city_card.png";

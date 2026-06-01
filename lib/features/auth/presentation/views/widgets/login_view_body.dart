@@ -50,15 +50,16 @@ class LoginViewBody extends StatelessWidget {
                   ],
                 ),
               ),
-              Positioned(
-                left: 0,
-                right: 0,
-                top: 320.h,
-                child: Transform.scale(
-                  scaleX: 1.5.w,
-                  scaleY: 1.7.h,
-                  child: Image.asset(
-                    Assets.assetsImagesSquareFrame,
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 325.h),
+                  child: Transform.scale(
+                    scaleX: 0.99.w,
+                    scaleY: 1.126.h,
+                    child: Image.asset(
+                      Assets.assetsImagesSquareFrame,
+                    ),
                   ),
                 ),
               ),

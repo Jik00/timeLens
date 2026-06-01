@@ -454,6 +454,11 @@ class S {
     return Intl.message('ar', name: 'arabicCode', desc: '', args: []);
   }
 
+  /// `de`
+  String get germanCode {
+    return Intl.message('de', name: 'germanCode', desc: '', args: []);
+  }
+
   /// `TimeTraveler`
   String get timeTraveler {
     return Intl.message(
@@ -462,6 +467,26 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
   }
 }
 
