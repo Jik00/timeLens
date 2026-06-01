@@ -45,14 +45,24 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
           SizedBox(
             height: 20.h,
           ),
-          Text(
-            context.loc.forgetPass,
-            style: TextStyle(
-              color: AppColors.brownWriting.withAlpha(179),
-              fontSize: 18.sp,
-              decoration: TextDecoration.underline,
+
+          ///////////////// مؤقتًا لفاية ما نعملها \\\\\\\\\\\\\\\\\\
+          Visibility(
+            visible: false,
+            maintainAnimation: true,
+            maintainSize: true,
+            maintainState: true,
+            child: Text(
+              context.loc.forgetPass,
+              style: TextStyle(
+                color: AppColors.brownWriting.withAlpha(179),
+                fontSize: 18.sp,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
+          ///////////////////////////////////////////////////////////
+          
           SizedBox(
             height: 16.h,
           ),

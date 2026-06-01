@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/core/network/dio_factory.dart';
+import 'package:timelens/core/services/railway_service.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/core/services/supabase_storage_service.dart';
 import 'package:timelens/features/auth/data/repos/auth_repo_impl.dart';
@@ -35,6 +36,7 @@ void setupGetIt() {
   getIt.registerSingleton<SupabaseAuthService>(SupabaseAuthService());
   getIt.registerSingleton<Dio>(DioFactory().createDio());
   getIt.registerSingleton(WeatherApiService(dio: getIt<Dio>()));
+  getIt.registerSingleton<RailwayService>(RailwayService(getIt<Dio>()));
 
 
   /// repos \\\
@@ -57,6 +59,7 @@ void setupGetIt() {
 
   getIt.registerSingleton<FigureRepo>(FigureRepoImpl(
     dataSource: getIt<SupabaseDataSource>(),
+    railwayService: getIt<RailwayService>(),
   ));
 
   getIt.registerSingleton<WeatherRepo>(

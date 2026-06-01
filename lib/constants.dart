@@ -43,3 +43,6 @@ const String kApiKey = '1344a7f8315943e2856153511262402';
 const String kBaseUrl = 'https://api.weatherapi.com/v1/';
 const String kWeatherEndpoint = 'forecast.json';
 const String kSearchWeatherEndpoint = 'search.json';
+const String kRailwayBaseUrl =
+    'https://back-time-lens-production.up.railway.app';
+const String kRailwayEndpoint = '/set-message';

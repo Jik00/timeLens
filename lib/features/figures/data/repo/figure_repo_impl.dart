@@ -3,15 +3,18 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/enums/railway_mssg.dart';
 import 'package:timelens/core/errors/failures.dart';
+import 'package:timelens/core/services/railway_service.dart';
 import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/domain/repos/figure_repo.dart';
 import 'package:timelens/core/data_sources/supa_data_source.dart';
 
 class FigureRepoImpl implements FigureRepo {
   final SupabaseDataSource dataSource;
+  final RailwayService railwayService;
 
-  FigureRepoImpl({required this.dataSource});
+  FigureRepoImpl({required this.dataSource, required this.railwayService});
 
   @override
   Future<Either<Failure, List<FigureEntity>>> getFigures(
@@ -34,6 +37,15 @@ class FigureRepoImpl implements FigureRepo {
     } catch (e) {
       debugPrint("Unexpected error: $e");
       return Left(ServerFailure('Failed to load figures: ${e.toString()}'));
+    }
+  }
+
+  @override
+  Future<bool> setMessage(RailwayMessage message) async {
+    try {
+       return await railwayService.setMessage(message);
+    } catch (e) {
+      throw Exception('RailwayRepo error: $e');
     }
   }
 }
