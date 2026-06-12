@@ -7,7 +7,7 @@ import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_with_top_frame.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
-import 'package:timelens/features/profile/presentation/views/widgets/edit_container_stack.dart';
+import 'package:timelens/features/profile/presentation/views/widgets/edit_profile_form.dart';
 
 class EditProfileViewBody extends StatelessWidget {
   const EditProfileViewBody({super.key});

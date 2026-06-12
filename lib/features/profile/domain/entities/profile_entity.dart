@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/adapters.dart';
 
 part 'profile_entity.g.dart';
 
 
 @HiveType(typeId: 0)
-class ProfileEntity {
+class ProfileEntity extends Equatable {
   @HiveField(0)
   final String id;
   @HiveField(1)
@@ -15,13 +16,16 @@ class ProfileEntity {
   final String avatarUrl;
   @HiveField(4)
   final String language;
+  @HiveField(5)
+  final String country;
 
-  ProfileEntity({
+  const ProfileEntity({
     required this.id,
     required this.email,
     required this.name,
     required this.avatarUrl,
-    required this.language,
+    required this.language, 
+    required this.country,
   });
 
   factory ProfileEntity.fromMap(Map<String, dynamic> data) {
@@ -31,6 +35,7 @@ class ProfileEntity {
       name: data['full_name'] ?? '',
       avatarUrl: data['avatar_url'] ?? '',
       language: data['language'] ?? '',
+      country: data['country'] ?? '',
     );
   }
 
@@ -41,6 +46,7 @@ class ProfileEntity {
       'full_name': name,
       'avatar_url': avatarUrl,
       'language': language,
+      'country': country,
     };
   }
 
@@ -50,6 +56,7 @@ class ProfileEntity {
     final String? name,
     final String? avatarUrl,
     final String? language,
+    final String? country,
   }) {
     return ProfileEntity(
       id: id ?? this.id,
@@ -57,6 +64,10 @@ class ProfileEntity {
       name: name ?? this.name,
       avatarUrl: avatarUrl ?? this.avatarUrl,
       language: language ?? this.language,
+      country: country ?? this.country,
     );
   }
+  
+  @override
+  List<Object?> get props => [ name, language, country];
 }

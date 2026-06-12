@@ -37,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
       "Explore the world",
     ),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "figureDynasty": MessageLookupByLibrary.simpleMessage("Dynasty"),
     "figureReign": MessageLookupByLibrary.simpleMessage("Reign in BC"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(
@@ -105,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("Select Country"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(
       "Speak and time shall answer",

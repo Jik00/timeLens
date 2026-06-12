@@ -4,9 +4,10 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/generated/l10n.dart';
 
 class DropList extends StatefulWidget {
-  const DropList({super.key, required this.chosen});
+  const DropList({super.key, required this.chosen,required this.onChanged});
 
   final int chosen;
+  final ValueChanged<int> onChanged;
 
   @override
   State<DropList> createState() => _DropListState();
@@ -80,6 +81,7 @@ class _DropListState extends State<DropList> {
         setState(() {
           selectedIndex = newValue!;
         });
+        widget.onChanged.call(newValue!);
       },
     );
   }

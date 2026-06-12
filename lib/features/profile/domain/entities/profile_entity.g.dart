@@ -22,13 +22,14 @@ class ProfileEntityAdapter extends TypeAdapter<ProfileEntity> {
       name: fields[2] as String,
       avatarUrl: fields[3] as String,
       language: fields[4] as String,
+      country: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ProfileEntity obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class ProfileEntityAdapter extends TypeAdapter<ProfileEntity> {
       ..writeByte(3)
       ..write(obj.avatarUrl)
       ..writeByte(4)
-      ..write(obj.language);
+      ..write(obj.language)
+      ..writeByte(5)
+      ..write(obj.country);
   }
 
   @override

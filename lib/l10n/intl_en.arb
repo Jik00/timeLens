@@ -56,6 +56,8 @@
     "timeTraveler": "TimeTraveler",
     "editProfile": "Edit Profile",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "selectCountry": "Select Country",
+    "fieldRequired": "This field is required"
 
 }

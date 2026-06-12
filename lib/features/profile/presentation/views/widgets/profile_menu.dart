@@ -56,11 +56,11 @@ class ProfileMenu extends StatelessWidget {
           MenuItem(
               icon: Icons.language_outlined,
               title: context.loc.Country,
-              trailingText: context.loc.egypt),
+              trailingText: profile?.country),
           MenuItem(
               icon: Icons.translate,
               title: context.loc.language,
-              trailingText: context.loc.englishCode,
+              trailingText: profile?.language,
               noDivider: true),
         ],
       ),
