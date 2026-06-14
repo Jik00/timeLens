@@ -74,6 +74,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login failed. Please check your credentials and try again.",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logoutConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to logout?",
+    ),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),

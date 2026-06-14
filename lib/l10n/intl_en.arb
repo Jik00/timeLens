@@ -44,6 +44,7 @@
     "loginError": "Login failed. Please check your credentials and try again.",
     "profile": "Profile",
     "logout": "Logout",
+    "logoutConfirmation": "Are you sure you want to logout?",
     "personalInfo": "Personal Information",
     "userName": "User Name",
     "language": "Language",

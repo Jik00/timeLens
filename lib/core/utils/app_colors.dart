@@ -5,6 +5,7 @@ abstract class AppColors {
   static const grayscale400 = Color(0xFF949D9E);
   static const brownWriting = Color(0xFF471806);
   static const primaryColor = Color(0xFFCE861A);
+  static const parchment = Color(0xFFF3DFC0);
   static const secondaryColor = Color.fromARGB(255, 96, 69, 7);
   static const newsecondaryColor = Color(0xFFC49B37);
   static const middleColor = Color(0xFFF7F2E4);
