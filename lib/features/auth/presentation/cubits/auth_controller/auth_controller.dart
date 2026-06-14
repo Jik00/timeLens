@@ -27,7 +27,7 @@ class AuthController extends ChangeNotifier {
       _status = status;
       status == AuthStatus.authenticated
           ? await _onAuthenticated()
-          : _onUnauthenticated();
+          : await _onUnauthenticated();
       notifyListeners();
     });
   }
@@ -41,14 +41,33 @@ class AuthController extends ChangeNotifier {
     final result = await _profileRepo.getProfile(user.uId);
 
     debugPrint('AuthController: profile fetch result: $result');
-   
+
     result.fold(
       (failure) => debugPrint('Profile load failed: $failure'),
       (profile) => _currentProfile = profile,
     );
   }
 
-  void _onUnauthenticated() {
+  Future<void> _onUnauthenticated() async {
+    
+    final userId = _userId;
+    
+    if (userId == null) {
+      _currentProfile = null;
+      return; // nothing to clear
+    }
+    
+    debugPrint('AuthController: user is unauthenticated, clearing Hive profile');
+
+    final result = await _profileRepo.clearCachedProfile(userId);
+
+    debugPrint('AuthController: profile clear result: $result');
+
+    result.fold(
+      (failure) => debugPrint('Failed to clear cached profile: $failure'),
+      (_) => debugPrint('Cached profile cleared'),
+    );
+
     _userId = null;
     _currentProfile = null;
   }
