@@ -40,11 +40,10 @@ class _CountryPickerState extends State<CountryPicker> {
       context: context,
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        
         return Container(
           height: MediaQuery.of(context).size.height * 0.6,
           decoration: BoxDecoration(
-            color: const Color(0xFFF3E2C0),
+            color: AppColors.parchment,
             borderRadius: const BorderRadius.vertical(
               top: Radius.circular(20),
             ),
@@ -53,17 +52,14 @@ class _CountryPickerState extends State<CountryPicker> {
               width: 1.5.w,
             ),
           ),
-          
           child: ClipRRect(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-           
             child: Theme(
               data: Theme.of(context).copyWith(
                 textTheme: Theme.of(context).textTheme.apply(
                       bodyColor: AppColors.brownWriting,
                       displayColor: AppColors.brownWriting,
                     ),
-                
                 inputDecorationTheme: InputDecorationTheme(
                   filled: true,
                   fillColor: Colors.transparent,
@@ -84,14 +80,12 @@ class _CountryPickerState extends State<CountryPicker> {
                     borderSide: BorderSide(color: AppColors.brownWriting),
                   ),
                 ),
-                
                 iconTheme: IconThemeData(color: AppColors.brownWriting),
                 colorScheme: Theme.of(context).colorScheme.copyWith(
                       primary: AppColors.primaryColor,
                       onSurface: AppColors.brownWriting,
                     ),
               ),
-              
               child: CountryPickerModal(
                 onCountryChanged: (Country country) {
                   debugPrint("Selected: ${country.countryName}");
@@ -101,7 +95,6 @@ class _CountryPickerState extends State<CountryPicker> {
                   });
                   Navigator.pop(context);
                 },
-                
                 placeholderText: context.loc.selectCountry,
                 selectedCountryCode: 'EG',
                 priorityCountryCodes: const ['EG', 'US', 'GB', 'SA'],

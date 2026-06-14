@@ -175,7 +175,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
                         ? context
                             .read<ProfileCubit>()
                             .updateProfile(editedProfile)
-                        : null;
+                        : Navigator.pop(context);
 
                     
                   } else {
