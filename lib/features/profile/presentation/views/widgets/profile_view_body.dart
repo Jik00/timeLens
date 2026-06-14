@@ -7,7 +7,9 @@ import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_with_top_frame.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
+import 'package:timelens/features/profile/presentation/manager/logout_cubit/logout_cubit.dart';
 import 'package:timelens/features/profile/presentation/views/widgets/container_stack.dart';
+import 'package:timelens/features/profile/presentation/views/widgets/logout_alert.dart';
 import 'package:timelens/features/profile/presentation/views/widgets/menu_item.dart';
 import 'package:timelens/features/profile/presentation/views/widgets/profile_avatar.dart';
 
@@ -64,7 +66,16 @@ class ProfileViewBody extends StatelessWidget {
                       child: MenuItem(
                         icon: Icons.logout,
                         title: context.loc.logout,
-                        // onTap: () => context.read<AuthController>().signOut(),
+                        onTap: () {
+                            LogoutAlert.show(
+                              context,
+                              onConfirm: () {
+                                
+                                context.read<LogoutCubit>().logout();
+
+                              },
+                            );
+                        },
                         iconColor: Colors.red,
                         trailingColor: Colors.red,
                         noDivider: true,
