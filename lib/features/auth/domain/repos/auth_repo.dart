@@ -14,4 +14,6 @@ abstract class AuthRepo {
   Stream<UserEntity?> authStateChanges();
 
   Future<UserEntity?> getCurrentUser();
+
+  Future<Either<Failure, void>> signOut();
 }

@@ -81,4 +81,19 @@ class AuthRepoImpl extends AuthRepo {
     if (session == null) return null;
     return UserModel.fromSupabaseUser(session.user);
   }
+
+  @override
+  Future<Either<Failure, void>> signOut() async {
+    try {
+      await supabaseAuthService.signOut();
+      return const Right(null);
+    } on CustomException catch (e) {
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      log('Error in AuthRepoImpl.signOut ${e.toString()}');
+      return Left(
+        ServerFailure('just in case we added more logic in the future'),
+      );
+    }
+  }
 }

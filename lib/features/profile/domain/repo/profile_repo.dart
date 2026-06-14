@@ -13,4 +13,6 @@ abstract class ProfileRepo {
 
   Future<Either<Failure, ProfileEntity>> updateProfilePic(
       ProfileEntity updated, File imgFile);
+
+  Future<Either<Failure, void>> clearCachedProfile(String userId);
 }

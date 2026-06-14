@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:timelens/constants.dart';
 import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -25,5 +27,15 @@ class HiveProfileDataSource {
     final cachedAt = DateTime.tryParse(raw as String);
     if (cachedAt == null) return true;
     return DateTime.now().difference(cachedAt) > threshold;
+  }
+
+  Future<void> clearCachedProfile(String userId) async {
+    final box = await _box;
+    try {
+      await box.delete(userId);
+      await box.delete('${userId}_cached_at');
+    } catch (e) {
+      log('Error clearing cached profile for user $userId: $e');
+    }
   }
 }

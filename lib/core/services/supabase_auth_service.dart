@@ -53,5 +53,14 @@ class SupabaseAuthService {
       throw Exception('Login failed. Please check your credentials and try again.');
     }
   }
+
+  Future<void> signOut() async {
+    try {
+      await supabase.auth.signOut();
+    } on Exception catch (e) {
+      log('Error in SupabaseAuthService.signOut: ${e.toString()}');
+      throw Exception('Logout failed. Please try again.');
+    }
+  }
   
 }
