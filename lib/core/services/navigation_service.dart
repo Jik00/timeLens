@@ -2,31 +2,26 @@ import 'package:flutter/material.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-final List<GlobalKey<NavigatorState>> tabNavigatorKeys = [
-  GlobalKey<NavigatorState>(), // HomeView
-  GlobalKey<NavigatorState>(), // ChatbotView
-  GlobalKey<NavigatorState>(), // For WeatherView
-  GlobalKey<NavigatorState>(), // For ProfileView
-];
 
 class NavigationService {
-
 
   // nav bar navigation Logic
   static void handleTabTap({
     required int index,
     required int currentIndex,
     required Function(int) onTabChanged,
+    required List<GlobalKey<NavigatorState>> keys
+
   }) {
     if (index == currentIndex) {
-      popToRootOfTab(index);
+      popToRootOfTab(index, keys);
     } else {
       onTabChanged(index);
     }
   }
 
-  static void popToRootOfTab(int index) {
-    tabNavigatorKeys[index].currentState?.popUntil((route) => route.isFirst);
+  static void popToRootOfTab(int index, List<GlobalKey<NavigatorState>> keys) {
+    keys[index].currentState?.popUntil((route) => route.isFirst);
   }
 
   // Navigate to a route that REPLACES the current screen (removes bottom nav)

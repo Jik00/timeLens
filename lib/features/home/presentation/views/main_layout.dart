@@ -20,6 +20,8 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   int currentIndex = 0;
+  final List<GlobalKey<NavigatorState>> tabNavigatorKeys = List.generate(4, (_) => GlobalKey<NavigatorState>());
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class _MainLayoutState extends State<MainLayout> {
             NavigationService.handleTabTap(
               index: index,
               currentIndex: currentIndex,
+              keys: tabNavigatorKeys,
               onTabChanged: (newIndex) {
                 setState(() {
                   currentIndex = newIndex;
@@ -46,6 +49,7 @@ class _MainLayoutState extends State<MainLayout> {
         ),
         body: MainLayoutBody(
           currentViewIndex: currentIndex,
+          keys: tabNavigatorKeys,
         ),
       ),
     );

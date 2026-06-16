@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:timelens/core/helper_functions/ongenerate_routes.dart';
-import 'package:timelens/core/services/navigation_service.dart';
 import 'package:timelens/features/chatbot/presentation/views/chatbot_view.dart';
 import 'package:timelens/features/home/presentation/views/home_view.dart';
 import 'package:timelens/features/profile/presentation/views/profile_view.dart';
 import 'package:timelens/features/weather/presentation/views/weather_view.dart';
 
 class MainLayoutBody extends StatefulWidget {
-  const MainLayoutBody({super.key, required this.currentViewIndex});
+  const MainLayoutBody({super.key, required this.currentViewIndex, required this.keys});
 
   final int currentViewIndex;
+  final List<GlobalKey<NavigatorState>> keys;
 
   @override
   State<MainLayoutBody> createState() => _MainLayoutBodyState();
@@ -37,7 +37,7 @@ class _MainLayoutBodyState extends State<MainLayoutBody> {
 
   Widget _buildNavigator(int index, String initialRoute) {
     return Navigator(
-      key: tabNavigatorKeys[index], // global keys from nav service
+      key: widget.keys[index],
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoutes,
     );
