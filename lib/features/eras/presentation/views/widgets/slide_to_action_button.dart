@@ -38,6 +38,7 @@ class SlideToActionButton extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(24.r)),
             child: Row(
+              textDirection: TextDirection.ltr,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -92,13 +93,18 @@ class SlideToActionButton extends StatelessWidget {
                       color: AppColors.brownWriting,
                       radius: 10,
                     )
-                  : const Icon(Icons.chevron_right,
-                      color: AppColors.brownWriting, size: 28),
+                  : const Icon(
+                      Icons.chevron_right,
+                      textDirection: TextDirection.ltr,
+                      color: AppColors.brownWriting,
+                      size: 28,
+                    ),
             ),
           );
         },
         action: () {
-          NavigationService.navigateWithinTab(context, FigureView.routeName, arguments: title);
+          NavigationService.navigateWithinTab(context, FigureView.routeName,
+              arguments: title);
         },
       ),
     );

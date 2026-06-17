@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/helper_functions/file_to_htttp_url.dart';
+import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 import 'package:timelens/features/weather/domain/entities/weather_entity.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/city_name_container.dart';
 import 'package:timelens/features/weather/presentation/views/widgets/condition_column.dart';
@@ -16,6 +18,8 @@ class WeatherCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isArabic =
+        getIt<AuthController>().currentLocale == const Locale('ar');
     return SizedBox(
       height: 220.h,
       width: 350.w,
@@ -32,9 +36,11 @@ class WeatherCard extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment.topLeft,
+            alignment: isArabic ? Alignment.topRight : Alignment.topLeft,
             child: Padding(
-              padding: EdgeInsets.only(left: 6.w, top: 4.h),
+              padding: isArabic
+                  ? EdgeInsets.only(right: 6.w, top: 4.h)
+                  : EdgeInsets.only(left: 6.w, top: 4.h),
               child: CityNameContainer(
                 cityName: weatherEntity.locationName,
               ),

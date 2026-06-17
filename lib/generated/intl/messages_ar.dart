@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("تحدث مع توت"),
+    "comingSoon": MessageLookupByLibrary.simpleMessage("قريبًا"),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "egypt": MessageLookupByLibrary.simpleMessage("مصر"),
@@ -59,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "lat": MessageLookupByLibrary.simpleMessage("خط العرض"),
+    "letsDive": MessageLookupByLibrary.simpleMessage("لننطلق"),
     "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل..."),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginError": MessageLookupByLibrary.simpleMessage(

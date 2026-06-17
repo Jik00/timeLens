@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/features/profile/presentation/views/edit_profile_view.dart';
-import 'package:timelens/generated/l10n.dart';
 
 class EditButton extends StatelessWidget {
   const EditButton({super.key});

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 
 class CityNameContainer extends StatelessWidget {
   const CityNameContainer({
@@ -24,6 +26,7 @@ class CityNameContainer extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
@@ -32,7 +35,7 @@ class CityNameContainer extends StatelessWidget {
               width: 28.w,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 10.w),
+              padding: getIt<AuthController>().currentLocale == const Locale('ar') ? EdgeInsets.only(right: 10.w) : EdgeInsets.only(left: 10.w),
               child: Text(
                 cityName,
                 style: TextStyle(

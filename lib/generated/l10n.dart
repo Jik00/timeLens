@@ -508,6 +508,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Coming Soon`
+  String get comingSoon {
+    return Intl.message('Coming Soon', name: 'comingSoon', desc: '', args: []);
+  }
+
+  /// `Let's Dive`
+  String get letsDive {
+    return Intl.message('Let\'s Dive', name: 'letsDive', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

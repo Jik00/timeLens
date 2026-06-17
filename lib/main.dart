@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
+        
         return ChangeNotifierProvider(
           create: (_) => getIt<AuthController>(),
           builder: (context, _) {

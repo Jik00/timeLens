@@ -96,7 +96,7 @@ class _CountryPickerState extends State<CountryPicker> {
                   Navigator.pop(context);
                 },
                 placeholderText: context.loc.selectCountry,
-                selectedCountryCode: 'EG',
+                
                 priorityCountryCodes: const ['EG', 'US', 'GB', 'SA'],
                 hideSearch: false,
               ),

@@ -22,6 +22,7 @@ class DetailsColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isReady = figure.ready != "Coming Soon";
     return Padding(
       padding: EdgeInsets.only(left: 20.w, top: 95.h),
       child: Column(
@@ -97,8 +98,8 @@ class DetailsColumn extends StatelessWidget {
           ),
           Center(
             child: CustomButton(
-              hint: figure.ready,
-              isIgnored: figure.ready == "Coming Soon",
+              hint: isReady ? context.loc.letsDive : context.loc.comingSoon,
+              isIgnored: !isReady,
               onTap: () {
                 context.read<RailwayCubit>().setMessage(RailwayMessage.ramesses);
                 NavigationService.pushGlobal(VrInstructionsView.routeName);

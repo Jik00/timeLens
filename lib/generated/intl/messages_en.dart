@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
+    "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
@@ -65,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lat": MessageLookupByLibrary.simpleMessage("Lat"),
+    "letsDive": MessageLookupByLibrary.simpleMessage("Let\'s Dive"),
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginError": MessageLookupByLibrary.simpleMessage(
