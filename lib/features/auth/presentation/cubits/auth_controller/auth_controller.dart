@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:timelens/features/auth/domain/usecases/check_auth_status.dart';
 import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
@@ -76,5 +78,10 @@ class AuthController extends ChangeNotifier {
   void onProfileUpdated(ProfileEntity updated) {
     _currentProfile = updated;
     notifyListeners();
+  }
+
+  Locale get currentLocale {
+    final langCode = currentProfile?.language ?? 'en'; // fallback
+    return Locale(langCode);
   }
 }

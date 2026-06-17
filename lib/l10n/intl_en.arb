@@ -58,7 +58,6 @@
     "editProfile": "Edit Profile",
     "save": "Save",
     "cancel": "Cancel",
-    "selectCountry": "Select Country",
-    "fieldRequired": "This field is required"
+    "selectCountry": "Select Country"
 
 }

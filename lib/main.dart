@@ -33,7 +33,7 @@ void main() async {
 
   setupGetIt();
   Bloc.observer = CustomBlocObserver();
-  
+
   runApp(const MyApp());
 }
 
@@ -48,33 +48,37 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-
         return ChangeNotifierProvider(
           create: (_) => getIt<AuthController>(),
-          child: MaterialApp(
-            theme: ThemeData(
-              colorScheme:
-                  ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
-              textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
-              visualDensity: VisualDensity.adaptivePlatformDensity,
-            ),
+          builder: (context, _) {
+            final locale =
+                context.watch<AuthController>().currentLocale;
 
-            debugShowCheckedModeBanner: false,
-            // showPerformanceOverlay: false,
-            onGenerateRoute: onGenerateRoutes,
-            initialRoute: SplashView.routeName,
-            navigatorKey: navigatorKey,
+            return MaterialApp(
+              locale: locale,
+              theme: ThemeData(
+                colorScheme:
+                    ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+                textTheme: GoogleFonts.cinzelDecorativeTextTheme(),
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+              ),
 
-            // flutter localization
-            locale: const Locale('en'),
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
-          ),
+              debugShowCheckedModeBanner: false,
+              // showPerformanceOverlay: false,
+              onGenerateRoute: onGenerateRoutes,
+              initialRoute: SplashView.routeName,
+              navigatorKey: navigatorKey,
+
+              // flutter localization
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+            );
+          },
         );
       },
     );

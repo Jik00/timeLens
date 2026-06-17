@@ -37,9 +37,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
       "Explore the world",
     ),
-    "fieldRequired": MessageLookupByLibrary.simpleMessage(
-      "This field is required",
-    ),
     "figureDynasty": MessageLookupByLibrary.simpleMessage("Dynasty"),
     "figureReign": MessageLookupByLibrary.simpleMessage("Reign in BC"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(

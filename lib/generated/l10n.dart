@@ -508,23 +508,16 @@ class S {
       args: [],
     );
   }
-
-  /// `This field is required`
-  String get fieldRequired {
-    return Intl.message(
-      'This field is required',
-      name: 'fieldRequired',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+    ];
   }
 
   @override
