@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:timelens/core/services/shared_preferences_singleton.dart';
 import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
 import 'package:timelens/features/profile/domain/repo/profile_repo.dart';
 
@@ -16,6 +17,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(ProfileLoading()); // show loading indicator
 
     final result = await profileRepo.updateProfile(updated);
+    Prefs.saveLanguage(updated.language); // Save the language preference
     result.fold(
       (failure) => emit(ProfileError(failure.message)),
       (profile) => emit(ProfileLoaded(profile)),

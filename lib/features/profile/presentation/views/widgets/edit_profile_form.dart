@@ -87,7 +87,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
                   
                   validator: (newValue) {
                     if (newValue == null || newValue.isEmpty) {
-                      return context.loc.fieldRequired;
+                      return context.loc.requiredField;
                     }
                     return null;
                   },

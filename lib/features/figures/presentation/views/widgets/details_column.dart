@@ -25,6 +25,7 @@ class DetailsColumn extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 20.w, top: 95.h),
       child: Column(
+        textDirection: TextDirection.ltr,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

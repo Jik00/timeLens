@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/send_icon.dart';
 
@@ -32,7 +34,7 @@ class _ChatTextFieldState extends State<ChatTextField> {
         border: Border.all(color: AppColors.primaryColor, width: 1.5.w),
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: 18.w, top: 8.h, bottom: 8.h),
+        padding: getIt<AuthController>().currentLocale == const Locale('ar') ? EdgeInsets.only(right: 18.w, top: 8.h, bottom: 8.h) : EdgeInsets.only(left: 18.w, top: 8.h, bottom: 8.h) ,
         child: TextFormField(
           controller: controller,
           maxLines: 5,

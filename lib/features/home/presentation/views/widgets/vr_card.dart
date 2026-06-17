@@ -15,7 +15,7 @@ class VrCard extends StatelessWidget {
       onTap: () => Navigator.pushNamed(context, ErasView.routeName),
       child: SizedBox(
         height: 315.h,
-        width: 332.w,
+        width: 330.w,
         child: Stack(
           clipBehavior: Clip.none,
           children: [

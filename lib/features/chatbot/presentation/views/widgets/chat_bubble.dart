@@ -16,6 +16,7 @@ class ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isUserMssg = mssg.role == kUser;
     return Row(
+      textDirection: TextDirection.ltr,
       mainAxisAlignment:
           isUserMssg ? MainAxisAlignment.end : MainAxisAlignment.start,
       children: [
