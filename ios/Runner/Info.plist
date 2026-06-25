@@ -50,5 +50,14 @@
 		<string>en</string>
 		<string>ar</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+		<string>com.example.timelens</string>
+		</array>
+	</dict>
+	</array>
 </dict>
 </plist>
