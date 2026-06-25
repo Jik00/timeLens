@@ -120,7 +120,6 @@ lib/
 | **Language** | Dart 3.x |
 | **Architecture** | Clean Architecture + Feature-first |
 | **State Management** | flutter_bloc / Cubit |
-| **Navigation** | go_router |
 | **Localization** | flutter_localizations + ARB |
 | **Networking** | Dio |
 | **VR Integration** | Meta Quest 3S VR Set |
