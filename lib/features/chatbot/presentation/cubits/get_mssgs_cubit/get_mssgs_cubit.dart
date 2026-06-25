@@ -13,10 +13,10 @@ class GetMssgsCubit extends Cubit<GetMssgsState> {
 
   final ChatRepo chatRepo;
 
-  Future<void> getMssgs({required String chatId}) async {
+  Future<void> getMssgs({required String chatId, required String userId}) async {
     emit(GetMssgsLoading());
 
-    var result = await chatRepo.getMessages(chatId);
+    var result = await chatRepo.getMessages(chatId, userId);
     debugPrint("result: ${result.toString()}");
 
     result.fold(

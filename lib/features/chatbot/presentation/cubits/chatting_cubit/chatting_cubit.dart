@@ -12,8 +12,8 @@ class ChattingCubit extends Cubit<ChattingState> {
 
   final List<MssgEntity> _mssgs = [];
 
-  Future<void> addMssg({required String mssg, required String chatId}) async {
-    final userMssg = MssgEntity(content: mssg, role: kUser, chatId: chatId);
+  Future<void> addMssg({required String mssg, required String chatId, required String userId}) async {
+    final userMssg = MssgEntity(content: mssg, role: kUser, chatId: chatId, userId: userId);
 
     _mssgs.add(userMssg);
 
@@ -21,13 +21,14 @@ class ChattingCubit extends Cubit<ChattingState> {
       content: kTyping,
       role: kAssistant,
       chatId: chatId,
+      userId: userId,
     );
 
     emit(ChattingLoading(
       mssgs: [..._mssgs, typing],
     ));
 
-    final result = await chatRepo.exchangeMessage(chatId, mssg);
+    final result = await chatRepo.exchangeMessage(chatId, mssg, userId);
 
     result.fold(
       (failure) {

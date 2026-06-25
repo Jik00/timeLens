@@ -17,14 +17,15 @@ class ChatRepoImpl implements ChatRepo {
 
   @override
   Future<Either<Failure, MssgEntity>> exchangeMessage(
-      String chatId, String message) async {
+      String chatId, String message, String userId) async {
     try {
-      debugPrint("chatId: $chatId, message: $message");
+      debugPrint("chatId: $chatId, message: $message, userId: $userId");
       final response = await supabase.functions.invoke(
         'chat',
         body: {
           'message': message,
           'chat_id': chatId,
+          'user_id': userId,
         },
       );
 
@@ -38,6 +39,7 @@ class ChatRepoImpl implements ChatRepo {
         content: data['reply'],
         role: kAssistant,
         chatId: chatId,
+        userId: userId,
       );
 
       debugPrint("successfuly got reply: ${reply.content}");
@@ -55,7 +57,7 @@ class ChatRepoImpl implements ChatRepo {
   }
 
   @override
-  Future<Either<Failure, List<MssgEntity>>> getMessages(String chatId) async {
+  Future<Either<Failure, List<MssgEntity>>> getMessages(String chatId, String userId) async {
     try {
       final response = await dataSource.fetchDataBy(
           tableName: kSupaChatTable, query: kSupaChatId, value: chatId);
