@@ -53,7 +53,6 @@ class SupabaseDataSource extends DataSource {
       }
 
       final response = await request.order('created_at', ascending: true);
-      ;
 
       log("Fetched ${response.length} objects");
       return response;
