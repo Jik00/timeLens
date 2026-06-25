@@ -38,16 +38,22 @@ class SupabaseDataSource extends DataSource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> fetchDataBy(
-      {required String tableName,
-      required String query,
-      required String value}) async {
+  Future<List<Map<String, dynamic>>> fetchDataBy({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
+  }) async {
     try {
-      final response = await supabase
-          .from(tableName)
-          .select()
-          .eq(query, value)
-          .order('created_at', ascending: true);
+      var request = supabase.from(tableName).select().eq(query, value);
+
+      if (query2 != null && value2 != null) {
+        request = request.eq(query2, value2);
+      }
+
+      final response = await request.order('created_at', ascending: true);
+      ;
 
       log("Fetched ${response.length} objects");
       return response;
@@ -58,10 +64,11 @@ class SupabaseDataSource extends DataSource {
   }
 
   @override
-  Stream<List<Map<String, dynamic>>> fetchDataByStream(
-      {required String tableName,
-      required String query,
-      required String value}) {
+  Stream<List<Map<String, dynamic>>> fetchDataByStream({
+    required String tableName,
+    required String query,
+    required String value,
+  }) {
     return supabase
         .from(tableName)
         .select()

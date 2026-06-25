@@ -1,5 +1,7 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:dartz/dartz.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/core/errors/failures.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/features/auth/data/models/user_model.dart';
@@ -96,4 +98,34 @@ class AuthRepoImpl extends AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> resetPassword(String email) async {
+    try {
+      await supabaseAuthService.resetPassword(email);
+      return right(unit);
+    } on AuthException catch (e) {
+      return left(ServerFailure(e.message));
+    } on SocketException {
+      return left(NetworkFailure('No internet connection.'));
+    } catch (e) {
+      return left(CustomException(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> updatePassword(String newPassword) async {
+    try {
+      await supabaseAuthService.updatePassword(newPassword);
+      return right(unit);
+    } on AuthException catch (e) {
+      return left(ServerFailure(e.message));
+    } on SocketException {
+      return left(NetworkFailure('No internet connection.'));
+    } catch (e) {
+      return left(CustomException(e.toString()));
+    }
+  }
+
+
 }

@@ -8,6 +8,8 @@ import 'package:timelens/core/services/supabase_storage_service.dart';
 import 'package:timelens/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:timelens/features/auth/domain/repos/auth_repo.dart';
 import 'package:timelens/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:timelens/features/auth/domain/usecases/reset_password_usecase.dart';
+import 'package:timelens/features/auth/domain/usecases/update_password_usecase.dart';
 import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 import 'package:timelens/features/chatbot/data/repos/chat_repo_impl.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
@@ -76,6 +78,12 @@ void setupGetIt() {
   /// usecases \\\
   getIt.registerSingleton<CheckAuthStatusUseCase>(
     CheckAuthStatusUseCase(getIt<AuthRepo>()),
+  );
+  getIt.registerSingleton<ResetPasswordUseCase>(
+    ResetPasswordUseCase(getIt<AuthRepo>()),
+  );
+  getIt.registerSingleton<UpdatePasswordUseCase>(
+    UpdatePasswordUseCase(getIt<AuthRepo>()),
   );
 
 

@@ -9,7 +9,6 @@ class SupabaseAuthService {
     required String password,
     required String username,
   }) async {
-
     try {
       final AuthResponse res = await supabase.auth.signUp(
         email: email,
@@ -38,7 +37,8 @@ class SupabaseAuthService {
       return user;
     } on Exception catch (e) {
       log('Error in SupabaseAuthService.signInWithEmail: ${e.toString()}');
-      throw Exception('Login failed. Please check your credentials and try again.');
+      throw Exception(
+          'Login failed. Please check your credentials and try again.');
     }
   }
 
@@ -50,7 +50,8 @@ class SupabaseAuthService {
       );
     } on Exception catch (e) {
       log('Error in SupabaseAuthService.signInWithGoogle: ${e.toString()}');
-      throw Exception('Login failed. Please check your credentials and try again.');
+      throw Exception(
+          'Login failed. Please check your credentials and try again.');
     }
   }
 
@@ -62,5 +63,23 @@ class SupabaseAuthService {
       throw Exception('Logout failed. Please try again.');
     }
   }
-  
+
+  Future<void> resetPassword(String email) async {
+    try {
+      await supabase.auth.resetPasswordForEmail(
+        email,
+        redirectTo: 'com.example.timelens://reset-password',
+      );
+    } on Exception catch (e) {
+      log('Error in SupabaseAuthService.resetPassword: ${e.toString()}');
+      throw Exception('Password reset failed. Please try again.');
+    }
+  }
+
+  Future<void> updatePassword(String newPassword) async {
+    await supabase.auth.updateUser(
+      UserAttributes(password: newPassword),
+    );
+  }
+
 }
