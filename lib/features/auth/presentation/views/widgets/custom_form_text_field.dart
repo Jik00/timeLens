@@ -11,20 +11,23 @@ class CustomFormTextfield extends StatelessWidget {
       this.suffixIcon,
       this.prefixIcon,
       this.onSaved,
-      this.obscure = false});
+      this.obscure = false, this.onChanged, this.controller});
 
   final TextInputType textInputType;
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onChanged;
   final bool obscure;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 278.w,
       child: TextFormField(
+          controller: controller,
           onSaved: onSaved,
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -33,6 +36,7 @@ class CustomFormTextfield extends StatelessWidget {
             return null;
           },
           obscureText: obscure,
+          onChanged: onChanged,
           style: const TextStyle(color: AppColors.brownWriting),
           keyboardType: textInputType,
           decoration: InputDecoration(

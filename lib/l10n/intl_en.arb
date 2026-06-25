@@ -60,6 +60,18 @@
     "cancel": "Cancel",
     "selectCountry": "Select Country",
     "comingSoon": "Coming Soon",
-    "letsDive": "Let's Dive"
+    "letsDive": "Let's Dive",
+    "forgetPassTitle": "Forget Password",
+    "forgetPassSubtitle": "Enter your email to reset your password",
+    "resetPassword": "Reset Password",
+    "sendResetLink": "Send Reset Link",
+    "enterNewPassword": "Enter New Password",
+    "confirmPassword": "Confirm Password",
+    "resetPasswordSuccess": "Password reset successfully",
+    "resetPasswordError": "Failed to reset password",
+    "backToLogin": "Back to Login",
+    "passwordsDontMatch": "Passwords don't match",
+    "goCheckYourEmail": "Go check your email, we sent you a link to reset your password",
+    "yesIgotTheLink": "Yes, I got the link"
 
 }

@@ -25,15 +25,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "Country": MessageLookupByLibrary.simpleMessage("Country"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
+    "backToLogin": MessageLookupByLibrary.simpleMessage("Back to Login"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "englishCode": MessageLookupByLibrary.simpleMessage("en"),
     "enterCityName": MessageLookupByLibrary.simpleMessage("Enter a city name"),
+    "enterNewPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter New Password",
+    ),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("An error occurred"),
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
       "Explore the world",
@@ -44,7 +49,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Rulers of Ancient Egypt",
     ),
     "forgetPass": MessageLookupByLibrary.simpleMessage("Forget password?"),
+    "forgetPassSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Enter your email to reset your password",
+    ),
+    "forgetPassTitle": MessageLookupByLibrary.simpleMessage("Forget Password"),
     "germanCode": MessageLookupByLibrary.simpleMessage("de"),
+    "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
+      "Go check your email, we sent you a link to reset your password",
+    ),
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
@@ -100,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("Skip"),
     "onboardingStart": MessageLookupByLibrary.simpleMessage("Start"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordsDontMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords don\'t match",
+    ),
     "personalInfo": MessageLookupByLibrary.simpleMessage(
       "Personal Information",
     ),
@@ -107,10 +122,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "requiredField": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "resetPasswordError": MessageLookupByLibrary.simpleMessage(
+      "Failed to reset password",
+    ),
+    "resetPasswordSuccess": MessageLookupByLibrary.simpleMessage(
+      "Password reset successfully",
+    ),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "selectCountry": MessageLookupByLibrary.simpleMessage("Select Country"),
+    "sendResetLink": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(
       "Speak and time shall answer",
@@ -125,5 +148,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "userName": MessageLookupByLibrary.simpleMessage("User Name"),
     "vr": MessageLookupByLibrary.simpleMessage("virtual reality"),
     "weather": MessageLookupByLibrary.simpleMessage("Weather"),
+    "yesIgotTheLink": MessageLookupByLibrary.simpleMessage(
+      "Yes, I got the link",
+    ),
   };
 }

@@ -518,6 +518,126 @@ class S {
   String get letsDive {
     return Intl.message('Let\'s Dive', name: 'letsDive', desc: '', args: []);
   }
+
+  /// `Forget Password`
+  String get forgetPassTitle {
+    return Intl.message(
+      'Forget Password',
+      name: 'forgetPassTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email to reset your password`
+  String get forgetPassSubtitle {
+    return Intl.message(
+      'Enter your email to reset your password',
+      name: 'forgetPassSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Reset Link`
+  String get sendResetLink {
+    return Intl.message(
+      'Send Reset Link',
+      name: 'sendResetLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter New Password`
+  String get enterNewPassword {
+    return Intl.message(
+      'Enter New Password',
+      name: 'enterNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password reset successfully`
+  String get resetPasswordSuccess {
+    return Intl.message(
+      'Password reset successfully',
+      name: 'resetPasswordSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to reset password`
+  String get resetPasswordError {
+    return Intl.message(
+      'Failed to reset password',
+      name: 'resetPasswordError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Login`
+  String get backToLogin {
+    return Intl.message(
+      'Back to Login',
+      name: 'backToLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords don't match`
+  String get passwordsDontMatch {
+    return Intl.message(
+      'Passwords don\'t match',
+      name: 'passwordsDontMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go check your email, we sent you a link to reset your password`
+  String get goCheckYourEmail {
+    return Intl.message(
+      'Go check your email, we sent you a link to reset your password',
+      name: 'goCheckYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, I got the link`
+  String get yesIgotTheLink {
+    return Intl.message(
+      'Yes, I got the link',
+      name: 'yesIgotTheLink',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

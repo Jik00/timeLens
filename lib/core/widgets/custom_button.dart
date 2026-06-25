@@ -9,13 +9,14 @@ class CustomButton extends StatelessWidget {
     required this.hint,
     this.onTap,
     this.scaleX,
-    this.isIgnored = false,
+    this.isIgnored = false, this.hintSize,
   });
 
   final String hint;
   final VoidCallback? onTap;
   final double? scaleX;
   final bool? isIgnored;
+  final double? hintSize;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class CustomButton extends StatelessWidget {
                     hint,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
-                      fontSize: 22.sp,
+                      fontSize: hintSize ?? 22.sp,
                       color: AppColors.brownWriting.withAlpha(227),
                     ),
                   ),

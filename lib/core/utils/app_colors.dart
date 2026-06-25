@@ -13,4 +13,5 @@ abstract class AppColors {
   static const blurColor = Color(0xFFFEDFB3);
   static const skipColor = Color(0xFFFFFCF5);
   static const blackBackground = Color(0xFF1E1E1E);
+  static const darkRedForErrorcolor = Color(0xFF7D0A0A);
 }

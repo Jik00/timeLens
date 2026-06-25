@@ -25,9 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "Country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
+    "backToLogin": MessageLookupByLibrary.simpleMessage("العودة للتسجيل"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("تحدث مع توت"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("قريبًا"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "editProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "egypt": MessageLookupByLibrary.simpleMessage("مصر"),
@@ -40,7 +44,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "figureReign": MessageLookupByLibrary.simpleMessage("فترة الحكم ق.م"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage("حكام مصر القديمة"),
     "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "forgetPassSubtitle": MessageLookupByLibrary.simpleMessage(
+      "ادخل البريد الاكتروني لاستعادة كلمة المرور",
+    ),
+    "forgetPassTitle": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
     "germanCode": MessageLookupByLibrary.simpleMessage("de"),
+    "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
+      "الرجاء التحقق من بريدك الالكتروني",
+    ),
     "homeTitle": MessageLookupByLibrary.simpleMessage("تعلّم عبر آلاف السنين"),
     "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "instructions1": MessageLookupByLibrary.simpleMessage(
@@ -94,9 +105,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "onboardingStart": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordsDontMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمات المرور لا تتطابق",
+    ),
     "personalInfo": MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "requiredField": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "resetPassword": MessageLookupByLibrary.simpleMessage(
+      "استعادة كلمة المرور",
+    ),
+    "resetPasswordError": MessageLookupByLibrary.simpleMessage(
+      "فشل استعادة كلمة المرور",
+    ),
+    "resetPasswordSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم استعادة كلمة المرور بنجاح",
+    ),
     "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "searchCity": MessageLookupByLibrary.simpleMessage("ابحث عن مدينة"),
@@ -113,5 +136,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "vr": MessageLookupByLibrary.simpleMessage("الواقع الافتراضي"),
     "weather": MessageLookupByLibrary.simpleMessage("الطقس"),
+    "yesIgotTheLink": MessageLookupByLibrary.simpleMessage(
+      "نعم، حصلت على الرابط",
+    ),
   };
 }

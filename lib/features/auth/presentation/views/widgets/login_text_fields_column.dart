@@ -6,22 +6,23 @@ import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
+import 'package:timelens/features/auth/presentation/views/forget_pass_view.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/custom_form_text_field.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/password_field.dart';
 
-class TextFieldsColumn extends StatefulWidget {
-  const TextFieldsColumn({super.key});
+class LoginTextFieldsColumn extends StatefulWidget {
+  const LoginTextFieldsColumn({super.key});
 
   @override
-  State<TextFieldsColumn> createState() => _TextFieldsColumnState();
+  State<LoginTextFieldsColumn> createState() => _LoginTextFieldsColumnState();
 }
 
 GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 late String email, pass;
 AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-class _TextFieldsColumnState extends State<TextFieldsColumn> {
+class _LoginTextFieldsColumnState extends State<LoginTextFieldsColumn> {
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -45,24 +46,20 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
           SizedBox(
             height: 20.h,
           ),
-
-          ///////////////// مؤقتًا لفاية ما نعملها \\\\\\\\\\\\\\\\\\
-          Visibility(
-            visible: false,
-            maintainAnimation: true,
-            maintainSize: true,
-            maintainState: true,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, ForgetPassView.routeName);
+            },
             child: Text(
               context.loc.forgetPass,
               style: TextStyle(
                 color: AppColors.brownWriting.withAlpha(179),
                 fontSize: 18.sp,
                 decoration: TextDecoration.underline,
+                decorationColor: AppColors.brownWriting.withAlpha(179),
               ),
             ),
           ),
-          ///////////////////////////////////////////////////////////
-          
           SizedBox(
             height: 16.h,
           ),
@@ -75,8 +72,6 @@ class _TextFieldsColumnState extends State<TextFieldsColumn> {
                 context
                     .read<SignInCubit>()
                     .signInWithEmailAndPassword(email: email, password: pass);
-
-
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

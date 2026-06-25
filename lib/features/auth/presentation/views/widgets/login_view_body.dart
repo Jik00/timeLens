@@ -6,7 +6,7 @@ import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/background_with_top_frame.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
 import 'package:timelens/features/auth/presentation/views/widgets/back_drop_filter.dart';
-import 'package:timelens/features/auth/presentation/views/widgets/text_fields_column.dart';
+import 'package:timelens/features/auth/presentation/views/widgets/login_text_fields_column.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -50,24 +50,24 @@ class LoginViewBody extends StatelessWidget {
                   ],
                 ),
               ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 325.h),
-                  child: Transform.scale(
-                    scaleX: 0.99.w,
-                    scaleY: 1.126.h,
-                    child: Image.asset(
-                      Assets.assetsImagesSquareFrame,
-                    ),
-                  ),
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.topCenter,
+              //   child: Padding(
+              //     padding: EdgeInsets.only(top: 325.h),
+              //     child: Transform.scale(
+              //       //scaleX: 0.99.w,
+              //       scaleY: 1.126.h,
+              //       child: Image.asset(
+              //         Assets.assetsImagesSquareFrame,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Positioned(
                 left: 0,
                 right: 0,
                 top: 370.h,
-                child: const TextFieldsColumn(),
+                child: const LoginTextFieldsColumn(),
               ),
             ],
           ),

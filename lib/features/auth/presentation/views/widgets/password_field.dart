@@ -6,9 +6,12 @@ import 'package:timelens/features/auth/presentation/views/widgets/custom_form_te
 import 'package:timelens/features/auth/presentation/views/widgets/icon_text_field.dart';
 
 class PasswordField extends StatefulWidget {
-  const PasswordField({super.key, this.onSaved});
+  const PasswordField({super.key, this.onSaved, this.hint, this.controller});
 
   final void Function(String?)? onSaved;
+  
+final String? hint;
+final TextEditingController? controller;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -22,8 +25,9 @@ class _PasswordFieldState extends State<PasswordField> {
     return CustomFormTextfield(
       obscure: obscure,
       textInputType: TextInputType.visiblePassword,
-      hintText: context.loc.password,
+      hintText: widget.hint ?? context.loc.password,
       onSaved: widget.onSaved,
+      controller: widget.controller,
       prefixIcon: const IconTextField(img: Assets.assetsImagesIconsPadlock),
       suffixIcon: IconButton(
         onPressed: () => setState(() => obscure = !obscure),
