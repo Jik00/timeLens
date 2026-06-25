@@ -60,5 +60,19 @@
     "cancel": "إلغاء",
     "selectCountry": "اختر الدولة",
     "comingSoon": "قريبًا",
-    "letsDive": "لننطلق"
+    "letsDive": "لننطلق",
+    "forgetPassTitle": "نسيت كلمة المرور",
+    "forgetPassSubtitle": "ادخل البريد الاكتروني لاستعادة كلمة المرور",
+    "resetPassword": "استعادة كلمة المرور",
+    "reset": "استعادة",
+    "newPassword": "كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "resetPasswordSuccess": "تم استعادة كلمة المرور بنجاح",
+    "resetPasswordError": "فشل استعادة كلمة المرور",
+    "backToLogin": "العودة للتسجيل",
+    "passwordsDontMatch": "كلمات المرور لا تتطابق",
+    "goCheckYourEmail": "الرجاء التحقق من بريدك الالكتروني",
+    "yesIgotTheLink": "نعم، حصلت على الرابط"
+
+
 }
