@@ -12,6 +12,7 @@ class AuthController extends ChangeNotifier {
   AuthStatus _status = AuthStatus.unknown;
   ProfileEntity? _currentProfile;
   String? _userId;
+  String? _accessToken;
 
   AuthController(this._checkAuthStatusUseCase, this._profileRepo) {
     _listenToAuthChanges();
@@ -20,6 +21,7 @@ class AuthController extends ChangeNotifier {
   AuthStatus get status => _status;
   ProfileEntity? get currentProfile => _currentProfile;
   String? get userId => _userId;
+  String? get accessToken => _accessToken;
   bool get isAuthenticated => _status == AuthStatus.authenticated;
   bool get isUnauthenticated => _status == AuthStatus.unauthenticated;
   bool get isUnknown => _status == AuthStatus.unknown;
@@ -39,6 +41,8 @@ class AuthController extends ChangeNotifier {
     if (user == null) return;
 
     _userId = user.uId;
+    
+    _accessToken = await _checkAuthStatusUseCase.authRepo.getAccessToken();
 
     final result = await _profileRepo.getProfile(user.uId);
 

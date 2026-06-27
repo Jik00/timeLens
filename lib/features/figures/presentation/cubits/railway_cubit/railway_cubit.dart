@@ -10,10 +10,10 @@ class RailwayCubit extends Cubit<RailwayState> {
 
   final FigureRepo figureRepo;
 
-  Future<void> setMessage(RailwayMessage message) async {
+  Future<void> setMessage( String accessToken , RailwayMessage message) async {
     emit(RailwayLoading());
     try {
-      final success = await figureRepo.setMessage(message);
+      final success = await figureRepo.setMessage( accessToken , message);
       emit(RailwaySuccess(success));
     } catch (e) {
       emit(RailwayFailure(e.toString()));

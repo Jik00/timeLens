@@ -85,6 +85,13 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
+  Future<String?> getAccessToken() async {
+    final session = supabase.auth.currentSession;
+    if (session == null) return null;
+    return session.accessToken;
+  }
+
+  @override
   Future<Either<Failure, void>> signOut() async {
     try {
       await supabaseAuthService.signOut();

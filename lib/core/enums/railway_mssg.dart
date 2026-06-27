@@ -1,5 +1,5 @@
 enum RailwayMessage {
-  ramesses,
+  ramsess,
   test,
   hatshepsut,
   tutankhamun,

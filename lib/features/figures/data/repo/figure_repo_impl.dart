@@ -41,9 +41,9 @@ class FigureRepoImpl implements FigureRepo {
   }
 
   @override
-  Future<bool> setMessage(RailwayMessage message) async {
+  Future<bool> setMessage( String accessToken , RailwayMessage message) async {
     try {
-       return await railwayService.setMessage(message);
+       return await railwayService.setMessage( accessToken , message);
     } catch (e) {
       throw Exception('RailwayRepo error: $e');
     }

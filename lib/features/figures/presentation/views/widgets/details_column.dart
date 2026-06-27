@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +10,7 @@ import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
 import 'package:timelens/core/widgets/custom_button.dart';
 import 'package:timelens/core/widgets/stroke_text_cinzel.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
 import 'package:timelens/features/figures/domain/entities/figure_entity.dart';
 import 'package:timelens/features/figures/presentation/cubits/railway_cubit/railway_cubit.dart';
 import 'package:timelens/features/figures/presentation/views/widgets/slide_transition_animation.dart';
@@ -101,7 +104,14 @@ class DetailsColumn extends StatelessWidget {
               hint: isReady ? context.loc.letsDive : context.loc.comingSoon,
               isIgnored: !isReady,
               onTap: () {
-                context.read<RailwayCubit>().setMessage(RailwayMessage.ramesses);
+                String accessToken = context.read<AuthController>().accessToken ?? "testAccessToken";
+               
+               // String userId = context.read<AuthController>().userId ?? "testUserId";
+               // log("accessToken: $accessToken, userId: $userId");
+               
+                context
+                    .read<RailwayCubit>()
+                    .setMessage( accessToken, RailwayMessage.ramsess);
                 NavigationService.pushGlobal(VrInstructionsView.routeName);
               },
             ),

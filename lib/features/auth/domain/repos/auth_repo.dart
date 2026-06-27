@@ -15,10 +15,11 @@ abstract class AuthRepo {
 
   Future<UserEntity?> getCurrentUser();
 
+  Future<String?> getAccessToken();
+
   Future<Either<Failure, void>> signOut();
 
   Future<Either<Failure, Unit>> resetPassword(String email);
 
   Future<Either<Failure, Unit>> updatePassword(String newPassword);
-
 }

@@ -21,6 +21,9 @@ const String kIsOnboardingSeen =
     'isOnboardingSeen'; // check if onboarding has been seen
 const String kAppLanguage = 'app_language'; // store selected language
 const String kLastCityKey = 'last_city'; // store selected theme
+const String kActiveChatKey = 'active_chat_id';
+const String kLastResetDateKey = 'chat_id_last_reset_date';
+
 
 /// Supabase Constants ////////
 const String kSupaURL = "https://bgiyysstohukhiztkyju.supabase.co";
@@ -28,12 +31,14 @@ const String kSupaKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnaXl5c3N0b2h1a2hpenRreWp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5OTEzMzMsImV4cCI6MjA3OTU2NzMzM30.e63lzBSAM0oUiBoTnd7mX5yIIqfy83F46blWbku959c";
 const String kSupaBucketForEras = "eras";
 const String kSupaErasTable = "eras_table";
-const String kSupaChatTable = "mssgs_table";
+const String kSupaMssgsTable = "mssgs_table";
+const String kSupaChatsTable = "chats_table";
 const String kSupaChatId = "chat_id";
 const String kSupaFiguresTable = "figures_table";
 const String kSupaBelongEra = "belong_era";
 const String kSupaProfilesTable = "profiles";
-const String kUserIdQuery = "id";
+const String kUserIdQueryForProfile = "id";
+const String kUserIdQueryForChats = "user_id";
 const String kProfilesPicsBucket = "profiles_pics";
 
 const String kHiveProfilesBox = 'profiles';
@@ -44,5 +49,7 @@ const String kBaseUrl = 'https://api.weatherapi.com/v1/';
 const String kWeatherEndpoint = 'forecast.json';
 const String kSearchWeatherEndpoint = 'search.json';
 const String kRailwayBaseUrl =
-    'https://back-time-lens-production.up.railway.app';
-const String kRailwayEndpoint = '/set-message';
+    'https://time-lens-sync-production.up.railway.app/api';
+const String kRailwayEndpoint = '/send-era';
+const String kAccesToken = 'accessToken';
+const String kEra = 'era';

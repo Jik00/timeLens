@@ -7,5 +7,5 @@ abstract class FigureRepo {
   Future<Either<Failure, List<FigureEntity>>> getFigures(
       {required String eraName});
 
-  Future<bool> setMessage(RailwayMessage message);
+  Future<bool> setMessage(String accessToken ,  RailwayMessage message);
 }
