@@ -54,6 +54,7 @@
     "englishCode": "en",
     "arabicCode": "ar",
     "germanCode": "de",
+    "chineseCode": "zh",
     "timeTraveler": "TimeTraveler",
     "editProfile": "Edit Profile",
     "save": "Save",
@@ -78,7 +79,7 @@
     "startWith": "Choose where you emerge in Ramses' world",
     "scene1": "the towering halls of Abu Simbel",
     "scene2": "he fertile banks of the Nile",
-    "history": "Previous Chats",
+    "prevChats": "Previous Chats",
     "noChats": "No Chats",
     "failedToFetchChats": "Failed to fetch chats"
 

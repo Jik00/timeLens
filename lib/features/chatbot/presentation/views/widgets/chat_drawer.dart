@@ -97,7 +97,7 @@ class ChatDrawer extends StatelessWidget {
                           fontFamily: GoogleFonts.lora().fontFamily,
                         ),
                       ),
-                      SizedBox(width: 28.w),
+                      SizedBox(width: 20.w),
                       IconButton(
                         onPressed: () {
                           context.read<FetchChatsCubit>().getChats(

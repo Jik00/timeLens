@@ -58,7 +58,7 @@ class DrawerItem extends StatelessWidget {
           Text(
             context.loc.newChat,
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               color: AppColors.brownWriting,
             ),
           ),

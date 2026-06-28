@@ -54,6 +54,7 @@
     "englishCode": "en",
     "arabicCode": "ar",
     "germanCode": "de",
+    "chineseCode": "zh",
     "timeTraveler": "مسافر الزمن",
     "editProfile": "تعديل الملف الشخصي",
     "save": "حفظ",
@@ -78,7 +79,7 @@
     "startWith": "اختر مكانك في عالم رمسيس",
     "scene1": "القاعات الكبيرة في عبو سيمبيل",
     "scene2": "البنوان الثابتة للنيل",
-    "history": "المحادثات السابقة",
+    "prevChats": "المحادثات السابقة",
     "noChats": "لا يوجد محادثات",
     "failedToFetchChats": "فشل تحميل المحادثات"
 

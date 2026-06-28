@@ -221,12 +221,14 @@ class _EditProfileFormState extends State<EditProfileForm> {
         return 1;
       case 'de':
         return 2;
+      case 'zh':
+        return 3;
       default:
         return -1; // Return -1 for unsupported languages
     }
   }
 
-  List<String> languages = ['en', 'ar', 'de'];
+  List<String> languages = ['en', 'ar', 'de', 'zh'];
 
   bool isProfileChanged() {
     return editedProfile != widget.profile;

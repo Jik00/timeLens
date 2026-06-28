@@ -469,6 +469,11 @@ class S {
     return Intl.message('de', name: 'germanCode', desc: '', args: []);
   }
 
+  /// `zh`
+  String get chineseCode {
+    return Intl.message('zh', name: 'chineseCode', desc: '', args: []);
+  }
+
   /// `TimeTraveler`
   String get timeTraveler {
     return Intl.message(
@@ -681,7 +686,12 @@ class S {
 
   /// `Previous Chats`
   String get prevChats {
-    return Intl.message('Previous Chats', name: 'history', desc: '', args: []);
+    return Intl.message(
+      'Previous Chats',
+      name: 'prevChats',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `No Chats`
@@ -707,6 +717,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'de'),
+      Locale.fromSubtags(languageCode: 'zh'),
     ];
   }
 

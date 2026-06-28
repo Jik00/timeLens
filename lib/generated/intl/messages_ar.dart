@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cairo": MessageLookupByLibrary.simpleMessage("القاهرة"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("تحدث مع توت"),
+    "chineseCode": MessageLookupByLibrary.simpleMessage("zh"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("قريبًا"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
@@ -56,7 +57,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
       "الرجاء التحقق من بريدك الالكتروني",
     ),
-    "history": MessageLookupByLibrary.simpleMessage("المحادثات السابقة"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("تعلّم عبر آلاف السنين"),
     "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "instructions1": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمات المرور لا تتطابق",
     ),
     "personalInfo": MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
+    "prevChats": MessageLookupByLibrary.simpleMessage("المحادثات السابقة"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "requiredField": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "resetPassword": MessageLookupByLibrary.simpleMessage(

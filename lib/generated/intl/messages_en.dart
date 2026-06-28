@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cairo": MessageLookupByLibrary.simpleMessage("Cairo"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
+    "chineseCode": MessageLookupByLibrary.simpleMessage("zh"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
@@ -61,7 +62,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
       "Go check your email, we sent you a link to reset your password",
     ),
-    "history": MessageLookupByLibrary.simpleMessage("Previous Chats"),
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
@@ -125,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "personalInfo": MessageLookupByLibrary.simpleMessage(
       "Personal Information",
     ),
+    "prevChats": MessageLookupByLibrary.simpleMessage("Previous Chats"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "requiredField": MessageLookupByLibrary.simpleMessage(
       "This field is required",

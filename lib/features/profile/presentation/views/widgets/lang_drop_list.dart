@@ -19,7 +19,8 @@ class _DropListState extends State<DropList> {
   final List<String> languages = [
     S.current.englishCode,
     S.current.arabicCode,
-    S.current.germanCode
+    S.current.germanCode,
+    S.current.chineseCode
   ];
 
   @override
