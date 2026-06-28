@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
-import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
-import 'package:timelens/features/chatbot/presentation/cubits/fetch_chats_cubit/fetch_chats_cubit.dart';
 
 class AppBarBody extends StatelessWidget {
   const AppBarBody({super.key});
@@ -44,7 +41,6 @@ class AppBarBody extends StatelessWidget {
         IconButton(
           onPressed: () {
             Scaffold.of(context).openEndDrawer();
-            context.read<FetchChatsCubit>().getChats(context.read<AuthController>().userId ?? 'testUserId');
           },
           icon: Icon(
             Icons.history_rounded,

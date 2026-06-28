@@ -19,7 +19,7 @@ class Prefs {
   }
 
   static String getCurrentLanguage() {
-    return _instance.getString (kAppLanguage) ?? _getDeviceLanguage();
+    return _instance.getString(kAppLanguage) ?? _getDeviceLanguage();
   }
 
   static Future<void> saveLanguage(String langCode) async {
@@ -30,11 +30,19 @@ class Prefs {
     return PlatformDispatcher.instance.locale.languageCode;
   }
 
-    static Future<bool> setLastCity(String key, String value) async {
-      return await _instance.setString(key, value);
+  static Future<bool> setString(String key, String value) async {
+    return await _instance.setString(key, value);
   }
 
-  static String getString(String key) {
+  static String getWeatherCity(String key) {
     return _instance.getString(key) ?? 'Cairo';
+  }
+
+  static String? getString(String key) {
+    return _instance.getString(key);
+  }
+
+  static Future<bool> remove(String key) async {
+    return await _instance.remove(key);
   }
 }

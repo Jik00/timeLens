@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
 import 'package:timelens/core/utils/context_extensions.dart';
+import 'package:timelens/features/auth/presentation/cubits/auth_controller/auth_controller.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/fetch_chats_cubit/fetch_chats_cubit.dart';
+import 'package:timelens/features/chatbot/presentation/views/widgets/chats_history_bloc_consumer.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/drawer_item.dart';
 
 class ChatDrawer extends StatelessWidget {
@@ -14,9 +19,8 @@ class ChatDrawer extends StatelessWidget {
     return Drawer(
       width: 280.w,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(24.r),
-          bottomRight: Radius.circular(24.r),
+        borderRadius: BorderRadius.all(
+          Radius.circular(24.r),
         ),
       ),
       child: Stack(
@@ -68,8 +72,57 @@ class ChatDrawer extends StatelessWidget {
                     indent: 24.w,
                     endIndent: 24.w,
                   ),
-                  SizedBox(height: 8.h),
-                  DrawerItem(),
+                  GestureDetector(
+                    onTap: () {
+                      Scaffold.of(context).closeEndDrawer();
+
+                      context.read<ChattingCubit>().reset();
+                    },
+                    child: DrawerItem(),
+                  ),
+                  Divider(
+                    color: AppColors.primaryColor.withAlpha(150),
+                    thickness: 1.5.w,
+                    indent: 24.w,
+                    endIndent: 24.w,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        context.loc.prevChats,
+                        style: TextStyle(
+                          fontSize: 18.sp,
+                          color: AppColors.brownWriting,
+                          fontFamily: GoogleFonts.lora().fontFamily,
+                        ),
+                      ),
+                      SizedBox(width: 28.w),
+                      IconButton(
+                        onPressed: () {
+                          context.read<FetchChatsCubit>().getChats(
+                              context.read<AuthController>().userId ??
+                                  'testUserId',
+                              forceRefresh: true);
+                        },
+                        icon: const Icon(
+                          Icons.refresh,
+                          color: AppColors.primaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: AppColors.primaryColor.withAlpha(150),
+                    thickness: 1.5.w,
+                    indent: 24.w,
+                    endIndent: 24.w,
+                  ),
+                  SizedBox(
+                    height: 350.h,
+                    child: ChatsHistoryBlocConsumer(),
+                  ),
                 ],
               ),
             ),

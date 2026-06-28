@@ -2,19 +2,21 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:timelens/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
 import 'package:timelens/features/profile/domain/entities/profile_entity.dart';
 import 'package:timelens/features/profile/domain/repo/profile_repo.dart';
 
 class AuthController extends ChangeNotifier {
   final CheckAuthStatusUseCase _checkAuthStatusUseCase;
   final ProfileRepo _profileRepo;
+  final ChatRepo chatRepo;
 
   AuthStatus _status = AuthStatus.unknown;
   ProfileEntity? _currentProfile;
   String? _userId;
   String? _accessToken;
 
-  AuthController(this._checkAuthStatusUseCase, this._profileRepo) {
+  AuthController(this._checkAuthStatusUseCase, this._profileRepo, this.chatRepo) {
     _listenToAuthChanges();
   }
 
@@ -60,6 +62,7 @@ class AuthController extends ChangeNotifier {
     
     if (userId == null) {
       _currentProfile = null;
+      chatRepo.clearCache();
       return; // nothing to clear
     }
     

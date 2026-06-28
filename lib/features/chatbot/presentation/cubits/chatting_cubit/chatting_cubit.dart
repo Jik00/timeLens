@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timelens/constants.dart';
+import 'package:timelens/core/services/chat_id_service.dart';
+import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/features/chatbot/domain/entities/mssg_entity.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
 
@@ -12,8 +14,12 @@ class ChattingCubit extends Cubit<ChattingState> {
 
   final List<MssgEntity> _mssgs = [];
 
-  Future<void> addMssg({required String mssg, required String chatId, required String userId}) async {
-    final userMssg = MssgEntity(content: mssg, role: kUser, chatId: chatId, userId: userId);
+  Future<void> addMssg(
+      {required String mssg,
+      required String chatId,
+      required String userId}) async {
+    final userMssg =
+        MssgEntity(content: mssg, role: kUser, chatId: chatId, userId: userId);
 
     _mssgs.add(userMssg);
 
@@ -45,5 +51,11 @@ class ChattingCubit extends Cubit<ChattingState> {
         ));
       },
     );
+  }
+
+  void reset() async {
+    emit(ChattingInitial());
+    _mssgs.clear();
+    await getIt<ChatIdService>().clearActiveChatId();
   }
 }

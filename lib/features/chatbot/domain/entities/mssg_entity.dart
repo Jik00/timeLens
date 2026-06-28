@@ -19,4 +19,11 @@ class MssgEntity {
       userId: map['user_id'],
     );
   }
+
+  Map<String, dynamic> toMap() => {
+        'content': content,
+        'role': role,
+        'chat_id': chatId,
+        'user_id': userId,
+      };
 }

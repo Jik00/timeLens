@@ -678,6 +678,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Previous Chats`
+  String get prevChats {
+    return Intl.message('Previous Chats', name: 'history', desc: '', args: []);
+  }
+
+  /// `No Chats`
+  String get noChats {
+    return Intl.message('No Chats', name: 'noChats', desc: '', args: []);
+  }
+
+  /// `Failed to fetch chats`
+  String get failedToFetchChats {
+    return Intl.message(
+      'Failed to fetch chats',
+      name: 'failedToFetchChats',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

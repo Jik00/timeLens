@@ -41,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterCityName": MessageLookupByLibrary.simpleMessage("أدخل اسم المدينة"),
     "errorOccurred": MessageLookupByLibrary.simpleMessage("حدث خطأ"),
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage("استكشف العالم"),
+    "failedToFetchChats": MessageLookupByLibrary.simpleMessage(
+      "فشل تحميل المحادثات",
+    ),
     "figureDynasty": MessageLookupByLibrary.simpleMessage("الأسرة"),
     "figureReign": MessageLookupByLibrary.simpleMessage("فترة الحكم ق.م"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage("حكام مصر القديمة"),
@@ -53,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
       "الرجاء التحقق من بريدك الالكتروني",
     ),
+    "history": MessageLookupByLibrary.simpleMessage("المحادثات السابقة"),
     "homeTitle": MessageLookupByLibrary.simpleMessage("تعلّم عبر آلاف السنين"),
     "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "instructions1": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lon": MessageLookupByLibrary.simpleMessage("خط الطول"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("المزيد عن ..."),
     "newChat": MessageLookupByLibrary.simpleMessage("محادثة جديدة"),
+    "noChats": MessageLookupByLibrary.simpleMessage("لا يوجد محادثات"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("لا توجد مدن"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "انغمس في عوالم ساحرة وأعِد اكتشاف الماضي بطريقة لم تختبرها من قبل",

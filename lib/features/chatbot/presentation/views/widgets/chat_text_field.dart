@@ -67,7 +67,7 @@ class _ChatTextFieldState extends State<ChatTextField> {
                 child: SendIcon(
                   onSend: () async {
                     
-                    final chatId = await ChatIdService().getOrCreateChatId();
+                    final chatId = await getIt< ChatIdService>().getOrCreateChatId();
                     
                 
                     sendMssg(context, chatId);

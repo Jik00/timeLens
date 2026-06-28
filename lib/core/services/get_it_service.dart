@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timelens/core/network/dio_factory.dart';
+import 'package:timelens/core/services/chat_id_service.dart';
 import 'package:timelens/core/services/railway_service.dart';
 import 'package:timelens/core/services/supabase_auth_service.dart';
 import 'package:timelens/core/services/supabase_storage_service.dart';
@@ -39,6 +40,7 @@ void setupGetIt() {
   getIt.registerSingleton<Dio>(DioFactory().createDio());
   getIt.registerSingleton(WeatherApiService(dio: getIt<Dio>()));
   getIt.registerSingleton<RailwayService>(RailwayService(getIt<Dio>()));
+  getIt.registerSingleton<ChatIdService>(ChatIdService());
 
 
   /// repos \\\
@@ -92,6 +94,7 @@ void setupGetIt() {
     AuthController(
       getIt<CheckAuthStatusUseCase>(),
       getIt<ProfileRepo>(),
+      getIt<ChatRepo>(),
     ),
   );
 }

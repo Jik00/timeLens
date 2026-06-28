@@ -44,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "exploreTheWorld": MessageLookupByLibrary.simpleMessage(
       "Explore the world",
     ),
+    "failedToFetchChats": MessageLookupByLibrary.simpleMessage(
+      "Failed to fetch chats",
+    ),
     "figureDynasty": MessageLookupByLibrary.simpleMessage("Dynasty"),
     "figureReign": MessageLookupByLibrary.simpleMessage("Reign in BC"),
     "figuresTitle": MessageLookupByLibrary.simpleMessage(
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "goCheckYourEmail": MessageLookupByLibrary.simpleMessage(
       "Go check your email, we sent you a link to reset your password",
     ),
+    "history": MessageLookupByLibrary.simpleMessage("Previous Chats"),
     "homeTitle": MessageLookupByLibrary.simpleMessage(
       "learn Across The Millennia",
     ),
@@ -92,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
     "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
+    "noChats": MessageLookupByLibrary.simpleMessage("No Chats"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Step into immersive worlds and relive the past like never before",

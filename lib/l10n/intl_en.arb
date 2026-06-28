@@ -77,6 +77,9 @@
     "newChat": "New Chat",
     "startWith": "Choose where you emerge in Ramses' world",
     "scene1": "the towering halls of Abu Simbel",
-    "scene2": "he fertile banks of the Nile"
+    "scene2": "he fertile banks of the Nile",
+    "history": "Previous Chats",
+    "noChats": "No Chats",
+    "failedToFetchChats": "Failed to fetch chats"
 
 }

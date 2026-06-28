@@ -48,13 +48,13 @@ class CheckMailAlert extends StatelessWidget {
                   Text(
                     context.loc.goCheckYourEmail,
                     style: TextStyle(
-                      fontSize: 28.sp,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                       color: AppColors.brownWriting,
                       letterSpacing: 1.5,
                     ),
                   ),
-                  const Spacer(),
+                  SizedBox(height: 12.h),
                   Row(
                     children: [
                       Expanded(
