@@ -123,7 +123,7 @@ lib/
 | **Localization** | flutter_localizations + ARB |
 | **Networking** | Dio |
 | **VR Integration** | Meta Quest 3S VR Set |
-| **AI Chatbot** | Thoth — llama-3.3-70b-versatile powered from Groq |
+| **AI Chatbot** | funnel tuned AI model |
 | **Asset Generation** | flutter_gen |
 
 ---
