@@ -24,9 +24,9 @@ List<ButtomNavBarEntity> get bottomNavBarItems => [
           inActiveImg: Assets.assetsImagesIconsChatbot,
           routeName: ChatbotView.routeName),
       ButtomNavBarEntity(
-          name: 'Web',
-          activeImg: Assets.assetsImagesIconsWebFill,
-          inActiveImg: Assets.assetsImagesIconsWeb,
+          name: 'Weather',
+          activeImg: Assets.assetsImagesIconsWeatherFill,
+          inActiveImg: Assets.assetsImagesIconsWeatherOutline,
           routeName: ErasView.routeName),
       ButtomNavBarEntity(
           name: 'Profile',

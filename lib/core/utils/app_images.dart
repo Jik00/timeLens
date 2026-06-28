@@ -138,6 +138,14 @@ class Assets {
   /// assets/images/icons/uv-index.png
   static const String assetsImagesIconsUvIndex = "assets/images/icons/uv-index.png";
 
+  /// Assets for assetsImagesIconsWeatherFill
+  /// assets/images/icons/weather_fill.png
+  static const String assetsImagesIconsWeatherFill = "assets/images/icons/weather_fill.png";
+
+  /// Assets for assetsImagesIconsWeatherOutline
+  /// assets/images/icons/weather_outline.png
+  static const String assetsImagesIconsWeatherOutline = "assets/images/icons/weather_outline.png";
+
   /// Assets for assetsImagesIconsWeb
   /// assets/images/icons/web.png
   static const String assetsImagesIconsWeb = "assets/images/icons/web.png";
