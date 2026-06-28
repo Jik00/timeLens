@@ -13,7 +13,7 @@ class WeatherGlimpseBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
-        var lastCity = Prefs.getString(kLastCityKey);
+        var lastCity = Prefs.getWeatherCity(kLastCityKey);
         if (state is WeatherSuccess) {
           return WeatherGlimpse(
             city: state.weather.locationName,
@@ -27,7 +27,7 @@ class WeatherGlimpseBlocBuilder extends StatelessWidget {
             condition: context.loc.loading,
           );
         }
-      }, 
+      },
     );
   }
 }

@@ -72,6 +72,11 @@
     "backToLogin": "Back to Login",
     "passwordsDontMatch": "Passwords don't match",
     "goCheckYourEmail": "Go check your email, we sent you a link to reset your password",
-    "yesIgotTheLink": "Yes, I got the link"
+    "yesIgotTheLink": "Yes, I got the link",
+    "cairo": "Cairo",
+    "newChat": "New Chat",
+    "startWith": "Choose where you emerge in Ramses' world",
+    "scene1": "the towering halls of Abu Simbel",
+    "scene2": "he fertile banks of the Nile"
 
 }

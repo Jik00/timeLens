@@ -74,6 +74,10 @@ class Assets {
   /// assets/images/home_view_2.png
   static const String assetsImagesHomeView2 = "assets/images/home_view_2.png";
 
+  /// Assets for assetsImagesHourGlass
+  /// assets/images/hour_glass.png
+  static const String assetsImagesHourGlass = "assets/images/hour_glass.png";
+
   /// Assets for assetsImagesIconsChatbot
   /// assets/images/icons/chatbot.png
   static const String assetsImagesIconsChatbot = "assets/images/icons/chatbot.png";

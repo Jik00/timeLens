@@ -14,4 +14,16 @@ abstract class AppColors {
   static const skipColor = Color(0xFFFFFCF5);
   static const blackBackground = Color(0xFF1E1E1E);
   static const darkRedForErrorcolor = Color(0xFF7D0A0A);
+
+  static const parchmentLight = Color(0xFFF4C990);
+  static const parchmentDark = Color(0xFFF0C183);
+
+  static const parchmentHighlight = Color(0xFFFBDEB5);
+  static const parchmentHighlight2 = Color(0xFFFAD8AA);
+
+  static const goldCircle = Color(0xFFD4A24A);
+
+  static const containerBorder = Color(0xFFE8C58F);
+
+  static const containerShadow = Color(0xFFC79A5A);
 }

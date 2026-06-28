@@ -28,7 +28,7 @@ class _MainLayoutState extends State<MainLayout> {
     return BlocProvider(
       create: (context) => WeatherCubit(weatherRepo: getIt.get<WeatherRepo>())
         ..getWeatherDetails(
-          Prefs.getString(kLastCityKey),
+          Prefs.getWeatherCity(kLastCityKey),
         ),
       child: Scaffold(
         extendBody: true,

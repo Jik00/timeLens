@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:timelens/core/services/chat_id_service.dart';
 import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/core/utils/app_colors.dart';
 import 'package:timelens/core/utils/app_images.dart';
@@ -64,16 +65,20 @@ class _ChatTextFieldState extends State<ChatTextField> {
                   height: 36.h,
                 ),
                 child: SendIcon(
-                  onSend: () {
-                    context.read<ChattingCubit>().addMssg(
-                          chatId: 'z',
-                          mssg: controller.text.trim(),
-                          userId: context.read<AuthController>().userId ?? 'testUserId',
-                        );
+                  onSend: () async {
+                    
+                    final chatId = await ChatIdService().getOrCreateChatId();
+                    
+                
+                    sendMssg(context, chatId);
+                    
+                    
+                    
                     setState(() {
                       controller.clear();
                       FocusManager.instance.primaryFocus?.unfocus();
                     });
+                    
                   },
                 ),
               ),
@@ -82,5 +87,13 @@ class _ChatTextFieldState extends State<ChatTextField> {
         ),
       ),
     );
+  }
+
+  void sendMssg(BuildContext context, String chatId) {
+    context.read<ChattingCubit>().addMssg(
+          chatId: chatId,
+          mssg: controller.text.trim(),
+          userId: context.read<AuthController>().userId ?? 'testUserId',
+        );
   }
 }

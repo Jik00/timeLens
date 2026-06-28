@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:timelens/core/services/get_it_service.dart';
 import 'package:timelens/features/chatbot/domain/repos/chat_repo.dart';
+import 'package:timelens/features/chatbot/presentation/cubits/fetch_chats_cubit/fetch_chats_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/get_mssgs_cubit/get_mssgs_cubit.dart';
 import 'package:timelens/features/chatbot/presentation/cubits/chatting_cubit/chatting_cubit.dart';
+import 'package:timelens/features/chatbot/presentation/views/widgets/chat_drawer.dart';
 import 'package:timelens/features/chatbot/presentation/views/widgets/chatbot_view_body.dart';
 
 class ChatbotView extends StatelessWidget {
@@ -21,8 +23,12 @@ class ChatbotView extends StatelessWidget {
         BlocProvider<GetMssgsCubit>(
           create: (context) => GetMssgsCubit(chatRepo: getIt.get<ChatRepo>()),
         ),
+        BlocProvider<FetchChatsCubit>(
+          create: (context) => FetchChatsCubit(chatRepo: getIt.get<ChatRepo>()),
+        ),
       ],
       child: Scaffold(
+        endDrawer: const ChatDrawer(),
         resizeToAvoidBottomInset: true,
         extendBody: true,
         body: const ChatbotViewBody(),

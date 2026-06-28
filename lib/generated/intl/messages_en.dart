@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
     "backToLogin": MessageLookupByLibrary.simpleMessage("Back to Login"),
+    "cairo": MessageLookupByLibrary.simpleMessage("Cairo"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("Chat with Thoth"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
@@ -90,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lon": MessageLookupByLibrary.simpleMessage("Lon"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("More About ..."),
+    "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("No cities found"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Step into immersive worlds and relive the past like never before",
@@ -131,9 +133,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
+    "scene1": MessageLookupByLibrary.simpleMessage(
+      "the towering halls of Abu Simbel",
+    ),
+    "scene2": MessageLookupByLibrary.simpleMessage(
+      "he fertile banks of the Nile",
+    ),
     "searchCity": MessageLookupByLibrary.simpleMessage("Search for a city"),
     "selectCountry": MessageLookupByLibrary.simpleMessage("Select Country"),
     "sendResetLink": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
+    "startWith": MessageLookupByLibrary.simpleMessage(
+      "Choose where you emerge in Ramses\' world",
+    ),
     "thoth": MessageLookupByLibrary.simpleMessage("THOTH"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage(
       "Speak and time shall answer",

@@ -72,7 +72,6 @@ class ProfileViewBody extends StatelessWidget {
                               onConfirm: () {
                                 
                                 context.read<LogoutCubit>().logout();
-
                               },
                             );
                         },

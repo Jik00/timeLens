@@ -638,6 +638,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Cairo`
+  String get cairo {
+    return Intl.message('Cairo', name: 'cairo', desc: '', args: []);
+  }
+
+  /// `New Chat`
+  String get newChat {
+    return Intl.message('New Chat', name: 'newChat', desc: '', args: []);
+  }
+
+  /// `Choose where you emerge in Ramses' world`
+  String get startWith {
+    return Intl.message(
+      'Choose where you emerge in Ramses\' world',
+      name: 'startWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `the towering halls of Abu Simbel`
+  String get scene1 {
+    return Intl.message(
+      'the towering halls of Abu Simbel',
+      name: 'scene1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `he fertile banks of the Nile`
+  String get scene2 {
+    return Intl.message(
+      'he fertile banks of the Nile',
+      name: 'scene2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("Time Lens"),
     "arabicCode": MessageLookupByLibrary.simpleMessage("ar"),
     "backToLogin": MessageLookupByLibrary.simpleMessage("العودة للتسجيل"),
+    "cairo": MessageLookupByLibrary.simpleMessage("القاهرة"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chatWithThoth": MessageLookupByLibrary.simpleMessage("تحدث مع توت"),
     "comingSoon": MessageLookupByLibrary.simpleMessage("قريبًا"),
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lon": MessageLookupByLibrary.simpleMessage("خط الطول"),
     "moreAbout": MessageLookupByLibrary.simpleMessage("المزيد عن ..."),
+    "newChat": MessageLookupByLibrary.simpleMessage("محادثة جديدة"),
     "noCitiesFound": MessageLookupByLibrary.simpleMessage("لا توجد مدن"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "انغمس في عوالم ساحرة وأعِد اكتشاف الماضي بطريقة لم تختبرها من قبل",
@@ -122,8 +124,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+    "scene1": MessageLookupByLibrary.simpleMessage(
+      "القاعات الكبيرة في عبو سيمبيل",
+    ),
+    "scene2": MessageLookupByLibrary.simpleMessage("البنوان الثابتة للنيل"),
     "searchCity": MessageLookupByLibrary.simpleMessage("ابحث عن مدينة"),
     "selectCountry": MessageLookupByLibrary.simpleMessage("اختر الدولة"),
+    "startWith": MessageLookupByLibrary.simpleMessage(
+      "اختر مكانك في عالم رمسيس",
+    ),
     "thoth": MessageLookupByLibrary.simpleMessage("توت"),
     "thothAskAbout": MessageLookupByLibrary.simpleMessage("تكلّم وسيجيب الزمن"),
     "thothCanMakemistakes": MessageLookupByLibrary.simpleMessage(

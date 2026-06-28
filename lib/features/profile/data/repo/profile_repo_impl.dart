@@ -65,7 +65,7 @@ class ProfileRepoImpl extends ProfileRepo {
     try {
       await _supabaseDataSource.updateData(
         tableName: kSupaProfilesTable,
-        query: kUserIdQuery,
+        query: kUserIdQueryForProfile,
         value: updated.id,
         newData: updated.toMap(),
       );
@@ -83,7 +83,6 @@ class ProfileRepoImpl extends ProfileRepo {
   Future<Either<Failure, ProfileEntity>> updateProfilePic(
       ProfileEntity updated, File imgFile) async {
     try {
-
       String newPicUrl = await _supabaseStorageService.uploadFile(
         file: imgFile,
         filePath: updated.id,
@@ -94,7 +93,7 @@ class ProfileRepoImpl extends ProfileRepo {
 
       await _supabaseDataSource.updateData(
         tableName: kSupaProfilesTable,
-        query: kUserIdQuery,
+        query: kUserIdQueryForProfile,
         value: updated.id,
         newData: updated.toMap(),
       );
@@ -107,18 +106,15 @@ class ProfileRepoImpl extends ProfileRepo {
       return Left(CustomException('Failed to update profile'));
     }
   }
-  
+
   @override
   Future<Either<Failure, void>> clearCachedProfile(String userId) async {
     try {
-      
       await _localDataSource.clearCachedProfile(userId);
       return const Right(null);
-   
     } catch (e) {
       log('ProfileRepo: clear cache failed — $e');
       return Left(CustomException('Failed to clear cached profile'));
-    }  
+    }
   }
-  
 }
